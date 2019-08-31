@@ -1,0 +1,7 @@
+/*
+
+!/.s2i
+!/contract.json
+!/IrisClassifier.*
+!/requirements.txt
+!/train.py
