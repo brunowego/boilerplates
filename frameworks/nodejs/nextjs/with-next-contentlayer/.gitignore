@@ -6,3 +6,7 @@
 !/.yarn/sdks
 !/.yarn/versions
 /node_modules
+
+
+# Contentlayer
+.contentlayer
