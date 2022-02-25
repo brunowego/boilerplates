@@ -2297,6 +2297,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-seo@npm:5.1.0":
+  version: 5.1.0
+  resolution: "next-seo@npm:5.1.0"
+  peerDependencies:
+    next: ^8.1.1-canary.54 || >=9.0.0
+    react: ">=16.0.0"
+    react-dom: ">=16.0.0"
+  checksum: 4a14fda26d57019637172032436ced849131fea823f72c59f0f043b8cddb0e7cd343c986f26ba9b7608b1cbbcbb0636140bf073d78b593efded52fb3d5f40b64
+  languageName: node
+  linkType: hard
+
 next@latest:
   version: 12.1.0
   resolution: "next@npm:12.1.0"
@@ -2946,6 +2957,7 @@ next@latest:
     eslint-config-next: 12.1.0
     eslint-plugin-tailwindcss: 3.5.0
     next: latest
+    next-seo: 5.1.0
     postcss: ~8.4.7
     prettier: 2.5.1
     prettier-plugin-tailwindcss: 0.1.8
