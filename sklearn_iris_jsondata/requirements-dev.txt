@@ -1,4 +1,0 @@
-pydocstyle==4.0.1
-pylint==2.3.1
-seldon-core==0.4.0
-notebook==6.0.1
