@@ -17,6 +17,9 @@ const options: NextAuthOptions = {
   theme: {
     colorScheme: 'light',
   },
+  pages: {
+    signIn: '/auth/signin',
+  },
   callbacks: {
     async jwt({ token }: { token: any }) {
       token.userRole = 'admin'
