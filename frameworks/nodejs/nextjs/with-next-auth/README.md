@@ -1,4 +1,4 @@
-# Next.js + Next SEO
+# Next.js + NextAuth.js
 
 ## Provider Configuration
 
