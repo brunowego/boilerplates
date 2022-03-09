@@ -9,7 +9,7 @@ const tailwindConfig = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
 
 module.exports = tailwindConfig

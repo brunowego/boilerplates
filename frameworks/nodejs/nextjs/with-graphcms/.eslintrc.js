@@ -15,6 +15,16 @@ const eslintRC = {
     ],
     'tailwindcss/classnames-order': 'off',
   },
+  overrides: [
+    {
+      files: ['./src/graphql/queries/*.graphql'],
+      parser: '@graphql-eslint/eslint-plugin',
+      plugins: ['@graphql-eslint'],
+      rules: {
+        '@graphql-eslint/known-type-names': 'error',
+      },
+    },
+  ],
 }
 
 module.exports = eslintRC
