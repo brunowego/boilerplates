@@ -5,4 +5,8 @@
 !/.yarn/releases
 !/.yarn/sdks
 !/.yarn/versions
+/src/schemas/*.ts
+!/src/schemas/.gitkeep
 /node_modules
+/.env
+/*.tsbuildinfo
