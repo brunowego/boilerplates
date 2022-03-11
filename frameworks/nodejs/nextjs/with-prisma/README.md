@@ -1,3 +1,0 @@
-# Next.js + Prisma
-
-TBD
