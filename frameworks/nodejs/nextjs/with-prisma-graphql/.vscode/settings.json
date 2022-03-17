@@ -1,5 +1,15 @@
 {
   "javascript.validate.enable": false,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.words": [
+    "codegen",
+    "esnext",
+    "giraphql",
+    "graphi",
+    "nextjs",
+    "requiredness",
+    "tailwindcss",
+    "upsert"
+  ]
 }

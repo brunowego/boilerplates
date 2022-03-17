@@ -6,6 +6,7 @@ const prettierConfig = {
   singleQuote: true,
   jsxSingleQuote: false,
   tailwindConfig: './tailwind.config.cjs',
+  plugins: [require('prettier-plugin-prisma'), require('prettier-plugin-tailwindcss')],
 }
 
 module.exports = prettierConfig

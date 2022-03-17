@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator giraphql {
+  provider     = "prisma-giraphql-types"
+  clientOutput = "@prisma/client"
+  output       = "./giraphql-types.ts"
+}
+
+generator dbml {
+  provider = "prisma-dbml-generator"
+  output   = "../dbml"
+}
+
+model Post {
+  id        String    @id @default(uuid()) @db.Uuid
+  author    User      @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  authorId  String    @map("author_id") @db.Uuid
+  title     String    @unique @db.VarChar(100)
+  slug      String    @unique @db.VarChar(100)
+  body      String    @db.Text
+  published Boolean   @default(false)
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamp
+  updatedAt DateTime  @default(now()) @map("updated_at") @db.Timestamp
+  comments  Comment[]
+
+  @@map("posts")
+}
+
+model Comment {
+  id        String   @id @default(uuid()) @db.Uuid
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  String   @map("author_id") @db.Uuid
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId    String   @map("post_id") @db.Uuid
+  body      String   @db.Text
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp
+
+  @@map("post_comments")
+}
+
+model User {
+  id        String    @id @default(uuid()) @db.Uuid
+  email     String    @unique @db.VarChar(255)
+  username  String    @unique @db.VarChar(20)
+  profile   Profile?
+  posts     Post[]
+  comments  Comment[]
+  followers Follow[]  @relation("followers")
+  following Follow[]  @relation("following")
+
+  @@map("users")
+}
+
+model Profile {
+  id     String  @id @default(uuid()) @db.Uuid
+  fname  String  @unique @db.VarChar(50)
+  lname  String  @unique @db.VarChar(50)
+  bio    String? @db.Text
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String  @unique @map("user_id") @db.Uuid
+
+  @@map("user_profiles")
+}
+
+model Follow {
+  from   User   @relation("following", fields: [fromId], references: [id], onDelete: Cascade)
+  fromId String @map("from_id") @db.Uuid
+  to     User   @relation("followers", fields: [toId], references: [id], onDelete: Cascade)
+  toId   String @map("to_id") @db.Uuid
+
+  @@id([fromId, toId], name: "compositeID")
+  @@map("user_follows")
+}

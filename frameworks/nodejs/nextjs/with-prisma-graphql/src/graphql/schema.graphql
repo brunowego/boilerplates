@@ -1,0 +1,54 @@
+input CreateUserInput {
+  email: String!
+  username: String!
+}
+
+scalar DateTime
+
+input DeleteUserInput {
+  id: ID!
+}
+
+input EditUserInput {
+  email: String
+  id: ID!
+  username: String
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User
+  deleteUser(input: DeleteUserInput!): Result!
+  editUser(input: EditUserInput!): User
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+type Query {
+  user(id: String!): User!
+  users(after: String, before: String, first: Int, last: Int): QueryUsersConnection!
+}
+
+type QueryUsersConnection {
+  edges: [QueryUsersConnectionEdge]!
+  pageInfo: PageInfo!
+}
+
+type QueryUsersConnectionEdge {
+  cursor: String!
+  node: User!
+}
+
+enum Result {
+  SUCCESS
+}
+
+type User {
+  email: String!
+  id: ID!
+  username: String!
+}
