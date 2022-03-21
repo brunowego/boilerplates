@@ -2,5 +2,5 @@
   "javascript.validate.enable": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["esnext", "tailwindcss"]
+  "cSpell.words": ["esnext", "tailwindcss", "uuidv", "yxxx"]
 }
