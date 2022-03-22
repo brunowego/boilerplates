@@ -1,0 +1,9 @@
+{
+  "javascript.validate.enable": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "cSpell.words": ["esnext", "tailwindcss", "typecheck", "upsert"]
+}
