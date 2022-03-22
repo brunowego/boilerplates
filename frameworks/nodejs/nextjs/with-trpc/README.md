@@ -1,3 +1,0 @@
-# Next.js + tRPC
-
-TBD

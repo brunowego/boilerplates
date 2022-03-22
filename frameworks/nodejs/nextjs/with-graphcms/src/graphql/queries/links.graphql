@@ -1,7 +1,0 @@
-query Links($limit: Int!) {
-  links(limit: $limit, orderBy: publishedAt_DESC) {
-    title
-    slug
-    description
-  }
-}

@@ -1,7 +1,0 @@
-query Link($slug: String!) {
-  link(where: { slug: $slug }) {
-    title
-    description
-    link
-  }
-}
