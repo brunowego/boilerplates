@@ -1,0 +1,69 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table Post {
+  id String [pk]
+  author User [not null]
+  authorId String [not null]
+  title String [unique, not null]
+  slug String [unique, not null]
+  body String [not null]
+  published Boolean [not null, default: false]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [default: `now()`, not null]
+  comments Comment [not null]
+}
+
+Table Comment {
+  id String [pk]
+  author User [not null]
+  authorId String [not null]
+  post Post [not null]
+  postId String [not null]
+  body String [not null]
+  createdAt DateTime [default: `now()`, not null]
+}
+
+Table User {
+  id String [pk]
+  email String [unique, not null]
+  username String [unique, not null]
+  profile Profile
+  posts Post [not null]
+  comments Comment [not null]
+  followers Follow [not null]
+  following Follow [not null]
+}
+
+Table Profile {
+  id String [pk]
+  fname String [unique, not null]
+  lname String [unique, not null]
+  bio String
+  user User [not null]
+  userId String [unique, not null]
+}
+
+Table Follow {
+  from User [not null]
+  fromId String [not null]
+  to User [not null]
+  toId String [not null]
+
+  indexes {
+    (fromId, toId) [pk]
+  }
+}
+
+Ref: Post.authorId > User.id [delete: Set Null]
+
+Ref: Comment.authorId > User.id [delete: Cascade]
+
+Ref: Comment.postId > Post.id [delete: Cascade]
+
+Ref: Profile.userId - User.id [delete: Cascade]
+
+Ref: Follow.fromId > User.id [delete: Cascade]
+
+Ref: Follow.toId > User.id [delete: Cascade]
