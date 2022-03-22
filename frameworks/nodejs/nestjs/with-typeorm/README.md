@@ -1,3 +1,0 @@
-# TypeORM with TypeORM
-
-TBD
