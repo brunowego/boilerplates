@@ -1,5 +1,6 @@
-import { IsEmail, IsNotEmpty, MinLength, Matches, IsString } from 'class-validator'
+import { IsEmail, IsNotEmpty, MinLength, Matches } from 'class-validator'
 import { Transform } from 'class-transformer'
+import { CreateUserProfileDto } from './create-user-profile.dto'
 
 export class CreateUserDto {
   @IsEmail()
@@ -13,11 +14,5 @@ export class CreateUserDto {
   })
   readonly username: string
 
-  // @IsString()
-  // @IsNotEmpty()
-  // readonly fname: string
-
-  // @IsString()
-  // @IsNotEmpty()
-  // readonly lname: string
+  readonly profile: CreateUserProfileDto
 }

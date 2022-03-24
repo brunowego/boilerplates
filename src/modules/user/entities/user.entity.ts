@@ -5,8 +5,11 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  JoinTable,
+  OneToOne,
 } from 'typeorm'
 import { Exclude } from 'class-transformer'
+import { UserProfileEntity } from './user-profile.entity'
 
 @Entity('users')
 export class UserEntity extends BaseEntity {
@@ -26,4 +29,15 @@ export class UserEntity extends BaseEntity {
   @UpdateDateColumn({ name: 'updated_at' })
   @Exclude()
   updatedAt: Date
+
+  @JoinTable()
+  @OneToOne(() => UserProfileEntity, (profile: UserProfileEntity) => profile.user, {
+    cascade: true,
+  })
+  profile: UserProfileEntity
+
+  // @Expose()
+  // get fullName(): string {
+  //   return `${this.fname} ${this.lname}`.trim()
+  // }
 }

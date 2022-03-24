@@ -9,11 +9,13 @@ export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
   public findAll(): Promise<UserEntity[]> {
-    return this.userRepository.find()
+    return this.userRepository.find({
+      relations: ['profile'],
+    })
   }
 
   public async findOneById(id: string): Promise<UserEntity> {
-    const user = await this.userRepository.findOneBy({ id })
+    const user = await this.userRepository.findOneBy({ id }, { relations: ['profile'] })
 
     if (!user) {
       throw new UserNotFoundException()
