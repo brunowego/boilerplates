@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { UserRepository } from './repositories'
+import { PaginationQueryDto } from '@/common/dto'
 import { UserEntity } from './entities'
 import { UserNotFoundException, EmailTakenException, UsernameTakenException } from '@/exceptions'
 import { CreateUserDto, UpdateUserDto } from './dto'
@@ -8,9 +9,13 @@ import { CreateUserDto, UpdateUserDto } from './dto'
 export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
-  public findAll(): Promise<UserEntity[]> {
+  public findAll(paginationQuery: PaginationQueryDto): Promise<UserEntity[]> {
+    const { limit, offset } = paginationQuery
+
     return this.userRepository.find({
       relations: ['profile'],
+      take: +limit,
+      skip: +offset,
     })
   }
 

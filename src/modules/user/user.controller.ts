@@ -3,12 +3,14 @@ import {
   UseInterceptors,
   ClassSerializerInterceptor,
   Get,
+  Query,
   Post,
   Patch,
   Body,
   Delete,
 } from '@nestjs/common'
 import { UserService } from './user.service'
+import { PaginationQueryDto } from '@/common/dto'
 import { UUIDParam } from '@/decorators'
 import { CreateUserDto, UpdateUserDto } from './dto'
 
@@ -18,8 +20,8 @@ export class UserController {
 
   @UseInterceptors(ClassSerializerInterceptor)
   @Get()
-  public async findAll() {
-    return this.userService.findAll()
+  public async findAll(@Query() paginationQuery: PaginationQueryDto) {
+    return this.userService.findAll(paginationQuery)
   }
 
   @UseInterceptors(ClassSerializerInterceptor)
