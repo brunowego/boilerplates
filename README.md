@@ -1,3 +1,3 @@
-# Base
+# Vite (React) Base
 
 TBD
