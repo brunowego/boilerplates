@@ -1,6 +1,4 @@
 {
-  "javascript.validate.enable": false,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["esnext", "tailwindcss"]
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
