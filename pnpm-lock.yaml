@@ -1,8 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@next/font': ~13.1.6
   '@types/node': ~18.11.18
   '@types/react': ~18.0.27
+  '@types/react-dom': ~18.0.10
   autoprefixer: ~10.4.13
   eslint: ~8.33.0
   eslint-config-next: ~13.1.6
@@ -22,8 +24,10 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
+  '@next/font': 13.1.6
   '@types/node': 18.11.18
   '@types/react': 18.0.27
+  '@types/react-dom': 18.0.10
   autoprefixer: 10.4.13_postcss@8.4.21
   eslint: 8.33.0
   eslint-config-next: 13.1.6_4vsywjlpuriuw3tl5oq6zy5a64
@@ -88,6 +92,10 @@ packages:
     resolution: {integrity: sha512-o7cauUYsXjzSJkay8wKjpKJf2uLzlggCsGUkPu3lP09Pv97jYlekTC20KJrjQKmSv5DXV0R/uks2ZXhqjNkqAw==}
     dependencies:
       glob: 7.1.7
+    dev: true
+
+  /@next/font/13.1.6:
+    resolution: {integrity: sha512-AITjmeb1RgX1HKMCiA39ztx2mxeAyxl4ljv2UoSBUGAbFFMg8MO7YAvjHCgFhD39hL7YTbFjol04e/BPBH5RzQ==}
     dev: true
 
   /@next/swc-android-arm-eabi/13.1.6:
@@ -260,6 +268,12 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+    dev: true
+
+  /@types/react-dom/18.0.10:
+    resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
+    dependencies:
+      '@types/react': 18.0.27
     dev: true
 
   /@types/react/18.0.27:
