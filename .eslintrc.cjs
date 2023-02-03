@@ -1,5 +1,5 @@
 /**
- * @type {import('@types/eslint').Linter.Config}
+ * @type { import('@types/eslint').Linter.Config }
  */
 const eslintRC = {
   extends: ['next/core-web-vitals', 'plugin:tailwindcss/recommended'],

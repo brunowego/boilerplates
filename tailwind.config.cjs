@@ -1,5 +1,5 @@
 /**
- * @type {import('tailwindcss/tailwind-config').TailwindConfig}
+ * @type { import('tailwindcss/tailwind-config').TailwindConfig }
  */
 const tailwindConfig = {
   content: ['./src/components/**/*.{ts,tsx}', './src/pages/**/*.{ts,tsx}'],
