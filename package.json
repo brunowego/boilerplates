@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "clean": "yarn dlx rimraf ./dist",
     "dev": "nest start --watch",
-    "build": "yarn run clean && nest build"
+    "clean": "pnpm dlx rimraf ./dist",
+    "build": "pnpm run clean && nest build"
   },
   "dependencies": {
     "@nestjs/axios": "~0.0.7",
@@ -23,6 +23,5 @@
     "@nestjs/schematics": "~8.0.8",
     "prettier": "~2.6.0",
     "typescript": "~4.6.2"
-  },
-  "packageManager": "yarn@3.2.0"
+  }
 }
