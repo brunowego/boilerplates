@@ -6,9 +6,7 @@ import { configValidationSchema as validationSchema } from './config.validation'
 @Module({
   imports: [
     NestConfigModule.forRoot({
-      // isGlobal: true,
       load: [appConfig],
-      // envFilePath: `${process.cwd()}/.env`,
       validationSchema,
     }),
   ],
