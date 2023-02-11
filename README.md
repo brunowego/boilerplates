@@ -4,10 +4,10 @@
   <a href="https://brunowego.com">
     <img src="https://assets.brunowego.com/images/logomark/any.svg" width="88" alt="Bruno Weg Logomark">
   </a>
-  <h2>Experiments</h2>
+  <h2>Boilerplates</h2>
 </div>
 
-<p align="center">Several experiments for personal learning.</p>
+<p align="center">Several boilerplates for personal learning.</p>
 
 <div align="center">
   <a href="https://twitter.com/brunowego">
