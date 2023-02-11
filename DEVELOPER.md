@@ -34,3 +34,15 @@ pnpm run test:cov
 pnpm run test:debug
 pnpm run test:e2e
 ```
+
+## Docker
+
+### Build and Run
+
+```sh
+#
+docker build --tag ghcr.io/brunowego/nestjs-base:latest ./
+
+#
+docker run -d --rm -p 3000:3000 ghcr.io/brunowego/nestjs-base:latest
+```
