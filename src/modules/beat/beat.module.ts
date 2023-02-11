@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common'
 import { HttpModule } from '@nestjs/axios'
 import { TerminusModule } from '@nestjs/terminus'
-import { HealthController } from './controllers/health.controller'
+import { BeatController } from './beat.controller'
+import { BeatService } from './beat.service'
 
 @Module({
   imports: [HttpModule, TerminusModule],
-  controllers: [HealthController],
+  controllers: [BeatController],
+  providers: [BeatService],
 })
-export class HealthModule {}
+export class BeatModule {}
