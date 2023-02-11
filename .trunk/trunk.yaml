@@ -24,6 +24,7 @@ runtimes:
     - python@3.10.8
 actions:
   enabled:
+    - trunk-cache-prune
     - trunk-announce
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
