@@ -1,7 +1,3 @@
-# NestJS Base
+# NestJS with Apollo Federation
 
 TODO
-
-## Docs
-
-- [Developer Guide](/DEVELOPER.md)
