@@ -4,7 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "turbo run dev",
-    "build": "turbo run build"
+    "dev:debug": "turbo run dev:debug",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "test:cov": "turbo run test:cov",
+    "test:debug": "turbo run test:debug",
+    "test:e2e": "turbo run test:e2e"
   },
   "devDependencies": {
     "turbo": "~1.7.4"
