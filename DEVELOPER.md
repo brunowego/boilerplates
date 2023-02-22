@@ -2,6 +2,13 @@
 
 ## Locally Development
 
+### Environment Variables
+
+```sh
+#
+cp ./.env.example ./.env
+```
+
 ### Installation
 
 ```sh
@@ -41,8 +48,18 @@ pnpm run test:e2e
 
 ```sh
 #
-docker build --tag ghcr.io/brunowego/nestjs-base:latest ./
+docker build \
+  --tag ghcr.io/brunowego/nestjs-base:latest \
+  ./
 
 #
-docker run -d --rm -p 3000:3000 ghcr.io/brunowego/nestjs-base:latest
+docker run \
+  -d \
+  --rm \
+  -p 3000:3000 \
+  --name nestjs-base \
+  ghcr.io/brunowego/nestjs-base:latest
+
+#
+docker stop nestjs-base
 ```
