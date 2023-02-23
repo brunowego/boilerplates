@@ -42,6 +42,12 @@ pnpm run test:debug
 pnpm run test:e2e
 ```
 
+### Docs
+
+```sh
+pnpm run compodoc:serve
+```
+
 ## Docker
 
 ### Build and Run
