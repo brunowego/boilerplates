@@ -8,7 +8,11 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id    String @id @default(uuid())
+  email String @unique
+  fname String
+  lname String
+  age   Int?
+
+  @@map("users")
 }

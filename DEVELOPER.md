@@ -20,6 +20,13 @@ pnpm install
 
 ```bash
 #
+docker compose up
+
+#
+pnpm run db:validate
+pnpm run db:push
+
+#
 pnpm run dev
 pnpm run dev:debug
 
