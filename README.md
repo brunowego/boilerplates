@@ -1,4 +1,4 @@
-# NestJS Base
+# NestJS with Compodoc
 
 TODO
 

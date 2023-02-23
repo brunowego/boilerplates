@@ -1,5 +1,10 @@
 import * as Joi from 'joi'
 
+/**
+ * Validation schema for the ConfigService
+ *
+ * @export configValidationSchema
+ */
 export const configValidationSchema = Joi.object({
   NODE_ENV: Joi.string()
     .valid('development', 'production', 'test', 'provision')

@@ -1,0 +1,5 @@
+{
+  "tsconfig": "./tsconfig.json",
+  "output": "./docs",
+  "name": "@brunowego/nestjs-with-compodoc"
+}
