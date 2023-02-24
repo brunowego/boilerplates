@@ -20,7 +20,7 @@ pnpm install
 
 ```bash
 #
-docker compose up
+docker compose up -d
 
 #
 pnpm run db:validate

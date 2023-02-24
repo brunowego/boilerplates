@@ -13,6 +13,18 @@ model User {
   fname String
   lname String
   age   Int?
+  posts Post[]
 
   @@map("users")
+}
+
+model Post {
+  id        String   @id @default(uuid())
+  title     String
+  content   String?
+  published Boolean? @default(false)
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  String?
+
+  @@map("posts")
 }
