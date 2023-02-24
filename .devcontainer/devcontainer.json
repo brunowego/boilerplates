@@ -1,0 +1,9 @@
+{
+  "name": "Debian",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "onCreateCommand": "curl -fsSL 'https://get.trunk.io' | bash -s -- -y",
+  "postCreateCommand": "pnpm install",
+  "forwardPorts": [3000]
+}
