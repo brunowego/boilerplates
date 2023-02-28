@@ -7,7 +7,7 @@ RUN corepack enable pnpm
 RUN \
   apt-get update && \
   apt-get --no-install-recommends -y install \
-  sudo && \
+  sudo=1.9.5p2-3+deb11u1 && \
   rm -rf /var/lib/apt/lists/*
 
 ARG USERNAME=node
