@@ -19,23 +19,6 @@ services:
         protocol: tcp
     restart: unless-stopped
 
-  app:
-    build:
-      context: ./.devcontainer
-    image: ghcr.io/brunowego/nestjs-with-prisma:latest
-    container_name: boilerplate-app
-    volumes:
-      - type: bind
-        source: ./
-        target: /workspace
-    environment:
-      DATABASE_URL:
-    command: tail -f /dev/null
-    network_mode: service:postgres
-    restart: unless-stopped
-    depends_on:
-      - postgres
-
 volumes:
   postgresql-data:
     driver: local
