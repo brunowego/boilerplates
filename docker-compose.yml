@@ -1,0 +1,41 @@
+---
+version: '3'
+
+services:
+  postgres:
+    image: docker.io/library/postgres:14.6-alpine
+    container_name: app-postgres
+    volumes:
+      - type: volume
+        source: postgresql-data
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB:
+    ports:
+      - target: 5432
+        published: 5432
+        protocol: tcp
+    restart: unless-stopped
+
+  app:
+    build:
+      context: ./.devcontainer
+    image: ghcr.io/london-bridge/app:latest
+    container_name: app
+    volumes:
+      - type: bind
+        source: ./
+        target: /workspace
+    environment:
+      DATABASE_URL:
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    network_mode: service:postgres
+    restart: unless-stopped
+    depends_on:
+      - postgres
+
+volumes:
+  postgresql-data:
+    driver: local

@@ -1,0 +1,1 @@
+export { appSeed } from './app'

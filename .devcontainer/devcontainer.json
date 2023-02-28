@@ -1,9 +1,10 @@
 {
-  "name": "Debian",
-  "build": {
-    "dockerfile": "./Dockerfile"
-  },
-  "onCreateCommand": "curl -fsSL 'https://get.trunk.io' | bash -s -- -y",
-  "postCreateCommand": "pnpm install",
+  "name": "App",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "onCreateCommand": "pnpm install",
+  "postCreateCommand": "pnpm db:generate",
+  "remoteUser": "node",
   "forwardPorts": [3000]
 }

@@ -1,0 +1,6 @@
+---
+# yamllint disable-line rule:quoted-strings
+addAssignees: 'author'
+
+skipKeywords:
+  - wip

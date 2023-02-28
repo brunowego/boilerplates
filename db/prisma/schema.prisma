@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+  output   = "../../src/generated/typegraphql-prisma"
+}
+
+generator erd {
+  provider                  = "prisma-erd-generator"
+  output                    = "../../docs/assets/images/ERD.svg"
+  includeRelationFromFields = true
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model App {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  @@map(name: "app")
+}

@@ -1,6 +1,6 @@
 /.pnpm-store
 /coverage
 /dist
-/docs
 /node_modules
+/src/generated
 /.env

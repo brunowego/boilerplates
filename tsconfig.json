@@ -1,19 +1,25 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
   "compilerOptions": {
     "module": "commonjs",
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "es2018",
+    "lib": ["es2018", "esnext.asynciterable"],
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/db/*": ["./db/*"]
     },
     "incremental": true,
     "skipLibCheck": true,
@@ -22,5 +28,7 @@
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true
-  }
+  },
+  "include": ["./db/**/*.ts", "./src/**/*.ts"],
+  "exclude": ["./node_modules"]
 }

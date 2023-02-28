@@ -1,7 +1,17 @@
-# NestJS with Compodoc
+<!-- markdownlint-disable MD033 MD041 -->
 
-TODO
+<div align="center">
+  <img src="https://raw.githubusercontent.com/london-bridge/.github/main/assets/images/grid.svg" alt="London Bridge Logo">
 
-## Docs
+  <h1>App</h1>
 
-- [Developer Guide](/DEVELOPER.md)
+  <p>App description (with emoji). 🗃️</p>
+
+  <nav>
+    <a href="https://backstage.londonbridge.dev/catalog/default/component/app">Backstage</a>
+    •
+    <a href="https://londonbridgeco.slack.com/archives/C042JQQU9HD">Slack</a>
+    •
+    <a href="https://github.com/orgs/london-bridge/discussions">Discussions</a>
+  </nav>
+</div>

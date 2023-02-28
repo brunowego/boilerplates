@@ -3,6 +3,7 @@
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
     "Trunk.io",
+    "prisma.prisma",
     "ms-vscode-remote.remote-containers"
   ]
 }

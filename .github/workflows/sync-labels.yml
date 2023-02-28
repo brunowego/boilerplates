@@ -1,0 +1,29 @@
+---
+name: Sync Labels
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/labels.yml
+      - .github/workflows/sync-labels.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  labeler:
+    name: Labeler
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Sync repository labels
+        if: success()
+        uses: crazy-max/ghaction-github-labeler@v4

@@ -1,0 +1,3 @@
+* @london-bridge/backend
+.github @london-bridge/infrastructure
+.trunk @london-bridge/infrastructure
