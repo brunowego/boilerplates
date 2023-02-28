@@ -1,0 +1,8 @@
+{
+  "name": "NestJS with Prisma",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "onCreateCommand": "pnpm install",
+  "forwardPorts": [3000]
+}

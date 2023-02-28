@@ -5,7 +5,6 @@ services:
   postgres:
     image: docker.io/library/postgres:15.1-alpine
     container_name: boilerplate-postgres
-    hostname: postgres
     volumes:
       - type: volume
         source: postgresql-data
@@ -18,14 +17,25 @@ services:
       - target: 5432
         published: 5432
         protocol: tcp
-    networks:
-      - workbench
     restart: unless-stopped
+
+  app:
+    build:
+      context: ./.devcontainer
+    image: ghcr.io/brunowego/nestjs-with-prisma:latest
+    container_name: boilerplate-app
+    volumes:
+      - type: bind
+        source: ./
+        target: /workspace
+    environment:
+      DATABASE_URL:
+    command: tail -f /dev/null
+    network_mode: service:postgres
+    restart: unless-stopped
+    depends_on:
+      - postgres
 
 volumes:
   postgresql-data:
     driver: local
-
-networks:
-  workbench:
-    name: workbench
