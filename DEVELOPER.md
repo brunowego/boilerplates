@@ -63,7 +63,7 @@ pnpm run build
 
 #
 docker build \
-  --tag ghcr.io/brunowego/nestjs-with-prisma-rest:latest \
+  --tag ghcr.io/brunowego/boilerplates:nestjs-with-prisma-rest \
   ./
 
 #
@@ -93,5 +93,5 @@ docker run \
   -p 3000:3000 \
   --name app \
   --network workbench \
-  ghcr.io/brunowego/nestjs-with-prisma-rest:latest
+  ghcr.io/brunowego/boilerplates:nestjs-with-prisma-rest
 ```
