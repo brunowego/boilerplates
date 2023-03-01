@@ -12,6 +12,12 @@ export class UserService {
     })
   }
 
+  async findOne(userWhereUniqueInput: Prisma.UserWhereUniqueInput): Promise<User | null> {
+    return this.prisma.user.findUnique({
+      where: userWhereUniqueInput,
+    })
+  }
+
   async exists(field: string, value: string): Promise<boolean> {
     return (await this.prisma.user.count({ where: { [field]: value } })) == 0
   }
