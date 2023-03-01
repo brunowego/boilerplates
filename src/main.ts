@@ -4,6 +4,7 @@ import { NestExpressApplication } from '@nestjs/platform-express'
 import { AppModule } from './app.module'
 import { ConfigService } from '@nestjs/config'
 import { PrismaService } from './common/services/prisma.service'
+import { useContainer } from 'class-validator'
 
 const logger = new Logger('Bootstrap')
 
@@ -19,10 +20,13 @@ async function bootstrap() {
 
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true,
       transform: true,
+      whitelist: true,
+      forbidNonWhitelisted: true,
     })
   )
+
+  useContainer(app.select(AppModule), { fallbackOnErrors: true })
 
   await app.listen(appPort, appHost, () => {
     logger.log(`The server is listening on http://${appHost}:${appPort}`)
