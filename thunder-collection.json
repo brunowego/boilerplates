@@ -1,7 +1,7 @@
 {
   "client": "Thunder Client",
   "collectionName": "NestJS with Prisma",
-  "dateExported": "2023-03-01T11:57:58.782Z",
+  "dateExported": "2023-03-01T17:31:12.235Z",
   "version": "1.1",
   "folders": [
     {
@@ -61,7 +61,7 @@
       "method": "POST",
       "sortNum": 10000,
       "created": "2023-03-01T11:25:32.112Z",
-      "modified": "2023-03-01T11:56:42.155Z",
+      "modified": "2023-03-01T17:30:23.179Z",
       "headers": [
         {
           "name": "Accept",
@@ -77,7 +77,7 @@
       "params": [],
       "body": {
         "type": "json",
-        "raw": "{\n  \"title\": \"NestJS with Prisma\",\n  \"content\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\",\n  \"authorId\": \"509ba04b-3fd0-478f-8a0c-8b046d205fb2\"\n}\n",
+        "raw": "{\n  \"title\": \"NestJS with Prisma\",\n  \"content\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\",\n  \"authorId\": \"c55dd05c-f82f-4ecc-af31-447251a5b179\"\n}\n",
         "form": []
       },
       "tests": []
@@ -216,7 +216,7 @@
       "method": "POST",
       "sortNum": 50000,
       "created": "2023-03-01T11:25:32.115Z",
-      "modified": "2023-03-01T11:25:32.115Z",
+      "modified": "2023-03-01T17:30:09.817Z",
       "headers": [
         {
           "name": "Accept",
@@ -232,7 +232,7 @@
       "params": [],
       "body": {
         "type": "json",
-        "raw": "{\n  \"email\": \"me@brunowego.com\",\n  \"fname\": \"Bruno\",\n  \"lname\": \"Wego\"\n}",
+        "raw": "{\n  \"email\": \"brunowego@invoxer.com\",\n  \"fname\": \"Bruno\",\n  \"lname\": \"Wego\"\n}",
         "form": []
       },
       "tests": []
@@ -247,6 +247,31 @@
       "sortNum": 60000,
       "created": "2023-03-01T11:25:32.117Z",
       "modified": "2023-03-01T11:57:18.985Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "86fbc660-3731-4106-8f75-2d40b6d48da3",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "e112a266-8bb2-4f02-94d1-45c78aa6bc0b",
+      "name": "/user/:id",
+      "url": "{{url}}/user/c55dd05c-f82f-4ecc-af31-447251a5b179",
+      "method": "GET",
+      "sortNum": 60000,
+      "created": "2023-03-01T13:46:53.825Z",
+      "modified": "2023-03-01T17:30:16.997Z",
       "headers": [
         {
           "name": "Accept",
