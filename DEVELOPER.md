@@ -59,18 +59,39 @@ pnpm run test:e2e
 
 ```sh
 #
+pnpm run build
+
+#
 docker build \
-  --tag ghcr.io/brunowego/nestjs-base:latest \
+  --tag ghcr.io/brunowego/nestjs-with-prisma-rest:latest \
   ./
 
 #
-docker run \
-  -d \
-  --rm \
-  -p 3000:3000 \
-  --name nestjs-base \
-  ghcr.io/brunowego/nestjs-base:latest
+docker network create workbench \
+  --subnet 10.1.1.0/24
 
 #
-docker stop nestjs-base
+docker run -d \
+  $(echo "$DOCKER_RUN_OPTS") \
+  -h postgresql \
+  -e POSTGRES_USER='dev' \
+  -e POSTGRES_PASSWORD='dev' \
+  -e POSTGRES_DB='dev' \
+  -v app-postgresql-data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  --name app-postgresql \
+  --network workbench \
+  docker.io/library/postgres:15.1-alpine
+
+#
+pnpm db:push
+
+#
+docker run \
+  --rm \
+  --env DATABASE_URL='postgresql://dev:dev@postgresql:5432/dev?schema=public' \
+  -p 3000:3000 \
+  --name app \
+  --network workbench \
+  ghcr.io/brunowego/nestjs-with-prisma-rest:latest
 ```
