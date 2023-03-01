@@ -1,4 +1,4 @@
-import { Logger } from '@nestjs/common'
+import { Logger, ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { NestExpressApplication } from '@nestjs/platform-express'
 import { AppModule } from './app.module'
@@ -16,6 +16,13 @@ async function bootstrap() {
 
   const prismaService = app.get(PrismaService)
   await prismaService.enableShutdownHooks(app)
+
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      transform: true,
+    })
+  )
 
   await app.listen(appPort, appHost, () => {
     logger.log(`The server is listening on http://${appHost}:${appPort}`)
