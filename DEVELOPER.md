@@ -1,6 +1,6 @@
 # Developer Guide
 
-## Locally Development
+## Host Development
 
 ### Environment Variables
 
@@ -29,7 +29,11 @@ pnpm run db:push
 #
 pnpm run dev
 pnpm run dev:debug
+```
 
+### Building
+
+```sh
 #
 pnpm run build
 
