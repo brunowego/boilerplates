@@ -1,5 +1,6 @@
 /*
 
 !/dist
+!/node_modules/@generated/prisma-client
 !/package.json
 !/pnpm-lock.yaml

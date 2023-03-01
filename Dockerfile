@@ -7,8 +7,9 @@ RUN corepack enable pnpm
 WORKDIR /app
 
 COPY ./package.json ./pnpm-lock.yaml ./
+COPY ./node_modules/@generated/prisma-client ./node_modules/@generated/prisma-client
 
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
 
 FROM cgr.dev/chainguard/node:18.12
