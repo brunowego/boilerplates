@@ -1,0 +1,266 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "NestJS with Prisma",
+  "dateExported": "2023-03-01T11:57:58.782Z",
+  "version": "1.1",
+  "folders": [
+    {
+      "_id": "c2e4f592-3727-440b-b0ba-6fecfbec89c0",
+      "name": "HealthCheck",
+      "containerId": "",
+      "created": "2023-03-01T11:25:32.108Z",
+      "sortNum": 10000
+    },
+    {
+      "_id": "e112a266-8bb2-4f02-94d1-45c78aa6bc0b",
+      "name": "User",
+      "containerId": "",
+      "created": "2023-03-01T11:25:32.109Z",
+      "sortNum": 15000
+    },
+    {
+      "_id": "9f7acb45-0943-4cd9-90ea-810893747028",
+      "name": "Post",
+      "containerId": "",
+      "created": "2023-03-01T11:25:32.110Z",
+      "sortNum": 20000
+    }
+  ],
+  "requests": [
+    {
+      "_id": "afe4e38b-2800-426f-8243-a38dc798f409",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "c2e4f592-3727-440b-b0ba-6fecfbec89c0",
+      "name": "/_healthcheck",
+      "url": "{{url}}/_healthcheck",
+      "method": "GET",
+      "sortNum": 10000,
+      "created": "2023-03-01T11:25:32.108Z",
+      "modified": "2023-03-01T11:25:32.108Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "003025b4-1226-4cec-aa21-c4cb0f11c51c",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "9f7acb45-0943-4cd9-90ea-810893747028",
+      "name": "/post/draft",
+      "url": "{{url}}/post/draft",
+      "method": "POST",
+      "sortNum": 10000,
+      "created": "2023-03-01T11:25:32.112Z",
+      "modified": "2023-03-01T11:56:42.155Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"NestJS with Prisma\",\n  \"content\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\",\n  \"authorId\": \"509ba04b-3fd0-478f-8a0c-8b046d205fb2\"\n}\n",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "5557a7ee-e06b-427a-9065-b40872331082",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "9f7acb45-0943-4cd9-90ea-810893747028",
+      "name": "/post/publish",
+      "url": "{{url}}/post/publish/e1786002-8224-4a64-9976-6a6ba5055909",
+      "method": "PUT",
+      "sortNum": 15000,
+      "created": "2023-03-01T11:25:32.114Z",
+      "modified": "2023-03-01T11:57:00.819Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "a2f7abda-cace-47a4-a179-69c4d5bb37e1",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "c2e4f592-3727-440b-b0ba-6fecfbec89c0",
+      "name": "/_healthbeat",
+      "url": "{{url}}/_healthbeat",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2023-03-01T11:25:32.109Z",
+      "modified": "2023-03-01T11:25:32.109Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "7e19fece-a50b-49dd-9141-c33d085bb7bb",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "9f7acb45-0943-4cd9-90ea-810893747028",
+      "name": "/post/feed",
+      "url": "{{url}}/post/feed",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2023-03-01T11:25:32.110Z",
+      "modified": "2023-03-01T11:25:32.110Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "9f0af47b-782b-410e-8945-3b5507997c64",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "9f7acb45-0943-4cd9-90ea-810893747028",
+      "name": "/post/filtered/:searchString",
+      "url": "{{url}}/post/filtered/NestJS with Prisma",
+      "method": "GET",
+      "sortNum": 25000,
+      "created": "2023-03-01T11:25:32.111Z",
+      "modified": "2023-03-01T11:25:32.111Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "a4117d57-10a2-4272-af4a-521411bd228f",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "9f7acb45-0943-4cd9-90ea-810893747028",
+      "name": "/post/:id",
+      "url": "{{url}}/post/e1786002-8224-4a64-9976-6a6ba5055909",
+      "method": "GET",
+      "sortNum": 35000,
+      "created": "2023-03-01T11:25:32.113Z",
+      "modified": "2023-03-01T11:57:14.646Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "1742db47-e42b-490f-a433-843c65bc4959",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "e112a266-8bb2-4f02-94d1-45c78aa6bc0b",
+      "name": "/user/signup",
+      "url": "{{url}}/user/signup",
+      "method": "POST",
+      "sortNum": 50000,
+      "created": "2023-03-01T11:25:32.115Z",
+      "modified": "2023-03-01T11:25:32.115Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"me@brunowego.com\",\n  \"fname\": \"Bruno\",\n  \"lname\": \"Wego\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "45e87697-0303-464d-83a5-9b765c0704e2",
+      "colId": "4500b9e7-1158-40b8-8675-2f2e56e6d0ad",
+      "containerId": "9f7acb45-0943-4cd9-90ea-810893747028",
+      "name": "/post/:id Copy",
+      "url": "{{url}}/post/e1786002-8224-4a64-9976-6a6ba5055909",
+      "method": "DELETE",
+      "sortNum": 60000,
+      "created": "2023-03-01T11:25:32.117Z",
+      "modified": "2023-03-01T11:57:18.985Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    }
+  ]
+}
