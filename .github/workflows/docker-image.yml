@@ -107,6 +107,4 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache
           context: ./
           push: ${{ github.ref == 'refs/heads/nestjs-with-prisma-rest' }}
-          tags: |
-            ghcr.io/${{ github.repository }}:${{ steps.sha.outputs.sha8 }}
-            ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/${{ github.repository }}:nestjs-with-prisma-rest
