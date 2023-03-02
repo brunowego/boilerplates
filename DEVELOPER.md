@@ -67,21 +67,7 @@ docker build \
   ./
 
 #
-docker network create workbench \
-  --subnet 10.1.1.0/24
-
-#
-docker run -d \
-  $(echo "$DOCKER_RUN_OPTS") \
-  -h postgresql \
-  -e POSTGRES_USER='dev' \
-  -e POSTGRES_PASSWORD='dev' \
-  -e POSTGRES_DB='dev' \
-  -v app-postgresql-data:/var/lib/postgresql/data \
-  -p 5432:5432 \
-  --name app-postgresql \
-  --network workbench \
-  docker.io/library/postgres:15.1-alpine
+docker compose up -d
 
 #
 pnpm db:push
@@ -92,6 +78,5 @@ docker run \
   --env DATABASE_URL='postgresql://dev:dev@postgresql:5432/dev?schema=public' \
   -p 3000:3000 \
   --name app \
-  --network workbench \
   ghcr.io/brunowego/boilerplates:nestjs-with-prisma-rest
 ```
