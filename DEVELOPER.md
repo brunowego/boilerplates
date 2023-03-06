@@ -45,7 +45,7 @@ pnpm run test:e2e
 ### Docs
 
 ```sh
-pnpm run compodoc:serve
+pnpm run docs:dev
 ```
 
 ## Docker
