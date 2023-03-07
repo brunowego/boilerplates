@@ -5,6 +5,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "postinstall": "pnpm db:generate",
+    "compose:up": "docker compose up -d",
+    "compose:down": "docker compose down",
     "db:validate": "prisma validate",
     "db:generate": "prisma generate",
     "db:generate:watch": "pnpm db:generate --watch",

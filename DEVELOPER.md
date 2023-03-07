@@ -20,10 +20,9 @@ pnpm install
 
 ```bash
 #
-docker compose up -d
+pnpm run compose:up
 
 #
-pnpm run db:validate
 pnpm run db:push
 
 #
@@ -67,7 +66,7 @@ docker build \
   ./
 
 #
-docker compose up -d
+pnpm run compose:up
 
 #
 pnpm db:push
