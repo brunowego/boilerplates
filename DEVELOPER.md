@@ -20,36 +20,36 @@ pnpm install
 
 ```bash
 #
-pnpm run compose:up
+pnpm compose:up
 
 #
-pnpm run db:push
+pnpm db:push
 
 #
-pnpm run dev
-pnpm run dev:debug
+pnpm dev
+pnpm dev:debug
 ```
 
 ### Building
 
 ```sh
 #
-pnpm run build
+pnpm build
 
 #
-pnpm run start
-pnpm run start:prod
+pnpm start
+pnpm start:prod
 ```
 
 ### Testing
 
 ```bash
 #
-pnpm run test
-pnpm run test:watch
-pnpm run test:cov
-pnpm run test:debug
-pnpm run test:e2e
+pnpm test
+pnpm test:watch
+pnpm test:cov
+pnpm test:debug
+pnpm test:e2e
 ```
 
 ## Docker
@@ -58,7 +58,7 @@ pnpm run test:e2e
 
 ```sh
 #
-pnpm run build
+pnpm build
 
 #
 docker build \
@@ -66,7 +66,7 @@ docker build \
   ./
 
 #
-pnpm run compose:up
+pnpm compose:up
 
 #
 pnpm db:push
