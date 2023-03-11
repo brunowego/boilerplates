@@ -1,8 +1,14 @@
 {
   "name": "@brunowego/nestjs-with-prisma",
+  "description": "Several boilerplates for personal learning",
   "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
+  "author": {
+    "name": "Bruno Wego",
+    "email": "brunowego@gmail.com",
+    "url": "https://brunowego.com"
+  },
   "scripts": {
     "postinstall": "pnpm db:generate",
     "compose:up": "docker compose up -d",
@@ -30,6 +36,7 @@
     "@nestjs/core": "~9.3.8",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "~9.3.8",
+    "@nestjs/swagger": "~6.2.1",
     "@nestjs/terminus": "~9.2.0",
     "@prisma/client": "~4.10.1",
     "class-transformer": "~0.5.1",
