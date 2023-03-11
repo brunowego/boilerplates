@@ -1,6 +1,6 @@
 import { Logger, ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
-import { NestExpressApplication } from '@nestjs/platform-express'
+import { NestFastifyApplication, FastifyAdapter } from '@nestjs/platform-fastify'
 import { AppModule } from './app.module'
 import { ConfigService } from '@nestjs/config'
 import { PrismaService } from './common/services/prisma.service'
@@ -9,7 +9,7 @@ import { useContainer } from 'class-validator'
 const logger = new Logger('Bootstrap')
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule)
+  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
 
   const configService = app.get(ConfigService)
   const appHost = configService.get('app.host')
