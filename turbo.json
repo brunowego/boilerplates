@@ -1,0 +1,33 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "db:validate": {
+      "cache": false
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:generate:watch": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {
+      "outputs": []
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["./dist/**"]
+    },
+    "start": {
+      "cache": false
+    },
+    "test": {
+      "cache": false
+    }
+  }
+}
