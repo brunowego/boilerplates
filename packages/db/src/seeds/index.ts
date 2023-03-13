@@ -1,0 +1,1 @@
+export { userSeed } from './user'

@@ -1,7 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "compilerOptions": {
-    "outDir": "dist"
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
   },
-  "include": ["index.ts"]
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["index.ts", "src/**/*.ts"]
 }

@@ -26,6 +26,10 @@ pnpm compose:up
 pnpm db:push
 
 #
+pnpm db:reset
+pnpm db:seed
+
+#
 pnpm dev
 pnpm dev:debug
 ```

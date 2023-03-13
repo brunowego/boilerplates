@@ -11,6 +11,8 @@
     "db:generate": "prisma generate",
     "db:generate:watch": "pnpm db:generate --watch",
     "db:push": "prisma db push --skip-generate",
+    "db:reset": "ts-node ./src/tasks/reset.ts",
+    "db:seed": "ts-node ./src/tasks/seed.ts",
     "dev": "cross-env BROWSER=none prisma studio --hostname 0.0.0.0",
     "build": "prisma generate && tsc"
   },
@@ -18,9 +20,12 @@
     "@prisma/client": "~4.11.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "~7.6.0",
     "@types/node": "~18.13.0",
     "cross-env": "~7.0.3",
+    "fishery": "~2.2.2",
     "prisma": "~4.10.1",
+    "ts-node": "~10.9.1",
     "typescript": "~4.9.5"
   },
   "engines": {
@@ -28,6 +33,6 @@
     "npm": ">=8 <9"
   },
   "prisma": {
-    "schema": "./prisma/schema.prisma"
+    "schema": "./src/prisma/schema.prisma"
   }
 }
