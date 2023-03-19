@@ -1,3 +1,3 @@
-# `<owner>/web`
+# `@acme/web`
 
 TBD

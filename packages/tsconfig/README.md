@@ -1,3 +1,3 @@
-# `<owner>/tsconfig`
+# `@acme/tsconfig`
 
 TBD

@@ -1,3 +1,3 @@
-# `<owner>/docs`
+# `@acme/docs`
 
 TBD

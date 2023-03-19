@@ -1,3 +1,3 @@
-# `<owner>/eslint-config-custom`
+# `@acme/eslint-config-custom`
 
 TBD

@@ -1,3 +1,3 @@
-# `<owner>/ui`
+# `@acme/ui`
 
 TBD
