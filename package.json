@@ -1,7 +1,6 @@
 {
-  "name": "acme",
-  "version": "0.0.0",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
