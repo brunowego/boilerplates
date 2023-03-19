@@ -1,4 +1,7 @@
-module.exports = {
+/**
+ * @type { import('@types/eslint').Linter.Config }
+ */
+const eslintRC = {
   root: true,
   extends: ['custom'],
   settings: {
@@ -7,3 +10,5 @@ module.exports = {
     },
   },
 }
+
+module.exports = eslintRC
