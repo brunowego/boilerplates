@@ -1,0 +1,22 @@
+{
+  "name": "turborepo-base",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "prettier": "~2.8.4",
+    "turbo": "~1.8.3"
+  },
+  "engines": {
+    "node": ">=18 <19",
+    "npm": ">=8 <9"
+  },
+  "packageManager": "pnpm@7.28.0"
+}
