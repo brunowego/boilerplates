@@ -4,7 +4,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
-  transpilePackages: ['ui'],
+  transpilePackages: ['@acme/ui'],
 }
 
 export default nextConfig

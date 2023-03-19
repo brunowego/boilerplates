@@ -1,5 +1,5 @@
 {
-  "name": "turborepo-base",
+  "name": "acme",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "start": "turbo run start"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
+    "@acme/eslint-config-custom": "workspace:*",
     "prettier": "~2.8.4",
     "turbo": "~1.8.3"
   },

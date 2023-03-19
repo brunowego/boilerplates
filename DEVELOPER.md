@@ -20,6 +20,8 @@ pnpm dev
 
 # Build for production
 pnpm build
+pnpm build --filter @acme/docs
+pnpm build --filter @acme/web
 
 # Run production server
 pnpm start

@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@acme/docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,16 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@acme/ui": "workspace:*",
     "next": "~13.1.1",
     "react": "~18.2.0",
-    "react-dom": "~18.2.0",
-    "ui": "workspace:*"
+    "react-dom": "~18.2.0"
   },
   "devDependencies": {
+    "@acme/eslint-config-custom": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "@babel/core": "~7.0.0",
-    "eslint-config-custom": "workspace:*",
     "eslint": "~7.32.0",
-    "tsconfig": "workspace:*",
     "@types/node": "~17.0.12",
     "@types/react": "~18.0.22",
     "@types/react-dom": "~18.0.7",

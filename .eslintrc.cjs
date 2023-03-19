@@ -3,7 +3,7 @@
  */
 const eslintRC = {
   root: true,
-  extends: ['custom'],
+  extends: ['@acme/eslint-config-custom'],
   settings: {
     next: {
       rootDir: ['apps/*/'],
