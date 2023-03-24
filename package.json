@@ -7,12 +7,13 @@
     "compose:down": "docker compose down -v",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "dev": "turbo run dev",
+    "dev": "dotenv -- turbo run dev",
     "build": "turbo run build",
     "start": "turbo run start"
   },
   "devDependencies": {
     "@acme/eslint-config-custom": "workspace:*",
+    "dotenv-cli": "~7.1.0",
     "prettier": "~2.8.4",
     "turbo": "~1.8.3"
   },
