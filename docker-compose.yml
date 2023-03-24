@@ -1,0 +1,24 @@
+---
+version: '3'
+
+services:
+  dex:
+    image: docker.io/dexidp/dex:v2.35.3
+    container_name: acme-dex
+    volumes:
+      - type: volume
+        source: dex-data
+        target: /data
+      - type: bind
+        source: ./dex-config.yml
+        target: /etc/dex/cfg/config.yml
+    command: dex serve /etc/dex/cfg/config.yml
+    ports:
+      - target: 5556
+        published: $DEX_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+volumes:
+  dex-data:
+    driver: local

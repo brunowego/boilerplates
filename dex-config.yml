@@ -1,0 +1,36 @@
+---
+issuer: http://127.0.0.1:5556
+
+storage:
+  type: sqlite3
+  config:
+    file: /var/dex/dex.db
+
+web:
+  http: 0.0.0.0:5556
+
+connectors: []
+
+oauth2:
+  responseTypes:
+    - code
+    - token
+    - id_token
+  skipApprovalScreen: true
+  alwaysShowLoginScreen: false
+  passwordConnector: local
+
+staticClients:
+  - id: acme
+    redirectURIs:
+      - http://127.0.0.1:3000/api/auth/callback/dex
+    name: ACME
+    secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+
+enablePasswordDB: true
+
+staticPasswords:
+  - email: admin@domain.tld
+    hash: $2a$10$ofsF6S7SdQAER/MkB0EwY.RosQ7.6MA5I8Bzf0TSUsnIURGUsqTEO
+    username: admin
+    userID: 926c2b23-5ee0-4c67-9c78-d7fdcc4974cb

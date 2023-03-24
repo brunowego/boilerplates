@@ -2,6 +2,9 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "compose:up": "docker compose up -d",
+    "compose:ps": "docker compose ps",
+    "compose:down": "docker compose down -v",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "dev": "turbo run dev",

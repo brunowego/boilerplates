@@ -9,6 +9,9 @@
 ### Setup
 
 ```sh
+# Run auxiliary services
+pnpm compose:up
+
 # Install dependencies
 pnpm install
 
