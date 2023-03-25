@@ -1,4 +1,5 @@
 import NextAuth, { NextAuthOptions } from 'next-auth'
+import { DEX } from '@/constants/env'
 
 // FIXME: This is a workaround for URL mismatch in development
 if (process.env.NODE_ENV === 'development') {
@@ -11,7 +12,7 @@ export const authOptions: NextAuthOptions = {
       id: 'dex',
       name: 'Dex',
       type: 'oauth',
-      wellKnown: 'http://127.0.0.1:5556/.well-known/openid-configuration',
+      wellKnown: `${DEX.ISSUER}/.well-known/openid-configuration`,
       authorization: {
         params: { scope: 'openid email profile offline_access groups' },
       },
@@ -24,8 +25,8 @@ export const authOptions: NextAuthOptions = {
           email: profile.email,
         }
       },
-      clientId: 'acme',
-      clientSecret: 'ZXhhbXBsZS1hcHAtc2VjcmV0',
+      clientId: DEX.CLIENT_ID,
+      clientSecret: DEX.CLIENT_SECRET,
     },
   ],
 }
