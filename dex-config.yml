@@ -23,7 +23,7 @@ oauth2:
 staticClients:
   - id: acme
     redirectURIs:
-      - http://127.0.0.1:3000/api/auth/callback/dex
+      - http://127.0.0.1:3001/api/auth/callback/dex
     name: ACME
     secret: ZXhhbXBsZS1hcHAtc2VjcmV0
 

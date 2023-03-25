@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "lint": "next lint",
-    "dev": "next dev",
+    "dev": "next dev -p $WEB_PORT",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p $WEB_PORT"
   },
   "dependencies": {
     "@acme/ui": "workspace:*",

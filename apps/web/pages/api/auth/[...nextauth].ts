@@ -2,7 +2,7 @@ import NextAuth, { NextAuthOptions } from 'next-auth'
 
 // FIXME: This is a workaround for URL mismatch in development
 if (process.env.NODE_ENV === 'development') {
-  process.env.NEXTAUTH_URL = 'http://127.0.0.1:3000'
+  process.env.NEXTAUTH_URL = 'http://127.0.0.1:3001'
 }
 
 export const authOptions: NextAuthOptions = {
