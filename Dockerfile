@@ -1,4 +1,4 @@
-FROM docker.io/library/node:18.12.1 as builder
+FROM docker.io/library/node:18.12.1 AS builder
 
 ENV NODE_ENV production
 
