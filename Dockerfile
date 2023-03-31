@@ -13,6 +13,8 @@ RUN pnpm install --frozen-lockfile
 
 FROM cgr.dev/chainguard/node:18.12
 
+USER nobody
+
 ENV \
   NODE_ENV=production \
   TZ=UTC
