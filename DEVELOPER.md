@@ -5,67 +5,60 @@
 ### Environment Variables
 
 ```sh
-#
+# Create environment variables
 cp ./.env.example ./.env
 ```
 
 ### Installation
 
 ```sh
-#
+# Install dependencies
 pnpm install
+```
+
+### Checking
+
+```sh
+# Linting
+pnpm lint
 ```
 
 ### Running
 
 ```bash
-#
-pnpm run dev
-pnpm run dev:debug
+# Development mode
+pnpm dev
 
-#
-pnpm run build
-
-#
-pnpm run start
-pnpm run start:prod
+# Production mode
+pnpm start
 ```
 
 ### Testing
 
 ```bash
-#
-pnpm run test
-pnpm run test:watch
-pnpm run test:cov
-pnpm run test:debug
-pnpm run test:e2e
-```
+# Unit tests
+pnpm test
+pnpm run test -- --watch
+pnpm run test -- --coverage
 
-### Docs
+# Debugger mode
+pnpm test:debug
 
-```sh
-pnpm run compodoc:serve
+# E2E tests
+TEST_ENV=e2e pnpm test
 ```
 
 ## Docker
 
-### Build and Run
+### Running Container
 
 ```sh
-#
-docker build \
-  --tag ghcr.io/brunowego/nestjs-base:latest \
-  ./
+# Run docker container
+pnpm docker:run
 
-#
-docker run \
-  -d \
-  --rm \
-  -p 3000:3000 \
-  --name nestjs-base \
-  ghcr.io/brunowego/nestjs-base:latest
+# View docker logs
+pnpm docker:logs
 
-#
-docker stop nestjs-base
+# Stop docker container
+pnpm docker:stop
 ```

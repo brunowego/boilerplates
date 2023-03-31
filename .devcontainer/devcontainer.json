@@ -1,9 +1,8 @@
 {
-  "name": "Debian",
+  "name": "NestJS Base",
   "build": {
     "dockerfile": "./Dockerfile"
   },
-  "onCreateCommand": "curl -fsSL 'https://get.trunk.io' | bash -s -- -y",
-  "postCreateCommand": "pnpm install",
+  "onCreateCommand": "pnpm install",
   "forwardPorts": [3000]
 }

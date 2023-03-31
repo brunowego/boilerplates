@@ -6,9 +6,9 @@ RUN corepack enable pnpm
 
 WORKDIR /app
 
-COPY ./package.json ./pnpm-lock.yaml ./
+COPY ./package.json ./
 
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 
 
 FROM cgr.dev/chainguard/node:18.12
@@ -21,9 +21,9 @@ ENV \
 
 WORKDIR /app
 
-COPY --from=builder /app/node_modules ./node_modules
-
 COPY ./dist ./
+
+COPY --from=builder /app/node_modules ./node_modules
 
 EXPOSE 3000
 
