@@ -9,11 +9,7 @@
     "test": "jest",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register ./node_modules/jest/bin/jest.js --runInBand",
     "build": "nest build",
-    "start": "nest start",
-    "docker:build": "docker build $DOCKER_BUILD_OPTS --tag ghcr.io/acme/api:latest ./",
-    "docker:run": "docker run --rm -dp ${MANAGER_API_PORT:-3000}:3000 --name acme-api ghcr.io/acme/api:latest",
-    "docker:logs": "docker logs acme-api -f",
-    "docker:stop": "docker stop acme-api"
+    "start": "nest start"
   },
   "dependencies": {
     "@nestjs/axios": "~2.0.0",
@@ -30,6 +26,7 @@
     "rxjs": "~7.8.0"
   },
   "devDependencies": {
+    "@acme/tsconfig": "workspace:~0.0.0",
     "@jest/types": "~29.4.2",
     "@nestjs/cli": "~9.2.0",
     "@nestjs/schematics": "~9.0.4",

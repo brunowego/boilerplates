@@ -1,26 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@acme/tsconfig/nestjs.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "resolveJsonModule": true,
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
-    "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "strictBindCallApply": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true
-  }
+    }
+  },
+  "exclude": ["dist", "node_modules"]
 }

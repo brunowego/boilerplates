@@ -20,19 +20,6 @@
     },
     "start": {
       "dependsOn": ["build"]
-    },
-    "docker:build": {
-      "cache": false
-    },
-    "docker:run": {
-      "cache": false,
-      "dependsOn": ["docker:build"]
-    },
-    "docker:logs": {
-      "cache": false
-    },
-    "docker:stop": {
-      "cache": false
     }
   }
 }

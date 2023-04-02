@@ -8,11 +8,7 @@
     "test": "dotenv -- turbo run test",
     "test:debug": "turbo run test:debug",
     "build": "turbo run build",
-    "start": "dotenv -- turbo run start",
-    "docker:build": "dotenv -- turbo run docker:build",
-    "docker:run": "dotenv -- turbo run docker:run",
-    "docker:logs": "turbo run docker:logs",
-    "docker:stop": "turbo run docker:stop"
+    "start": "dotenv -- turbo run start"
   },
   "devDependencies": {
     "@trunkio/launcher": "~1.2.3",
