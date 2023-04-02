@@ -5,7 +5,7 @@ cli:
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.11
+      ref: v0.0.14
       uri: https://github.com/trunk-io/plugins
 lint:
   enabled:
@@ -19,7 +19,7 @@ lint:
     - dotenv-linter@3.3.0
 runtimes:
   enabled:
-    - go@1.18.3
+    - go@1.19.5
     - node@18.12.1
     - python@3.10.8
 actions:
