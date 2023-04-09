@@ -1,4 +1,4 @@
-# NestJS Base
+# NestJS and NextJS Base
 
 TODO
 
