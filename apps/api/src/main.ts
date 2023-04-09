@@ -3,6 +3,8 @@ import { NestFactory } from '@nestjs/core'
 import { NestExpressApplication } from '@nestjs/platform-express'
 import { AppModule } from './app.module'
 import { ConfigService } from '@nestjs/config'
+import { Reflector } from '@nestjs/core'
+import { AuthGuard } from './modules/auth/auth.guard'
 
 const logger = new Logger('Bootstrap')
 
@@ -12,6 +14,9 @@ async function bootstrap() {
   const configService = app.get(ConfigService)
   const appHost = configService.get('app.host')
   const appPort = configService.get('app.port')
+
+  const reflector = app.get(Reflector)
+  app.useGlobalGuards(new AuthGuard(reflector))
 
   await app.listen(appPort, appHost, () => {
     logger.log(`The server is listening on http://${appHost}:${appPort}`)
