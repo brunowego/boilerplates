@@ -4,16 +4,8 @@ import { NestExpressApplication } from '@nestjs/platform-express'
 import { AppModule } from './app.module'
 import { ConfigService } from '@nestjs/config'
 
-/**
- * Logger instance
- */
 const logger = new Logger('Bootstrap')
 
-/**
- * Bootstrap function
- *
- * @returns { Promise<void> }
- */
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule)
 
