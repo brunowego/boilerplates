@@ -5,11 +5,6 @@ import { configValidationSchema as validationSchema } from './common/validations
 import { BeatModule } from './modules/beat/beat.module'
 import { HealthModule } from './modules/health/health.module'
 
-/**
- * Main module
- *
- * @export AppModule
- */
 @Module({
   imports: [
     ConfigModule.forRoot({
