@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
-  "main": "index.js",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "~5.51.0",
     "@typescript-eslint/parser": "~5.51.0",

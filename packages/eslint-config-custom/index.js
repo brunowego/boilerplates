@@ -1,20 +1,3 @@
-module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    tsconfigRootDir: __dirname,
-    sourceType: 'module',
-  },
-  plugins: ['@typescript-eslint/eslint-plugin', 'eslint-plugin-tsdoc'],
-  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
-  root: true,
-  env: {
-    node: true,
-    jest: true,
-  },
-  rules: {
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-  },
-}
+throw new Error(
+  '@acme/eslint-config-custom is not meant to be used directly. Please use the dedicated rules for your app/package, eg @acme/eslint-config-custom/next, @acme/eslint-config-custom/nest in your extends file instead.'
+)
