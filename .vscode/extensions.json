@@ -1,3 +1,8 @@
 {
-  "recommendations": ["EditorConfig.EditorConfig", "esbenp.prettier-vscode", "Trunk.io"]
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "Trunk.io",
+    "ms-vscode-remote.remote-containers"
+  ]
 }

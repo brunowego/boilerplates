@@ -1,2 +1,4 @@
-/.next
+/.pnpm-store
 /node_modules
+/out
+/.env

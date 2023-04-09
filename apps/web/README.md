@@ -1,6 +1,6 @@
 # NextJS Base
 
-TODO
+TBD
 
 ## Docs
 

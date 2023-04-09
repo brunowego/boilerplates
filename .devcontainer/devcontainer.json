@@ -1,0 +1,8 @@
+{
+  "name": "NestJS Base",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "onCreateCommand": "pnpm install",
+  "forwardPorts": [3000]
+}

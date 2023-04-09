@@ -1,29 +1,29 @@
 {
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
-    "lint": "next lint",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "~13.2.4",
-    "react": "~18.2.0",
-    "react-dom": "~18.2.0"
+    "clean": "turbo run clean",
+    "lint": "trunk check -a",
+    "dev": "dotenv -- turbo run dev",
+    "build": "turbo run build",
+    "start": "dotenv -- turbo run start"
   },
   "devDependencies": {
-    "@next/font": "~13.2.4",
-    "@types/node": "~18.15.3",
-    "@types/react": "~18.0.28",
-    "@types/react-dom": "~18.0.11",
-    "autoprefixer": "~10.4.14",
-    "eslint": "~8.36.0",
-    "eslint-config-next": "~13.2.4",
-    "eslint-plugin-tailwindcss": "~3.10.1",
-    "postcss": "~8.4.21",
+    "@trunkio/launcher": "~1.2.3",
+    "@typescript-eslint/eslint-plugin": "~5.51.0",
+    "@typescript-eslint/parser": "~5.51.0",
+    "dotenv-cli": "~7.1.0",
+    "eslint": "~8.34.0",
+    "eslint-config-prettier": "~8.6.0",
+    "eslint-plugin-prettier": "~4.2.1",
+    "eslint-plugin-tsdoc": "~0.2.17",
     "prettier": "~2.8.4",
-    "prettier-plugin-tailwindcss": "~0.2.5",
-    "tailwindcss": "~3.2.7",
-    "typescript": "~5.0.2"
-  }
+    "turbo": "~1.8.3",
+    "typescript": "~5.0.4"
+  },
+  "engines": {
+    "node": ">=18 <19",
+    "npm": ">=8 <9"
+  },
+  "packageManager": "pnpm@7.28.0"
 }
