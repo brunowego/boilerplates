@@ -1,4 +1,4 @@
-# NestJS with Audit
+# NestJS with Prisma
 
 TODO
 

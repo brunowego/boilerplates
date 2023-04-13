@@ -3,7 +3,13 @@
   "license": "UNLICENSED",
   "scripts": {
     "clean": "turbo run clean",
-    "lint": "trunk check -a",
+    "compose:up": "docker compose up -d",
+    "compose:ps": "docker compose ps",
+    "compose:down": "docker compose down",
+    "db:validate": "dotenv -- turbo run db:validate",
+    "db:generate": "dotenv -- turbo run db:generate",
+    "db:push": "dotenv -- turbo run db:push",
+    "lint": "trunk check --ci",
     "dev": "dotenv -- turbo run dev",
     "test": "dotenv -- turbo run test",
     "test:debug": "turbo run test:debug",
@@ -12,11 +18,11 @@
   },
   "devDependencies": {
     "@acme/eslint-config-custom": "workspace:~0.0.0",
-    "@trunkio/launcher": "~1.2.3",
-    "dotenv-cli": "~7.1.0",
-    "eslint": "~8.34.0",
-    "prettier": "~2.8.4",
-    "turbo": "~1.8.3"
+    "@trunkio/launcher": "~1.2.4",
+    "dotenv-cli": "~7.2.1",
+    "eslint": "~8.38.0",
+    "prettier": "~2.8.7",
+    "turbo": "~1.9.3"
   },
   "engines": {
     "node": ">=18 <19",

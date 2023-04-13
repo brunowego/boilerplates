@@ -5,6 +5,16 @@
     "clean": {
       "cache": false
     },
+    "db:validate": {
+      "cache": false
+    },
+    "db:generate": {
+      "dependsOn": ["db:validate"]
+    },
+    "db:push": {
+      "cache": false,
+      "dependsOn": ["db:generate"]
+    },
     "dev": {
       "cache": false
     },

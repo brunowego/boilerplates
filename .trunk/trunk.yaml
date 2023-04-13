@@ -8,6 +8,8 @@ plugins:
       ref: v0.0.15
       uri: https://github.com/trunk-io/plugins
 lint:
+  disabled:
+    - dotenv-linter
   enabled:
     - hadolint@2.12.0
     - yamllint@1.30.0
@@ -15,8 +17,7 @@ lint:
     - prettier@2.8.7
     - markdownlint@0.33.0
     - git-diff-check
-    - eslint@8.37.0
-    - dotenv-linter@3.3.0
+    - eslint@8.38.0
 runtimes:
   enabled:
     - go@1.19.5

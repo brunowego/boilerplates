@@ -1,0 +1,291 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "NestJS with Audit",
+  "dateExported": "2023-04-19T18:14:25.830Z",
+  "version": "1.1",
+  "folders": [
+    {
+      "_id": "a394489d-ecd8-4a94-86ab-6e31aa2c6f4a",
+      "name": "HealthCheck",
+      "containerId": "",
+      "created": "2023-04-19T17:59:08.193Z",
+      "sortNum": 10000
+    },
+    {
+      "_id": "fa48db3a-f1fc-4440-a793-c0660ea942a5",
+      "name": "User",
+      "containerId": "",
+      "created": "2023-04-19T17:59:08.194Z",
+      "sortNum": 15000
+    },
+    {
+      "_id": "cc152bcd-803a-4b65-89f1-47d7e0831e71",
+      "name": "Post",
+      "containerId": "",
+      "created": "2023-04-19T17:59:08.195Z",
+      "sortNum": 20000
+    }
+  ],
+  "requests": [
+    {
+      "_id": "87a8e9c0-e1b6-4583-8670-72687f7307f1",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "a394489d-ecd8-4a94-86ab-6e31aa2c6f4a",
+      "name": "/_healthcheck",
+      "url": "{{url}}/_healthcheck",
+      "method": "GET",
+      "sortNum": 10000,
+      "created": "2023-04-19T17:59:08.193Z",
+      "modified": "2023-04-19T17:59:08.193Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "6d64a5e1-e039-4386-9ac6-afb226ca96e4",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "cc152bcd-803a-4b65-89f1-47d7e0831e71",
+      "name": "/post/draft",
+      "url": "{{url}}/post/draft",
+      "method": "POST",
+      "sortNum": 10000,
+      "created": "2023-04-19T17:59:08.194Z",
+      "modified": "2023-04-19T18:04:36.185Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"NestJS with Prisma\",\n  \"content\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\",\n  \"authorId\": \"71cd28f8-8c62-408f-8a95-5bfa19edcd53\"\n}\n",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "0107d72c-1faf-4047-8302-ac36d996e70c",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "cc152bcd-803a-4b65-89f1-47d7e0831e71",
+      "name": "/post/publish",
+      "url": "{{url}}/post/publish/6e2b42f1-b69c-45d7-9e75-e1ca6e32a414",
+      "method": "PUT",
+      "sortNum": 15000,
+      "created": "2023-04-19T17:59:08.195Z",
+      "modified": "2023-04-19T18:04:49.789Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "7b2e40af-975d-476a-b166-6f2b2099787d",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "a394489d-ecd8-4a94-86ab-6e31aa2c6f4a",
+      "name": "/_healthbeat",
+      "url": "{{url}}/_healthbeat",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2023-04-19T17:59:08.196Z",
+      "modified": "2023-04-19T17:59:08.196Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "a3c05d4d-6845-440d-a7e1-15c3f1fdb8b8",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "cc152bcd-803a-4b65-89f1-47d7e0831e71",
+      "name": "/post/feed",
+      "url": "{{url}}/post/feed",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2023-04-19T17:59:08.197Z",
+      "modified": "2023-04-19T17:59:08.197Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "2703b08a-9c39-4629-85e3-0f4b34d32b70",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "cc152bcd-803a-4b65-89f1-47d7e0831e71",
+      "name": "/post/filtered/:searchString",
+      "url": "{{url}}/post/filtered/NestJS with Prisma",
+      "method": "GET",
+      "sortNum": 25000,
+      "created": "2023-04-19T17:59:08.198Z",
+      "modified": "2023-04-19T17:59:08.198Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "e82fde75-279e-4d7b-9e4b-6de3a7358668",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "cc152bcd-803a-4b65-89f1-47d7e0831e71",
+      "name": "/post/:id",
+      "url": "{{url}}/post/e1786002-8224-4a64-9976-6a6ba5055909",
+      "method": "GET",
+      "sortNum": 35000,
+      "created": "2023-04-19T17:59:08.199Z",
+      "modified": "2023-04-19T17:59:08.199Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "f828c4e2-836b-43a3-92c3-4094a73fe90f",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "fa48db3a-f1fc-4440-a793-c0660ea942a5",
+      "name": "/user/signup",
+      "url": "{{url}}/user/signup",
+      "method": "POST",
+      "sortNum": 50000,
+      "created": "2023-04-19T17:59:08.200Z",
+      "modified": "2023-04-19T18:00:07.454Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"brunowego@henkiz.com\",\n  \"fname\": \"Bruno\",\n  \"lname\": \"Wego\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "4e6e04a9-8a27-4691-92dd-e412c0b10b53",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "cc152bcd-803a-4b65-89f1-47d7e0831e71",
+      "name": "/post/:id Copy",
+      "url": "{{url}}/post/e1786002-8224-4a64-9976-6a6ba5055909",
+      "method": "DELETE",
+      "sortNum": 60000,
+      "created": "2023-04-19T17:59:08.201Z",
+      "modified": "2023-04-19T17:59:08.201Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "f703d937-d3bf-4683-8f2c-08b15db8c746",
+      "colId": "30a6fcf6-21a4-49a0-822e-415fa7578db1",
+      "containerId": "fa48db3a-f1fc-4440-a793-c0660ea942a5",
+      "name": "/user/:id",
+      "url": "{{url}}/user/71cd28f8-8c62-408f-8a95-5bfa19edcd53",
+      "method": "GET",
+      "sortNum": 60000,
+      "created": "2023-04-19T17:59:08.202Z",
+      "modified": "2023-04-19T18:00:18.813Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isDisabled": true
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)",
+          "isDisabled": true
+        }
+      ],
+      "params": [],
+      "tests": []
+    }
+  ]
+}

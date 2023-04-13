@@ -1,8 +1,8 @@
 {
-  "name": "NestJS Base",
-  "build": {
-    "dockerfile": "./Dockerfile"
-  },
+  "name": "NestJS with Prisma",
+  "dockerComposeFile": ["../docker-compose.yml", "./docker-compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/workspace",
   "onCreateCommand": "pnpm install",
   "forwardPorts": [3000]
 }

@@ -1,5 +1,13 @@
 # Developer Guide
 
+## Port Mapping
+
+| Service       | Type     | Port                          |
+| ------------- | -------- | ----------------------------- |
+| API           | API REST | [3001](http://127.0.0.1:3000) |
+| PostgreSQL    | Database | TCP 5432                      |
+| Prisma Studio | Web      | [5555](http://127.0.0.1:5555) |
+
 ## Locally Development
 
 ### Environment Variables
@@ -7,6 +15,13 @@
 ```sh
 # Create environment variables
 cp ./.env.example ./.env
+```
+
+### Auxiliary Services
+
+```sh
+# Up services
+pnpm compose:up
 ```
 
 ### Installation
@@ -26,6 +41,9 @@ pnpm lint
 ### Running
 
 ```bash
+# Push schema to database
+pnpm db:push
+
 # Development mode
 pnpm dev
 
