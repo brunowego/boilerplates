@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // "extends": "@acme/tsconfig/react-library.json",
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react-jsx"
+  },
+  // "include": ["src/index.tsx", "src/templates.ts", "src/templates/**/*.tsx"]
+  "exclude": [".react-email", "node_modules"]
+}

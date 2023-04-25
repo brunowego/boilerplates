@@ -1,0 +1,41 @@
+{
+  "name": "@acme/mailer",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf ./.react-email ./.turbo ./dist",
+    "dev": "NODE_DEBUG=preview-email email dev -d ./src/templates -p 8000",
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@acme/tailwind-config": "workspace:~0.0.0",
+    "@acme/utils": "workspace:~0.0.0",
+    "@aws-sdk/client-ses": "~3.316.0",
+    "@aws-sdk/credential-provider-node": "~3.316.0",
+    "@react-email/components": "~0.0.5",
+    "@react-email/render": "0.0.7",
+    "@react-email/tailwind": "~0.0.7",
+    "clsx": "~1.2.1",
+    "nodemailer": "~6.9.1",
+    "preview-email": "~3.0.10",
+    "react": "~18.2.0",
+    "react-email": "1.9.2"
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "workspace:~0.0.0",
+    "@types/node": "~18.16.0",
+    "@types/nodemailer": "~6.4.7",
+    "@types/preview-email": "~3.0.0",
+    "@types/react": "~18.0.38",
+    "rimraf": "~5.0.0",
+    "tsup": "~6.7.0",
+    "typescript": "~4.9.4"
+  },
+  "engines": {
+    "node": ">=18 <19",
+    "npm": ">=8 <9"
+  }
+}

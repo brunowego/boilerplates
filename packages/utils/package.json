@@ -1,0 +1,20 @@
+{
+  "name": "@acme/utils",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "workspace:~0.0.0",
+    "@types/node": "~18.15.11",
+    "tsup": "~6.7.0"
+  },
+  "engines": {
+    "node": ">=18 <19",
+    "npm": ">=8 <9"
+  }
+}
