@@ -7,7 +7,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rimraf ./.react-email ./.turbo ./dist",
-    "dev": "NODE_DEBUG=preview-email email dev -d ./src/templates -p 8000",
+    "email:dev": "NODE_DEBUG=preview-email email dev -d ./src/templates -p 8000",
+    "dev": "concurrently 'tsup --watch' npm:email:dev",
     "build": "tsup"
   },
   "dependencies": {
@@ -30,6 +31,7 @@
     "@types/nodemailer": "~6.4.7",
     "@types/preview-email": "~3.0.0",
     "@types/react": "~18.0.38",
+    "concurrently": "~8.0.1",
     "rimraf": "~5.0.0",
     "tsup": "~6.7.0",
     "typescript": "~4.9.4"
