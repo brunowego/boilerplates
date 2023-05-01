@@ -9,16 +9,16 @@
     "start": "dotenv -- turbo run start"
   },
   "devDependencies": {
-    "@trunkio/launcher": "~1.2.3",
-    "@typescript-eslint/eslint-plugin": "~5.51.0",
-    "@typescript-eslint/parser": "~5.51.0",
-    "dotenv-cli": "~7.1.0",
-    "eslint": "~8.34.0",
-    "eslint-config-prettier": "~8.6.0",
+    "@trunkio/launcher": "~1.2.4",
+    "@typescript-eslint/eslint-plugin": "~5.59.1",
+    "@typescript-eslint/parser": "~5.59.1",
+    "dotenv-cli": "~7.2.1",
+    "eslint": "~8.39.0",
+    "eslint-config-prettier": "~8.8.0",
     "eslint-plugin-prettier": "~4.2.1",
     "eslint-plugin-tsdoc": "~0.2.17",
-    "prettier": "~2.8.4",
-    "turbo": "~1.8.3",
+    "prettier": "~2.8.8",
+    "turbo": "~1.9.3",
     "typescript": "~5.0.4"
   },
   "engines": {
