@@ -1,4 +1,4 @@
-# NextJS Base
+# NextJS with typesafe-i18n
 
 TODO
 
