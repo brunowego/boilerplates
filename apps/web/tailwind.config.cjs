@@ -2,7 +2,7 @@
  * @type { import('tailwindcss/tailwind-config').TailwindConfig }
  */
 const tailwindConfig = {
-  content: ['./src/components/**/*.{ts,tsx}', './src/pages/**/*.{ts,tsx}'],
+  content: ['./src/app/**/*.{ts,tsx}', './src/pages/**/*.{ts,tsx}'],
   theme: {
     extend: {},
   },
