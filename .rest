@@ -1,0 +1,22 @@
+@baseUrl = {{$dotenv API_BASE_URL}}
+@contentType = application/json
+
+### Health beat
+
+GET {{baseUrl}}/_healthbeat HTTP/1.1
+Content-Type: {{contentType}}
+
+### Health check
+
+GET {{baseUrl}}/_healthcheck HTTP/1.1
+Content-Type: {{contentType}}
+
+### List Settings
+
+GET {{baseUrl}}/settings HTTP/1.1
+Content-Type: {{contentType}}
+
+### Get Setting Category
+
+GET {{baseUrl}}/settings/category/app HTTP/1.1
+Content-Type: {{contentType}}

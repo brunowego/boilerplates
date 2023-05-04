@@ -5,8 +5,32 @@
     "clean": {
       "cache": false
     },
-    "dev": {
+    "db:validate": {
       "cache": false
+    },
+    "db:generate": {
+      "cache": false,
+      "dependsOn": ["db:validate"]
+    },
+    "db:push": {
+      "cache": false,
+      "dependsOn": ["db:generate"]
+    },
+    "db:reset": {
+      "cache": false,
+      "dependsOn": ["db:generate"]
+    },
+    "db:seed": {
+      "cache": false,
+      "dependsOn": ["db:reset"]
+    },
+    "db:studio": {
+      "cache": false,
+      "dependsOn": ["db:generate"]
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
     },
     "test": {
       "cache": false

@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@acme/tsconfig/base.json",
+  "include": ["tsup.config.ts", "src/tasks/reset.ts", "src/tasks/seed.ts", "src/index.ts"]
+}

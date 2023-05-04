@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Setting {
+  name          String
+  category      String
+  type          String
+  default_value String   @default("")
+  value         String?
+  description   String
+  obscured      Boolean  @default(false)
+  secret        Boolean  @default(true)
+  locked        Boolean  @default(false)
+  order         Int
+  updated_at    DateTime @updatedAt
+
+  @@id([name, category])
+  @@map(name: "settings")
+}

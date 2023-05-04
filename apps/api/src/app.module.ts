@@ -4,6 +4,7 @@ import appConfig from './common/configs/app.config'
 import { configValidationSchema as validationSchema } from './common/validations/config.validation'
 import { BeatModule } from './modules/beat/beat.module'
 import { HealthModule } from './modules/health/health.module'
+import { SettingModule } from './modules/setting/setting.module'
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { HealthModule } from './modules/health/health.module'
     }),
     BeatModule,
     HealthModule,
+    SettingModule,
   ],
 })
 export class AppModule {}
