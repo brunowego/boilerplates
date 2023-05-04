@@ -1,7 +1,3 @@
-# NextJS Base
+# `@acme/web`
 
 TBD
-
-## Docs
-
-- [Developer Guide](/DEVELOPER.md)

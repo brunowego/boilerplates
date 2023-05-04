@@ -1,25 +1,46 @@
 import { Logger } from '@nestjs/common'
-import { NestFactory } from '@nestjs/core'
+import { NestFactory, Reflector } from '@nestjs/core'
 import { NestExpressApplication } from '@nestjs/platform-express'
-import { AppModule } from './app.module'
+import { ApiModule } from './api.module'
 import { ConfigService } from '@nestjs/config'
+import { ValidationPipe, ClassSerializerInterceptor } from '@nestjs/common'
+import bodyParser from 'body-parser'
+import cookieParser from 'cookie-parser'
+import * as fs from 'fs'
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
+import * as pkg from '../package.json'
 
 const logger = new Logger('Bootstrap')
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule)
+  const api = await NestFactory.create<NestExpressApplication>(ApiModule)
 
-  const configService = app.get(ConfigService)
-  const appHost = configService.get('app.host')
-  const appPort = configService.get('app.port')
+  const configService = api.get(ConfigService)
+  const apiHost = configService.get('api.host')
+  const apiPort = configService.get('api.port')
 
-  await app.listen(appPort, appHost, () => {
-    logger.log(`The server is listening on http://${appHost}:${appPort}`)
+  api.useGlobalPipes(new ValidationPipe({ whitelist: true }))
+  api.useGlobalInterceptors(new ClassSerializerInterceptor(api.get(Reflector)))
+
+  api.use(bodyParser.raw({ type: 'application/octet-stream', limit: '20mb' }))
+  api.use(cookieParser())
+  api.set('trust proxy', true)
+
+  await fs.promises.mkdir('./data/uploads/_temp', { recursive: true })
+
+  api.setGlobalPrefix('api')
+
+  SwaggerModule.setup(
+    'docs',
+    api,
+    SwaggerModule.createDocument(
+      api,
+      new DocumentBuilder().setTitle(pkg.name).setVersion(pkg.version).addBearerAuth().build()
+    )
+  )
+
+  await api.listen(apiPort, apiHost, () => {
+    logger.log(`The server is listening on http://${apiHost}:${apiPort}`)
   })
 }
-
-bootstrap().catch((err) => {
-  logger.error(err)
-
-  process.exit(1)
-})
+bootstrap()

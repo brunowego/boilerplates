@@ -2,6 +2,13 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "compose:up": "docker compose up -d",
+    "compose:ps": "docker compose ps",
+    "compose:down": "docker compose down -v",
+    "db:push": "dotenv -- turbo run db:push",
+    "db:reset": "dotenv -- turbo run db:reset",
+    "db:seed": "dotenv -- turbo run db:seed",
+    "db:studio": "dotenv -- turbo run db:studio",
     "clean": "turbo run clean",
     "lint": "trunk check -a",
     "dev": "dotenv -- turbo run dev",
@@ -14,7 +21,7 @@
     "@acme/eslint-config-custom": "workspace:~0.0.0",
     "@trunkio/launcher": "~1.2.4",
     "dotenv-cli": "~7.2.1",
-    "eslint": "~8.39.0",
+    "eslint": "~8.40.0",
     "prettier": "~2.8.8",
     "turbo": "~1.9.3"
   },

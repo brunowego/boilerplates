@@ -1,0 +1,33 @@
+---
+version: '3'
+
+services:
+  postgres:
+    image: docker.io/library/postgres:15.1-alpine
+    container_name: boilerplate-postgres
+    volumes:
+      - type: volume
+        source: postgresql-data
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB:
+    ports:
+      - target: 5432
+        published: $POSTGRES_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+  clamav:
+    image: docker.io/clamav/clamav:1.1
+    container_name: boilerplate-clamav
+    ports:
+      - target: 3310
+        published: $CLAMAV_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+volumes:
+  postgresql-data:
+    driver: local

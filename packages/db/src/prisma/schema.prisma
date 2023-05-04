@@ -1,0 +1,181 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+
+  email    String  @unique
+  username String  @unique
+  password String
+  isAdmin  Boolean @default(false)
+
+  mfaMethod   MfaMethod @default(NONE)
+  mfaPhone    String?
+  mfaSecret   String?
+  mfaVerified Boolean   @default(false)
+
+  resetPasswordToken ResetPasswordToken?
+
+  shares        Share[]
+  refreshTokens RefreshToken[]
+  loginTokens   LoginToken[]
+  reverseShares ReverseShare[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map(name: "users")
+}
+
+model RefreshToken {
+  id String @id @default(uuid())
+
+  token String @unique @default(uuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@map(name: "refresh_tokens")
+}
+
+model LoginToken {
+  token String @id @default(uuid())
+
+  userId String
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  used   Boolean @default(false)
+
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@map(name: "login_tokens")
+}
+
+model ResetPasswordToken {
+  token String @id @default(uuid())
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@map(name: "reset_password_tokens")
+}
+
+model Share {
+  id String @id @default(uuid())
+
+  uploadLocked  Boolean  @default(false)
+  isZipReady    Boolean  @default(false)
+  views         Int      @default(0)
+  expiration    DateTime
+  description   String?
+  removedReason String?
+
+  creatorId String?
+  creator   User?   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  reverseShareId String?
+  reverseShare   ReverseShare? @relation(fields: [reverseShareId], references: [id], onDelete: Cascade)
+
+  security   ShareSecurity?
+  recipients ShareRecipient[]
+  files      File[]
+
+  createdAt DateTime @default(now())
+
+  @@map(name: "shares")
+}
+
+model ReverseShare {
+  id String @id @default(uuid())
+
+  token                 String   @unique @default(uuid())
+  shareExpiration       DateTime
+  maxShareSize          String
+  sendEmailNotification Boolean
+  remainingUses         Int
+
+  creatorId String
+  creator   User   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  shares Share[]
+
+  createdAt DateTime @default(now())
+
+  @@map(name: "reverse_shares")
+}
+
+model ShareRecipient {
+  id String @id @default(uuid())
+
+  email String
+
+  shareId String
+  share   Share  @relation(fields: [shareId], references: [id], onDelete: Cascade)
+
+  @@map(name: "share_recipients")
+}
+
+model File {
+  id String @id @default(uuid())
+
+  name String
+  size String
+
+  shareId String
+  share   Share  @relation(fields: [shareId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@map(name: "files")
+}
+
+model ShareSecurity {
+  id String @id @default(uuid())
+
+  password String?
+  maxViews Int?
+
+  shareId String? @unique
+  share   Share?  @relation(fields: [shareId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@map(name: "share_securities")
+}
+
+model Setting {
+  name         String
+  category     String
+  type         String
+  defaultValue String  @default("")
+  value        String?
+  description  String
+  obscured     Boolean @default(false)
+  secret       Boolean @default(true)
+  locked       Boolean @default(false)
+  order        Int
+
+  updatedAt DateTime @updatedAt
+
+  @@id([name, category])
+  @@map(name: "settings")
+}
+
+enum MfaMethod {
+  NONE
+  TOTP
+  SMS
+  EMAIL
+}

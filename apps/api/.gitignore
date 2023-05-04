@@ -1,5 +1,3 @@
-/.turbo
-/coverage
+/data
 /dist
 /node_modules
-/out

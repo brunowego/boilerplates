@@ -1,8 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./tsconfig.json",
-  // "compilerOptions": {
-  //   "sourceMap": false
-  // },
   "include": [".next/types/**/*.ts", "src/**/*.ts", "src/**/*.tsx", "next-env.d.ts"]
 }

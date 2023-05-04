@@ -1,0 +1,42 @@
+{
+  "name": "@acme/db",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf ./.turbo ./dist",
+    "db:validate": "prisma validate",
+    "db:generate": "prisma generate",
+    "db:generate:watch": "npm run db:generate -- --watch",
+    "db:push": "prisma db push --skip-generate",
+    "db:reset": "ts-node ./src/tasks/reset.ts",
+    "db:seed": "prisma db seed",
+    "db:studio": "cross-env BROWSER=none prisma studio --hostname 0.0.0.0",
+    "dev": "concurrently npm:db:generate:watch npm:db:studio 'tsup --watch'",
+    "build": "npm run db:generate && tsup"
+  },
+  "dependencies": {
+    "@prisma/client": "~4.13.0"
+  },
+  "devDependencies": {
+    "@acme/eslint-config-custom": "workspace:~0.0.0",
+    "@acme/tsconfig": "workspace:~0.0.0",
+    "@types/node": "~18.16.3",
+    "concurrently": "~8.0.1",
+    "cross-env": "~7.0.3",
+    "prisma": "~4.13.0",
+    "rimraf": "~5.0.0",
+    "ts-node": "~10.9.1",
+    "tsup": "~6.7.0",
+    "typescript": "~5.0.4"
+  },
+  "prisma": {
+    "schema": "./src/prisma/schema.prisma",
+    "seed": "ts-node ./src/tasks/seed.ts"
+  },
+  "engines": {
+    "node": ">=18 <19",
+    "npm": ">=8 <9"
+  }
+}
