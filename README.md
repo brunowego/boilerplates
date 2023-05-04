@@ -1,4 +1,4 @@
-# NestJS Base
+# NestJS with Settings
 
 TODO
 
