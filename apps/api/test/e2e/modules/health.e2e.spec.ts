@@ -1,22 +1,22 @@
 import { INestApplication } from '@nestjs/common'
 import { TestingModule, Test } from '@nestjs/testing'
-import { AppModule } from '@/app.module'
+import { ApiModule } from '@/api.module'
 import request from 'supertest'
 
 describe('HealthController (e2e)', () => {
-  let app: INestApplication
+  let api: INestApplication
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule],
+      imports: [ApiModule],
     }).compile()
 
-    app = moduleFixture.createNestApplication()
+    api = moduleFixture.createNestApplication()
 
-    await app.init()
+    await api.init()
   })
 
   it('/_healthcheck (GET)', () => {
-    return request(app.getHttpServer()).get('/_healthcheck').expect(200)
+    return request(api.getHttpServer()).get('/_healthcheck').expect(200)
   })
 })

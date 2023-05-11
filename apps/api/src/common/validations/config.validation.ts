@@ -5,7 +5,7 @@ export const configValidationSchema = Joi.object({
     .valid('development', 'production', 'test', 'provision')
     .default('development')
     .required(),
-  TZ: Joi.string().default('UTC').required(),
-  HOST: Joi.string().default('0.0.0.0'),
-  PORT: Joi.number().default(3000),
+  TZ: Joi.string().required(),
+
+  API_KEY: Joi.string().required(),
 })

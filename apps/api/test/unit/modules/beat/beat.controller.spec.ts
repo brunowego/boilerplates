@@ -6,12 +6,12 @@ describe('BeatController', () => {
   let controller: BeatController
 
   beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
+    const api: TestingModule = await Test.createTestingModule({
       controllers: [BeatController],
       providers: [BeatService],
     }).compile()
 
-    controller = app.get<BeatController>(BeatController)
+    controller = api.get<BeatController>(BeatController)
   })
 
   describe('root', () => {

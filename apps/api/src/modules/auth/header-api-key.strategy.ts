@@ -15,7 +15,7 @@ export class HeaderApiKeyStrategy extends PassportStrategy(Strategy, 'api-key') 
     apiKey: string,
     done: (error: Error | null, data) => Record<string, unknown>
   ) => {
-    if (this.configService.get<string>('API_KEY') === apiKey) {
+    if (this.configService.get<string>('api.key') === apiKey) {
       done(null, true)
     }
 

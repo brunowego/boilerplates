@@ -8,6 +8,6 @@ export class HealthController {
   @Get()
   @HealthCheck()
   check() {
-    return this.health.check([() => this.http.pingCheck('app', 'https://google.com')])
+    return this.health.check([() => this.http.pingCheck('google', 'https://google.com')])
   }
 }
