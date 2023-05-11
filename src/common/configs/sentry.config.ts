@@ -1,7 +1,7 @@
 import { registerAs } from '@nestjs/config'
-import { SENTRY } from '@/common/constants/env'
 
 export default registerAs('sentry', () => ({
-  dsn: SENTRY.DSN,
-  environment: SENTRY.ENV,
+  dsn: process.env.SENTRY_DSN,
+  debug: process.env.SENTRY_DEBUG === 'true',
+  environment: process.env.NODE_ENV,
 }))

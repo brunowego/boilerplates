@@ -14,7 +14,7 @@ export class HealthController {
   @HealthCheck()
   check() {
     return this.health.check([
-      () => this.http.pingCheck('app', 'https://google.com'),
+      () => this.http.pingCheck('google', 'https://google.com'),
       () => this.prisma.isHealthy('database'),
     ])
   }

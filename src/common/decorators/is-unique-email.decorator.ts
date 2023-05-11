@@ -8,6 +8,7 @@ import {
 
 import { Injectable } from '@nestjs/common'
 import { UserService } from '@/modules/user/user.service'
+import { ConflictException } from '@nestjs/common'
 
 export function IsUniqueEmail(options?: ValidationOptions) {
   return (object: object, propertyName: string): void =>
@@ -30,6 +31,6 @@ export class IsUniqueEmailConstraint implements ValidatorConstraintInterface {
   }
 
   defaultMessage(validationArguments: ValidationArguments): string {
-    return `${validationArguments.value} is taken, please try another`
+    throw new ConflictException(`${validationArguments.value} is taken, please try another.`)
   }
 }

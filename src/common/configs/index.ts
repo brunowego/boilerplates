@@ -1,4 +1,4 @@
-import appConfig from './app.config'
-import sentryConfig from './sentry.config'
+import AppConfig from './app.config'
+import SentryConfig from './sentry.config'
 
-export { appConfig, sentryConfig }
+export { AppConfig, SentryConfig }

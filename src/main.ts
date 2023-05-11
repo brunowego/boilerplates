@@ -3,9 +3,7 @@ import { NestFactory } from '@nestjs/core'
 import { NestExpressApplication } from '@nestjs/platform-express'
 import { AppModule } from './app.module'
 import { ConfigService } from '@nestjs/config'
-import { PrismaService } from './common/services/prisma.service'
 import { useContainer } from 'class-validator'
-import * as Sentry from '@sentry/node'
 
 const logger = new Logger('Bootstrap')
 
@@ -16,9 +14,6 @@ async function bootstrap() {
   const appHost = configService.get('app.host')
   const appPort = configService.get('app.port')
 
-  const prismaService = app.get(PrismaService)
-  await prismaService.enableShutdownHooks(app)
-
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
@@ -28,11 +23,6 @@ async function bootstrap() {
   )
 
   useContainer(app.select(AppModule), { fallbackOnErrors: true })
-
-  Sentry.init({
-    dsn: configService.get('sentry.dsn'),
-    environment: configService.get('sentry.environment'),
-  })
 
   await app.listen(appPort, appHost, () => {
     logger.log(`The server is listening on http://${appHost}:${appPort}`)

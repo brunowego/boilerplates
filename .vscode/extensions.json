@@ -5,6 +5,7 @@
     "Trunk.io",
     "prisma.prisma",
     "ms-azuretools.vscode-docker",
-    "rangav.vscode-thunder-client"
+    "rangav.vscode-thunder-client",
+    "humao.rest-client"
   ]
 }
