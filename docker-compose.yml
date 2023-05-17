@@ -1,0 +1,32 @@
+---
+version: '3'
+
+services:
+  kong:
+    image: docker.io/library/kong:3.2.2-alpine
+    container_name: boilerplate-kong
+    volumes:
+      - type: bind
+        source: ./kong.yml
+        target: /usr/local/kong/declarative/kong.yml
+    environment:
+      KONG_DATABASE: off
+      KONG_DECLARATIVE_CONFIG: /usr/local/kong/declarative/kong.yml
+      KONG_PROXY_LISTEN: 0.0.0.0:8000
+      KONG_PROXY_LISTEN_SSL: 0.0.0.0:8443
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001
+    ports:
+      - target: 8000
+        published: $KONG_PROXY_PORT
+        protocol: tcp
+      - target: 8443
+        published: $KONG_PROXY_SSL_PORT
+        protocol: tcp
+      - target: 8001
+        published: $KONG_ADMIN_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+volumes:
+  kong-postgresql-data:
+    driver: local

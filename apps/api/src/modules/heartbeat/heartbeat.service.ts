@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common'
 
 @Injectable()
-export class BeatService {
-  getBeat(): string {
+export class HeartbeatService {
+  showHeartbeat(): string {
     return '.'
   }
 }

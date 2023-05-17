@@ -2,6 +2,9 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "compose:up": "docker compose up -d",
+    "compose:ps": "docker compose ps",
+    "compose:down": "docker compose down -v",
     "clean": "turbo run clean",
     "lint": "trunk check -a",
     "dev": "dotenv -- turbo run dev",

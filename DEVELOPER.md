@@ -26,6 +26,9 @@ pnpm lint
 ### Running
 
 ```bash
+# Run auxiliary services
+pnpm compose:up
+
 # Development mode
 pnpm dev
 
@@ -65,3 +68,11 @@ docker build --build-arg TZ=America/Sao_Paulo -f ./nestjs.dockerfile --tag ghcr.
 # Run container
 docker run -it --rm -p 3000:3000 --name acme-api ghcr.io/acme/api:latest
 ```
+
+## Port Mapping
+
+| Service      | Type | Address                                                          |
+| ------------ | ---- | ---------------------------------------------------------------- |
+| Web          | Web  | [http://127.0.0.1:8000](http://127.0.0.1:8000)                   |
+| API          | REST | [http://127.0.0.1:8000/api](http://127.0.0.1:8000/api)           |
+| Kong Gateway | REST | [http://127.0.0.1:8001/services](http://127.0.0.1:8001/services) |
