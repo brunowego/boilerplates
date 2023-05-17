@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import appConfig from './common/configs/app.config'
 import { configValidationSchema as validationSchema } from './common/validations/config.validation'
-import { BeatModule } from './modules/beat/beat.module'
-import { HealthModule } from './modules/health/health.module'
+import { HeartbeatModule } from './modules/heartbeat/heartbeat.module'
+import { HealthcheckModule } from './modules/healthcheck/healthcheck.module'
 
 @Module({
   imports: [
@@ -11,8 +11,8 @@ import { HealthModule } from './modules/health/health.module'
       load: [appConfig],
       validationSchema,
     }),
-    BeatModule,
-    HealthModule,
+    HeartbeatModule,
+    HealthcheckModule,
   ],
 })
 export class AppModule {}
