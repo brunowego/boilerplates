@@ -2,8 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET' || req.method === 'HEAD') {
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8')
-    res.status(200).end('.')
+    res.status(200).json({ status: 'OK' })
   } else {
     res.setHeader('Allow', 'GET')
     res.status(405).end('Method Not Allowed')

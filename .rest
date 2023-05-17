@@ -1,0 +1,15 @@
+@hostname = 127.0.0.1
+@port = 3000
+@host = {{hostname}}:{{port}}
+@baseUrl = http://{{host}}
+@contentType = application/json
+
+### Healthz ready
+
+GET {{baseUrl}}/api/healthz/ready HTTP/1.1
+Content-Type: {{contentType}}
+
+### Healthz live
+
+GET {{baseUrl}}/api/healthz/live HTTP/1.1
+Content-Type: {{contentType}}

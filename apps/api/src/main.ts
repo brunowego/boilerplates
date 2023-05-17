@@ -13,6 +13,10 @@ async function bootstrap() {
   const appHost = configService.get('app.host')
   const appPort = configService.get('app.port')
 
+  app.disable('x-powered-by')
+
+  app.setGlobalPrefix('api')
+
   await app.listen(appPort, appHost, () => {
     logger.log(`The server is listening on http://${appHost}:${appPort}`)
   })
