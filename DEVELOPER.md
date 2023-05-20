@@ -5,9 +5,34 @@
 ### Environment Variables
 
 ```sh
-# Create environment variables
+# Create dotENV
 cp ./.env.example ./.env
+
+# Create direnv
+cp ./.envrc.example ./.envrc
 ```
+
+### Bytebase
+
+#### Setup
+
+1. [Setup admin account](http://127.0.0.1:8080/auth/signup)
+2. [Setup service account](http://127.0.0.1:8080/setting/member)
+
+   - Check "Create as service account"
+   - Name: `bytebase`
+   - Check role "DBA"
+   - Click "+ Add"
+
+3. "Copy Service Key" from `bytebase@service.bytebase.com` and save on `BYTEBASE_SERVICE_KEY` in `.envrc` file
+4. Run Terraform
+
+   ```sh
+   ( cd ./.infra/terraform && terraform init )
+   ( cd ./.infra/terraform && terraform apply )
+   ```
+
+5. Correct the [Environments](http://127.0.0.1:8080/environment#101) order
 
 ### Installation
 

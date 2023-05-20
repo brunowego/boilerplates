@@ -1,0 +1,88 @@
+---
+version: '3'
+
+services:
+  bytebase-postgres:
+    image: docker.io/library/postgres:15.1-alpine
+    container_name: boilerplate-bytebase-postgres
+    volumes:
+      - type: volume
+        source: bytebase-postgresql-data
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: bytebase
+      POSTGRES_PASSWORD: bytebase
+      POSTGRES_DB: bytebase
+    # command: ['postgres', '-c', 'log_statement=all']
+    ports:
+      - target: 5432
+        published: 15432
+        protocol: tcp
+    restart: unless-stopped
+
+  bytebase:
+    image: docker.io/bytebase/bytebase:2.0.0
+    container_name: boilerplate-bytebase
+    volumes:
+      - type: volume
+        source: bytebase-postgresql-data
+        target: /var/lib/postgresql/data
+    environment:
+      PG_URL: postgresql://bytebase:bytebase@bytebase-postgres:5432/bytebase
+    command:
+      ['--data', '/var/opt/bytebase', '--external-url', 'http://127.0.0.1:8080', '--port', '8080']
+    ports:
+      - target: 8080
+        published: $BYTEBASE_PORT
+        protocol: tcp
+    restart: unless-stopped
+    depends_on:
+      - bytebase-postgres
+
+  postgres-dev:
+    image: docker.io/library/postgres:15.1-alpine
+    container_name: boilerplate-postgres
+    volumes:
+      - type: volume
+        source: postgresql-data
+        target: /var/lib/postgresql/data
+      - type: bind
+        source: ./data/postgres
+        target: /docker-entrypoint-initdb.d
+      - type: bind
+        source: ./config/postgres/postgresql.conf
+        target: /etc/postgresql/postgresql.conf
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: dev
+    command: ['postgres', '-c', 'config_file=/etc/postgresql/postgresql.conf']
+    ports:
+      - target: 5432
+        published: 5432
+        protocol: tcp
+    restart: unless-stopped
+
+  postgres-test:
+    image: docker.io/library/postgres:15.1-alpine
+    container_name: boilerplate-postgres-test
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+    restart: unless-stopped
+
+  postgres-prod:
+    image: docker.io/library/postgres:15.1-alpine
+    container_name: boilerplate-postgres-prod
+    environment:
+      POSTGRES_USER: prod
+      POSTGRES_PASSWORD: prod
+      POSTGRES_DB: prod
+    restart: unless-stopped
+
+volumes:
+  bytebase-postgresql-data:
+    driver: local
+  postgresql-data:
+    driver: local

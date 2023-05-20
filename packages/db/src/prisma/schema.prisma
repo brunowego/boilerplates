@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(uuid())
+  username      String    @unique
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  password      String
+  firstName     String
+  lastName      String
+  role          UserRole  @default(MEMBER)
+  birthDate     DateTime? @db.Date
+
+  emailChange       EmailChange?
+  emailVerification EmailVerification?
+  passwordReset     PasswordReset?
+
+  @@map("users")
+}
+
+model EmailChange {
+  userId     String   @unique
+  token      String   @id @db.Char(21)
+  newEmail   String
+  validUntil DateTime @default(dbgenerated("(timezone('utc'::text, now()) + '2 days'::interval)")) @db.Timestamp(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("email_changes")
+}
+
+model EmailVerification {
+  userId     String   @unique
+  token      String   @id @db.Char(21)
+  validUntil DateTime @default(dbgenerated("(timezone('utc'::text, now()) + '2 days'::interval)")) @db.Timestamp(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("email_verifications")
+}
+
+model PasswordReset {
+  userId     String   @unique
+  token      String   @id @db.Char(21)
+  validUntil DateTime @default(dbgenerated("(timezone('utc'::text, now()) + '2 days'::interval)")) @db.Timestamp(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("password_resets")
+}
+
+enum UserRole {
+  ADMIN
+  OWNER
+  MANAGER
+  MEMBER
+}

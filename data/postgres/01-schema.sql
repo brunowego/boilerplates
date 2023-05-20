@@ -1,0 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
+
+CREATE USER bytebase WITH ENCRYPTED PASSWORD 'bytebase';
+
+ALTER USER bytebase WITH SUPERUSER;
