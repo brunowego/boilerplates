@@ -16,7 +16,8 @@ lint:
     - markdownlint@0.33.0
     - git-diff-check
     - eslint@8.37.0
-    - dotenv-linter@3.3.0
+  disabled:
+    - dotenv-linter
 runtimes:
   enabled:
     - go@1.19.5
