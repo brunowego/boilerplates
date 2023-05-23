@@ -10,7 +10,7 @@ import { AuthService } from './services/auth.service'
 import { MfaService } from './services/mfa.service'
 import { JwtStrategy } from './jwt.strategy'
 import { PrismaService } from 'src/common/services/prisma.service'
-import SmsService from './services/sms.service'
+import { SmsService } from './services/sms.service'
 
 @Module({
   imports: [
