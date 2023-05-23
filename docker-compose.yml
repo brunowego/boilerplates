@@ -1,0 +1,45 @@
+---
+version: '3'
+
+services:
+  postgres:
+    image: docker.io/library/postgres:15.1-alpine
+    container_name: boilerplate-postgres
+    volumes:
+      - type: volume
+        source: postgresql-data
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB:
+    ports:
+      - target: 5432
+        published: $POSTGRES_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+  cerbos:
+    image: ghcr.io/cerbos/cerbos:0.26.0
+    container_name: boilerplate-cerbos
+    volumes:
+      - type: bind
+        source: ./config/cerbos/config.yml
+        target: /config/cerbos.yml
+      - type: bind
+        source: ./config/cerbos/policies
+        target: /policies
+    environment:
+      CERBOS_CONFIG: /config/cerbos.yml
+    ports:
+      - target: 3592
+        published: $CERBOS_HTTP_PORT
+        protocol: tcp
+      - target: 3593
+        published: $CERBOS_GRPC_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+volumes:
+  postgresql-data:
+    driver: local

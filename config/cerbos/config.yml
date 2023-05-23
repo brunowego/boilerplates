@@ -1,0 +1,30 @@
+---
+server:
+  httpListenAddr: :3592
+  grpcListenAddr: :3593
+  adminAPI:
+    enabled: true
+    adminCredentials:
+      username: cerbos
+      passwordHash: JDJ5JDEwJGE3WFg4YUtFR2E5dEdZOWkzODNRMy5UL1lGLkp0djA5Q2c4ZkxUbjk4NmRzNy9aMzNWZmRpCgo=
+  # metricsEnabled: true
+  # playgroundEnabled: true
+
+storage:
+  driver: disk
+
+  disk:
+    directory: /policies
+    watchForChanges: true
+
+  # postgres:
+  #   url: 'postgres://cerbos:cerbos@postgres:5432/cerbos'
+# audit:
+#   enabled: ${AUDIT_ENABLED}
+#   accessLogsEnabled: true
+#   decisionLogsEnabled: true
+#   backend: local
+#   local:
+#     storagePath: /audit/cerbos_auditlog
+#     advanced:
+#       flushInterval: 5s

@@ -26,6 +26,12 @@ pnpm lint
 ### Running
 
 ```bash
+# Run auxiliary services
+pnpm compose:up
+
+# Sync database schema
+pnpm db:push
+
 # Development mode
 pnpm dev
 
