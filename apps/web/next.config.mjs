@@ -6,6 +6,9 @@ import withPWA from 'next-pwa'
  */
 const nextConfig = {
   output: 'standalone',
+  experimental: {
+    instrumentationHook: true,
+  },
   env: {
     VERSION: pkg.version,
   },

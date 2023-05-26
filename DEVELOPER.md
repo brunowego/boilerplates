@@ -23,6 +23,15 @@ pnpm install
 pnpm lint
 ```
 
+### Tracing
+
+> Only run if with debug with tracing.
+
+```sh
+export COMPOSE_FILE='docker-compose.yml:docker-compose.tracing.yml'
+export OPENTELEMETRY_ENABLED=true
+```
+
 ### Database
 
 ```sh

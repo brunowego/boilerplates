@@ -1,4 +1,5 @@
 import { Logger } from '@nestjs/common'
+import otelSDK from './tracing'
 import { NestFactory, Reflector } from '@nestjs/core'
 import { NestExpressApplication } from '@nestjs/platform-express'
 import { ApiModule } from './api.module'
@@ -13,6 +14,12 @@ import * as pkg from '../package.json'
 const logger = new Logger('Bootstrap')
 
 async function bootstrap() {
+  if (process.env.OPENTELEMETRY_ENABLED === 'true') {
+    logger.log('OpenTelemetry is active')
+
+    await otelSDK.start()
+  }
+
   const api = await NestFactory.create<NestExpressApplication>(ApiModule)
 
   const configService = api.get(ConfigService)

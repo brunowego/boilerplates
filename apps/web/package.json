@@ -19,6 +19,7 @@
     "@mantine/modals": "~6.0.10",
     "@mantine/next": "~6.0.10",
     "@mantine/notifications": "~6.0.10",
+    "@vercel/otel": "~0.3.0",
     "axios": "~1.4.0",
     "cookies-next": "~2.1.1",
     "file-saver": "~2.0.5",

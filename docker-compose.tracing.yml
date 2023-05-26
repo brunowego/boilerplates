@@ -1,0 +1,35 @@
+---
+version: '3'
+
+services:
+  jaeger:
+    image: docker.io/jaegertracing/all-in-one:1.45.0
+    container_name: boilerplate-jaeger
+    volumes:
+      - type: volume
+        source: jaeger-tmp
+        target: /tmp
+    ports:
+      - target: 16686
+        published: $JAEGER_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+  otelcol-contrib:
+    image: docker.io/otel/opentelemetry-collector-contrib:0.78.0
+    container_name: boilerplate-otelcol-contrib
+    volumes:
+      - type: bind
+        source: ./config/otelcol-contrib/config.yml
+        target: /etc/otelcol-contrib/config.yaml
+    ports:
+      - target: 4317
+        published: $OTEL_PORT
+        protocol: tcp
+    restart: unless-stopped
+    depends_on:
+      - jaeger
+
+volumes:
+  jaeger-tmp:
+    driver: local

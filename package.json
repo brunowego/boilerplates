@@ -4,6 +4,7 @@
   "scripts": {
     "compose:up": "docker compose up -d",
     "compose:ps": "docker compose ps",
+    "compose:restart": "docker compose restart",
     "compose:down": "docker compose down -v",
     "db:push": "dotenv -- turbo run db:push",
     "db:reset": "dotenv -- turbo run db:reset",

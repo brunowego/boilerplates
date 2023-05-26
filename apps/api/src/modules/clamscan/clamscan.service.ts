@@ -1,3 +1,4 @@
+import { Logger } from '@nestjs/common'
 import { Injectable } from '@nestjs/common'
 import NodeClam from 'clamscan'
 import * as fs from 'fs'
@@ -13,6 +14,8 @@ const clamscanConfig = {
   preference: 'clamdscan',
 }
 
+const logger = new Logger('Bootstrap')
+
 @Injectable()
 export class ClamScanService {
   constructor(private fileService: FileService, private prismaService: PrismaService) {}
@@ -20,12 +23,12 @@ export class ClamScanService {
   private ClamScan: Promise<NodeClam | null> = new NodeClam()
     .init(clamscanConfig)
     .then((res) => {
-      console.log('ClamAV is active')
+      logger.log('ClamAV is active')
 
       return res
     })
     .catch(() => {
-      console.log('ClamAV is not active')
+      logger.log('ClamAV is not active')
 
       return null
     })
