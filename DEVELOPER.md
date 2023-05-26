@@ -26,6 +26,9 @@ pnpm lint
 ### Database
 
 ```sh
+# Run auxiliary services
+pnpm compose:up
+
 # Sync database schema
 pnpm db:push
 
