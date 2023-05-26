@@ -9,6 +9,7 @@
     "db:reset": "dotenv -- turbo run db:reset",
     "db:seed": "dotenv -- turbo run db:seed",
     "db:studio": "dotenv -- turbo run db:studio",
+    "db:dev": "dotenv -- turbo run db:dev",
     "clean": "turbo run clean",
     "lint": "trunk check -a",
     "dev": "dotenv -- turbo run dev",

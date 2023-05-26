@@ -28,6 +28,9 @@
       "cache": false,
       "dependsOn": ["db:generate"]
     },
+    "db:dev": {
+      "cache": false
+    },
     "dev": {
       "cache": false
     },
