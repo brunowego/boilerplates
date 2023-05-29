@@ -1,0 +1,50 @@
+@apiUrl = {{$dotenv API_HOST}}
+@apiKey = {{$dotenv API_KEY}}
+@contentType = application/json
+
+### Hearth beat
+
+GET {{apiUrl}}/_heartbeat HTTP/1.1
+Content-Type: {{contentType}}
+
+### Health check
+
+GET {{apiUrl}}/_healthcheck HTTP/1.1
+Content-Type: {{contentType}}
+X-API-KEY: {{apiKey}}
+
+### Create payment
+
+POST {{apiUrl}}/payments HTTP/1.1
+Content-Type: {{contentType}}
+X-API-KEY: {{apiKey}}
+
+{
+  "merchantId": "78263bdb-83c4-436a-b1d6-1215963bff15",
+  "amount": 150,
+  "currency": "BRL",
+  "statementDescriptor": "Order #123",
+  "capture": true,
+  "paymentMethod": {
+    "paymentType": "PIX",
+    "expiresIn": 3600
+  },
+  "paymentSource": {
+    "sourceType": "CUSTOMER",
+    "customer": {
+      "name": "John Doe",
+      "phoneNumber": "99 99999-9999",
+      "email": "johndoe@xyz.tld",
+      "document": {
+          "number": "06983630009",
+          "type": "CPF"
+      }
+    }
+  }
+}
+
+### Get payment
+
+GET {{apiUrl}}/payments/64761bf8f4e0b112b2f062df HTTP/1.1
+Content-Type: {{contentType}}
+X-API-KEY: {{apiKey}}

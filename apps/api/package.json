@@ -12,14 +12,21 @@
     "start": "nest start"
   },
   "dependencies": {
+    "@acme/db": "workspace:~0.0.0",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "~9.4.2",
     "@nestjs/config": "~2.3.2",
     "@nestjs/core": "~9.4.2",
+    "@nestjs/passport": "~9.0.3",
     "@nestjs/platform-express": "~9.4.2",
+    "@nestjs/swagger": "~6.3.0",
     "@nestjs/terminus": "~9.2.2",
     "axios": "~1.4.0",
-    "joi": "~17.9.2"
+    "class-transformer": "~0.5.1",
+    "class-validator": "~0.14.0",
+    "joi": "~17.9.2",
+    "passport-headerapikey": "~1.2.2",
+    "pix-utils": "~2.5.0"
   },
   "peerDependencies": {
     "reflect-metadata": "~0.1.13",

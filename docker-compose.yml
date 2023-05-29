@@ -1,0 +1,74 @@
+---
+version: '3'
+
+services:
+  kong:
+    image: docker.io/library/kong:3.2.2-alpine
+    container_name: boilerplate-kong
+    volumes:
+      - type: bind
+        source: ./config/kong/kong.yml
+        target: /usr/local/kong/declarative/kong.yml
+    environment:
+      KONG_DATABASE: off
+      KONG_DECLARATIVE_CONFIG: /usr/local/kong/declarative/kong.yml
+      KONG_PROXY_LISTEN: 0.0.0.0:8000
+      KONG_PROXY_LISTEN_SSL: 0.0.0.0:8443
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001
+    ports:
+      - target: 8000
+        published: $KONG_PROXY_PORT
+        protocol: tcp
+      - target: 8443
+        published: $KONG_PROXY_SSL_PORT
+        protocol: tcp
+      - target: 8001
+        published: $KONG_ADMIN_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+  # postgres:
+  #   image: docker.io/library/postgres:15.1-alpine
+  #   container_name: boilerplate-postgres
+  #   volumes:
+  #     - type: volume
+  #       source: postgresql-data
+  #       target: /var/lib/postgresql/data
+  #   environment:
+  #     POSTGRES_USER:
+  #     POSTGRES_PASSWORD:
+  #     POSTGRES_DB:
+  #   ports:
+  #     - target: 5432
+  #       published: $POSTGRES_PORT
+  #       protocol: tcp
+  #   restart: unless-stopped
+
+  mongodb:
+    image: docker.io/library/mongo:5.0.15
+    hostname: boilerplate-mongodb
+    volumes:
+      - type: volume
+        source: mongodb-data
+        target: /data/db
+      - type: volume
+        source: mongodb-configdb
+        target: /data/configdb
+      - type: bind
+        source: ./config/mongodb/init.js
+        target: /docker-entrypoint-initdb.d/init.js
+        read_only: true
+    environment:
+      MONGO_INITDB_DATABASE:
+    command: ['--replSet', 'rs0']
+    ports:
+      - target: 27017
+        published: $MONGODB_PORT
+        protocol: tcp
+    restart: always
+
+volumes:
+  mongodb-data:
+    driver: local
+  mongodb-configdb:
+    driver: local

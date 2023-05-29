@@ -3,6 +3,8 @@
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
     "Trunk.io",
-    "ms-vscode-remote.remote-containers"
+    "ms-vscode-remote.remote-containers",
+    "prisma.prisma",
+    "humao.rest-client"
   ]
 }

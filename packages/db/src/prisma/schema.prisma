@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Payment {
+  id                  String        @id @default(auto()) @map("_id") @db.ObjectId
+  merchantId          String
+  amount              Int
+  currency            String
+  statementDescriptor String
+  capture             Boolean
+  paymentMethod       PaymentMethod
+  paymentSource       PaymentSource
+  createdAt           DateTime      @default(now())
+
+  @@map(name: "payments")
+}
+
+type PaymentMethod {
+  paymentType PaymentType
+  expiresIn   Int
+  // qrCodeData     String
+}
+
+type PaymentSource {
+  sourceType SourceType
+  customer   Customer
+}
+
+type Customer {
+  name        String
+  phoneNumber String
+  email       String
+  document    Document
+}
+
+type Document {
+  number String
+  type   DocumentType
+}
+
+enum PaymentType {
+  NONE
+  PIX
+}
+
+enum SourceType {
+  NONE
+  CUSTOMER
+}
+
+enum DocumentType {
+  NONE
+  CPF
+}

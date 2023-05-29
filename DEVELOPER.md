@@ -23,9 +23,28 @@ pnpm install
 pnpm lint
 ```
 
+### Database
+
+```sh
+# Run auxiliary services
+pnpm compose:up
+
+# Sync database schema
+pnpm db:push
+
+# Seed database
+pnpm db:seed
+
+# Run Prisma Studio
+pnom db:studio
+```
+
 ### Running
 
 ```bash
+# Build database library
+pnpm build --filter @acme/db
+
 # Development mode
 pnpm dev
 

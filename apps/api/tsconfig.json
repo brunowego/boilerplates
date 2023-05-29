@@ -2,6 +2,9 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@acme/tsconfig/nestjs.json",
   "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "strictPropertyInitialization": false,
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
