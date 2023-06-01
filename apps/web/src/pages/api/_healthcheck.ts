@@ -1,12 +1,12 @@
-import axios from 'axios'
-import { NextApiRequest, NextApiResponse } from 'next'
 import nextConfig from 'next/config'
+import { NextApiRequest, NextApiResponse } from 'next'
+import axios from 'axios'
 
-const { apiURL } = nextConfig().serverRuntimeConfig
+const { apiURL } = nextConfig().publicRuntimeConfig
 
 export default async (_: NextApiRequest, res: NextApiResponse) => {
   const apiStatus = await axios
-    .get(`${apiURL}/api/settings`)
+    .get(`${apiURL}/_heartbeat`)
     .then(() => 'OK')
     .catch(() => 'ERROR')
 

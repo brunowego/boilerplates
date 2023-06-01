@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@acme/db": "workspace:~0.0.0",
+    "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "~9.4.0",
     "@nestjs/config": "~2.3.1",
     "@nestjs/core": "~9.4.0",
@@ -22,6 +23,7 @@
     "@nestjs/platform-express": "~9.4.0",
     "@nestjs/schedule": "~2.2.1",
     "@nestjs/swagger": "~6.3.0",
+    "@nestjs/terminus": "~9.2.2",
     "@opentelemetry/api": "~1.4.1",
     "@opentelemetry/exporter-trace-otlp-grpc": "~0.39.1",
     "@opentelemetry/instrumentation-express": "~0.32.3",

@@ -12,6 +12,9 @@ import { UserModule } from './modules/user/user.module'
 import { ShareModule } from './modules/share/share.module'
 import { ReverseShareModule } from './modules/reverse-share/reverse-share.module'
 import { ClamScanModule } from './modules/clamscan/clamscan.module'
+import { HeartbeatModule } from './modules/heartbeat/heartbeat.module'
+import { HealthcheckModule } from './modules/healthcheck/healthcheck.module'
+import { HealthzModule } from './modules/healthz/healthz.module'
 
 @Module({
   imports: [
@@ -20,6 +23,9 @@ import { ClamScanModule } from './modules/clamscan/clamscan.module'
       validationSchema,
     }),
     ScheduleModule.forRoot(),
+    HeartbeatModule,
+    HealthcheckModule,
+    HealthzModule,
     SettingModule,
     AuthModule,
     EmailModule,
