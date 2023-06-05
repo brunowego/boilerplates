@@ -47,7 +47,7 @@ export class AuthController {
 
     const result = await this.authService.signUp(dto)
 
-    response = this.addTokensToResponse(response, result.refreshToken, result.accessToken)
+    this.addTokensToResponse(response, result.refreshToken, result.accessToken)
 
     return result
   }
@@ -58,7 +58,7 @@ export class AuthController {
     const result = await this.authService.signIn(dto)
 
     if (result.accessToken && result.refreshToken) {
-      response = this.addTokensToResponse(response, result.refreshToken, result.accessToken)
+      this.addTokensToResponse(response, result.refreshToken, result.accessToken)
     }
 
     return result
@@ -69,7 +69,7 @@ export class AuthController {
   async signInMfa(@Body() dto: AuthSigninMfaDto, @Res({ passthrough: true }) response: Response) {
     const result = await this.mfaService.signInMfa(dto)
 
-    response = this.addTokensToResponse(response, result.refreshToken, result.accessToken)
+    this.addTokensToResponse(response, result.refreshToken, result.accessToken)
 
     return new AuthTokenDto().from(result)
   }
@@ -95,7 +95,7 @@ export class AuthController {
   ) {
     const result = await this.authService.updatePassword(user, dto.oldPassword, dto.password)
 
-    response = this.addTokensToResponse(response, result.refreshToken)
+    this.addTokensToResponse(response, result.refreshToken)
 
     return new AuthTokenDto().from(result)
   }
@@ -110,7 +110,7 @@ export class AuthController {
 
     const accessToken = await this.authService.refreshAccessToken(request.cookies.refresh_token)
 
-    response = this.addTokensToResponse(response, undefined, accessToken)
+    this.addTokensToResponse(response, undefined, accessToken)
 
     return new AuthTokenDto().from({ accessToken })
   }

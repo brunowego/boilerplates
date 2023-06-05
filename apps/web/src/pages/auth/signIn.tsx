@@ -25,7 +25,7 @@ const SignIn = ({ redirectPath }: { redirectPath?: string }) => {
         setIsLoading(false)
       }
     })
-  }, [])
+  }, [redirectPath, refreshUser, router])
 
   if (isLoading) return <LoadingOverlay overlayOpacity={1} visible />
 

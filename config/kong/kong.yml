@@ -1,0 +1,23 @@
+---
+_format_version: '3.0'
+
+services:
+  - name: web
+    host: host.docker.internal
+    port: 3000
+    routes:
+      - name: web
+        hosts:
+          - web.localtest.me
+        paths:
+          - /
+
+  - name: api
+    host: host.docker.internal
+    port: 3001
+    routes:
+      - name: api
+        hosts:
+          - api.localtest.me
+        paths:
+          - /

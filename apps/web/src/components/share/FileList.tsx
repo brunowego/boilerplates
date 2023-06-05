@@ -71,7 +71,7 @@ const FileList = ({
     }
   }
 
-  useEffect(sortFiles, [sort])
+  useEffect(sortFiles, [sort, files, setShare, share])
 
   return (
     <Box sx={{ display: 'block', overflowX: 'auto' }}>

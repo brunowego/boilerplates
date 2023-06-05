@@ -15,6 +15,7 @@
     "lint": "trunk check -a",
     "dev": "dotenv -- turbo run dev",
     "test": "dotenv -- turbo run test",
+    "test:load": "dotenv -- turbo run test:load",
     "test:debug": "turbo run test:debug",
     "build": "turbo run build",
     "start": "dotenv -- turbo run start"

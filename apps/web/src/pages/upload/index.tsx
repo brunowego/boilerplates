@@ -145,7 +145,7 @@ const Upload = ({
         })
         .catch(() => toast.error('An error occurred while finishing your share.'))
     }
-  }, [files])
+  }, [files, modals, setting])
 
   return (
     <>

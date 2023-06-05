@@ -112,7 +112,7 @@ const removeReverseShare = async (id: string) => {
   await api.delete(`/reverse-shares/${id}`)
 }
 
-export default {
+const shareService = {
   create,
   completeShare,
   getShareToken,
@@ -129,3 +129,5 @@ export default {
   getMyReverseShares,
   removeReverseShare,
 }
+
+export default shareService

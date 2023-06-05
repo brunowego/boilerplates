@@ -46,8 +46,8 @@ const MyShares = () => {
       {shares.length == 0 ? (
         <Center style={{ height: '70vh' }}>
           <Stack align="center" spacing={10}>
-            <Title order={3}>It's empty here 👀</Title>
-            <Text>You don't have any shares.</Text>
+            <Title order={3}>It&apos;s empty here 👀</Title>
+            <Text>You don&apos;t have any shares.</Text>
             <Space h={5} />
             <Button component={Link} href="/upload" variant="light">
               Create one

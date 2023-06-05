@@ -1,0 +1,46 @@
+---
+version: '3'
+
+services:
+  influxdb:
+    image: docker.io/library/influxdb:1.8.10-alpine
+    container_name: boilerplate-influxdb
+    volumes:
+      - type: volume
+        source: influxdb-data
+        target: /var/lib/influxdb
+    environment:
+      INFLUXDB_DB: k6
+      INFLUXDB_HTTP_MAX_BODY_SIZE: 0
+    ports:
+      - target: 8086
+        published: $INFLUXDB_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+  grafana:
+    image: docker.io/grafana/grafana:9.5.2
+    container_name: boilerplate-grafana
+    volumes:
+      - type: volume
+        source: grafana-config
+        target: /etc/grafana
+      - type: volume
+        source: grafana-data
+        target: /var/lib/grafana
+    environment:
+      GF_AUTH_BASIC_ENABLED: false
+      GF_AUTH_ANONYMOUS_ENABLED: true
+    ports:
+      - target: 3000
+        published: $GRAFANA_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+volumes:
+  influxdb-data:
+    driver: local
+  grafana-config:
+    driver: local
+  grafana-data:
+    driver: local

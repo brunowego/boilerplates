@@ -38,7 +38,7 @@ const ErrorNotFound = () => {
         <div className={classes.label}>404</div>
 
         <Title align="center" order={3}>
-          Oops this page doesn't exist.
+          Oops this page doesn&apos;t exist.
         </Title>
 
         <Text color="dimmed" align="center" className={classes.description}></Text>

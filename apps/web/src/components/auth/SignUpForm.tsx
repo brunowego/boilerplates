@@ -94,7 +94,7 @@ const SignUpForm = () => {
           />
 
           <Button fullWidth mt="xl" type="submit">
-            Let's get started
+            Let&apos;s get started
           </Button>
         </form>
       </Paper>

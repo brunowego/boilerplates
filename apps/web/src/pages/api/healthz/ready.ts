@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const { apiURL } = nextConfig().publicRuntimeConfig
 
-export default async (_: NextApiRequest, res: NextApiResponse) => {
+const ready = async (_: NextApiRequest, res: NextApiResponse) => {
   const apiStatus = await axios
     .get(`${apiURL}/_heartbeat`)
     .then(() => 'OK')
@@ -12,3 +12,5 @@ export default async (_: NextApiRequest, res: NextApiResponse) => {
 
   res.status(apiStatus == 'OK' ? 200 : 500).send(apiStatus)
 }
+
+export default ready

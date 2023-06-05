@@ -302,6 +302,16 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       typescript: 5.0.4
 
+  packages/load-testing:
+    specifiers:
+      '@acme/tsconfig': workspace:~0.0.0
+      '@types/k6': ~0.44.2
+      typescript: ~5.0.4
+    devDependencies:
+      '@acme/tsconfig': link:../tsconfig
+      '@types/k6': 0.44.2
+      typescript: 5.0.4
+
   packages/tsconfig:
     specifiers: {}
 
@@ -3733,6 +3743,10 @@ packages:
     resolution: {integrity: sha512-drE6uz7QBKq1fYqqoFKTDRdFCPHd5TCub75BM+D+cMx7NU9hUz7SESLfC2fSCXVFMO5Yj8sOWHuGqPgjc+fz0Q==}
     dependencies:
       '@types/node': 20.1.0
+    dev: true
+
+  /@types/k6/0.44.2:
+    resolution: {integrity: sha512-aK/hngWYvJGxiKJy/fEPXOitK/0/guTodMwFvCUXAkkZPY3udHoAybwrpiugtkOvwES5tz31EQXZfmqqyxM61A==}
     dev: true
 
   /@types/long/4.0.2:

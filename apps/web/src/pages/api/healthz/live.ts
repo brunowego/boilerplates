@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const live = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET' || req.method === 'HEAD') {
     res.status(200).json({ status: 'OK' })
   } else {
@@ -8,3 +8,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(405).end('Method Not Allowed')
   }
 }
+
+export default live

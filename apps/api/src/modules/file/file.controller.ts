@@ -22,12 +22,7 @@ export class FileController {
 
   @Post()
   @UseGuards(CreateShareGuard, ShareOwnerGuard)
-  async create(
-    @Query() query: any,
-
-    @Body() body: string,
-    @Param('shareId') shareId: string
-  ) {
+  async create(@Query() query: any, @Body() body: string, @Param('shareId') shareId: string) {
     const { id, name, chunkIndex, totalChunks } = query
 
     const data = body.toString().split(',')[1] ?? ''

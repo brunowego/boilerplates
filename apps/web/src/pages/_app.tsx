@@ -48,7 +48,7 @@ function App({ Component, pageProps }: AppProps) {
       preferences.get('colorScheme') == 'system' ? systemTheme : preferences.get('colorScheme')
 
     toggleColorScheme(colorScheme)
-  }, [systemTheme])
+  }, [systemTheme, preferences])
 
   const toggleColorScheme = (value: ColorScheme) => {
     setColorScheme(value ?? 'light')

@@ -54,7 +54,7 @@ const changeLogo = async (file: File) => {
   await api.post('/settings/admin/logo', form)
 }
 
-export default {
+const settingService = {
   list,
   getByCategory,
   updateMany,
@@ -64,3 +64,5 @@ export default {
   // isNewReleaseAvailable,
   changeLogo,
 }
+
+export default settingService

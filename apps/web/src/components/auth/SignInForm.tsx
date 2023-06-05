@@ -98,7 +98,7 @@ const SignInForm = ({ redirectPath }: { redirectPath: string }) => {
 
       {setting.get('share.allowRegistration') && (
         <Text color="dimmed" size="sm" align="center" mt={5}>
-          You don't have an account yet?{' '}
+          You don&apos;t have an account yet?{' '}
           <Anchor component={Link} href={'signup'} size="sm">
             {'Sign up'}
           </Anchor>

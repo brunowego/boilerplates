@@ -15,7 +15,7 @@ export default function Home() {
         router.replace('/upload')
       }
     })
-  }, [])
+  }, [refreshUser, router])
 
   return (
     <>

@@ -2,6 +2,39 @@
 version: '3'
 
 services:
+  kong:
+    image: docker.io/library/kong:3.2.2-alpine
+    container_name: boilerplate-kong
+    volumes:
+      - type: bind
+        source: ./config/kong/kong.yml
+        target: /usr/local/kong/declarative/kong.yml
+    environment:
+      KONG_DATABASE: off
+      KONG_DECLARATIVE_CONFIG: /usr/local/kong/declarative/kong.yml
+      KONG_PROXY_LISTEN: 0.0.0.0:8000
+      KONG_PROXY_LISTEN_SSL: 0.0.0.0:8443
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001
+    ports:
+      - target: 8000
+        published: $KONG_PROXY_PORT
+        protocol: tcp
+      - target: 8443
+        published: $KONG_PROXY_SSL_PORT
+        protocol: tcp
+      - target: 8001
+        published: $KONG_ADMIN_PORT
+        protocol: tcp
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 129M
+    restart: unless-stopped
+
   postgres:
     image: docker.io/library/postgres:15.1-alpine
     container_name: boilerplate-postgres
@@ -17,6 +50,14 @@ services:
       - target: 5432
         published: $POSTGRES_PORT
         protocol: tcp
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+        reservations:
+          cpus: '0.15'
+          memory: 64M
     restart: unless-stopped
 
   clamav:
@@ -26,6 +67,14 @@ services:
       - target: 3310
         published: $CLAMAV_PORT
         protocol: tcp
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+        reservations:
+          cpus: '0.15'
+          memory: 64M
     restart: unless-stopped
 
 volumes:

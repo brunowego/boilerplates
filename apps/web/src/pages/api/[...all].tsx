@@ -11,7 +11,7 @@ export const config = {
 
 const { apiURL } = nextConfig().serverRuntimeConfig
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+const all = (req: NextApiRequest, res: NextApiResponse) => {
   return httpProxyMiddleware(req, res, {
     headers: {
       'X-Forwarded-For': req.socket?.remoteAddress ?? '',
@@ -19,3 +19,5 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     target: apiURL,
   })
 }
+
+export default all

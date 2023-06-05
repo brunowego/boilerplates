@@ -35,7 +35,7 @@ const getCurrentUser = async (): Promise<CurrentUser | null> => {
   }
 }
 
-export default {
+const userService = {
   list,
   create,
   update,
@@ -44,3 +44,5 @@ export default {
   updateCurrentUser,
   removeCurrentUser,
 }
+
+export default userService

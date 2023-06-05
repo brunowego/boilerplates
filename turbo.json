@@ -1,6 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "globalDependencies": [".env"],
+  "globalEnv": ["NODE_ENV", "API_URL", "VERSION"],
   "pipeline": {
     "clean": {
       "cache": false
@@ -35,6 +36,9 @@
       "cache": false
     },
     "test": {
+      "cache": false
+    },
+    "test:load": {
       "cache": false
     },
     "test:debug": {

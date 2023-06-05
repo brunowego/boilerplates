@@ -72,7 +72,7 @@ const Share = ({ shareId }: { shareId: string }) => {
 
   useEffect(() => {
     getFiles()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

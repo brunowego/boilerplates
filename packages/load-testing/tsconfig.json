@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@acme/tsconfig/base.json",
+  "include": ["src/post-signup-test.ts"]
+}

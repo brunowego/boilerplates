@@ -108,7 +108,7 @@ const disableMfa = async (code: string, password: string) => {
   })
 }
 
-export default {
+const authService = {
   signIn,
   signInMfa,
   signUp,
@@ -122,3 +122,5 @@ export default {
   disableMfa,
   refreshMfaCode,
 }
+
+export default authService

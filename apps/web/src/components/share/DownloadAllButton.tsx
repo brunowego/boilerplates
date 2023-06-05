@@ -29,7 +29,7 @@ const DownloadAllButton = ({ shareId }: { shareId: string }) => {
     return () => {
       clearInterval(timer)
     }
-  }, [])
+  }, [shareId])
 
   return (
     <Button
