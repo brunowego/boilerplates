@@ -1,3 +1,4 @@
+import LanguageProvider from '@/providers/LanguageProvider'
 import { ColorScheme, ColorSchemeProvider, Container, MantineProvider } from '@mantine/core'
 import { useColorScheme } from '@mantine/hooks'
 import { ModalsProvider } from '@mantine/modals'
@@ -59,49 +60,51 @@ function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme, ...globalStyle }}>
-      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <GlobalStyle />
+    <LanguageProvider>
+      <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme, ...globalStyle }}>
+        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+          <GlobalStyle />
 
-        <Notifications />
+          <Notifications />
 
-        <ModalsProvider>
-          <SettingContext.Provider
-            value={{
-              settingVariables,
-              refresh: async () => {
-                setSettingVariables(await settingService.list())
-              },
-            }}
-          >
-            <UserContext.Provider
+          <ModalsProvider>
+            <SettingContext.Provider
               value={{
-                user,
-                refreshUser: async () => {
-                  const user = await userService.getCurrentUser()
-
-                  setUser(user)
-
-                  return user
+                settingVariables,
+                refresh: async () => {
+                  setSettingVariables(await settingService.list())
                 },
               }}
             >
-              {excludeDefaultLayoutRoutes.includes(route) ? (
-                <Component {...pageProps} />
-              ) : (
-                <>
-                  <Header />
+              <UserContext.Provider
+                value={{
+                  user,
+                  refreshUser: async () => {
+                    const user = await userService.getCurrentUser()
 
-                  <Container>
-                    <Component {...pageProps} />
-                  </Container>
-                </>
-              )}
-            </UserContext.Provider>
-          </SettingContext.Provider>
-        </ModalsProvider>
-      </ColorSchemeProvider>
-    </MantineProvider>
+                    setUser(user)
+
+                    return user
+                  },
+                }}
+              >
+                {excludeDefaultLayoutRoutes.includes(route) ? (
+                  <Component {...pageProps} />
+                ) : (
+                  <>
+                    <Header />
+
+                    <Container>
+                      <Component {...pageProps} />
+                    </Container>
+                  </>
+                )}
+              </UserContext.Provider>
+            </SettingContext.Provider>
+          </ModalsProvider>
+        </ColorSchemeProvider>
+      </MantineProvider>
+    </LanguageProvider>
   )
 }
 

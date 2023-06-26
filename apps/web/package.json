@@ -5,6 +5,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "clean": "rimraf ./{.next,.turbo}",
+    "lingui": "npm run lingui:extract; npm run lingui:compile",
+    "lingui:extract": "lingui extract --clean",
+    "lingui:compile": "lingui compile",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -12,6 +15,12 @@
   "dependencies": {
     "@emotion/react": "~11.11.1",
     "@emotion/server": "~11.11.0",
+    "@lingui/core": "~4.2.1",
+    "@lingui/detect-locale": "~4.2.1",
+    "@lingui/format-po": "~4.2.1",
+    "@lingui/loader": "~4.2.1",
+    "@lingui/macro": "~4.2.1",
+    "@lingui/react": "~4.2.1",
     "@mantine/core": "~6.0.14",
     "@mantine/dropzone": "~6.0.14",
     "@mantine/form": "~6.0.14",
@@ -41,11 +50,15 @@
   "devDependencies": {
     "@acme/eslint-config-custom": "workspace:~0.0.0",
     "@acme/tsconfig": "workspace:~0.0.0",
+    "@babel/core": "~7.22.5",
+    "@lingui/cli": "~4.2.1",
+    "@lingui/conf": "~4.2.1",
     "@types/mime-types": "~2.1.1",
     "@types/node": "20.3.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "axios": "~1.3.4",
+    "babel-plugin-macros": "~3.1.0",
     "rimraf": "~5.0.1",
     "tar": "~6.1.15",
     "typescript": "~5.1.3"

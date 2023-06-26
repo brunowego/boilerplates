@@ -16,6 +16,7 @@ import useSetting from '../../hooks/setting.hook'
 import useUser from '../../hooks/user.hook'
 import authService from '../../services/auth.service'
 import toast from '../../utils/toast.util'
+import { Trans } from '@lingui/macro'
 
 const SignUpForm = () => {
   const setting = useSetting()
@@ -55,14 +56,14 @@ const SignUpForm = () => {
   return (
     <Container size={420} my={40}>
       <Title order={2} align="center" weight={900}>
-        Sign up
+        <Trans>Sign up</Trans>
       </Title>
 
       {setting.get('share.allowRegistration') && (
         <Text color="dimmed" size="sm" align="center" mt={5}>
-          You have an account already?{' '}
+          <Trans>You have an account already?</Trans>{' '}
           <Anchor component={Link} href={'signin'} size="sm">
-            Sign in
+            <Trans>Sign in</Trans>
           </Anchor>
         </Text>
       )}

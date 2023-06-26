@@ -6,6 +6,7 @@ import useSetting from '../../hooks/setting.hook'
 import { FileUpload } from '../../types/file.type'
 import { byteToHumanSizeString } from '../../utils/fileSize.util'
 import toast from '../../utils/toast.util'
+import { t, Trans } from '@lingui/macro'
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -55,7 +56,7 @@ const Dropzone = ({
 
           if (fileSizeSum > maxShareSize) {
             toast.error(
-              `Your files exceed the maximum share size of ${byteToHumanSizeString(maxShareSize)}.`
+              t`Your files exceed the maximum share size of ${byteToHumanSizeString(maxShareSize)}.`
             )
           } else {
             newFiles = newFiles.map((newFile) => {
@@ -72,15 +73,18 @@ const Dropzone = ({
           <Group position="center">
             <TbCloudUpload size={50} />
           </Group>
+
           <Text align="center" weight={700} size="lg" mt="xl">
-            Upload files
+            <Trans>Upload files</Trans>
           </Text>
+
           <Text align="center" size="sm" mt="xs" color="dimmed">
             Drag&apos;n&apos;drop files here to start your share. We can accept only files that are
             less than {byteToHumanSizeString(maxShareSize)} in total.
           </Text>
         </div>
       </MantineDropzone>
+
       <Center>
         <Button
           className={classes.control}

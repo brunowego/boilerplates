@@ -8,7 +8,9 @@ import useUser from '../../hooks/user.hook'
 
 export function getServerSideProps(context: GetServerSidePropsContext) {
   return {
-    props: { redirectPath: context.query.redirect ?? null },
+    props: {
+      redirectPath: context.query.redirect ?? null,
+    },
   }
 }
 
@@ -37,4 +39,5 @@ const SignIn = ({ redirectPath }: { redirectPath?: string }) => {
     </>
   )
 }
+
 export default SignIn

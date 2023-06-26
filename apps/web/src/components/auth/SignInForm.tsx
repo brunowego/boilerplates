@@ -21,6 +21,7 @@ import useSetting from '../../hooks/setting.hook'
 import useUser from '../../hooks/user.hook'
 import authService from '../../services/auth.service'
 import toast from '../../utils/toast.util'
+import { t, Trans } from '@lingui/macro'
 
 const SignInForm = ({ redirectPath }: { redirectPath: string }) => {
   const setting = useSetting()
@@ -93,14 +94,14 @@ const SignInForm = ({ redirectPath }: { redirectPath: string }) => {
   return (
     <Container size={420} my={40}>
       <Title order={2} align="center" weight={900}>
-        Welcome back
+        <Trans>Welcome back</Trans>
       </Title>
 
       {setting.get('share.allowRegistration') && (
         <Text color="dimmed" size="sm" align="center" mt={5}>
-          You don't have an account yet?{' '}
+          <Trans>You don't have an account yet?</Trans>{' '}
           <Anchor component={Link} href={'signup'} size="sm">
-            {'Sign up'}
+            {t`Sign up`}
           </Anchor>
         </Text>
       )}

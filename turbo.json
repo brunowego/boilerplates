@@ -34,6 +34,15 @@
     "dev": {
       "cache": false
     },
+    "lingui": {
+      "cache": false
+    },
+    "lingui:extract": {
+      "cache": false
+    },
+    "lingui:compile": {
+      "cache": false
+    },
     "test": {
       "cache": false
     },

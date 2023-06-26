@@ -1,4 +1,4 @@
-# NestJS and NextJS with File Share
+# NestJS and NextJS with Lingui
 
 TODO
 
