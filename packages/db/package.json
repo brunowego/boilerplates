@@ -17,18 +17,18 @@
     "build": "npm run db:generate && tsup"
   },
   "dependencies": {
-    "@prisma/client": "~4.15.0"
+    "@prisma/client": "~4.16.1"
   },
   "devDependencies": {
     "@acme/eslint-config-custom": "workspace:~0.0.0",
     "@acme/tsconfig": "workspace:~0.0.0",
-    "@types/node": "~20.3.0",
+    "@types/node": "~20.3.1",
     "concurrently": "~8.2.0",
     "cross-env": "~7.0.3",
-    "prisma": "~4.15.0",
+    "prisma": "~4.16.1",
     "rimraf": "~5.0.1",
     "ts-node": "~10.9.1",
-    "tsup": "~6.7.0",
+    "tsup": "~7.1.0",
     "typescript": "~5.1.3"
   },
   "prisma": {

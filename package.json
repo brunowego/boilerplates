@@ -22,9 +22,9 @@
     "@acme/eslint-config-custom": "workspace:~0.0.0",
     "@trunkio/launcher": "~1.2.4",
     "dotenv-cli": "~7.2.1",
-    "eslint": "~8.42.0",
+    "eslint": "~8.43.0",
     "prettier": "~2.8.8",
-    "turbo": "~1.10.3"
+    "turbo": "~1.10.6"
   },
   "engines": {
     "node": ">=18 <19",
