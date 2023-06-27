@@ -39,6 +39,16 @@ pnpm db:seed
 pnom db:studio
 ```
 
+### Internationalization
+
+```sh
+# Extract messages
+pnpm lingui:extract
+
+# Compile messages
+pnpm lingui:compile
+```
+
 ### Running
 
 ```bash
