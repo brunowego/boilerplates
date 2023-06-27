@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/components/auth/SignInForm.tsx:117
+msgid "Email or username"
+msgstr ""
+
 #: src/components/auth/SignUpForm.tsx:66
 msgid "Sign in"
 msgstr ""

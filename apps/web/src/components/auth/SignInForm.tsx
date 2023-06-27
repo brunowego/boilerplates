@@ -114,7 +114,7 @@ const SignInForm = ({ redirectPath }: { redirectPath: string }) => {
           })}
         >
           <TextInput
-            label="Email or username"
+            label={t`Email or username`}
             placeholder="Your email or username"
             {...form.getInputProps('emailOrUsername')}
           />

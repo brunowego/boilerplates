@@ -10,8 +10,7 @@ const getLocale = (): string => {
     return DEFAULT_LOCALE
   }
 
-  // let locale = detect(fromUrl('lang'), fromStorage('lang'), fromNavigator()) ?? DEFAULT_LOCALE
-  let locale = detect(fromStorage('lang')) ?? DEFAULT_LOCALE
+  let locale = detect(fromUrl('lang'), fromStorage('lang'), fromNavigator()) ?? DEFAULT_LOCALE
 
   if (!SUPPORTED_LOCALES.includes(locale)) {
     locale = DEFAULT_LOCALE
@@ -44,9 +43,6 @@ const dynamicActivate = async (locale: string) => {
 interface LanguageProviderProps {
   children: ReactNode
 }
-
-// const locale = getLocale()
-// dynamicActivate(locale)
 
 const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
   useEffect(() => {
