@@ -50,8 +50,9 @@
       "cache": false
     },
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "dependsOn": ["db:generate", "^build"],
+      "outputs": ["dist/**"],
+      "cache": false
     },
     "start": {
       "dependsOn": ["build"]
