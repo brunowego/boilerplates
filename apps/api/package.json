@@ -8,9 +8,11 @@
     "start": "nest start"
   },
   "dependencies": {
+    "@nestjs/axios": "~3.0.0",
     "@nestjs/common": "~10.2.7",
     "@nestjs/core": "~10.2.7",
     "@nestjs/platform-express": "~10.2.7",
+    "@nestjs/terminus": "~10.1.1",
     "reflect-metadata": "~0.1.13",
     "rxjs": "~7.8.1"
   },
