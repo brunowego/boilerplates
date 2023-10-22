@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "start": "turbo run start"
   },
   "devDependencies": {
     "@acme/tsconfig": "workspace:*",
