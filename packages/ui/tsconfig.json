@@ -1,0 +1,5 @@
+{
+  "extends": "@acme/tsconfig/react-library.json",
+  "include": ["src/**/*.ts", "turbo/generators/config.ts"],
+  "exclude": ["build", "dist", "node_modules"]
+}

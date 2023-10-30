@@ -1,0 +1,14 @@
+import type { ReactNode, JSX } from 'react'
+
+interface {{ pascalCase name }}Props {
+  children?: ReactNode
+}
+
+export default function {{ pascalCase name }}({ children }: {{ pascalCase name }}Props): JSX.Element {
+  return (
+    <div>
+      <h1>{{ name }}</h1>
+      {children}
+    </div>
+  )
+}
