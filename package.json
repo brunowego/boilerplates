@@ -8,10 +8,10 @@
   },
   "devDependencies": {
     "@acme/tsconfig": "workspace:*",
-    "@trivago/prettier-plugin-sort-imports": "~4.2.1",
-    "eslint": "~8.52.0",
-    "prettier": "~3.0.3",
-    "turbo": "~1.10.16"
+    "@trivago/prettier-plugin-sort-imports": "~4.3.0",
+    "eslint": "~8.55.0",
+    "prettier": "~3.1.1",
+    "turbo": "~1.11.2"
   },
   "packageManager": "pnpm@8.6.10"
 }
