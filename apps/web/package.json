@@ -10,18 +10,20 @@
     "start": "next start"
   },
   "dependencies": {
-    "@acme/ui": "workspace:*",
+    "@acme/env": "workspace:~",
+    "@acme/ui": "workspace:~",
+    "@medusajs/medusa-js": "~6.1.4",
     "next": "~14.0.4",
     "react": "~18.2.0",
     "react-dom": "~18.2.0"
   },
   "devDependencies": {
-    "@acme/tsconfig": "workspace:*",
+    "@acme/tsconfig": "workspace:~",
     "@next/eslint-plugin-next": "~14.0.4",
     "@types/node": "~20.10.4",
     "@types/react": "~18.2.45",
     "@types/react-dom": "~18.2.17",
-    "eslint-config-acme": "workspace:*",
+    "eslint-config-acme": "workspace:~",
     "typescript": "~5.3.3"
   }
 }

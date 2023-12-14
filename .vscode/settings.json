@@ -8,5 +8,8 @@
   ],
   "[handlebars]": {
     "editor.formatOnSave": false
+  },
+  "files.associations": {
+    "*.env*": "properties"
   }
 }
