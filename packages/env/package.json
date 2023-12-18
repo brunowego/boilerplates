@@ -20,7 +20,7 @@
     }
   },
   "scripts": {
-    "clean": "rimraf ./.turbo ./dist",
+    "clean": "rimraf ./{.turbo,dist}",
     "lint": "eslint --ext .ts ./",
     "build": "tsc -p ./tsconfig.build.json"
   },

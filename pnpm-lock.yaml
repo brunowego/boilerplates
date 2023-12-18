@@ -54,6 +54,9 @@ importers:
       babel-cli:
         specifier: ~6.26.0
         version: 6.26.0
+      rimraf:
+        specifier: ~5.0.5
+        version: 5.0.5
 
   apps/web:
     dependencies:
@@ -66,15 +69,27 @@ importers:
       '@medusajs/medusa-js':
         specifier: ~6.1.4
         version: 6.1.4(@medusajs/medusa@1.18.1)
+      barcode-validator:
+        specifier: ~1.0.2
+        version: 1.0.2
+      html5-qrcode:
+        specifier: ~2.3.8
+        version: 2.3.8
       next:
         specifier: ~14.0.4
         version: 14.0.4(@babel/core@7.23.6)(react-dom@18.2.0)(react@18.2.0)
+      qrcode.react:
+        specifier: ~3.1.0
+        version: 3.1.0(react@18.2.0)
       react:
         specifier: ~18.2.0
         version: 18.2.0
       react-dom:
         specifier: ~18.2.0
         version: 18.2.0(react@18.2.0)
+      react-hook-form:
+        specifier: ~7.49.2
+        version: 7.49.2(react@18.2.0)
     devDependencies:
       '@acme/tsconfig':
         specifier: workspace:~
@@ -94,6 +109,9 @@ importers:
       eslint-config-acme:
         specifier: workspace:~
         version: link:../../tooling/eslint-config-acme
+      rimraf:
+        specifier: ~5.0.5
+        version: 5.0.5
       typescript:
         specifier: ~5.3.3
         version: 5.3.3
@@ -2734,7 +2752,7 @@ packages:
       '@medusajs/types': 1.11.8
       '@medusajs/utils': 1.11.1(pg@8.11.3)
       '@mikro-orm/core': 5.7.12(@mikro-orm/migrations@5.7.12)(@mikro-orm/postgresql@5.7.12)
-      '@mikro-orm/postgresql': 5.7.12(@mikro-orm/core@5.7.12)(@mikro-orm/migrations@5.7.12)
+      '@mikro-orm/postgresql': 5.7.12(@mikro-orm/core@5.7.12)
       awilix: 8.0.1
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
@@ -2765,7 +2783,7 @@ packages:
       '@medusajs/types': 1.11.8
       '@medusajs/utils': 1.11.1(pg@8.11.3)
       '@mikro-orm/core': 5.7.12(@mikro-orm/postgresql@5.7.12)
-      '@mikro-orm/postgresql': 5.7.12(@mikro-orm/core@5.7.12)(@mikro-orm/migrations@5.7.12)
+      '@mikro-orm/postgresql': 5.7.12(@mikro-orm/core@5.7.12)
       awilix: 8.0.1
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
@@ -3296,7 +3314,7 @@ packages:
       '@mikro-orm/sqlite':
         optional: true
     dependencies:
-      '@mikro-orm/postgresql': 5.7.12(@mikro-orm/core@5.7.12)(@mikro-orm/migrations@5.7.12)
+      '@mikro-orm/postgresql': 5.7.12(@mikro-orm/core@5.7.12)
       acorn-loose: 8.3.0
       acorn-walk: 8.2.0
       dotenv: 16.1.4
@@ -3392,6 +3410,48 @@ packages:
       - tedious
     dev: false
 
+  /@mikro-orm/knex@5.7.14(@mikro-orm/core@5.7.12)(pg@8.11.0):
+    resolution: {integrity: sha512-dLw80JiOfQ6YBtKXI3j0C31lYfbWlytZUpXFM4tEKlMbAMmSbPqDgZpiF3luxBKTg3JpsnGSK0urBOxL1c/m+g==}
+    engines: {node: '>= 14.0.0'}
+    peerDependencies:
+      '@mikro-orm/core': ^5.0.0
+      '@mikro-orm/entity-generator': ^5.0.0
+      '@mikro-orm/migrations': ^5.0.0
+      better-sqlite3: '*'
+      mssql: '*'
+      mysql: '*'
+      mysql2: '*'
+      pg: '*'
+      sqlite3: '*'
+    peerDependenciesMeta:
+      '@mikro-orm/entity-generator':
+        optional: true
+      '@mikro-orm/migrations':
+        optional: true
+      better-sqlite3:
+        optional: true
+      mssql:
+        optional: true
+      mysql:
+        optional: true
+      mysql2:
+        optional: true
+      pg:
+        optional: true
+      sqlite3:
+        optional: true
+    dependencies:
+      '@mikro-orm/core': 5.7.12(@mikro-orm/postgresql@5.7.12)
+      fs-extra: 11.1.1
+      knex: 2.5.1(pg@8.11.0)
+      pg: 8.11.0
+      sqlstring: 2.3.3
+    transitivePeerDependencies:
+      - pg-native
+      - supports-color
+      - tedious
+    dev: false
+
   /@mikro-orm/migrations@5.7.12(@mikro-orm/core@5.7.12)(pg@8.11.3):
     resolution: {integrity: sha512-hUKUMKw01KpCKEoLMSbqLpztymE8Gk95+/nO7ThO5PTkNzH5eqLt00Zy9KlFgDEi85mOkyGnKbthzZMHPSLxSg==}
     engines: {node: '>= 14.0.0'}
@@ -3410,6 +3470,36 @@ packages:
       - mysql
       - mysql2
       - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+    dev: false
+
+  /@mikro-orm/postgresql@5.7.12(@mikro-orm/core@5.7.12):
+    resolution: {integrity: sha512-JF89Yf3D/nyA45TzXxclajaDrHXFB/ad3edkF0BA5+sFKsj6it18P/wq0HEk/rhqsHLTlxcmyG0/F+AO3HOPow==}
+    engines: {node: '>= 14.0.0'}
+    peerDependencies:
+      '@mikro-orm/core': ^5.0.0
+      '@mikro-orm/entity-generator': ^5.0.0
+      '@mikro-orm/migrations': ^5.0.0
+      '@mikro-orm/seeder': ^5.0.0
+    peerDependenciesMeta:
+      '@mikro-orm/entity-generator':
+        optional: true
+      '@mikro-orm/migrations':
+        optional: true
+      '@mikro-orm/seeder':
+        optional: true
+    dependencies:
+      '@mikro-orm/core': 5.7.12(@mikro-orm/postgresql@5.7.12)
+      '@mikro-orm/knex': 5.7.14(@mikro-orm/core@5.7.12)(pg@8.11.0)
+      pg: 8.11.0
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mssql
+      - mysql
+      - mysql2
       - pg-native
       - sqlite3
       - supports-color
@@ -7985,6 +8075,10 @@ packages:
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
+  /barcode-validator@1.0.2:
+    resolution: {integrity: sha512-MZ6nkU/MzEUmdA1mUU5s6tXPP/1dbfuYFx4iUmPhbMLKYMHHr8DwE/PgTgnS5MXS4JQN8kliGeP7h+6tLwVGBA==}
+    dev: false
+
   /base16@1.0.0:
     resolution: {integrity: sha512-pNdYkNPiJUnEhnfXV56+sQy8+AaPcG3POZAUnwr4EeqCUZFz4u2PePbo3e5Gj4ziYPCWGUZT9RHisvJKnwFuBQ==}
     dev: false
@@ -11227,6 +11321,10 @@ packages:
       pretty-error: 4.0.0
       tapable: 2.2.1
       webpack: 5.89.0(@swc/core@1.3.100)(esbuild@0.17.18)
+    dev: false
+
+  /html5-qrcode@2.3.8:
+    resolution: {integrity: sha512-jsr4vafJhwoLVEDW3n1KvPnCCXWaQfRng0/EEYk1vNcQGcG/htAdhJX0be8YyqMoSz7+hZvOZSTAepsabiuhiQ==}
     dev: false
 
   /htmlparser2@6.1.0:
@@ -14474,6 +14572,14 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
+  /qrcode.react@3.1.0(react@18.2.0):
+    resolution: {integrity: sha512-oyF+Urr3oAMUG/OiOuONL3HXM+53wvuH3mtIWQrYmsXoAq0DkvZp2RYUWFSMFtbdOpuS++9v+WAkzNVkMlNW6Q==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /qs@6.11.0:
     resolution: {integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==}
     engines: {node: '>=0.6'}
@@ -14767,6 +14873,15 @@ packages:
   /react-hook-form@7.38.0(react@18.2.0):
     resolution: {integrity: sha512-gxWW1kMeru9xR1GoR+Iw4hA+JBOM3SHfr4DWCUKY0xc7Vv1MLsF109oHtBeWl9shcyPFx67KHru44DheN0XY5A==}
     engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /react-hook-form@7.49.2(react@18.2.0):
+    resolution: {integrity: sha512-TZcnSc17+LPPVpMRIDNVITY6w20deMdNi6iehTFLV1x8SqThXGwu93HjlUVU09pzFgZH7qZOvLMM7UYf2ShAHA==}
+    engines: {node: '>=18', pnpm: '8'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
     dependencies:

@@ -4,9 +4,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "clean": "rimraf ./{.cache,.turbo,build,dist}",
     "db:migrate": "medusa migrations run",
     "db:seed": "medusa seed -f ./data/seed.json",
-    "dev": "medusa develop"
+    "dev": "medusa develop",
+    "build": "npm run clean && npm run build:server && npm run build:admin",
+    "build:server": "tsc -p ./tsconfig.server.json",
+    "build:admin": "medusa-admin build"
   },
   "dependencies": {
     "@medusajs/admin": "~7.1.8",
@@ -18,6 +22,7 @@
     "medusa-payment-manual": "~1.0.24"
   },
   "devDependencies": {
-    "babel-cli": "~6.26.0"
+    "babel-cli": "~6.26.0",
+    "rimraf": "~5.0.5"
   }
 }

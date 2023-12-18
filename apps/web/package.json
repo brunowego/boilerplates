@@ -5,6 +5,7 @@
   "private": true,
   "license": "COPYRIGHT",
   "scripts": {
+    "clean": "rimraf ./.next",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -13,9 +14,13 @@
     "@acme/env": "workspace:~",
     "@acme/ui": "workspace:~",
     "@medusajs/medusa-js": "~6.1.4",
+    "barcode-validator": "~1.0.2",
+    "html5-qrcode": "~2.3.8",
     "next": "~14.0.4",
+    "qrcode.react": "~3.1.0",
     "react": "~18.2.0",
-    "react-dom": "~18.2.0"
+    "react-dom": "~18.2.0",
+    "react-hook-form": "~7.49.2"
   },
   "devDependencies": {
     "@acme/tsconfig": "workspace:~",
@@ -24,6 +29,7 @@
     "@types/react": "~18.2.45",
     "@types/react-dom": "~18.2.17",
     "eslint-config-acme": "workspace:~",
+    "rimraf": "~5.0.5",
     "typescript": "~5.3.3"
   }
 }

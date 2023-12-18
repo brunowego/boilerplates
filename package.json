@@ -6,6 +6,7 @@
     "compose:status": "docker compose ps",
     "compose:restart": "docker compose restart",
     "compose:down": "docker compose down",
+    "clean": "turbo run clean",
     "db:migrate": "dotenv -- turbo run db:migrate",
     "db:seed": "dotenv -- turbo run db:seed",
     "dev": "dotenv -- turbo run dev",
