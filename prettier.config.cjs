@@ -7,6 +7,7 @@ const prettierConfig = {
   singleQuote: true,
   jsxSingleQuote: true,
   importOrder: ['^@medusajs/(.*)$', '^@acme/(.*)$', '^@/(.*)$', '^[./]'],
+  importOrderParserPlugins: ['typescript', 'decorators-legacy'],
   importOrderSeparation: true,
 }
 

@@ -9,6 +9,9 @@ pnpm install
 # Start the auxiliary services
 pnpm compose:up
 
+# Build backend first
+pnpm build --filter backend
+
 # Run the migrations
 pnpm db:migrate
 

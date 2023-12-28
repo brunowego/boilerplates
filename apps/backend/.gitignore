@@ -1,4 +1,5 @@
 /.cache
+/.turbo
 /build
 /dist
 /node_modules

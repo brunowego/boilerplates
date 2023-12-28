@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "clean": "rimraf ./{.cache,build,dist}",
+    "clean": "rimraf ./{.cache,.turbo,build,dist}",
     "db:migrate": "medusa migrations run",
     "db:seed": "medusa seed -f ./data/seed.json",
-    "dev": "medusa develop"
+    "dev": "medusa develop",
+    "build": "tsc -p ./tsconfig.server.json"
   },
   "dependencies": {
     "@medusajs/admin": "~7.1.9",
