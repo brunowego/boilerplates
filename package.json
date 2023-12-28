@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch",
+    "test:cov": "turbo test:cov",
+    "test:debug": "turbo test:debug",
+    "test:e2e": "turbo test:e2e",
+    "build": "turbo build",
+    "start": "turbo start",
+    "start:debug": "turbo start:debug",
+    "start:prod": "turbo start:prod"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:~",
+    "@acme/typescript-config": "workspace:~",
+    "@trivago/prettier-plugin-sort-imports": "~4.3.0",
+    "eslint": "~8.56.0",
+    "prettier": "~3.2.4",
+    "turbo": "~1.11.3"
+  },
+  "packageManager": "pnpm@8.13.1",
+  "volta": {
+    "node": "18.19.0"
+  }
+}
