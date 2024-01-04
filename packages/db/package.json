@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/db",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "clean": "rimraf ./.turbo",
+    "lint": "eslint --ext .ts ./",
+    "db:generate": "dotenv -- drizzle-kit generate:pg",
+    "db:migrate": "dotenv -- tsx ./src/migrate.ts",
+    "db:seed": "dotenv -- tsx ./src/seed.ts",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@paralleldrive/cuid2": "~2.2.2",
+    "drizzle-orm": "~0.29.3",
+    "drizzle-typebox": "~0.1.1",
+    "drizzle-zod": "~0.5.1",
+    "pg": "~8.11.3",
+    "postgres": "~3.4.3"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:~",
+    "@acme/typescript-config": "workspace:~",
+    "@faker-js/faker": "~8.3.1",
+    "@types/node": "~18.18.14",
+    "@types/pg": "~8.10.9",
+    "chalk": "~5.3.0",
+    "dotenv": "~16.3.1",
+    "drizzle-kit": "~0.20.9",
+    "rimraf": "~5.0.5",
+    "tsx": "~4.7.0",
+    "zod": "~3.22.4"
+  }
+}

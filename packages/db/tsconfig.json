@@ -1,0 +1,12 @@
+{
+  "extends": "@acme/typescript-config/base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strictNullChecks": false
+  },
+  "include": ["src/**/*.ts", "drizzle.config.ts"],
+  "exclude": ["node_modules"]
+}

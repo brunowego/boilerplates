@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "private": true,
+  "scripts": {
+    "compose:up": "docker compose up -d",
+    "compose:status": "docker compose ps",
+    "compose:restart": "docker compose restart",
+    "compose:down": "docker compose down",
+    "clean": "turbo clean",
+    "db:generate": "turbo db:generate",
+    "db:migrate": "turbo db:migrate",
+    "db:seed": "turbo db:seed",
+    "db:studio": "turbo db:studio",
+    "dev": "turbo dev",
+    "dev:test": "turbo dev:test",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "test:e2e": "turbo test:e2e",
+    "test:e2e:ui": "turbo test:e2e:ui",
+    "test:e2e:report": "turbo test:e2e:report",
+    "build": "turbo build",
+    "start": "turbo start"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:~",
+    "@acme/typescript-config": "workspace:~",
+    "eslint": "~8.56.0",
+    "prettier": "~3.1.1",
+    "turbo": "~1.11.3"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "volta": {
+    "node": "18.19.0"
+  }
+}

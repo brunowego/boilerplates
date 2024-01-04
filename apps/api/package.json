@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf ./{.turbo,dist}",
+    "dev": "bun --watch ./src/index.ts",
+    "lint": "eslint --ext .ts,.tsx ./",
+    "build": "bun build --target bun ./src/index.ts --outfile ./dist/index.js",
+    "start": "NODE_ENV=production bun run ./dist/server.js"
+  },
+  "dependencies": {
+    "@acme/db": "workspace:~",
+    "@acme/mail": "workspace:~",
+    "@elysiajs/cookie": "~0.8.0",
+    "@elysiajs/cors": "~0.8.0",
+    "@elysiajs/jwt": "~0.8.0",
+    "@elysiajs/swagger": "~0.8.1",
+    "@paralleldrive/cuid2": "~2.2.2",
+    "bun": "~1.0.21",
+    "dayjs": "~1.11.10",
+    "elysia": "~0.8.8",
+    "resend": "~2.1.0",
+    "zod": "~3.22.4"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "~2.1.0",
+    "@trivago/prettier-plugin-sort-imports": "~4.3.0",
+    "bun-types": "~1.0.21",
+    "eslint": "8.56.0",
+    "eslint-plugin-drizzle": "~0.2.3",
+    "prettier": "~3.1.1",
+    "prettier-plugin-tailwindcss": "~0.5.10",
+    "rimraf": "~5.0.5",
+    "typescript": "~5.3.3"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "pipeline": {
+    "clean": {},
+    "db:generate": {
+      "outputs": ["drizzle/**"]
+    },
+    "db:migrate": {
+      "cache": false
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "db:studio": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:test": {},
+    "lint": {
+      "dependsOn": ["^lint"],
+      "cache": false
+    },
+    "test": {},
+    "test:e2e": {},
+    "test:e2e:ui": {},
+    "test:e2e:report": {},
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "start": {
+      "cache": false
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleDetection": "force",
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "composite": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "types": ["bun-types"],
+
+    /* Linting */
+    "strict": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", ".eslintrc.cjs", "prettier.config.cjs"],
+  "exclude": ["dist", "node_modules"]
+}
