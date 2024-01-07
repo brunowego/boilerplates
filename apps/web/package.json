@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@web/web",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "scripts": {
+    "dev": "next dev",
+    "lint": "next lint",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@acme/ui": "workspace:~",
+    "next": "14.0.4",
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "~20.10.7",
+    "@types/react": "~18.2.47",
+    "@types/react-dom": "~18.2.18",
+    "autoprefixer": "~10.4.16",
+    "eslint": "~8.56.0",
+    "eslint-config-next": "14.0.4",
+    "postcss": "~8.4.33",
+    "tailwindcss": "~3.4.1",
+    "typescript": "~5.3.3"
+  }
+}
