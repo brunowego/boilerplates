@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@acme/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    ".next/types/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "test/e2e/setup.ts",
+    "test/e2e/*.e2e-spec.ts",
+    "next-env.d.ts",
+    "next.config.mjs",
+    "playwright.config.ts",
+    "postcss.config.cjs",
+    "prettier.config.cjs",
+    "tailwind.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts"
+  ],
+  "exclude": ["node_modules"]
+}
