@@ -1,0 +1,6 @@
+---
+packages:
+  - apps/*
+  - apps/headless/*
+  - packages/*
+  - tooling/*
