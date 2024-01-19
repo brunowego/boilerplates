@@ -1,0 +1,36 @@
+---
+version: 0.1
+cli:
+  version: 1.19.0
+plugins:
+  sources:
+    - id: trunk
+      ref: v1.4.2
+      uri: https://github.com/trunk-io/plugins
+runtimes:
+  enabled:
+    - node@18.12.1
+    - python@3.10.8
+lint:
+  enabled:
+    - checkov@3.1.67
+    - eslint@8.56.0
+    - git-diff-check
+    - markdownlint@0.38.0
+    - prettier@3.2.4
+    - svgo@3.2.0
+    - trivy@0.48.3
+    - trufflehog@3.63.10
+    - yamllint@1.33.0
+  disabled:
+    - dotenv-linter
+  ignore:
+    - linters: [prettier]
+      paths:
+        - apps/api/src/db/migrations/meta/*.json
+actions:
+  enabled:
+    - trunk-announce
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+    - trunk-upgrade-available

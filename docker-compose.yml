@@ -1,0 +1,25 @@
+---
+version: '3'
+
+services:
+  postgres:
+    image: docker.io/library/postgres:15.1-alpine
+    volumes:
+      - type: volume
+        source: postgresql-data
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_DB:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+    ports:
+      - target: 5432
+        published: $POSTGRES_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+    driver: local
+  postgresql-data:
+    driver: local
