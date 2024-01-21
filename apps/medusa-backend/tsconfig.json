@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@acme/typescript-config/medusajs.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+  },
+  "include": ["src", "index.js", "medusa-config.js", "prettier.config.cjs"],
+  "exclude": [".cache", "build", "dist", "node_modules"],
+}

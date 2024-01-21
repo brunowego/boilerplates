@@ -1,0 +1,29 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "pipeline": {
+    "db:migrate": {
+      "cache": false
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "build": {
+      "outputs": ["dist/**"],
+      "env": [
+        "NODE_ENV",
+        "DATABASE_URL",
+        "PORT",
+        "OPEN_BROWSER",
+        "REDIS_URL",
+        "JWT_SECRET",
+        "COOKIE_SECRET",
+        "STORE_CORS",
+        "ADMIN_CORS",
+        "MEDUSA_BACKEND_URL",
+        "MEDUSA_ADMIN_BACKEND_URL",
+        "MEDUSA_ADMIN_ONBOARDING_TYPE"
+      ]
+    }
+  }
+}

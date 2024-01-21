@@ -1,0 +1,127 @@
+{
+  "store": {
+    "name": "ACME",
+    "default_currency_code": "brl",
+    "currencies": ["brl"]
+  },
+  "regions": [
+    {
+      "id": "test-region-br",
+      "name": "BR",
+      "currency_code": "brl",
+      "tax_rate": 0,
+      "payment_providers": ["manual"],
+      "fulfillment_providers": ["manual"],
+      "countries": ["br"]
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_01HJ1KZ8573P6SFYQ6KG965GTS",
+      "title": "Mack s Ultra Soft Foam Earplugs 50 Pair - 33dB Highest NRR",
+      "categories": [
+        {
+          "id": "pcat_ear-care"
+        }
+      ],
+      "subtitle": null,
+      "description": "These ear plugs are molded with super low-pressure  tapered foam to provide unmatched comfort. With a high noise reduction rating (NRR) of 33 decibels  this high performance hearing protection can be used in environments where noise is just a nuisance up to environments with hazardous noise levels. They are great for loud concerts  motor sports  sleep  shooting sports  power tools  etc.",
+      "handle": "mack-s-ultra-soft-foam-earplugs-50-pair-33db-highest-nrr",
+      "is_giftcard": false,
+      "barcode": "33732092500"
+    }
+  ],
+  "categories": [
+    {
+      "id": "pcat_health-beauty",
+      "name": "Health & Beauty",
+      "rank": 0,
+      "category_children": [
+        {
+          "id": "pcat_personal-care",
+          "name": "Personal Care",
+          "rank": 0,
+          "category_children": [
+            {
+              "id": "pcat_ear-care",
+              "name": "Ear Care",
+              "rank": 0,
+              "category_children": [],
+              "handle": "ear-care"
+            }
+          ],
+          "handle": "personal-care"
+        }
+      ],
+      "handle": "health-beauty"
+    }
+  ],
+  "shipping_options": [
+    {
+      "name": "PostFake Standard",
+      "region_id": "test-region-br",
+      "provider_id": "manual",
+      "data": {
+        "id": "manual-fulfillment"
+      },
+      "price_type": "flat_rate",
+      "amount": 1000
+    },
+    {
+      "name": "PostFake Express",
+      "region_id": "test-region-br",
+      "provider_id": "manual",
+      "data": {
+        "id": "manual-fulfillment"
+      },
+      "price_type": "flat_rate",
+      "amount": 1500
+    },
+    {
+      "name": "PostFake Return",
+      "region_id": "test-region-br",
+      "provider_id": "manual",
+      "data": {
+        "id": "manual-fulfillment"
+      },
+      "price_type": "flat_rate",
+      "is_return": true,
+      "amount": 1000
+    },
+    {
+      "name": "I want to return it myself",
+      "region_id": "test-region-br",
+      "provider_id": "manual",
+      "data": {
+        "id": "manual-fulfillment"
+      },
+      "price_type": "flat_rate",
+      "is_return": true,
+      "amount": 0
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@acme.dev",
+      "password": "Pa$$w0rd!",
+      "api_token": "sk_01HHM470FF5GCF322HTG06ZAZR",
+      "role": "admin"
+    },
+    {
+      "email": "member@acme.dev",
+      "password": "Pa$$w0rd!",
+      "role": "member"
+    },
+    {
+      "email": "developer@acme.dev",
+      "password": "Pa$$w0rd!",
+      "role": "developer"
+    }
+  ],
+  "publishable_api_keys": [
+    {
+      "id": "pk_01HHM002W5BRBT613GBTXG641J",
+      "title": "Development"
+    }
+  ]
+}
