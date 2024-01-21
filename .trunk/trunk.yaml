@@ -1,0 +1,35 @@
+---
+version: 0.1
+cli:
+  version: 1.19.0
+plugins:
+  sources:
+    - id: trunk
+      ref: v1.4.2
+      uri: https://github.com/trunk-io/plugins
+runtimes:
+  enabled:
+    - node@18.12.1
+    - python@3.10.8
+lint:
+  enabled:
+    - biome@1.5.3
+    - checkov@3.1.70
+    - git-diff-check
+    - markdownlint@0.38.0
+    - svgo@3.2.0
+    - trivy@0.48.3
+    - trufflehog@3.64.0
+    - yamllint@1.33.0
+  disabled:
+    - dotenv-linter
+  ignore:
+    - linters: [biome]
+      paths:
+        - '**/*.json'
+actions:
+  enabled:
+    - trunk-check-pre-push
+    - trunk-announce
+    - trunk-fmt-pre-commit
+    - trunk-upgrade-available

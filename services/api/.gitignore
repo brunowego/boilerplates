@@ -1,0 +1,6 @@
+/.turbo
+/dist
+/node_modules
+/static/files/*
+!/static/files/.gitkeep
+/.env*.local
