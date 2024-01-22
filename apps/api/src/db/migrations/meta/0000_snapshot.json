@@ -1,0 +1,146 @@
+{
+  "id": "2d902282-64b0-44e6-be52-dfac59c7698b",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "products": {
+      "name": "products",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "category": {
+          "name": "category",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "images": {
+          "name": "images",
+          "type": "varchar[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "brand": {
+          "name": "brand",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "model": {
+          "name": "model",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dimension": {
+          "name": "dimension",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "weight": {
+          "name": "weight",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ean": {
+          "name": "ean",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "upc": {
+          "name": "upc",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gtin": {
+          "name": "gtin",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "asin": {
+          "name": "asin",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "products_ean_unique": {
+          "name": "products_ean_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "ean"
+          ]
+        },
+        "products_upc_unique": {
+          "name": "products_upc_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "upc"
+          ]
+        },
+        "products_gtin_unique": {
+          "name": "products_gtin_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "gtin"
+          ]
+        },
+        "products_asin_unique": {
+          "name": "products_asin_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "asin"
+          ]
+        }
+      }
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

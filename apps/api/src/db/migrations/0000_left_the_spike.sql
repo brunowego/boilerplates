@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS "products" (
+	"id" varchar PRIMARY KEY NOT NULL,
+	"title" varchar NOT NULL,
+	"description" text NOT NULL,
+	"category" varchar,
+	"images" varchar[],
+	"brand" varchar NOT NULL,
+	"model" varchar,
+	"dimension" varchar,
+	"weight" varchar,
+	"ean" varchar NOT NULL,
+	"upc" varchar NOT NULL,
+	"gtin" varchar,
+	"asin" varchar,
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	"updated_at" timestamp DEFAULT now() NOT NULL,
+	CONSTRAINT "products_ean_unique" UNIQUE("ean"),
+	CONSTRAINT "products_upc_unique" UNIQUE("upc"),
+	CONSTRAINT "products_gtin_unique" UNIQUE("gtin"),
+	CONSTRAINT "products_asin_unique" UNIQUE("asin")
+);

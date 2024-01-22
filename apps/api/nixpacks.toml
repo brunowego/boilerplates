@@ -1,0 +1,15 @@
+[phases.setup]
+nixpkgsArchive = '2d67382acbdc2aea9bc2743fc3c40815375a0078'
+nixPkgs = ['...', 'bun']
+
+[phases.install]
+dependsOn = ["setup"]
+cmds = ['bun install --production']
+
+[phases.build]
+dependsOn = ["install"]
+cmds = ['bun run --cwd apps/api build']
+
+[start]
+dependsOn = ["build"]
+cmd = 'bun run --cwd apps/api start'
