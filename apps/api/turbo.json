@@ -1,0 +1,21 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "pipeline": {
+    "db:migrate": {
+      "cache": false
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "db:studio": {
+      "cache": false
+    },
+    "test:coverage": {
+      "cache": false
+    },
+    "build": {
+      "outputs": ["dist/**"]
+    }
+  }
+}

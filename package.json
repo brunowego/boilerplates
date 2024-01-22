@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "private": true,
+  "license": "COPYRIGHT",
+  "scripts": {
+    "clean": "turbo clean",
+    "compose:up": "docker compose up -d",
+    "compose:status": "docker compose ps",
+    "compose:restart": "docker compose restart",
+    "compose:down": "docker compose down",
+    "db:migrate": "turbo db:migrate",
+    "db:seed": "turbo db:seed",
+    "db:studio": "turbo db:studio",
+    "dev": "turbo dev",
+    "test": "turbo test",
+    "test:coverage": "turbo test:coverage",
+    "lint": "turbo lint",
+    "build": "turbo build"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:~",
+    "@acme/typescript-config": "workspace:~",
+    "prettier": "~3.1.1",
+    "turbo": "~1.11.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.0.23",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tooling/*"
+  ]
+}
