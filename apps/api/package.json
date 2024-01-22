@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "type": "module",
+  "scripts": {
+    "db:migrate": "typeorm-ts-node-esm migration:run -d ./ormconfig.ts",
+    "dev": "bun run --watch ./src/http/server.ts",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "build": "bun build --target bun --minify ./src/http/server.ts --outdir ./dist",
+    "start": "NODE_ENV=production bun ./dist/server.js"
+  },
+  "dependencies": {
+    "@elysiajs/cookie": "~0.8.0",
+    "@elysiajs/cors": "~0.8.0",
+    "@elysiajs/cron": "~0.8.0",
+    "@elysiajs/fn": "~0.6.1",
+    "@elysiajs/jwt": "~0.8.0",
+    "@elysiajs/static": "~0.8.1",
+    "@elysiajs/swagger": "~0.8.3",
+    "elysia": "~0.8.9",
+    "elysia-helmet": "~1.0.2",
+    "mongodb": "~6.3.0",
+    "typeorm": "~0.3.19",
+    "uuid": "~9.0.1"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:~",
+    "@acme/typescript-config": "workspace:~",
+    "@trivago/prettier-plugin-sort-imports": "~4.3.0",
+    "@types/uuid": "~9.0.7",
+    "bun-types": "~1.0.23"
+  }
+}
