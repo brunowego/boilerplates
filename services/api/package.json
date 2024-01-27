@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "bun run --hot ./src/index.ts"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "~0.1.11",
+    "hono": "~3.12.11",
+    "zod": "~3.22.4"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:*",
+    "@types/bun": "~1.0.4"
+  }
+}
