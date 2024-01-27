@@ -1,0 +1,11 @@
+/**
+
+!/apps
+!/packages
+!/services
+!/tooling
+!/bun.lockb
+!/package.json
+!/turbo.json
+
+/**/.env
