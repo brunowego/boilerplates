@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "overview": "Overview",
+    "customers": "Customers",
+    "analytics": "Analytics",
+    "settings": "Settings"
+  },
+  "tab": {
+    "notifications": "Notifications"
+  }
+}

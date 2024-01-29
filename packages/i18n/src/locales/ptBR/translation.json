@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "overview": "Visão geral",
+    "customers": "Clientes",
+    "analytics": "Análise",
+    "settings": "Configurações"
+  },
+  "tab": {
+    "notifications": "Notificações"
+  }
+}
