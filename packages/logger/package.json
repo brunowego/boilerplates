@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/logger",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "pino": "~8.17.2",
+    "pino-pretty": "~10.3.1"
+  }
+}

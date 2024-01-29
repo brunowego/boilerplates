@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "scripts": {
+    "db:generate": "drizzle-kit generate:pg",
+    "db:migrate": "bun ./src/db/migrate.ts",
+    "db:seed": "bun ./src/db/seed.ts",
+    "db:studio": "drizzle-kit studio",
+    "dev": "bun run --hot ./src/http/server.ts"
+  },
+  "dependencies": {
+    "@acme/config": "workspace:~",
+    "@acme/id": "workspace:~",
+    "@acme/logger": "workspace:~",
+    "@hono/swagger-ui": "~0.2.1",
+    "@hono/zod-openapi": "~0.9.6",
+    "@lucia-auth/adapter-postgresql": "~3.0.0",
+    "@paralleldrive/cuid2": "~2.2.2",
+    "drizzle-orm": "~0.29.3",
+    "drizzle-zod": "~0.5.1",
+    "hono": "~3.12.8",
+    "lucia": "~3.0.1",
+    "oslo": "~1.0.2",
+    "rate-limiter-flexible": "^4.0.1",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:~",
+    "@types/bun": "~1.0.4",
+    "drizzle-kit": "^0.20.13"
+  }
+}
