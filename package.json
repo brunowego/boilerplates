@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "private": true,
+  "license": "COPYRIGHT",
+  "scripts": {
+    "clean": "turbo clean",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "build": "turbo build"
+  },
+  "dependencies": {
+    "turbo": "~1.12.4"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:~",
+    "@biomejs/biome": "~1.5.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.0.25",
+  "workspaces": ["apps/*", "packages/*", "services/*", "tooling/*"]
+}
