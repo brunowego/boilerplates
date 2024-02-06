@@ -1,0 +1,9 @@
+---
+extends: default
+rules:
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+  quoted-strings:
+    quote-type: single
+    required: only-when-needed
