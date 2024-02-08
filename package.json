@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "private": true,
+  "license": "COPYRIGHT",
+  "scripts": {
+    "postinstall": "npm run i18n:compile",
+    "clean": "turbo clean",
+    "i18n:extract": "lingui extract --clean",
+    "i18n:compile": "lingui compile",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "build": "turbo build",
+    "start": "turbo start"
+  },
+  "dependencies": {
+    "turbo": "~1.12.4"
+  },
+  "devDependencies": {
+    "@acme/i18n": "workspace:~",
+    "@acme/typescript-config": "workspace:~",
+    "@biomejs/biome": "~1.5.3",
+    "@lingui/cli": "~4.7.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.0.23",
+  "workspaces": ["apps/*", "packages/*", "services/*", "tooling/*"]
+}

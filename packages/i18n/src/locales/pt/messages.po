@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-02-08 13:16-0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: pt\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: gpt-po v1.0.11\n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: apps/web/src/app/(home)/page.tsx
+msgid "Active Now"
+msgstr "Ativo Agora"
+
+#: apps/web/src/app/(home)/page.tsx
+msgid "Dashboard"
+msgstr "Painel"
+
+#: apps/web/src/components/language-switch.tsx
+msgid "English"
+msgstr "Inglês"
+
+#: apps/web/src/components/language-switch.tsx
+msgid "Language Switch"
+msgstr "Troca de Idioma"
+
+#: apps/web/src/components/language-switch.tsx
+msgid "Portuguese"
+msgstr "Português"
+
+#: apps/web/src/app/(home)/page.tsx
+msgid "Sales"
+msgstr "Vendas"
+
+#: apps/web/src/app/(home)/page.tsx
+msgid "Subscriptions"
+msgstr "Assinaturas"
+
+#: apps/web/src/app/(home)/page.tsx
+msgid "Total Revenue"
+msgstr "Rendimento Total"
