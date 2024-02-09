@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "esModuleInterop": true,
+  },
+  "include": ["src/**/*.ts", "payload.config.ts"],
+  "exclude": ["node_modules"]
+}
