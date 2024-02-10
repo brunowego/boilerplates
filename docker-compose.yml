@@ -2,5 +2,42 @@
 version: '3'
 
 services:
+  postgres:
+    image: docker.io/library/postgres:15.1-alpine
+    volumes:
+      - type: volume
+        source: postgresql-data
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_DB:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+    ports:
+      - target: 5432
+        published: $POSTGRES_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+  tooljet:
+    image: docker.io/tooljet/tooljet-ce:v2.28.3
+    environment:
+      TOOLJET_HOST:
+      LOCKBOX_MASTER_KEY:
+      SECRET_KEY_BASE:
+      ORM_LOGGING: true
+      PG_HOST: postgres
+      PG_USER: $POSTGRES_USER
+      PG_PASS: $POSTGRES_PASSWORD
+      PG_DB: $POSTGRES_DB
+    command: npm run start:prod
+    ports:
+      - target: 3000
+        published: $TOOLJET_PORT
+        protocol: tcp
+    restart: unless-stopped
+    depends_on:
+      - postgres
 
 volumes:
+  postgresql-data:
+    driver: local
