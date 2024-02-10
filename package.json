@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "private": true,
+  "license": "COPYRIGHT",
+  "scripts": {
+    "compose:up": "docker compose up -d",
+    "compose:status": "docker compose ps",
+    "compose:restart": "docker compose restart",
+    "compose:down": "docker compose down",
+    "clean": "turbo clean",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "build": "turbo build",
+    "start": "turbo start"
+  },
+  "dependencies": {
+    "turbo": "~1.12.3"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:*"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.0.23",
+  "workspaces": ["apps/*", "packages/*", "services/*", "tooling/*"]
+}
