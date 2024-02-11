@@ -1,0 +1,19 @@
+---
+version: '3'
+
+services:
+  appsmith:
+    image: docker.io/appsmith/appsmith-ce:v1.10
+    volumes:
+      - type: volume
+        source: appsmith-stacks
+        target: /appsmith-stacks
+    ports:
+      - target: 80
+        published: $APPSMITH_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+volumes:
+  appsmith-stacks:
+    driver: local
