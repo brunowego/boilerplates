@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/db",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./orm": "./src/orm.ts",
+    "./schema": "./src/schemas/index.ts"
+  },
+  "scripts": {
+    "db:generate": "drizzle-kit generate:pg",
+    "db:migrate": "bun ./src/migrate.ts",
+    "db:seed": "bun ./src/seed.ts",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "drizzle-orm": "~0.29.3",
+    "pg": "~8.11.3",
+    "postgres": "~3.4.3",
+    "zod": "~3.22.4"
+  },
+  "devDependencies": {
+    "@acme/id": "workspace:*",
+    "@acme/typescript-config": "workspace:*",
+    "drizzle-kit": "~0.20.14"
+  }
+}
