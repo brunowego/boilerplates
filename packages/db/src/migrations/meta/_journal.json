@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1708348920500,
+      "tag": "0000_quiet_the_professor",
+      "breakpoints": true
+    }
+  ]
+}

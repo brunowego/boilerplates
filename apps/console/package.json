@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/console",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "scripts": {
+    "clean": "bunx rimraf ./{.next,.turbo}",
+    "dev": "next dev",
+    "lint": "next lint",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@acme/db": "workspace:~",
+    "@acme/id": "workspace:~",
+    "@acme/ui": "workspace:~",
+    "@hookform/resolvers": "~3.3.4",
+    "@lucia-auth/adapter-postgresql": "~3.1.0",
+    "@tanstack/react-query": "~5.21.7",
+    "@tanstack/react-query-devtools": "~5.21.7",
+    "@tanstack/react-query-next-experimental": "~5.21.7",
+    "arctic": "~1.1.6",
+    "axios": "~1.6.7",
+    "lucia": "~3.0.1",
+    "next": "14.1.0",
+    "next-themes": "~0.2.1",
+    "oslo": "~1.1.2",
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0",
+    "react-hook-form": "~7.50.1",
+    "zod": "~3.22.4"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:~",
+    "@types/node": "~20.11.19",
+    "@types/react": "~18.2.56",
+    "@types/react-dom": "~18.2.19",
+    "autoprefixer": "~10.4.17",
+    "postcss": "~8.4.35",
+    "tailwindcss": "~3.4.1",
+    "typescript": "~5.3.3"
+  }
+}
