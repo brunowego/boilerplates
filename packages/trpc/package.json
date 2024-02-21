@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/trpc",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@acme/auth": "workspace:*",
+    "@acme/db": "workspace:*",
+    "@acme/id": "workspace:*",
+    "@sindresorhus/slugify": "~2.2.1",
+    "@trpc/server": "~10.45.1",
+    "superjson": "~2.2.1",
+    "zod": "~3.22.4"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:*"
+  }
+}
