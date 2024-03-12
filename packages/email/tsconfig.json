@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  },
+  "include": ["emails/*.tsx"],
+  "exclude": ["node_modules"]
+}
