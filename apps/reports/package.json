@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/reports",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "type": "module",
+  "scripts": {
+    "sources": "evidence sources",
+    "dev": "evidence dev --open /",
+    "test": "evidence build",
+    "build": "evidence build",
+    "build:strict": "evidence build:strict",
+    "preview": "evidence preview"
+  },
+  "dependencies": {
+    "@evidence-dev/core-components": "^3.5.1",
+    "@evidence-dev/evidence": "^29.0.2",
+    "@evidence-dev/postgres": "^1.0.4"
+  },
+  "overrides": {
+    "jsonwebtoken": "9.0.0",
+    "trim@<0.0.3": ">0.0.3",
+    "sqlite3": "5.1.5"
+  }
+}

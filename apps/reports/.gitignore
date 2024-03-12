@@ -1,0 +1,4 @@
+/.evidence/template
+/build
+/node_modules
+/sources/*/*.options.yaml
