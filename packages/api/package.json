@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@acme/auth": "workspace:*",
+    "@acme/db": "workspace:*",
+    "@hono/zod-openapi": "~0.9.8",
+    "@hono/zod-validator": "~0.2.0",
+    "hono": "~4.1.0",
+    "zod": "~3.22.4"
+  }
+}
