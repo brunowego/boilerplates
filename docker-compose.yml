@@ -1,0 +1,62 @@
+---
+version: '3'
+
+services:
+  postgres:
+    image: docker.io/library/postgres:16.2-alpine
+    volumes:
+      - type: volume
+        source: postgresql-data
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_DB:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+    ports:
+      - target: 5432
+        published: $POSTGRES_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+  minio:
+    image: docker.io/minio/minio:RELEASE.2024-03-15T01-07-19Z
+    volumes:
+      - type: volume
+        source: minio-data
+        target: /data
+    environment:
+      MINIO_ROOT_USER:
+      MINIO_ROOT_PASSWORD:
+    command: server /data --console-address ':9001'
+    ports:
+      - target: 9000
+        published: $MINIO_PORT
+        protocol: tcp
+      - target: 9001
+        published: $MINIO_WEB_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+  minio-mc:
+    image: docker.io/minio/mc:RELEASE.2024-03-13T23-51-57Z
+    environment:
+      MINIO_ALIAS: acme
+      MINIO_ENDPOINT: http://minio:$MINIO_PORT
+      MINIO_ACCESS_KEY:
+      MINIO_SECRET_KEY:
+      MINIO_BUCKET:
+    entrypoint: >
+      /bin/sh -c "
+        sleep 5;
+        /usr/bin/mc config host add $${MINIO_ALIAS} $${MINIO_ENDPOINT} $${MINIO_ACCESS_KEY} $${MINIO_SECRET_KEY};
+        /usr/bin/mc mb $${MINIO_ALIAS}/$${MINIO_BUCKET};
+        /usr/bin/mc anonymous set public $${MINIO_ALIAS}/$${MINIO_BUCKET};
+      "
+    depends_on:
+      - minio
+
+volumes:
+  postgresql-data:
+    driver: local
+  minio-data:
+    driver: local
