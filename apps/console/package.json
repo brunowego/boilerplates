@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/console",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "scripts": {
+    "clean": "pnpx rimraf ./{.next,.turbo}",
+    "db:schema:create": "mikro-orm schema:create -r",
+    "db:migrate:up": "mikro-orm migration:up",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@acme/ui": "workspace:~",
+    "@medusajs/store": "~0.1.1",
+    "@mikro-orm/core": "5.9.7",
+    "@mikro-orm/migrations": "5.9.7",
+    "@mikro-orm/postgresql": "5.9.7",
+    "next": "14.1.4",
+    "next-themes": "~0.3.0",
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:~",
+    "@mikro-orm/cli": "5.9.7",
+    "@types/node": "~20.12.6",
+    "@types/react": "~18.2.75",
+    "@types/react-dom": "~18.2.24",
+    "autoprefixer": "~10.4.19",
+    "cssnano": "~6.1.2",
+    "postcss": "~8.4.38",
+    "tailwindcss": "~3.4.3",
+    "ts-node": "~10.9.2",
+    "typescript": "~5.4.4"
+  }
+}

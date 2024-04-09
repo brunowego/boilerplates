@@ -1,0 +1,15 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "pipeline": {
+    "db:schema:create": {
+      "cache": false
+    },
+    "db:migrate:up": {
+      "cache": false
+    },
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**"]
+    }
+  }
+}
