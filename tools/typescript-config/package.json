@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
