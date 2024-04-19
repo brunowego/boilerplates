@@ -1,0 +1,908 @@
+[
+  {
+    "id": 156,
+    "name": "Netherlands",
+    "iso3": "NLD",
+    "iso2": "NL",
+    "numeric_code": "528",
+    "phone_code": "31",
+    "capital": "Amsterdam",
+    "currency": "EUR",
+    "currency_name": "Euro",
+    "currency_symbol": "€",
+    "tld": ".nl",
+    "native": "Nederland",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Amsterdam",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "52.50000000",
+    "longitude": "5.75000000",
+    "emoji": "🇳🇱",
+    "emojiU": "U+1F1F3 U+1F1F1",
+    "flag": "./assets/flags/flag-netherlands_1f1f3-1f1f1.png",
+    "languages": ["Dutch", "Frisian", "Papiamento"],
+    "population": 17975000,
+    "cover_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Den_Haag_-_panoramio_-_Nikolai_Karaneschev.jpg/1280px-Den_Haag_-_panoramio_-_Nikolai_Karaneschev.jpg",
+    "about": "Netherlands, country located in northwestern Europe, also known as Holland. “Netherlands” means low-lying country; the name Holland (from Houtland, or “Wooded Land”) was originally given to one of the medieval cores of what later became the modern state and is still used for 2 of its 12 provinces (Noord-Holland and Zuid-Holland). A parliamentary democracy under a constitutional monarch, the kingdom includes its former colonies in the Lesser Antilles: Aruba, Bonaire, Curaçao, Saba, Sint Eustatius, and Sint Maarten. The capital is Amsterdam and the seat of government The Hague. The country is indeed low-lying and remarkably flat, with large expanses of lakes, rivers, and canals. Some 2,500 square miles (6,500 square km) of the Netherlands consist of reclaimed land, the result of a process of careful water management dating back to medieval times. Along the coasts, land was reclaimed from the sea, and, in the interior, lakes and marshes were drained, especially alongside the many rivers. All this new land was turned into polders, usually surrounded by dikes. Initially, man power and horsepower were used to drain the land, but they were later replaced by windmills, such as the mill network at Kinderdijk-Elshout, now a UNESCO World Heritage site. The largest water-control schemes were carried out in the second half of the 19th century and in the 20th century, when steam pumps and, later, electric or diesel pumps came into use."
+  },
+  {
+    "id": 177,
+    "name": "Portugal",
+    "iso3": "PRT",
+    "iso2": "PT",
+    "numeric_code": "620",
+    "phone_code": "351",
+    "capital": "Lisbon",
+    "currency": "EUR",
+    "currency_name": "Euro",
+    "currency_symbol": "€",
+    "tld": ".pt",
+    "native": "Portugal",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "timezones": [
+      {
+        "zoneName": "Atlantic/Azores",
+        "gmtOffset": -3600,
+        "gmtOffsetName": "UTC-01:00",
+        "abbreviation": "AZOT",
+        "tzName": "Azores Standard Time"
+      },
+      {
+        "zoneName": "Atlantic/Madeira",
+        "gmtOffset": 0,
+        "gmtOffsetName": "UTC±00",
+        "abbreviation": "WET",
+        "tzName": "Western European Time"
+      },
+      {
+        "zoneName": "Europe/Lisbon",
+        "gmtOffset": 0,
+        "gmtOffsetName": "UTC±00",
+        "abbreviation": "WET",
+        "tzName": "Western European Time"
+      }
+    ],
+    "latitude": "39.50000000",
+    "longitude": "-8.00000000",
+    "emoji": "🇵🇹",
+    "emojiU": "U+1F1F5 U+1F1F9",
+    "flag": "./assets/flags/flag-portugal_1f1f5-1f1f9.png",
+    "languages": ["Portuguese", "Mirandese"],
+    "population": 10296000,
+    "cover_image": "https://cdn.britannica.com/98/178098-050-9E076C05/dwellings-district-Ribeira-Portugal-Porto.jpg",
+    "about": ""
+  },
+  {
+    "id": 107,
+    "name": "Italy",
+    "iso3": "ITA",
+    "iso2": "IT",
+    "numeric_code": "380",
+    "phone_code": "39",
+    "capital": "Rome",
+    "currency": "EUR",
+    "currency_name": "Euro",
+    "currency_symbol": "€",
+    "tld": ".it",
+    "native": "Italia",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Rome",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "42.83333333",
+    "longitude": "12.83333333",
+    "emoji": "🇮🇹",
+    "emojiU": "U+1F1EE U+1F1F9",
+    "flag": "./assets/flags/flag-italy_1f1ee-1f1f9.png",
+    "languages": ["Italian"],
+    "population": 58983000,
+    "cover_image": "https://cdn.britannica.com/82/195482-050-2373E635/Amalfi-Italy.jpg",
+    "about": "Italy (Italian: Italia), officially the Italian Republic or the Republic of Italy, is a country in Southern and Western Europe. Located in the middle of the Mediterranean Sea, it consists of a peninsula delimited by the Alps and surrounded by several islands; its territory largely coincides with the homonymous geographical region. Italy shares land borders with France, Switzerland, Austria, Slovenia and the enclaved microstates of Vatican City and San Marino. It has a territorial exclave in Switzerland, Campione, and some islands in the African Plate. Italy covers an area of 301,230 km2 (116,310 sq mi), with a population of about 60 million. It is the third-most populous member state of the European Union, the sixth-most populous country in Europe, and the tenth-largest country in the continent by land area. Italy's capital and largest city is Rome. Italy was the native place of civilizations such as the Italic peoples and the Etruscans, while due to its central geographic location in Southern Europe and the Mediterranean, the country has also historically been home to myriad peoples and cultures, who immigrated to the peninsula throughout history. The Latins, native of central Italy, formed the Roman Kingdom in the 8th century BC, which eventually became a republic with a government of the Senate and the People. The Roman Republic initially conquered and assimilated its neighbours on the Italian peninsula, eventually expanding and conquering a large part of Europe, North Africa and Western Asia. By the first century BC, the Roman Empire emerged as the dominant power in the Mediterranean Basin and became a leading cultural, political and religious centre, inaugurating the Pax Romana, a period of more than 200 years during which Italy's law, technology, economy, art, and literature developed. During the Early Middle Ages, Italy endured the fall of the Western Roman Empire and the Barbarian Invasions, but by the 11th century, numerous city-states and maritime republics, mostly in the North, became prosperous through trade, commerce, and banking, laying the groundwork for modern capitalism. The Renaissance began in Italy and spread to the rest of Europe, bringing a renewed interest in humanism, science, exploration, and art. During the Middle Ages, Italian explorers discovered new routes to the Far East and the New World, helping to usher in the European Age of Discovery. However, centuries of rivalry and infighting between the Italian city-states, and the invasions of other European powers during the Italian Wars of the 15th and 16th centuries, left Italy politically fragmented. Italy's commercial and political power significantly waned during the 17th and 18th centuries with the decline of the Catholic Church and the increasing importance of trade routes that bypassed the Mediterranean. By the mid-19th century, rising Italian nationalism, along with other social, economic, and military events, led to a period of revolutionary political upheaval. After centuries of political and territorial divisions, Italy was almost entirely unified in 1861 following a war of independence, establishing the Kingdom of Italy. From the late 19th century to the early 20th century, Italy rapidly industrialised, mainly in the north, and acquired a colonial empire, while the south remained largely impoverished and excluded from industrialisation, fuelling a large and influential diaspora. Despite being one of the victorious allied powers in World War I, Italy entered a period of economic crisis and social turmoil, leading to the rise of the Italian fascist dictatorship in 1922. The participation of Italy in World War II on the Axis led to the Italian surrender to Allied powers and its occupation by Nazi Germany helped by Fascists, followed by the rise of the Italian Resistance and the subsequent Italian Civil War and liberation of Italy. After the war, the country abolished its monarchy, established a democratic unitary parliamentary republic, and enjoyed a prolonged economic boom, becoming a major advanced economy. Italy has the eighth-largest nominal GDP (third in the European Union) in the world, the ninth-largest national wealth and the third-largest central bank gold reserve. The country has been described as the ''least of the great powers'', and it has a significant role in regional and global economic, military, cultural, and diplomatic affairs. Italy is a founding and leading member of the European Union and a member of numerous international institutions, including the United Nations, NATO, the OECD, the G7, the Latin Union, the Schengen Area, and many more. The source of many inventions and discoveries, the country is considered a cultural superpower and has long been a global centre of art, music, literature, philosophy, science and technology, tourism and fashion, as well as having greatly influenced and contributed to diverse fields including cinema, cuisine, sports, jurisprudence, banking, and business. It has the world's largest number of World Heritage Sites (58), and is the world's fifth-most visited country."
+  },
+  {
+    "id": 75,
+    "name": "France",
+    "iso3": "FRA",
+    "iso2": "FR",
+    "numeric_code": "250",
+    "phone_code": "33",
+    "capital": "Paris",
+    "currency": "EUR",
+    "currency_name": "Euro",
+    "currency_symbol": "€",
+    "tld": ".fr",
+    "native": "France",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Paris",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "46.00000000",
+    "longitude": "2.00000000",
+    "emoji": "🇫🇷",
+    "emojiU": "U+1F1EB U+1F1F7",
+    "flag": "./assets/flags/flag-france_1f1eb-1f1f7.png",
+    "languages": ["French"],
+    "population": 66218000,
+    "cover_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/2560px-Louvre_Museum_Wikimedia_Commons.jpg",
+    "about": ""
+  },
+  {
+    "id": 207,
+    "name": "Spain",
+    "iso3": "ESP",
+    "iso2": "ES",
+    "numeric_code": "724",
+    "phone_code": "34",
+    "capital": "Madrid",
+    "currency": "EUR",
+    "currency_name": "Euro",
+    "currency_symbol": "€",
+    "tld": ".es",
+    "native": "España",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "timezones": [
+      {
+        "zoneName": "Africa/Ceuta",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      },
+      {
+        "zoneName": "Atlantic/Canary",
+        "gmtOffset": 0,
+        "gmtOffsetName": "UTC±00",
+        "abbreviation": "WET",
+        "tzName": "Western European Time"
+      },
+      {
+        "zoneName": "Europe/Madrid",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "40.00000000",
+    "longitude": "-4.00000000",
+    "emoji": "🇪🇸",
+    "emojiU": "U+1F1EA U+1F1F8",
+    "flag": "./assets/flags/flag-spain_1f1ea-1f1f8.png",
+    "population": 47900000,
+    "languages": ["Spanish"],
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 232,
+    "name": "United Kingdom",
+    "iso3": "GBR",
+    "iso2": "GB",
+    "numeric_code": "826",
+    "phone_code": "44",
+    "capital": "London",
+    "currency": "GBP",
+    "currency_name": "British pound",
+    "currency_symbol": "£",
+    "tld": ".uk",
+    "native": "United Kingdom",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/London",
+        "gmtOffset": 0,
+        "gmtOffsetName": "UTC±00",
+        "abbreviation": "GMT",
+        "tzName": "Greenwich Mean Time"
+      }
+    ],
+    "latitude": "54.00000000",
+    "longitude": "-2.00000000",
+    "emoji": "🇬🇧",
+    "emojiU": "U+1F1EC U+1F1E7",
+    "flag": "./assets/flags/flag-united-kingdom_1f1ec-1f1e7.png",
+    "languages": ["English", "Welsh", "Scottish Gaelic", "Irish"],
+    "population": 67879000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 182,
+    "name": "Russia",
+    "iso3": "RUS",
+    "iso2": "RU",
+    "numeric_code": "643",
+    "phone_code": "7",
+    "capital": "Moscow",
+    "currency": "RUB",
+    "currency_name": "Russian ruble",
+    "currency_symbol": "₽",
+    "tld": ".ru",
+    "native": "Россия",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "timezones": [
+      {
+        "zoneName": "Asia/Anadyr",
+        "gmtOffset": 43200,
+        "gmtOffsetName": "UTC+12:00",
+        "abbreviation": "ANAT",
+        "tzName": "Anadyr Time[4"
+      },
+      {
+        "zoneName": "Asia/Barnaul",
+        "gmtOffset": 25200,
+        "gmtOffsetName": "UTC+07:00",
+        "abbreviation": "KRAT",
+        "tzName": "Krasnoyarsk Time"
+      },
+      {
+        "zoneName": "Asia/Chita",
+        "gmtOffset": 32400,
+        "gmtOffsetName": "UTC+09:00",
+        "abbreviation": "YAKT",
+        "tzName": "Yakutsk Time"
+      },
+      {
+        "zoneName": "Asia/Irkutsk",
+        "gmtOffset": 28800,
+        "gmtOffsetName": "UTC+08:00",
+        "abbreviation": "IRKT",
+        "tzName": "Irkutsk Time"
+      },
+      {
+        "zoneName": "Asia/Kamchatka",
+        "gmtOffset": 43200,
+        "gmtOffsetName": "UTC+12:00",
+        "abbreviation": "PETT",
+        "tzName": "Kamchatka Time"
+      },
+      {
+        "zoneName": "Asia/Khandyga",
+        "gmtOffset": 32400,
+        "gmtOffsetName": "UTC+09:00",
+        "abbreviation": "YAKT",
+        "tzName": "Yakutsk Time"
+      },
+      {
+        "zoneName": "Asia/Krasnoyarsk",
+        "gmtOffset": 25200,
+        "gmtOffsetName": "UTC+07:00",
+        "abbreviation": "KRAT",
+        "tzName": "Krasnoyarsk Time"
+      },
+      {
+        "zoneName": "Asia/Magadan",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
+        "abbreviation": "MAGT",
+        "tzName": "Magadan Time"
+      },
+      {
+        "zoneName": "Asia/Novokuznetsk",
+        "gmtOffset": 25200,
+        "gmtOffsetName": "UTC+07:00",
+        "abbreviation": "KRAT",
+        "tzName": "Krasnoyarsk Time"
+      },
+      {
+        "zoneName": "Asia/Novosibirsk",
+        "gmtOffset": 25200,
+        "gmtOffsetName": "UTC+07:00",
+        "abbreviation": "NOVT",
+        "tzName": "Novosibirsk Time"
+      },
+      {
+        "zoneName": "Asia/Omsk",
+        "gmtOffset": 21600,
+        "gmtOffsetName": "UTC+06:00",
+        "abbreviation": "OMST",
+        "tzName": "Omsk Time"
+      },
+      {
+        "zoneName": "Asia/Sakhalin",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
+        "abbreviation": "SAKT",
+        "tzName": "Sakhalin Island Time"
+      },
+      {
+        "zoneName": "Asia/Srednekolymsk",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
+        "abbreviation": "SRET",
+        "tzName": "Srednekolymsk Time"
+      },
+      {
+        "zoneName": "Asia/Tomsk",
+        "gmtOffset": 25200,
+        "gmtOffsetName": "UTC+07:00",
+        "abbreviation": "MSD+3",
+        "tzName": "Moscow Daylight Time+3"
+      },
+      {
+        "zoneName": "Asia/Ust-Nera",
+        "gmtOffset": 36000,
+        "gmtOffsetName": "UTC+10:00",
+        "abbreviation": "VLAT",
+        "tzName": "Vladivostok Time"
+      },
+      {
+        "zoneName": "Asia/Vladivostok",
+        "gmtOffset": 36000,
+        "gmtOffsetName": "UTC+10:00",
+        "abbreviation": "VLAT",
+        "tzName": "Vladivostok Time"
+      },
+      {
+        "zoneName": "Asia/Yakutsk",
+        "gmtOffset": 32400,
+        "gmtOffsetName": "UTC+09:00",
+        "abbreviation": "YAKT",
+        "tzName": "Yakutsk Time"
+      },
+      {
+        "zoneName": "Asia/Yekaterinburg",
+        "gmtOffset": 18000,
+        "gmtOffsetName": "UTC+05:00",
+        "abbreviation": "YEKT",
+        "tzName": "Yekaterinburg Time"
+      },
+      {
+        "zoneName": "Europe/Astrakhan",
+        "gmtOffset": 14400,
+        "gmtOffsetName": "UTC+04:00",
+        "abbreviation": "SAMT",
+        "tzName": "Samara Time"
+      },
+      {
+        "zoneName": "Europe/Kaliningrad",
+        "gmtOffset": 7200,
+        "gmtOffsetName": "UTC+02:00",
+        "abbreviation": "EET",
+        "tzName": "Eastern European Time"
+      },
+      {
+        "zoneName": "Europe/Kirov",
+        "gmtOffset": 10800,
+        "gmtOffsetName": "UTC+03:00",
+        "abbreviation": "MSK",
+        "tzName": "Moscow Time"
+      },
+      {
+        "zoneName": "Europe/Moscow",
+        "gmtOffset": 10800,
+        "gmtOffsetName": "UTC+03:00",
+        "abbreviation": "MSK",
+        "tzName": "Moscow Time"
+      },
+      {
+        "zoneName": "Europe/Samara",
+        "gmtOffset": 14400,
+        "gmtOffsetName": "UTC+04:00",
+        "abbreviation": "SAMT",
+        "tzName": "Samara Time"
+      },
+      {
+        "zoneName": "Europe/Saratov",
+        "gmtOffset": 14400,
+        "gmtOffsetName": "UTC+04:00",
+        "abbreviation": "MSD",
+        "tzName": "Moscow Daylight Time+4"
+      },
+      {
+        "zoneName": "Europe/Ulyanovsk",
+        "gmtOffset": 14400,
+        "gmtOffsetName": "UTC+04:00",
+        "abbreviation": "SAMT",
+        "tzName": "Samara Time"
+      },
+      {
+        "zoneName": "Europe/Volgograd",
+        "gmtOffset": 14400,
+        "gmtOffsetName": "UTC+04:00",
+        "abbreviation": "MSK",
+        "tzName": "Moscow Standard Time"
+      }
+    ],
+    "latitude": "60.00000000",
+    "longitude": "100.00000000",
+    "emoji": "🇷🇺",
+    "emojiU": "U+1F1F7 U+1F1FA",
+    "flag": "./assets/flags/flag-russia_1f1f7-1f1fa.png",
+    "languages": ["Russian"],
+    "population": 144995000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 82,
+    "name": "Germany",
+    "iso3": "DEU",
+    "iso2": "DE",
+    "numeric_code": "276",
+    "phone_code": "49",
+    "capital": "Berlin",
+    "currency": "EUR",
+    "currency_name": "Euro",
+    "currency_symbol": "€",
+    "tld": ".de",
+    "native": "Deutschland",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Berlin",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      },
+      {
+        "zoneName": "Europe/Busingen",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "51.00000000",
+    "longitude": "9.00000000",
+    "emoji": "🇩🇪",
+    "emojiU": "U+1F1E9 U+1F1EA",
+    "flag": "./assets/flags/flag-germany_1f1e9-1f1ea.png",
+    "languages": ["German"],
+    "population": 85887000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 59,
+    "name": "Denmark",
+    "iso3": "DNK",
+    "iso2": "DK",
+    "numeric_code": "208",
+    "phone_code": "45",
+    "capital": "Copenhagen",
+    "currency": "DKK",
+    "currency_name": "Danish krone",
+    "currency_symbol": "Kr.",
+    "tld": ".dk",
+    "native": "Danmark",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Copenhagen",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "56.00000000",
+    "longitude": "10.00000000",
+    "emoji": "🇩🇰",
+    "emojiU": "U+1F1E9 U+1F1F0",
+    "flag": "./assets/flags/flag-denmark_1f1e9-1f1f0.png",
+    "languages": ["Danish", "German"],
+    "population": 5986000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 213,
+    "name": "Sweden",
+    "iso3": "SWE",
+    "iso2": "SE",
+    "numeric_code": "752",
+    "phone_code": "46",
+    "capital": "Stockholm",
+    "currency": "SEK",
+    "currency_name": "Swedish krona",
+    "currency_symbol": "kr",
+    "tld": ".se",
+    "native": "Sverige",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Stockholm",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "62.00000000",
+    "longitude": "15.00000000",
+    "emoji": "🇸🇪",
+    "emojiU": "U+1F1F8 U+1F1EA",
+    "flag": "./assets/flags/flag-sweden_1f1f8-1f1ea.png",
+    "languages": ["Swedish"],
+    "population": 10565000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 214,
+    "name": "Switzerland",
+    "iso3": "CHE",
+    "iso2": "CH",
+    "numeric_code": "756",
+    "phone_code": "41",
+    "capital": "Bern",
+    "currency": "CHF",
+    "currency_name": "Swiss franc",
+    "currency_symbol": "CHf",
+    "tld": ".ch",
+    "native": "Schweiz",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Zurich",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "47.00000000",
+    "longitude": "8.00000000",
+    "emoji": "🇨🇭",
+    "emojiU": "U+1F1E8 U+1F1ED",
+    "flag": "./assets/flags/flag-switzerland_1f1e8-1f1ed.png",
+    "languages": ["German", "French", "Italian", "Romansh"],
+    "population": 8864000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 74,
+    "name": "Finland",
+    "iso3": "FIN",
+    "iso2": "FI",
+    "numeric_code": "246",
+    "phone_code": "358",
+    "capital": "Helsinki",
+    "currency": "EUR",
+    "currency_name": "Euro",
+    "currency_symbol": "€",
+    "tld": ".fi",
+    "native": "Suomi",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Helsinki",
+        "gmtOffset": 7200,
+        "gmtOffsetName": "UTC+02:00",
+        "abbreviation": "EET",
+        "tzName": "Eastern European Time"
+      }
+    ],
+    "latitude": "64.00000000",
+    "longitude": "26.00000000",
+    "emoji": "🇫🇮",
+    "emojiU": "U+1F1EB U+1F1EE",
+    "flag": "./assets/flags/flag-finland_1f1eb-1f1ee.png",
+    "languages": ["Finnish", "Swedish"],
+    "population": 5571000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 105,
+    "name": "Ireland",
+    "iso3": "IRL",
+    "iso2": "IE",
+    "numeric_code": "372",
+    "phone_code": "353",
+    "capital": "Dublin",
+    "currency": "EUR",
+    "currency_name": "Euro",
+    "currency_symbol": "€",
+    "tld": ".ie",
+    "native": "Éire",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Dublin",
+        "gmtOffset": 0,
+        "gmtOffsetName": "UTC±00",
+        "abbreviation": "GMT",
+        "tzName": "Greenwich Mean Time"
+      }
+    ],
+    "latitude": "53.00000000",
+    "longitude": "-8.00000000",
+    "emoji": "🇮🇪",
+    "emojiU": "U+1F1EE U+1F1EA",
+    "flag": "./assets/flags/flag-ireland_1f1ee-1f1ea.png",
+    "languages": ["English", "Irish"],
+    "population": 5203000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 106,
+    "name": "Israel",
+    "iso3": "ISR",
+    "iso2": "IL",
+    "numeric_code": "376",
+    "phone_code": "972",
+    "capital": "Jerusalem",
+    "currency": "ILS",
+    "currency_name": "Israeli new shekel",
+    "currency_symbol": "₪",
+    "tld": ".il",
+    "native": "יִשְׂרָאֵל",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "timezones": [
+      {
+        "zoneName": "Asia/Jerusalem",
+        "gmtOffset": 7200,
+        "gmtOffsetName": "UTC+02:00",
+        "abbreviation": "IST",
+        "tzName": "Israel Standard Time"
+      }
+    ],
+    "latitude": "31.50000000",
+    "longitude": "34.75000000",
+    "emoji": "🇮🇱",
+    "emojiU": "U+1F1EE U+1F1F1",
+    "flag": "./assets/flags/flag-israel_1f1ee-1f1f1.png",
+    "languages": ["Hebrew", "Arabic"],
+    "population": 9153000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 14,
+    "name": "Australia",
+    "iso3": "AUS",
+    "iso2": "AU",
+    "numeric_code": "036",
+    "phone_code": "61",
+    "capital": "Canberra",
+    "currency": "AUD",
+    "currency_name": "Australian dollar",
+    "currency_symbol": "$",
+    "tld": ".au",
+    "native": "Australia",
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "timezones": [
+      {
+        "zoneName": "Antarctica/Macquarie",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
+        "abbreviation": "MIST",
+        "tzName": "Macquarie Island Station Time"
+      },
+      {
+        "zoneName": "Australia/Adelaide",
+        "gmtOffset": 37800,
+        "gmtOffsetName": "UTC+10:30",
+        "abbreviation": "ACDT",
+        "tzName": "Australian Central Daylight Saving Time"
+      },
+      {
+        "zoneName": "Australia/Brisbane",
+        "gmtOffset": 36000,
+        "gmtOffsetName": "UTC+10:00",
+        "abbreviation": "AEST",
+        "tzName": "Australian Eastern Standard Time"
+      },
+      {
+        "zoneName": "Australia/Broken_Hill",
+        "gmtOffset": 37800,
+        "gmtOffsetName": "UTC+10:30",
+        "abbreviation": "ACDT",
+        "tzName": "Australian Central Daylight Saving Time"
+      },
+      {
+        "zoneName": "Australia/Currie",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
+        "abbreviation": "AEDT",
+        "tzName": "Australian Eastern Daylight Saving Time"
+      },
+      {
+        "zoneName": "Australia/Darwin",
+        "gmtOffset": 34200,
+        "gmtOffsetName": "UTC+09:30",
+        "abbreviation": "ACST",
+        "tzName": "Australian Central Standard Time"
+      },
+      {
+        "zoneName": "Australia/Eucla",
+        "gmtOffset": 31500,
+        "gmtOffsetName": "UTC+08:45",
+        "abbreviation": "ACWST",
+        "tzName": "Australian Central Western Standard Time (Unofficial)"
+      },
+      {
+        "zoneName": "Australia/Hobart",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
+        "abbreviation": "AEDT",
+        "tzName": "Australian Eastern Daylight Saving Time"
+      },
+      {
+        "zoneName": "Australia/Lindeman",
+        "gmtOffset": 36000,
+        "gmtOffsetName": "UTC+10:00",
+        "abbreviation": "AEST",
+        "tzName": "Australian Eastern Standard Time"
+      },
+      {
+        "zoneName": "Australia/Lord_Howe",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
+        "abbreviation": "LHST",
+        "tzName": "Lord Howe Summer Time"
+      },
+      {
+        "zoneName": "Australia/Melbourne",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
+        "abbreviation": "AEDT",
+        "tzName": "Australian Eastern Daylight Saving Time"
+      },
+      {
+        "zoneName": "Australia/Perth",
+        "gmtOffset": 28800,
+        "gmtOffsetName": "UTC+08:00",
+        "abbreviation": "AWST",
+        "tzName": "Australian Western Standard Time"
+      },
+      {
+        "zoneName": "Australia/Sydney",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
+        "abbreviation": "AEDT",
+        "tzName": "Australian Eastern Daylight Saving Time"
+      }
+    ],
+    "latitude": "-27.00000000",
+    "longitude": "133.00000000",
+    "emoji": "🇦🇺",
+    "emojiU": "U+1F1E6 U+1F1FA",
+    "flag": "./assets/flags/flag-australia_1f1e6-1f1fa.png",
+    "languages": ["English"],
+    "population": 26231000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 15,
+    "name": "Austria",
+    "iso3": "AUT",
+    "iso2": "AT",
+    "numeric_code": "040",
+    "phone_code": "43",
+    "capital": "Vienna",
+    "currency": "EUR",
+    "currency_name": "Euro",
+    "currency_symbol": "€",
+    "tld": ".at",
+    "native": "Österreich",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Vienna",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "47.33333333",
+    "longitude": "13.33333333",
+    "emoji": "🇦🇹",
+    "emojiU": "U+1F1E6 U+1F1F9",
+    "flag": "./assets/flags/flag-austria_1f1e6-1f1f9.png",
+    "languages": ["German", "Hungarian", "Slovenian", "Croatian"],
+    "population": 9050000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 58,
+    "name": "Czech Republic",
+    "iso3": "CZE",
+    "iso2": "CZ",
+    "numeric_code": "203",
+    "phone_code": "420",
+    "capital": "Prague",
+    "currency": "CZK",
+    "currency_name": "Czech koruna",
+    "currency_symbol": "Kč",
+    "tld": ".cz",
+    "native": "Česká republika",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Prague",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "49.75000000",
+    "longitude": "15.50000000",
+    "emoji": "🇨🇿",
+    "emojiU": "U+1F1E8 U+1F1FF",
+    "flag": "./assets/flags/flag-czechia_1f1e8-1f1ff.png",
+    "languages": ["Czech"],
+    "population": 10527000,
+    "cover_image": "",
+    "about": ""
+  },
+  {
+    "id": 176,
+    "name": "Poland",
+    "iso3": "POL",
+    "iso2": "PL",
+    "numeric_code": "616",
+    "phone_code": "48",
+    "capital": "Warsaw",
+    "currency": "PLN",
+    "currency_name": "Polish złoty",
+    "currency_symbol": "zł",
+    "tld": ".pl",
+    "native": "Polska",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "timezones": [
+      {
+        "zoneName": "Europe/Warsaw",
+        "gmtOffset": 3600,
+        "gmtOffsetName": "UTC+01:00",
+        "abbreviation": "CET",
+        "tzName": "Central European Time"
+      }
+    ],
+    "latitude": "52.00000000",
+    "longitude": "20.00000000",
+    "emoji": "🇵🇱",
+    "emojiU": "U+1F1F5 U+1F1F1",
+    "flag": "./assets/flags/flag-poland_1f1f5-1f1f1.png",
+    "languages": ["Polish"],
+    "population": 37546000,
+    "cover_image": "",
+    "about": ""
+  }
+]

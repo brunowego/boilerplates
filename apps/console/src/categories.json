@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "name": "Food & Drinks",
+    "types": [
+      "Bakery",
+      "Bar",
+      "Restaurant",
+      "Restaurant & Bar",
+      "Cafe",
+      "Supermarket",
+      "Pizzeria",
+      "Fast Food",
+      "Ice Cream",
+      "Other"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Shopping",
+    "types": [
+      "Clothing",
+      "Shoes",
+      "Accessories",
+      "Jewelry",
+      "Bags",
+      "Electronics",
+      "Books",
+      "Toys",
+      "Mall",
+      "Market",
+      "Other"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Beauty & Health",
+    "types": [
+      "Hair Salon",
+      "Spa",
+      "Beauty Salon",
+      "Tattoo",
+      "Pharmacy",
+      "Other"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Sports & Outdoors",
+    "types": ["Gym", "Yoga", "Pilates", "Other"]
+  },
+  {
+    "id": 5,
+    "name": "Travel & Transportation",
+    "types": [
+      "Hotel",
+      "Hostel",
+      "Airport",
+      "Bus Station",
+      "Train Station",
+      "Other"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Entertainment",
+    "types": [
+      "Cinema",
+      "Theater",
+      "Museum",
+      "Park",
+      "Zoo",
+      "Spa",
+      "Stadium",
+      "Casino",
+      "Amusement Park",
+      "Water Park",
+      "National Park",
+      "Other"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Religious",
+    "types": ["Church", "Synagogue", "Mosque", "Other"]
+  },
+  {
+    "id": 8,
+    "name": "Education",
+    "types": ["School", "University", "College", "Library", "Other"]
+  },
+  {
+    "id": 9,
+    "name": "Finance",
+    "types": ["Bank", "ATM", "Other"]
+  },
+  {
+    "id": 10,
+    "name": "Government",
+    "types": ["City Hall", "Embassy", "Other"]
+  },
+  {
+    "id": 11,
+    "name": "Services",
+    "types": [
+      "Post Office",
+      "Police",
+      "Fire Station",
+      "Hospital",
+      "Dentist",
+      "Doctor",
+      "Veterinary",
+      "Other"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Historical Sites",
+    "types": [
+      "Monument",
+      "Castle",
+      "Ruins",
+      "Building",
+      "Park",
+      "University",
+      "Library",
+      "Church",
+      "Synagogue",
+      "Palace",
+      "Temple",
+      "Cathedral",
+      "Nature",
+      "Abbey",
+      "Mountain",
+      "Monastery",
+      "Square",
+      "Other"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Nature",
+    "types": [
+      "Beach",
+      "Mountain",
+      "Lake",
+      "River",
+      "Waterfall",
+      "Forest",
+      "Other"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Accommodation",
+    "types": ["Hotel", "Hostel", "Other"]
+  }
+]
