@@ -1,11 +1,14 @@
 import { api, axios } from '@/lib/api'
 
-type UploadProps = {
+type FileUploadProps = {
   file: File
   onProgress?: (progress: number) => void
 }
 
-export default async function upload({ file, onProgress }: UploadProps) {
+export default async function FileUpload({
+  file,
+  onProgress,
+}: FileUploadProps) {
   try {
     const { url, key } = await api
       .post('/upload', { filename: file.name })

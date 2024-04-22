@@ -8,9 +8,7 @@ import { type ReactNode, useState, useCallback } from 'react'
 
 import toast from '@acme/ui/lib/toast'
 
-import upload from '@/lib/upload'
-
-// import upload from '@/lib/upload'
+import FileUpload from '@/lib/file-upload'
 
 type FileInfo = {
   file: File
@@ -56,7 +54,7 @@ export default function Upload({
       const urls = []
 
       for (const file of acceptedFiles) {
-        const url = await upload({
+        const url = await FileUpload({
           file,
           onProgress: (progress) => {
             setFiles((prevFiles) =>

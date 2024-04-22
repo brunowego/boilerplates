@@ -6,7 +6,7 @@ import { generateId } from '@acme/id'
 
 import { s3Client, PutObjectCommand } from '@/lib/s3'
 
-export const fileSchema = z.object({
+const fileSchema = z.object({
   filename: z.string().min(1),
 })
 
