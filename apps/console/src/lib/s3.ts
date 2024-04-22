@@ -1,5 +1,5 @@
-import { S3Client } from '@aws-sdk/client-s3'
 import {
+  S3Client,
   GetObjectCommand,
   PutObjectCommand,
   DeleteObjectCommand,
@@ -7,12 +7,12 @@ import {
 } from '@aws-sdk/client-s3'
 
 const s3Client = new S3Client({
-  region: process.env.AWS_DEFAULT_REGION,
-  endpoint: process.env.AWS_ENDPOINT_URL,
+  region: process.env.STORAGE_DEFAULT_REGION,
+  endpoint: process.env.STORAGE_ENDPOINT_URL,
   forcePathStyle: true,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID ?? '',
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ?? '',
+    accessKeyId: process.env.STORAGE_ACCESS_KEY_ID ?? '',
+    secretAccessKey: process.env.STORAGE_SECRET_ACCESS_KEY ?? '',
   },
 })
 
