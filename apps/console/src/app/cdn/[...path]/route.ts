@@ -16,7 +16,7 @@ export async function GET(
     const response = await s3Client
       .send(
         new GetObjectCommand({
-          Bucket: process.env.S3_BUCKET_NAME,
+          Bucket: process.env.STORAGE_BUCKET_NAME,
           Key,
         }),
       )

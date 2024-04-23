@@ -29,7 +29,7 @@ export async function POST(req: Request): Promise<Response> {
     const url = await getSignedUrl(
       s3Client,
       new PutObjectCommand({
-        Bucket: process.env.S3_BUCKET_NAME,
+        Bucket: process.env.STORAGE_BUCKET_NAME,
         Key: key,
       }),
       { expiresIn: 60 },
