@@ -6,9 +6,9 @@
   "license": "COPYRIGHT",
   "scripts": {
     "clean": "pnpx rimraf ./{.next,.turbo}",
-    "dev": "next dev",
+    "dev": "next dev -p ${PORT-13000}",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p ${PORT-13000}"
   },
   "dependencies": {
     "@acme/db": "workspace:~",
