@@ -24,7 +24,7 @@
     "drizzle-zod": "~0.5.1",
     "pg": "~8.11.5",
     "postgres": "~3.4.4",
-    "zod": "~3.22.5"
+    "zod": "~3.23.3"
   },
   "devDependencies": {
     "@acme/id": "workspace:~",
