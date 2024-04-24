@@ -1,3 +1,5 @@
+'use client'
+
 import {
   type DropzoneInputProps,
   type DropzoneRootProps,
@@ -34,7 +36,7 @@ type UploadProps = {
   render: (props: RenderProps) => ReactNode
 }
 
-export default function Upload({
+export default function ImageUpload({
   value,
   onChange,
   render,

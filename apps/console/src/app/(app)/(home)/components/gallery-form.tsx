@@ -22,7 +22,7 @@ import Gauge from '@acme/ui/components/gauge'
 
 import { api } from '@/lib/api'
 import HookFormDevtool from '@/components/hookform-devtool'
-import Upload from '@/components/upload'
+import ImageUpload from '@/components/image-upload'
 
 type Gallery = {
   images: string[]
@@ -126,7 +126,7 @@ export default function SignUpForm({
                 </FormLabel>
 
                 <div className='grid grid-cols-2 gap-3 lg:grid-cols-4 md:grid-cols-3'>
-                  <Upload
+                  <ImageUpload
                     accept={{ 'image/*': [] }}
                     maxFiles={6}
                     notAcceptedErrorMessage='Only images are allowed'
