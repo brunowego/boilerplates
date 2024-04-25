@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1713979391621,
+      "tag": "0000_first_senator_kelly",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1714044234361,
+      "tag": "0001_happy_swordsman",
+      "breakpoints": true
+    }
+  ]
+}

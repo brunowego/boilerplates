@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@acme/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "tailwind.config.ts"],
+  "exclude": ["dist", "node_modules"]
+}
