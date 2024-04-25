@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { typographyVariants } from '@acme/ui/components/typography'
 import { buttonVariants } from '@acme/ui/components/button'
-import { GitHub, Google } from '@acme/ui/components/logo'
+import { GitHub, Google, LinkedIn } from '@acme/ui/components/logo'
 import {
   Accordion,
   AccordionItem,
@@ -79,6 +79,18 @@ export default function SignUpPage(): JSX.Element {
                 <Google className='size-6' />
 
                 <span>Continue with Google</span>
+              </Link>
+
+              <Link
+                className={buttonVariants({
+                  className: 'space-x-2',
+                  size: 'lg',
+                })}
+                href='/sign-in/linkedin'
+              >
+                <LinkedIn className='size-6' />
+
+                <span>Continue with LinkedIn</span>
               </Link>
             </div>
           </AccordionContent>

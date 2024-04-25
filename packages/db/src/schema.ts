@@ -28,14 +28,12 @@ export const usersTable = pgTable(
   {
     id: varchar('id').primaryKey().$defaultFn(generateId),
     email: varchar('email').notNull().unique(),
-    emailVerified: boolean('email_verified').notNull().default(false),
+    emailVerified: boolean('email_verified').default(false).notNull(),
     // username: varchar('username').unique().notNull(),
     firstName: varchar('first_name').notNull(),
     lastName: varchar('last_name'),
     hashedPassword: varchar('hashed_password'),
-    role: varchar('role', { enum: ['USER', 'ADMIN'] })
-      .notNull()
-      .default('USER'),
+    role: userRoleEnum('role').default('customer').notNull(),
     // lastSignInAt: timestamp('last_sign_in_at'),
     picture: varchar('picture'),
     githubId: integer('github_id').unique(),

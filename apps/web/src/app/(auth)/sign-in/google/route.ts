@@ -11,17 +11,17 @@ export async function GET(): Promise<Response> {
   })
 
   cookies().set('google_oauth_state', state, {
-    path: '/',
     httpOnly: true,
     maxAge: 60 * 10,
+    path: '/',
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production',
   })
 
   cookies().set('google_oauth_code_verifier', codeVerifier, {
-    path: '/',
     httpOnly: true,
     maxAge: 60 * 10,
+    path: '/',
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production',
   })

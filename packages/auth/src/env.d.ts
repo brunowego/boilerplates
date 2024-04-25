@@ -8,5 +8,9 @@ declare namespace NodeJS {
     GOOGLE_CLIENT_ID: string
     GOOGLE_CLIENT_SECRET: string
     GOOGLE_REDIRECT_URI: string
+
+    LINKEDIN_CLIENT_ID: string
+    LINKEDIN_CLIENT_SECRET: string
+    LINKEDIN_REDIRECT_URI: string
   }
 }
