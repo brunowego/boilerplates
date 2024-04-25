@@ -53,4 +53,23 @@ const Google = (props: LogoProps) => (
   </svg>
 )
 
-export { LogoMark, GitHub, Google }
+const LinkedIn = (props: LogoProps) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    viewBox='0 0 24 24'
+    fill='currentColor'
+    {...props}
+  >
+    <title>LinkedIn</title>
+    <path
+      fill='#0A66C2'
+      d='M20.518 2.001H3.476A1.46 1.46 0 0 0 2 3.443v17.114A1.46 1.46 0 0 0 3.476 22h17.042c.808.01 1.47-.636 1.482-1.443V3.442A1.463 1.463 0 0 0 20.518 2'
+    />
+    <path
+      fill='#fff'
+      d='M19.04 19.041h-2.962v-4.64c0-1.107-.02-2.532-1.542-2.532-1.543 0-1.78 1.206-1.78 2.45v4.722H9.794V9.497h2.845v1.305h.04a3.12 3.12 0 0 1 2.807-1.542c3.003 0 3.557 1.976 3.557 4.546zM6.45 8.193a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44m1.48 10.848H4.965V9.497H7.93z'
+    />
+  </svg>
+)
+
+export { LogoMark, GitHub, Google, LinkedIn }

@@ -40,6 +40,7 @@ export const usersTable = pgTable(
     picture: varchar('picture'),
     githubId: integer('github_id').unique(),
     googleId: varchar('google_id').unique(),
+    linkedinId: varchar('linkedin_id').unique(),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     // createdBy: varchar('created_by'),
     // modifiedAt: timestamp('modified_at'),
