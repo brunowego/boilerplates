@@ -5,16 +5,22 @@ import Link from 'next/link'
 
 import { LogoMark } from '@acme/ui/components/logo'
 
+import {
+  Layout,
+  LayoutHeader,
+  LayoutContent,
+  LayoutAside,
+} from '@/components/layout'
+import LogOut from '@/components/log-out'
 import ThemeToggle from '@/components/theme-toggle'
 
 import { getSession } from './actions'
-import LogOut from '@/components/log-out'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
 }
 
-interface AppLayoutProps {
+type AppLayoutProps = {
   children: ReactNode
 }
 
@@ -28,10 +34,8 @@ export default async function AppLayout({
   }
 
   return (
-    <div className='flex h-screen 2xl:container'>
-      <div className='-translate-x-full fixed top-0 bottom-0 w-full bg-secondary' />
-
-      <header className='fixed inset-y-0 flex w-16 flex-col gap-y-2 bg-secondary px-2 py-4 text-center'>
+    <Layout>
+      <LayoutHeader>
         <Link className='self-center py-1' href='/'>
           <LogoMark className='size-8' />
         </Link>
@@ -39,11 +43,11 @@ export default async function AppLayout({
         <LogOut className='mt-auto' />
 
         <ThemeToggle className='self-center' />
-      </header>
+      </LayoutHeader>
 
-      <main className='w-full pl-16'>{children}</main>
+      <LayoutContent>{children}</LayoutContent>
 
-      <aside className='w-96 shrink-0 border-l' />
-    </div>
+      <LayoutAside />
+    </Layout>
   )
 }
