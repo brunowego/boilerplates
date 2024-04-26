@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { LogoMark } from '@acme/ui/components/logo'
 import { typographyVariants } from '@acme/ui/components/typography'
 
+import { Layout, LayoutContent, LayoutHeader } from '@/components/layout'
 import ThemeToggle from '@/components/theme-toggle'
 
 import { getSession } from './actions'
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title: 'Dashboard',
 }
 
-interface AuthLayoutProps {
+type AuthLayoutProps = {
   children: ReactNode
 }
 
@@ -28,18 +29,18 @@ export default async function AuthLayout({
   }
 
   return (
-    <div className='flex h-screen 2xl:container'>
-      <header className='fixed inset-y-0 flex w-16 flex-col px-2 py-4 text-center'>
+    <Layout>
+      <LayoutHeader infinite={false}>
         <Link className='self-center py-1' href='/'>
           <LogoMark className='size-8' />
         </Link>
 
         <ThemeToggle className='mt-auto self-center' />
-      </header>
+      </LayoutHeader>
 
-      <main className='w-full pl-16'>
-        <div className='flex min-h-screen items-center justify-center overflow-hidden p-6 md:p-0'>
-          <div className='m-auto flex w-full max-w-md flex-col space-y-6 p-4 lg:px-5'>
+      <LayoutContent>
+        <article className='flex min-h-screen items-center justify-center overflow-hidden p-6 md:p-0'>
+          <section className='m-auto flex w-full max-w-md flex-col space-y-6 p-4 lg:px-5'>
             {children}
 
             <p className={typographyVariants({ size: 'sm', variant: 'muted' })}>
@@ -54,9 +55,9 @@ export default async function AuthLayout({
               </Link>
               .
             </p>
-          </div>
-        </div>
-      </main>
-    </div>
+          </section>
+        </article>
+      </LayoutContent>
+    </Layout>
   )
 }
