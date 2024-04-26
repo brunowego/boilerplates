@@ -1,5 +1,5 @@
 import cn from '@acme/ui/lib/cn'
-import type { HTMLAttributes, ReactNode } from 'react'
+import type { HTMLAttributes } from 'react'
 
 type PageProps = HTMLAttributes<HTMLElement>
 

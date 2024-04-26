@@ -1,6 +1,6 @@
 import type { JSX } from 'react'
 
-interface TailwindIndicatorProps {
+type TailwindIndicatorProps = {
   env?: string
 }
 

@@ -1,5 +1,7 @@
 'use client'
 
+import type { JSX } from 'react'
+
 import useTheme from '@acme/ui/hooks/use-theme'
 import Button from '@acme/ui/components/button'
 import { Sun, Moon } from '@acme/ui/components/icon'
@@ -8,7 +10,9 @@ type ThemeToggleProps = {
   className?: string
 }
 
-export default function ThemeToggle({ className }: ThemeToggleProps) {
+export default function ThemeToggle({
+  className,
+}: ThemeToggleProps): JSX.Element {
   const { setTheme, theme } = useTheme()
 
   return (
