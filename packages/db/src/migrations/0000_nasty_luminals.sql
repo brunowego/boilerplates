@@ -24,14 +24,16 @@ CREATE TABLE IF NOT EXISTS "users" (
 	"first_name" varchar NOT NULL,
 	"last_name" varchar,
 	"hashed_password" varchar,
-	"role" varchar DEFAULT 'USER' NOT NULL,
+	"role" "user_role" DEFAULT 'customer' NOT NULL,
 	"picture" varchar,
 	"github_id" integer,
 	"google_id" varchar,
+	"linkedin_id" varchar,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	CONSTRAINT "users_email_unique" UNIQUE("email"),
 	CONSTRAINT "users_github_id_unique" UNIQUE("github_id"),
-	CONSTRAINT "users_google_id_unique" UNIQUE("google_id")
+	CONSTRAINT "users_google_id_unique" UNIQUE("google_id"),
+	CONSTRAINT "users_linkedin_id_unique" UNIQUE("linkedin_id")
 );
 --> statement-breakpoint
 CREATE INDEX IF NOT EXISTS "users_email_index" ON "users" ("email");--> statement-breakpoint

@@ -1,5 +1,5 @@
 {
-  "id": "964f9397-6eb9-4bad-a3e2-8c0ea0e25eb1",
+  "id": "dc82826f-035d-4016-b74e-0d07a4ca65e2",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -137,10 +137,10 @@
         },
         "role": {
           "name": "role",
-          "type": "varchar",
+          "type": "user_role",
           "primaryKey": false,
           "notNull": true,
-          "default": "'USER'"
+          "default": "'customer'"
         },
         "picture": {
           "name": "picture",
@@ -156,6 +156,12 @@
         },
         "google_id": {
           "name": "google_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "linkedin_id": {
+          "name": "linkedin_id",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
@@ -199,6 +205,13 @@
           "nullsNotDistinct": false,
           "columns": [
             "google_id"
+          ]
+        },
+        "users_linkedin_id_unique": {
+          "name": "users_linkedin_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "linkedin_id"
           ]
         }
       }

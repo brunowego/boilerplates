@@ -63,7 +63,7 @@ export const userRelations = relations(usersTable, ({ many }) => ({
 }))
 
 export const sessionTable = pgTable(tableNames.sessions, {
-  id: varchar('id').primaryKey().$defaultFn(generateId),
+  id: varchar('id').primaryKey(),
   userId: varchar('user_id')
     .notNull()
     .references(() => usersTable.id, {

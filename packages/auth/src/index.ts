@@ -1,14 +1,11 @@
-import { PostgresJsAdapter } from '@lucia-auth/adapter-postgresql'
+import { DrizzlePostgreSQLAdapter } from '@lucia-auth/adapter-drizzle'
 import { type SessionCookieOptions, Lucia, TimeSpan } from 'lucia'
 
-import { client } from '@acme/db'
-import { tableNames } from '@acme/db/schema'
+import { db } from '@acme/db'
+import { sessionTable, usersTable } from '@acme/db/schema'
 import type { Session, User } from '@acme/db/types'
 
-const adapter = new PostgresJsAdapter(client, {
-  user: tableNames.users,
-  session: tableNames.sessions,
-})
+const adapter = new DrizzlePostgreSQLAdapter(db, sessionTable, usersTable)
 
 const sessionCookieOptions: SessionCookieOptions = {
   expires: true,
