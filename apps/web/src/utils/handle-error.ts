@@ -1,6 +1,9 @@
 import { isAxiosError } from '@/lib/api'
 
-export default function handleError(err: unknown, defaultMessage?: string) {
+export default function handleError(
+  err: unknown,
+  defaultMessage?: string,
+): string {
   if (isAxiosError(err)) {
     if (typeof err.response?.data === 'string') {
       return err.response.data
