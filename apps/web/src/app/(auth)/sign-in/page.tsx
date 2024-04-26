@@ -33,6 +33,7 @@ export default function SignInPage(): JSX.Element {
           <Link
             className='text-foreground underline underline-offset-4'
             href='/sign-up'
+            prefetch={false}
           >
             Sign up
           </Link>{' '}
@@ -75,6 +76,7 @@ export default function SignInPage(): JSX.Element {
                   size: 'lg',
                 })}
                 href='/sign-in/google'
+                prefetch={false}
               >
                 <Google className='size-6' />
 
@@ -87,6 +89,7 @@ export default function SignInPage(): JSX.Element {
                   size: 'lg',
                 })}
                 href='/sign-in/linkedin'
+                prefetch={false}
               >
                 <LinkedIn className='size-6' />
 

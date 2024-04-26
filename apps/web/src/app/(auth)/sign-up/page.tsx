@@ -43,6 +43,7 @@ export default function SignUpPage(): JSX.Element {
       <Link
         className={buttonVariants({ className: 'space-x-2', size: 'lg' })}
         href='/sign-in/github'
+        prefetch={false}
       >
         <GitHub className='size-6' />
 
@@ -75,6 +76,7 @@ export default function SignUpPage(): JSX.Element {
                   size: 'lg',
                 })}
                 href='/sign-in/google'
+                prefetch={false}
               >
                 <Google className='size-6' />
 
@@ -87,6 +89,7 @@ export default function SignUpPage(): JSX.Element {
                   size: 'lg',
                 })}
                 href='/sign-in/linkedin'
+                prefetch={false}
               >
                 <LinkedIn className='size-6' />
 
