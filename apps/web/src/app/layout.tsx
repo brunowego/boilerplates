@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Basic boilerplate for Next.js.',
 }
 
-interface RootLayoutProps {
+type RootLayoutProps = {
   children: ReactNode
 }
 
