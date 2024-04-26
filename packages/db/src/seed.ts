@@ -1,6 +1,8 @@
 import { z } from 'zod'
-import { insertUserSchema, usersTable } from './schema'
 import { faker } from '@faker-js/faker'
+
+import { insertUserSchema } from './schemas'
+import { usersTable } from './schema'
 import { db } from './db'
 
 const extendedUserSchema = insertUserSchema.merge(
@@ -21,7 +23,7 @@ async function seedUsers(): Promise<void> {
     users.push({
       firstName,
       lastName,
-      username: faker.internet.userName({ firstName, lastName }).toLowerCase(),
+      // username: faker.internet.userName({ firstName, lastName }).toLowerCase(),
       email: faker.internet.email({ firstName, lastName }).toLowerCase(),
       createdAt: faker.date.between({
         from: new Date('2020-01-01'),
