@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/db",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./constants": "./src/constants.ts",
+    "./orm": "./src/orm.ts",
+    "./queries": "./src/queries.ts",
+    "./schema": "./src/schema.ts",
+    "./schemas": "./src/schemas.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "db:generate": "drizzle-kit generate:pg",
+    "db:migrate": "bun ./src/migrate.ts",
+    "db:seed": "bun ./src/seed.ts",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "drizzle-orm": "~0.30.9",
+    "drizzle-valibot": "~0.2.0",
+    "pg": "~8.11.5",
+    "postgres": "~3.4.4",
+    "valibot": "~0.30.0"
+  },
+  "devDependencies": {
+    "@acme/id": "workspace:~",
+    "@acme/typescript-config": "workspace:~",
+    "@faker-js/faker": "~8.4.1",
+    "bun": "~1.1.4",
+    "drizzle-kit": "~0.20.17"
+  }
+}
