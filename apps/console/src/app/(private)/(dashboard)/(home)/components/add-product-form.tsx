@@ -35,7 +35,7 @@ export default function AddProductForm({
       mode: 'onChange',
       defaultValues: {
         title: '',
-        description: '',
+        tags: [],
       },
       resolver: zodResolver(formSchema),
     })
@@ -60,6 +60,22 @@ export default function AddProductForm({
             render={({ field }) => (
               <FormItem className='max-w-md'>
                 <FormLabel>Title</FormLabel>
+
+                <FormControl>
+                  <Input className='h-12' type='text' {...field} />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={control}
+            name='tags'
+            render={({ field }) => (
+              <FormItem className='max-w-md'>
+                <FormLabel>Tags</FormLabel>
 
                 <FormControl>
                   <Input className='h-12' type='text' {...field} />
