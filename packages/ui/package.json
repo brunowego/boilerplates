@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/ui",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./components/*": "./src/components/*.tsx",
+    "./hooks/*": "./src/hooks/*.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./providers/*": "./src/providers/*.ts",
+    "./styles.css": "./src/styles/index.css",
+    "./tailwind.config": "./tailwind.config.ts"
+  },
+  "scripts": {
+    "clean": "pnpx rimraf ./.turbo"
+  },
+  "dependencies": {
+    "@acme/tailwind-config": "workspace:~",
+    "@hookform/resolvers": "~3.3.4",
+    "@radix-ui/react-label": "~2.0.2",
+    "@radix-ui/react-slot": "~1.0.2",
+    "class-variance-authority": "~0.7.0",
+    "clsx": "~2.1.1",
+    "lucide-react": "~0.376.0",
+    "next-themes": "~0.3.0",
+    "react-hook-form": "~7.51.3",
+    "tailwind-merge": "~2.3.0",
+    "tailwindcss": "~3.4.3",
+    "tailwindcss-animate": "~1.0.7",
+    "zod": "~3.23.4"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:~",
+    "@types/node": "~20.12.7",
+    "@types/react": "~18.3.1",
+    "@types/react-dom": "~18.3.0",
+    "react": "~18.3.1",
+    "typescript": "~5.4.5"
+  }
+}
