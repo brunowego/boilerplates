@@ -2,7 +2,6 @@
 
 import type { HTMLAttributes, JSX } from 'react'
 
-import { insertProductSchema } from '@/schemas'
 import { type z, zodResolver } from '@acme/ui/lib/zod'
 import { useForm, type SubmitHandler } from '@acme/ui/hooks/use-form'
 import {
@@ -17,6 +16,9 @@ import Input from '@acme/ui/components/input'
 import Button from '@acme/ui/components/button'
 import Icon from '@acme/ui/components/icon'
 import cn from '@acme/ui/lib/cn'
+
+import { insertProductSchema } from '@/schemas'
+import HookFormDevtool from '@/components/hookform-devtool'
 
 const formSchema = insertProductSchema
 
@@ -44,84 +46,92 @@ export default function AddProductForm({
   }
 
   return (
-    <Form {...{ register, formState, reset, handleSubmit, control, ...form }}>
-      <form
-        className={cn('grid space-y-2', className)}
-        onSubmit={handleSubmit(onSubmit)}
-        {...props}
-      >
-        <div className='grid grid-cols-2 gap-2'>
-          <FormField
-            control={control}
-            name='title'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Title</FormLabel>
+    <>
+      <HookFormDevtool control={control} />
 
-                <FormControl>
-                  <Input className='h-12' type='text' {...field} />
-                </FormControl>
+      <Form {...{ register, formState, reset, handleSubmit, control, ...form }}>
+        <form
+          className={cn('grid space-y-2', className)}
+          onSubmit={handleSubmit(onSubmit)}
+          {...props}
+        >
+          <div className='grid grid-cols-2 gap-2'>
+            <FormField
+              control={control}
+              name='title'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Title</FormLabel>
 
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+                  <FormControl>
+                    <Input className='h-12' type='text' {...field} />
+                  </FormControl>
 
-          <FormField
-            control={control}
-            name='handle'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Handle</FormLabel>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-                <FormControl>
-                  <div className='relative'>
-                    <Input className='h-12 pl-[150px]' type='text' {...field} />
+            <FormField
+              control={control}
+              name='handle'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Handle</FormLabel>
 
-                    <span className='absolute inset-y-0 left-4 flex items-center text-muted-foreground text-sm'>
-                      https://acme.com/
-                    </span>
-                  </div>
-                </FormControl>
+                  <FormControl>
+                    <div className='relative'>
+                      <Input
+                        className='h-12 pl-[150px]'
+                        type='text'
+                        {...field}
+                      />
 
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+                      <span className='absolute inset-y-0 left-4 flex items-center text-muted-foreground text-sm'>
+                        https://acme.com/
+                      </span>
+                    </div>
+                  </FormControl>
 
-          <FormField
-            control={control}
-            name='price'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Price</FormLabel>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-                <FormControl>
-                  <Input className='h-12' type='text' {...field} />
-                </FormControl>
+            <FormField
+              control={control}
+              name='price'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Price</FormLabel>
 
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
+                  <FormControl>
+                    <Input className='h-12' type='text' {...field} />
+                  </FormControl>
 
-        <div className='flex'>
-          <Button
-            className='ml-auto'
-            disabled={!formState.isDirty || !formState.isValid}
-            size='lg'
-            type='submit'
-            variant='secondary'
-          >
-            {formState.isSubmitting ? (
-              <Icon.loader2 className='size-5 animate-spin' />
-            ) : (
-              <span>Add</span>
-            )}
-          </Button>
-        </div>
-      </form>
-    </Form>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          <div className='flex'>
+            <Button
+              className='ml-auto'
+              disabled={!formState.isDirty || !formState.isValid}
+              size='lg'
+              type='submit'
+              variant='secondary'
+            >
+              {formState.isSubmitting ? (
+                <Icon.loader2 className='size-5 animate-spin' />
+              ) : (
+                <span>Add</span>
+              )}
+            </Button>
+          </div>
+        </form>
+      </Form>
+    </>
   )
 }
