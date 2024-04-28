@@ -14,7 +14,7 @@ import {
 } from '@acme/ui/components/form'
 import Input from '@acme/ui/components/input'
 import Button from '@acme/ui/components/button'
-import Icon from '@acme/ui/components/icon'
+import { Loader2 } from '@acme/ui/components/icon'
 import cn from '@acme/ui/lib/cn'
 
 import { insertProductSchema } from '@/schemas'
@@ -124,7 +124,7 @@ export default function AddProductForm({
               variant='secondary'
             >
               {formState.isSubmitting ? (
-                <Icon.loader2 className='size-5 animate-spin' />
+                <Loader2 className='size-5 animate-spin' />
               ) : (
                 <span>Add</span>
               )}
