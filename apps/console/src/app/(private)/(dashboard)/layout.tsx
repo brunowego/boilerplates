@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import type { ReactNode, JSX } from 'react'
+import Link from 'next/link'
 
 import { Layout, LayoutHeader, LayoutContent, LayoutAside } from '@/components'
+import { LogoMark } from '@acme/ui/components/logo'
 import ThemeToggle from '@/components/theme-toggle'
 
 export const metadata: Metadata = {
@@ -18,7 +20,11 @@ export default function DashboardLayout({
   return (
     <Layout>
       <LayoutHeader>
-        <ThemeToggle className='self-center' />
+        <Link className='self-center py-1' href='/'>
+          <LogoMark className='size-8' />
+        </Link>
+
+        <ThemeToggle className='mt-auto self-center' />
       </LayoutHeader>
 
       <LayoutContent>
