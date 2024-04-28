@@ -18,7 +18,7 @@ export default function DashboardLayout({
   return (
     <Layout>
       <LayoutHeader>
-        <ThemeToggle />
+        <ThemeToggle className='self-center' />
       </LayoutHeader>
 
       <LayoutContent>
