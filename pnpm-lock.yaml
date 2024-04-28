@@ -33,9 +33,6 @@ importers:
       next:
         specifier: 14.2.1
         version: 14.2.1(react-dom@18.2.0)(react@18.2.0)
-      next-themes:
-        specifier: ~0.3.0
-        version: 0.3.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ~18.2.0
         version: 18.2.0
@@ -97,6 +94,9 @@ importers:
       lucide-react:
         specifier: ~0.368.0
         version: 0.368.0(react@18.2.0)
+      next-themes:
+        specifier: ~0.3.0
+        version: 0.3.0(react-dom@18.2.0)(react@18.2.0)
       react-hook-form:
         specifier: ~7.51.3
         version: 7.51.3(react@18.2.0)

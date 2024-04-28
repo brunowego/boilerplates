@@ -1,7 +1,6 @@
 'use client'
 
-import { useTheme } from 'next-themes'
-
+import useTheme from '@acme/ui/hooks/use-theme'
 import Button from '@acme/ui/components/button'
 import { Sun, Moon } from '@acme/ui/components/icon'
 

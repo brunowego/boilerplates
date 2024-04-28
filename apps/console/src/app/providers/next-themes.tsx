@@ -1,11 +1,14 @@
 'use client'
 
-import type { ThemeProviderProps } from 'next-themes/dist/types'
-import { ThemeProvider } from 'next-themes'
+import type { JSX } from 'react'
+
+import ThemeProvider, {
+  type ThemeProviderProps,
+} from '@acme/ui/providers/next-themes'
 
 export default function NextThemesProvider({
   children,
   ...props
-}: ThemeProviderProps) {
+}: ThemeProviderProps): JSX.Element {
   return <ThemeProvider {...props}>{children}</ThemeProvider>
 }
