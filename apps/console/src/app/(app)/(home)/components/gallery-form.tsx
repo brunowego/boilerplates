@@ -127,7 +127,10 @@ export default function SignUpForm({
 
                 <div className='grid grid-cols-2 gap-3 lg:grid-cols-4 md:grid-cols-3'>
                   <ImageUpload
-                    accept={{ 'image/*': [] }}
+                    accept={{
+                      'image/jpg': ['.jpg', '.jpeg'],
+                      'image/png': ['.png'],
+                    }}
                     maxFiles={6}
                     notAcceptedErrorMessage='Only images are allowed'
                     onChange={field.onChange}
