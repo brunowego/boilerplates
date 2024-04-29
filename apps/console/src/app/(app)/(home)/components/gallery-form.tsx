@@ -120,7 +120,7 @@ export default function SignUpForm({
           <FormField
             control={control}
             name='images'
-            render={({ field }) => (
+            render={({ field: { onChange, value } }) => (
               <FormItem>
                 <FormLabel>
                   Images{' '}
@@ -135,8 +135,8 @@ export default function SignUpForm({
                     }}
                     maxFiles={6}
                     notAcceptedErrorMessage='Only images are allowed'
-                    onChange={field.onChange}
-                    value={field.value}
+                    onChange={onChange}
+                    value={value}
                     render={({
                       getInputProps,
                       getRootProps,
@@ -144,7 +144,7 @@ export default function SignUpForm({
                       files,
                     }) => (
                       <>
-                        {field.value.map((image, index) => (
+                        {value.map((image, index) => (
                           <div
                             className='group relative h-full w-full overflow-hidden rounded-lg border shadow-sm'
                             // biome-ignore lint/suspicious/noArrayIndexKey: This is a controlled input
@@ -160,9 +160,7 @@ export default function SignUpForm({
                             <button
                               className='absolute top-0 right-0 rounded-bl-lg bg-neutral-100 p-2 text-neutral-600 opacity-0 shadow-sm transition-all duration-200 hover:bg-neutral-200 group-hover:opacity-100'
                               onClick={() => {
-                                field.onChange(
-                                  field.value.filter((i) => i !== image),
-                                )
+                                onChange(value.filter((i) => i !== image))
                               }}
                               type='button'
                             >
@@ -201,7 +199,7 @@ export default function SignUpForm({
                           </div>
                         ))}
 
-                        {field.value.length < 6 && (
+                        {value.length < 6 && (
                           <div
                             className={cn(
                               'aspect-[2/3] h-full w-full rounded-lg border-2 border-dashed p-4 shadow-sm transition-colors duration-200 dark:hover:border-neutral-200/20 hover:border-neutral-900/20',
