@@ -61,9 +61,9 @@ export default function SignUpForm({
     resolver: zodResolver(formSchema),
   })
 
-  const router = useRouter()
+  const { refresh } = useRouter()
 
-  const mutation = useMutation({
+  const { mutateAsync } = useMutation({
     mutationFn: (values: FormValues) => {
       return api.post('/', values)
     },
@@ -76,7 +76,7 @@ export default function SignUpForm({
     //   )
     // },
     onSuccess: () => {
-      router.refresh()
+      refresh()
     },
   })
 
@@ -89,7 +89,7 @@ export default function SignUpForm({
       ]),
     )
 
-    void mutation.mutate(modifiedFields)
+    await mutateAsync(modifiedFields)
 
     reset(modifiedFields)
   }
