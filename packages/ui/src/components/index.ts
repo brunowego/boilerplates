@@ -7,6 +7,7 @@ export {
   FormMessage,
   FormField,
 } from './form'
+export { typographyVariants } from './typography'
 
 export { default as Button, buttonVariants } from './button'
 export { default as Input, inputVariants } from './input'
