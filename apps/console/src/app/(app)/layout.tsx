@@ -26,9 +26,7 @@ export default function AppLayout({ children }: AppLayoutProps): JSX.Element {
         <ThemeToggle className='mt-auto self-center' />
       </LayoutHeader>
 
-      <LayoutContent>
-        <article>{children}</article>
-      </LayoutContent>
+      <LayoutContent>{children}</LayoutContent>
 
       <LayoutAside />
     </Layout>
