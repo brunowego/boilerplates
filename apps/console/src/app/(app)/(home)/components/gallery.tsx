@@ -1,10 +1,10 @@
 import type { JSX } from 'react'
 
-import GalleryForm from './gallery-form'
+import EditGalleryForm from './edit-gallery-form'
 
 export default function Gallery(): JSX.Element {
   return (
-    <GalleryForm
+    <EditGalleryForm
       gallery={{
         images: [],
       }}

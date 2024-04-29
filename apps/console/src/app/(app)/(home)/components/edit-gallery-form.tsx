@@ -38,15 +38,15 @@ const formSchema = gallerySchema
 
 type FormValues = z.infer<typeof formSchema>
 
-interface SignUpFormProps extends HTMLAttributes<HTMLFormElement> {
+interface EditGalleryFormProps extends HTMLAttributes<HTMLFormElement> {
   gallery: Gallery | undefined
 }
 
-export default function SignUpForm({
+export default function EditGalleryForm({
   className,
   gallery,
   ...props
-}: SignUpFormProps): JSX.Element {
+}: EditGalleryFormProps): JSX.Element {
   const {
     register,
     formState,
