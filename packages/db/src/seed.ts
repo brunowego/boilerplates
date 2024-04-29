@@ -1,52 +1,26 @@
-import { z } from 'zod'
-import { insertUserSchema, usersTable } from './schema'
-import { faker } from '@faker-js/faker'
+import { productsTable } from './schema'
 import { db } from './db'
 
-const extendedUserSchema = insertUserSchema.merge(
-  z.object({
-    createdAt: z.date().default(() => new Date()),
-  }),
-)
-
-type InsertUser = z.infer<typeof extendedUserSchema>
-
-async function seedUsers(): Promise<void> {
-  const users: InsertUser[] = []
-
-  for (let i = 0; i < 100; i++) {
-    const firstName = faker.person.firstName()
-    const lastName = faker.person.lastName()
-
-    users.push({
-      firstName,
-      lastName,
-      username: faker.internet.userName({ firstName, lastName }).toLowerCase(),
-      email: faker.internet.email({ firstName, lastName }).toLowerCase(),
-      createdAt: faker.date.between({
-        from: new Date('2020-01-01'),
-        to: new Date(),
-      }),
-    })
-  }
-
-  await db.insert(usersTable).values(users).returning()
+async function seedProducts(): Promise<void> {
+  await db.insert(productsTable).values({
+    id: 'sxQ2itlspvsb2eL',
+  })
 }
 
 async function main(): Promise<void> {
   /**
    * Reset database
    */
-  await db.delete(usersTable)
+  await db.delete(productsTable)
 
   console.log('✔ Database reset')
 
   /**
-   * Create users
+   * Create products
    */
-  await seedUsers()
+  await seedProducts()
 
-  console.log('✔ Created users')
+  console.log('✔ Created products')
 
   console.log('Database seeded successfully!')
 }
