@@ -8,6 +8,10 @@ export const productsTable = pgTable('products', {
   createdAt: timestamp('created_at').defaultNow().notNull(),
 })
 
+export const productsRelations = relations(productsTable, ({ many }) => ({
+  images: many(productImagesTable),
+}))
+
 export const productImagesTable = pgTable(
   'product_images',
   {
