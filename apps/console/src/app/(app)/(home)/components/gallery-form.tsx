@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 
 import { z, zodResolver } from '@acme/ui/lib/zod'
 import { useForm, type SubmitHandler } from '@acme/ui/hooks/use-form'
+import toast from '@acme/ui/lib/toast'
 import {
   Form,
   FormField,
@@ -21,6 +22,7 @@ import { X, Image, Loader2 } from '@acme/ui/components/icon'
 import Gauge from '@acme/ui/components/gauge'
 
 import { api } from '@/lib/api'
+import handleError from '@/utils'
 import HookFormDevtool from '@/components/hookform-devtool'
 import ImageUpload from '@/components/image-upload'
 
@@ -67,14 +69,14 @@ export default function SignUpForm({
     mutationFn: (values: FormValues) => {
       return api.post('/', values)
     },
-    // onError(err) {
-    //   toast.error(
-    //     handleError(
-    //       err,
-    //       'Profile update is currently not available, please try again later :(',
-    //     ),
-    //   )
-    // },
+    onError(err) {
+      toast.error(
+        handleError(
+          err,
+          'Profile update is currently not available, please try again later :(',
+        ),
+      )
+    },
     onSuccess: () => {
       refresh()
     },
