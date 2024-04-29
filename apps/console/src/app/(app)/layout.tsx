@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Logo from '@acme/ui/components/logo'
 
 import ThemeToggle from '@/components/theme-toggle'
+import { Layout, LayoutAside, LayoutContent, LayoutHeader } from '@/components'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -16,22 +17,20 @@ interface AppLayoutProps {
 
 export default function AppLayout({ children }: AppLayoutProps): JSX.Element {
   return (
-    <div className='flex h-screen 2xl:container'>
-      <div className='-translate-x-full fixed top-0 bottom-0 w-full bg-secondary' />
-
-      <header className='fixed inset-y-0 flex w-16 flex-col bg-secondary px-2 py-4 text-center'>
+    <Layout>
+      <LayoutHeader>
         <Link className='self-center py-1' href='/'>
           <Logo.mark className='size-8' />
         </Link>
 
         <ThemeToggle className='mt-auto self-center' />
-      </header>
+      </LayoutHeader>
 
-      <main className='w-full pl-16'>
+      <LayoutContent>
         <article>{children}</article>
-      </main>
+      </LayoutContent>
 
-      <aside className='w-96 shrink-0 border-l' />
-    </div>
+      <LayoutAside />
+    </Layout>
   )
 }
