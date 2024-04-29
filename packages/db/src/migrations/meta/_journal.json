@@ -15,6 +15,13 @@
       "when": 1714403550770,
       "tag": "0001_nappy_kronos",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1714415370665,
+      "tag": "0002_watery_moon_knight",
+      "breakpoints": true
     }
   ]
 }

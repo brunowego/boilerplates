@@ -42,6 +42,9 @@ importers:
       '@hookform/devtools':
         specifier: ~4.3.1
         version: 4.3.1(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
+      '@hookform/resolvers':
+        specifier: ~3.3.4
+        version: 3.3.4(react-hook-form@7.51.3)
       '@tanstack/query-core':
         specifier: ~5.32.0
         version: 5.32.0

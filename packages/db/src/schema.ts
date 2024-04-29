@@ -5,6 +5,7 @@ import { generateId } from '@acme/id'
 
 export const productsTable = pgTable('products', {
   id: varchar('id').primaryKey().$defaultFn(generateId),
+  title: varchar('title').notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 })
 

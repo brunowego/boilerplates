@@ -3,8 +3,10 @@
 import type { HTMLAttributes, JSX } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
+import { zodResolver } from '@hookform/resolvers/zod'
 
-import { z, zodResolver } from '@acme/ui/lib/zod'
+import { insertProductSchema, type Product } from '@acme/db/schemas'
+import type { z } from '@acme/ui/lib/zod'
 import { useForm, type SubmitHandler } from '@acme/ui/hooks/use-form'
 import toast from '@acme/ui/lib/toast'
 import {
@@ -16,37 +18,30 @@ import {
   FormDescription,
   FormMessage,
 } from '@acme/ui/components/form'
+import Input from '@acme/ui/components/input'
 import cn from '@acme/ui/lib/cn'
 import Button from '@acme/ui/components/button'
 import { X, Image, Loader2 } from '@acme/ui/components/icon'
 import Gauge from '@acme/ui/components/gauge'
 
-import { api } from '@/lib/api'
+import api from '@/lib/api'
 import handleError from '@/utils'
 import HookFormDevtool from '@/components/hookform-devtool'
 import ImageUpload from '@/components/image-upload'
 
-type Gallery = {
-  images: string[]
-}
-
-export const gallerySchema = z.object({
-  images: z.array(z.string()).refine((images) => images.length > 0),
-})
-
-const formSchema = gallerySchema
+const formSchema = insertProductSchema
 
 type FormValues = z.infer<typeof formSchema>
 
-interface EditGalleryFormProps extends HTMLAttributes<HTMLFormElement> {
-  gallery: Gallery | undefined
+interface EditProductFormProps extends HTMLAttributes<HTMLFormElement> {
+  product: Product | undefined
 }
 
-export default function EditGalleryForm({
+export default function EditProductForm({
   className,
-  gallery,
+  product,
   ...props
-}: EditGalleryFormProps): JSX.Element {
+}: EditProductFormProps): JSX.Element {
   const {
     register,
     formState,
@@ -57,23 +52,25 @@ export default function EditGalleryForm({
     setValue,
     ...form
   } = useForm<FormValues>({
+    // mode: 'onChange',
     defaultValues: {
-      images: gallery?.images || [],
+      title: product?.title,
+      images: product?.images || [],
     },
-    resolver: zodResolver(formSchema),
+    // resolver: zodResolver(formSchema),
   })
 
   const { refresh } = useRouter()
 
-  const { mutateAsync } = useMutation({
+  const mutation = useMutation({
     mutationFn: (values: FormValues) => {
-      return api.post('/', values)
+      return api.patch(`/products/${product?.id}`, values)
     },
     onError(err) {
       toast.error(
         handleError(
           err,
-          'Profile update is currently not available, please try again later :(',
+          'Product update is currently not available, please try again later :(',
         ),
       )
     },
@@ -91,7 +88,7 @@ export default function EditGalleryForm({
       ]),
     )
 
-    await mutateAsync(modifiedFields)
+    void mutation.mutate(modifiedFields)
 
     reset(modifiedFields)
   }
@@ -117,6 +114,22 @@ export default function EditGalleryForm({
           onSubmit={handleSubmit(onSubmit)}
           {...props}
         >
+          <FormField
+            control={control}
+            name='title'
+            render={({ field }) => (
+              <FormItem className='w-96'>
+                <FormLabel>Title</FormLabel>
+
+                <FormControl>
+                  <Input className='h-12' type='text' {...field} />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <FormField
             control={control}
             name='images'
@@ -154,7 +167,7 @@ export default function EditGalleryForm({
                               alt=''
                               className='aspect-[2/3] h-full w-full object-cover'
                               draggable={false}
-                              src={image}
+                              src={image.url}
                             />
 
                             <button
@@ -169,20 +182,20 @@ export default function EditGalleryForm({
                           </div>
                         ))}
 
-                        {files.map((file) => (
+                        {files.map(({ file, progress }) => (
                           <div
                             className='relative aspect-[2/3] h-full w-full overflow-hidden rounded-lg border shadow-sm'
-                            key={file.file.name}
+                            key={file.name}
                           >
                             <img
                               alt=''
                               className='h-full w-full object-cover'
                               draggable={false}
-                              src={URL.createObjectURL(file.file)}
+                              src={URL.createObjectURL(file)}
                             />
 
                             <div className='absolute inset-0 flex w-full items-center justify-center bg-neutral-800/50'>
-                              {file.progress === 100 ? (
+                              {progress === 100 ? (
                                 <>
                                   <span className='text-neutral-100 text-sm'>
                                     File uploaded!
@@ -191,7 +204,7 @@ export default function EditGalleryForm({
                               ) : (
                                 <Gauge
                                   size='medium'
-                                  value={file.progress}
+                                  value={progress}
                                   showValue
                                 />
                               )}

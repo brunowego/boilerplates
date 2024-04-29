@@ -4,9 +4,15 @@ import { typographyVariants } from '@acme/ui/components/typography'
 
 import { Page, PageContent, PageHeader } from '@/components/page'
 
-import Gallery from './components/gallery'
+import Product from './components/product'
 
-export default function HomePage(): JSX.Element {
+type HomePageProps = {
+  params: {
+    productId: string
+  }
+}
+
+export default function HomePage({ params }: HomePageProps): JSX.Element {
   return (
     <Page>
       <PageHeader>
@@ -18,7 +24,7 @@ export default function HomePage(): JSX.Element {
       </PageHeader>
 
       <PageContent>
-        <Gallery />
+        <Product productId={params.productId} />
       </PageContent>
     </Page>
   )

@@ -8,9 +8,12 @@ import {
 } from 'react-dropzone'
 import { type ReactNode, useState, useCallback } from 'react'
 
+import type { InsertImage } from '@acme/db/schemas'
 import toast from '@acme/ui/lib/toast'
 
 import FileUpload from '@/lib/file-upload'
+
+type Image = Pick<InsertImage, 'filename' | 'url'>
 
 type FileInfo = {
   file: File
@@ -27,8 +30,8 @@ type RenderProps = {
 }
 
 type UploadProps = {
-  value?: string[] | undefined
-  onChange?: (value: string[] | undefined) => void
+  value?: Image[] | undefined
+  onChange?: (value: Image[] | undefined) => void
   notAcceptedErrorMessage?: string
   maxFiles?: number
   maxSize?: number
@@ -53,10 +56,10 @@ export default function ImageUpload({
         prevFiles.concat(acceptedFiles.map((file) => ({ file, progress: 0 }))),
       )
 
-      const urls = []
+      const images = []
 
       for (const file of acceptedFiles) {
-        const url = await FileUpload({
+        const image = await FileUpload({
           file,
           onProgress: (progress) => {
             setFiles((prevFiles) =>
@@ -67,8 +70,8 @@ export default function ImageUpload({
           },
         })
 
-        if (url) {
-          urls.push(url)
+        if (image) {
+          images.push(image)
         }
       }
 
@@ -77,7 +80,7 @@ export default function ImageUpload({
       )
 
       if (onChange) {
-        onChange([...(value || []), ...urls])
+        onChange([...(value || []), ...images])
       }
     },
     [value, onChange],

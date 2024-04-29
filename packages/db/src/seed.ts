@@ -4,6 +4,7 @@ import { db } from './db'
 async function seedProducts(): Promise<void> {
   await db.insert(productsTable).values({
     id: 'sxQ2itlspvsb2eL',
+    title: 'Apple iPhone 13',
   })
 }
 
