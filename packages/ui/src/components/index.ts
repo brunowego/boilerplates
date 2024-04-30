@@ -1,4 +1,5 @@
 export { LogoMark } from './logo'
+export { typographyVariants } from './typography'
 
 export { default as Button, buttonVariants } from './button'
 export { default as Icon } from './icon'
