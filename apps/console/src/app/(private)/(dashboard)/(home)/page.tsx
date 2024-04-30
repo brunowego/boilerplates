@@ -1,17 +1,19 @@
 import type { JSX } from 'react'
 
+import { Page, PageHeader, PageContent } from '@/components/page'
+
 import AddProductForm from './components/add-product-form'
 
 export default function HomePage(): JSX.Element {
   return (
-    <>
-      <header>
+    <Page>
+      <PageHeader>
         <h1>Add Product</h1>
-      </header>
+      </PageHeader>
 
-      <div className='mt-4' />
-
-      <AddProductForm />
-    </>
+      <PageContent>
+        <AddProductForm />
+      </PageContent>
+    </Page>
   )
 }
