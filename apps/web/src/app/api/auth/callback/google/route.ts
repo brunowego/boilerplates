@@ -118,7 +118,9 @@ export async function GET(request: Request): Promise<Response> {
       status: 302,
     })
   } catch (err) {
-    console.error(err)
+    if (process.env.NODE_ENV === 'development') {
+      console.error(err)
+    }
 
     if (
       err instanceof OAuth2RequestError &&

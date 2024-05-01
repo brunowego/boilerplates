@@ -57,7 +57,9 @@ export async function POST(req: Request): Promise<Response> {
       status: 302,
     })
   } catch (err) {
-    console.error(err)
+    if (process.env.NODE_ENV === 'development') {
+      console.error(err)
+    }
 
     if (err instanceof z.ZodError) {
       return NextResponse.json(
