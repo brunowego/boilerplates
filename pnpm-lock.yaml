@@ -103,9 +103,6 @@ importers:
       '@lucia-auth/adapter-drizzle':
         specifier: ~1.0.7
         version: 1.0.7(lucia@3.2.0)
-      '@lucia-auth/adapter-postgresql':
-        specifier: ~3.1.2
-        version: 3.1.2(lucia@3.2.0)
       arctic:
         specifier: ~1.8.0
         version: 1.8.0
@@ -1022,24 +1019,6 @@ packages:
     resolution: {integrity: sha512-X/V7fLBca8EC/gPXCntwbQpb0+F9oEuRoHElvsi9rCrdnGhCMNxHgwAvgiQ6pes+rIYpyvx4n3hvjqo/fPo03A==}
     peerDependencies:
       lucia: 3.x
-    dependencies:
-      lucia: 3.2.0
-    dev: false
-
-  /@lucia-auth/adapter-postgresql@3.1.2(lucia@3.2.0):
-    resolution: {integrity: sha512-XgScy312JsaiyJZ0OaUHakk01hFBldF1m8abX4Ctk2Dkt7lEVS/u0xZ2Sf6Hlji1wZtEM0uiIWdeMUu79XcXZA==}
-    peerDependencies:
-      '@neondatabase/serverless': 0.7 - 0.9
-      lucia: 3.x
-      pg: ^8.8.0
-      postgres: ^3.3.0
-    peerDependenciesMeta:
-      '@neondatabase/serverless':
-        optional: true
-      pg:
-        optional: true
-      postgres:
-        optional: true
     dependencies:
       lucia: 3.2.0
     dev: false
