@@ -25,7 +25,7 @@ export default async function AuthLayout({
   const { user } = await getSession()
 
   if (user) {
-    return redirect('/')
+    return redirect(process.env.NEXT_PUBLIC_APP_URL as string)
   }
 
   return (
