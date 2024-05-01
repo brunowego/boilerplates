@@ -11,8 +11,6 @@ export interface SessionObject {
 export const getSession = async (): Promise<SessionObject> => {
   const sessionId = cookies().get(auth.sessionCookieName)?.value ?? null
 
-  console.log('sessionId', sessionId)
-
   if (!sessionId) {
     return {
       user: null,

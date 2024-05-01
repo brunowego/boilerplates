@@ -6,6 +6,7 @@ import {
   timestamp,
   integer,
   index,
+  primaryKey,
 } from 'drizzle-orm/pg-core'
 import { relations } from 'drizzle-orm'
 
@@ -15,6 +16,7 @@ export const tableNames = {
   users: 'users',
   sessions: 'user_sessions',
   tokens: 'user_tokens',
+  oauthAccounts: 'oauth_accounts',
 }
 
 export const userRoleEnum = pgEnum('user_role', [
@@ -36,9 +38,6 @@ export const usersTable = pgTable(
     role: userRoleEnum('role').default('customer').notNull(),
     // lastSignInAt: timestamp('last_sign_in_at'),
     picture: varchar('picture'),
-    githubId: integer('github_id').unique(),
-    googleId: varchar('google_id').unique(),
-    linkedinId: varchar('linkedin_id').unique(),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     // createdBy: varchar('created_by'),
     // modifiedAt: timestamp('modified_at'),
@@ -61,6 +60,23 @@ export const usersTable = pgTable(
 export const userRelations = relations(usersTable, ({ many }) => ({
   session: many(sessionTable),
 }))
+
+export const oauthAccountsTable = pgTable(
+  tableNames.oauthAccounts,
+  {
+    providerId: varchar('provider_id').notNull(),
+    providerUserId: varchar('provider_user_id').notNull(),
+    userId: varchar('user_id')
+      .notNull()
+      .references(() => usersTable.id, {
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
+      }),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.providerId, t.providerUserId] }),
+  }),
+)
 
 export const sessionTable = pgTable(tableNames.sessions, {
   id: varchar('id').primaryKey(),

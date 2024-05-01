@@ -1,9 +1,10 @@
 import { cookies } from 'next/headers'
+import { NextResponse } from 'next/server'
 
 import { github } from '@acme/auth/providers'
 import { db } from '@acme/db'
-import { usersTable } from '@acme/db/schema'
-import { eq } from '@acme/db/orm'
+import { oauthAccountsTable, usersTable } from '@acme/db/schema'
+import { and, eq } from '@acme/db/orm'
 import { auth } from '@acme/auth'
 import { generateId } from '@acme/id'
 import { OAuth2RequestError } from '@acme/auth/lib/arctic'
@@ -11,7 +12,7 @@ import { OAuth2RequestError } from '@acme/auth/lib/arctic'
 // https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28
 interface GitHubUser {
   login: string
-  id: number
+  id: string
   avatar_url: string
   name: string
   email: string
@@ -38,13 +39,16 @@ export async function GET(request: Request): Promise<Response> {
     })
 
     const githubUser: GitHubUser = await githubUserResponse.json()
-    const existingUser = await db.query.usersTable.findFirst({
-      where: eq(usersTable.githubId, githubUser.id),
+    const existingAccount = await db.query.oauthAccountsTable.findFirst({
+      where: and(
+        eq(oauthAccountsTable.providerId, 'github'),
+        eq(oauthAccountsTable.providerUserId, githubUser.id),
+      ),
     })
 
-    if (existingUser) {
+    if (existingAccount) {
       // @ts-ignore
-      const session = await auth.createSession(existingUser.id, {})
+      const session = await auth.createSession(existingAccount.userId, {})
       const sessionCookie = auth.createSessionCookie(session.id)
 
       cookies().set(
@@ -61,15 +65,28 @@ export async function GET(request: Request): Promise<Response> {
       })
     }
 
-    const userId = generateId()
+    const existingUser = await db.query.usersTable.findFirst({
+      where: eq(usersTable.email, githubUser.email),
+    })
 
-    await db.insert(usersTable).values({
-      id: userId,
-      email: githubUser.email,
-      // username: githubUser.login,
-      firstName: githubUser.name,
-      picture: githubUser.avatar_url,
-      githubId: githubUser.id,
+    const userId = existingUser?.id ?? generateId()
+
+    await db.transaction(async (tx) => {
+      if (!existingUser) {
+        await tx.insert(usersTable).values({
+          id: userId,
+          email: githubUser.email,
+          // username: githubUser.login,
+          firstName: githubUser.name,
+          picture: githubUser.avatar_url,
+        })
+      }
+
+      await tx.insert(oauthAccountsTable).values({
+        providerId: 'github',
+        providerUserId: githubUser.id,
+        userId,
+      })
     })
 
     // @ts-ignore

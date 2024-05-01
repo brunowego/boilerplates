@@ -1,9 +1,10 @@
 import { cookies } from 'next/headers'
+import { NextResponse } from 'next/server'
 
 import { linkedin } from '@acme/auth/providers'
 import { db } from '@acme/db'
-import { usersTable } from '@acme/db/schema'
-import { eq } from '@acme/db/orm'
+import { oauthAccountsTable, usersTable } from '@acme/db/schema'
+import { and, eq } from '@acme/db/orm'
 import { auth } from '@acme/auth'
 import { generateId } from '@acme/id'
 import { OAuth2RequestError } from '@acme/auth/lib/arctic'
@@ -41,13 +42,16 @@ export async function GET(request: Request): Promise<Response> {
     )
 
     const linkedinUser: LinkedInUser = await linkedinUserResponse.json()
-    const existingUser = await db.query.usersTable.findFirst({
-      where: eq(usersTable.linkedinId, linkedinUser.sub),
+    const existingAccount = await db.query.oauthAccountsTable.findFirst({
+      where: and(
+        eq(oauthAccountsTable.providerId, 'linkedin'),
+        eq(oauthAccountsTable.providerUserId, linkedinUser.sub),
+      ),
     })
 
-    if (existingUser) {
+    if (existingAccount) {
       // @ts-ignore
-      const session = await auth.createSession(existingUser.id, {})
+      const session = await auth.createSession(existingAccount.userId, {})
       const sessionCookie = auth.createSessionCookie(session.id)
 
       cookies().set(
@@ -64,15 +68,28 @@ export async function GET(request: Request): Promise<Response> {
       })
     }
 
-    const userId = generateId()
+    const existingUser = await db.query.usersTable.findFirst({
+      where: eq(usersTable.email, linkedinUser.email),
+    })
 
-    await db.insert(usersTable).values({
-      id: userId,
-      email: linkedinUser.email,
-      firstName: linkedinUser.given_name,
-      lastName: linkedinUser.family_name,
-      picture: linkedinUser.picture,
-      linkedinId: linkedinUser.sub,
+    const userId = existingUser?.id ?? generateId()
+
+    await db.transaction(async (tx) => {
+      if (!existingUser) {
+        await tx.insert(usersTable).values({
+          id: userId,
+          email: linkedinUser.email,
+          firstName: linkedinUser.given_name,
+          lastName: linkedinUser.family_name,
+          picture: linkedinUser.picture,
+        })
+      }
+
+      await tx.insert(oauthAccountsTable).values({
+        providerId: 'linkedin',
+        providerUserId: linkedinUser.sub,
+        userId,
+      })
     })
 
     // @ts-ignore

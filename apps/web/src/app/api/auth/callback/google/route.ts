@@ -1,9 +1,10 @@
 import { cookies } from 'next/headers'
+import { NextResponse } from 'next/server'
 
 import { google } from '@acme/auth/providers'
 import { db } from '@acme/db'
-import { usersTable } from '@acme/db/schema'
-import { eq } from '@acme/db/orm'
+import { oauthAccountsTable, usersTable } from '@acme/db/schema'
+import { and, eq } from '@acme/db/orm'
 import { auth } from '@acme/auth'
 import { generateId } from '@acme/id'
 import { OAuth2RequestError } from '@acme/auth/lib/arctic'
@@ -51,13 +52,16 @@ export async function GET(request: Request): Promise<Response> {
     )
 
     const googleUser: GoogleUser = await googleUserResponse.json()
-    const existingUser = await db.query.usersTable.findFirst({
-      where: eq(usersTable.googleId, googleUser.id),
+    const existingAccount = await db.query.oauthAccountsTable.findFirst({
+      where: and(
+        eq(oauthAccountsTable.providerId, 'google'),
+        eq(oauthAccountsTable.providerUserId, googleUser.id),
+      ),
     })
 
-    if (existingUser) {
+    if (existingAccount) {
       // @ts-ignore
-      const session = await auth.createSession(existingUser.id, {})
+      const session = await auth.createSession(existingAccount.userId, {})
       const sessionCookie = auth.createSessionCookie(session.id)
 
       cookies().set(
@@ -74,14 +78,27 @@ export async function GET(request: Request): Promise<Response> {
       })
     }
 
-    const userId = generateId()
+    const existingUser = await db.query.usersTable.findFirst({
+      where: eq(usersTable.email, googleUser.email),
+    })
 
-    await db.insert(usersTable).values({
-      id: userId,
-      email: googleUser.email,
-      firstName: googleUser.given_name,
-      picture: googleUser.picture,
-      googleId: googleUser.id,
+    const userId = existingUser?.id ?? generateId()
+
+    await db.transaction(async (tx) => {
+      if (!existingUser) {
+        await tx.insert(usersTable).values({
+          id: userId,
+          email: googleUser.email,
+          firstName: googleUser.given_name,
+          picture: googleUser.picture,
+        })
+      }
+
+      await tx.insert(oauthAccountsTable).values({
+        providerId: 'google',
+        providerUserId: googleUser.id,
+        userId,
+      })
     })
 
     // @ts-ignore
