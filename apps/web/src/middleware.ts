@@ -20,12 +20,7 @@ export const parse = (req: NextRequest) => {
 
 export default async function middleware(req: NextRequest) {
   const requestHeaders = new Headers(req.headers)
-  // requestHeaders.set('Access-Control-Allow-Credentials', 'true')
   requestHeaders.set('Access-Control-Allow-Origin', '*')
-  // requestHeaders.set(
-  //   'Access-Control-Allow-Methods',
-  //   'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-  // )
   requestHeaders.set(
     'Access-Control-Allow-Headers',
     'Accept, Authorization, Content-Type, Next-Router-Prefetch, Next-Router-State-Tree, Next-Url, RSC',

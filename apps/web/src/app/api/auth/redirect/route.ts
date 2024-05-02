@@ -1,8 +1,6 @@
 import { cookies } from 'next/headers'
 
-export const dynamic = 'force-dynamic'
-
-export async function GET(): Promise<Response> {
+export function GET(): Response {
   let url = process.env.NEXT_PUBLIC_APP_URL as string
 
   const next = cookies().get('next')
