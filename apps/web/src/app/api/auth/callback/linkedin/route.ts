@@ -62,7 +62,7 @@ export async function GET(request: Request): Promise<Response> {
 
       return new Response(null, {
         headers: {
-          Location: '/auth/redirect',
+          Location: '/api/auth/redirect',
         },
         status: 302,
       })
@@ -104,7 +104,7 @@ export async function GET(request: Request): Promise<Response> {
 
     return new Response(null, {
       headers: {
-        Location: '/auth/redirect',
+        Location: '/api/auth/redirect',
       },
       status: 302,
     })
