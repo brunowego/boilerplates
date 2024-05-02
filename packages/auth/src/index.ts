@@ -10,8 +10,9 @@ const adapter = new DrizzlePostgreSQLAdapter(db, sessionTable, usersTable)
 const sessionCookieOptions: SessionCookieOptions = {
   expires: true,
   attributes: {
-    // sameSite: 'lax',
+    sameSite: undefined,
     domain: 'acme.localtest.me',
+    // path: '/',
     secure: process.env.NODE_ENV === 'production',
   },
 }

@@ -22,7 +22,7 @@ import Input from '@acme/ui/components/input'
 import Button from '@acme/ui/components/button'
 import { AtSign, Lock, Loader2 } from '@acme/ui/components/icon'
 
-import api from '@/lib/api'
+import /*api, */ { axios } from '@/lib/api'
 import handleError from '@/utils/handle-error'
 
 const formSchema = signInSchema
@@ -44,11 +44,12 @@ export default function SignInForm({
       resolver: zodResolver(formSchema),
     })
 
-  const { push } = useRouter()
+  const { refresh } = useRouter()
 
   const { mutateAsync } = useMutation({
     mutationFn: (values: FormValues) => {
-      return api.post('/auth/sign-in', values)
+      return axios.post('/api/auth/sign-in', values)
+      // return api.post('/auth/sign-in', values)
     },
     onError(err) {
       toast.error(
@@ -59,7 +60,7 @@ export default function SignInForm({
       )
     },
     onSuccess: () => {
-      push('/redirect')
+      refresh()
     },
   })
 

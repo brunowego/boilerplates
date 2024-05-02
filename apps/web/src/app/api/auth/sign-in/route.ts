@@ -60,7 +60,9 @@ export async function POST(req: Request): Promise<Response> {
       status: 200,
     })
   } catch (err) {
-    console.log(err)
+    if (process.env.NODE_ENV === 'development') {
+      console.error(err)
+    }
 
     if (err instanceof z.ZodError) {
       return NextResponse.json(
@@ -74,4 +76,10 @@ export async function POST(req: Request): Promise<Response> {
       { status: 500 },
     )
   }
+}
+
+export function OPTIONS(): Response {
+  return new Response(null, {
+    status: 200,
+  })
 }
