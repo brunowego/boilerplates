@@ -1,10 +1,13 @@
 'use client'
 
 import type { HTMLAttributes } from 'react'
+import { useRouter } from 'next/navigation'
+import { useMutation } from '@tanstack/react-query'
 
 import { signUpSchema } from '@acme/db/schemas'
 import { type z, zodResolver } from '@acme/ui/lib/zod'
 import { useForm, type SubmitHandler } from '@acme/ui/hooks/use-form'
+import toast from '@acme/ui/lib/toast'
 import {
   Form,
   FormField,
@@ -17,6 +20,9 @@ import cn from '@acme/ui/utils/cn'
 import Input from '@acme/ui/components/input'
 import Button from '@acme/ui/components/button'
 import { User, AtSign, Lock, Loader2 } from '@acme/ui/components/icon'
+
+import api from '@/lib/api'
+import { handleError } from '@/utils'
 
 const formSchema = signUpSchema
 
@@ -37,6 +43,25 @@ export default function SignInForm({
       },
       resolver: zodResolver(formSchema),
     })
+
+  const { push } = useRouter()
+
+  const { mutateAsync } = useMutation({
+    mutationFn: (values: FormValues) => {
+      return api.post('/auth/sign-up', values)
+    },
+    onError(err) {
+      toast.error(
+        handleError(
+          err,
+          'Registration is currently not available, please try again later :(',
+        ),
+      )
+    },
+    onSuccess: () => {
+      push('/')
+    },
+  })
 
   const onSubmit: SubmitHandler<FormValues> = async (values: FormValues) => {
     try {

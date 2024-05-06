@@ -1,9 +1,21 @@
 import type { NextAuthConfig } from 'next-auth'
 
-import providers from './providers'
+import {
+  CredentialsProvider,
+  // ResendProvider,
+  GitHubProvider,
+  GoogleProvider,
+  LinkedInProvider,
+} from './providers'
 
 export default {
-  providers,
+  providers: [
+    CredentialsProvider,
+    // ResendProvider,
+    GitHubProvider,
+    GoogleProvider,
+    LinkedInProvider,
+  ],
   session: {
     strategy: 'jwt',
   },

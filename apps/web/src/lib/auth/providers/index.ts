@@ -1,13 +1,5 @@
-import CredentialsProvider from './credentials'
-import ResendProvider from './resend'
-import GitHubProvider from './github'
-import GoogleProvider from './google'
-import LinkedInProvider from './linkedin'
-
-export default [
-  CredentialsProvider,
-  ResendProvider,
-  GitHubProvider,
-  GoogleProvider,
-  LinkedInProvider,
-]
+export { default as CredentialsProvider } from './credentials'
+// export { default as ResendProvider } from './resend'
+export { default as GitHubProvider } from './github'
+export { default as GoogleProvider } from './google'
+export { default as LinkedInProvider } from './linkedin'

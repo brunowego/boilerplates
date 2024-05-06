@@ -1,15 +1,15 @@
-import { type NodePgDatabase, drizzle } from 'drizzle-orm/node-postgres'
+import { type PostgresJsDatabase, drizzle } from 'drizzle-orm/postgres-js'
 
 import * as schema from './schema'
 import { env } from './env'
 import { client } from './client'
 
 declare global {
-  var db: NodePgDatabase<typeof schema> | undefined
+  var db: PostgresJsDatabase<typeof schema> | undefined
 }
 
 // biome-ignore lint/suspicious/noRedeclare: to support hot reloading
-let db: NodePgDatabase<typeof schema>
+let db: PostgresJsDatabase<typeof schema>
 
 if (env.NODE_ENV === 'production') {
   db = drizzle(client, {

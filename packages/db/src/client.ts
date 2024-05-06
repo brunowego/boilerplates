@@ -1,5 +1,5 @@
-import { Pool } from 'pg'
+import postgres from 'postgres'
 
 import { env } from './env'
 
-export const client = new Pool({ connectionString: env.DATABASE_URL })
+export const client = postgres(env.DATABASE_URL)

@@ -17,7 +17,7 @@ import {
 import cn from '@acme/ui/utils/cn'
 import Input from '@acme/ui/components/input'
 import Button from '@acme/ui/components/button'
-import { AtSign, Loader2 } from '@acme/ui/components/icon'
+import { AtSign, Lock, Loader2 } from '@acme/ui/components/icon'
 
 const formSchema = signInSchema
 
@@ -32,13 +32,14 @@ export default function SignInForm({
   const { formState, handleSubmit, control, ...form } = useForm<FormValues>({
     defaultValues: {
       email: '',
+      password: '',
     },
     resolver: zodResolver(formSchema),
   })
 
   const onSubmit: SubmitHandler<FormValues> = async (values: FormValues) => {
     try {
-      await signIn('resend', {
+      await signIn('credentials', {
         ...values,
       })
     } catch (err) {
@@ -73,6 +74,33 @@ export default function SignInForm({
                       className='h-12 pl-10'
                       placeholder='Type your email'
                       type='email'
+                      {...field}
+                    />
+                  </div>
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={control}
+            name='password'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='sr-only'>Password</FormLabel>
+
+                <FormControl>
+                  <div className='relative'>
+                    <div className='absolute inset-y-0 left-3 flex'>
+                      <Lock className='size-4 self-center' />
+                    </div>
+
+                    <Input
+                      className='h-12 pl-10'
+                      placeholder='Type your password'
+                      type='password'
                       {...field}
                     />
                   </div>

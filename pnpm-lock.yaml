@@ -51,6 +51,9 @@ importers:
       axios:
         specifier: ~1.6.8
         version: 1.6.8
+      bcryptjs:
+        specifier: ~2.4.3
+        version: 2.4.3
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1)(react@18.3.1)
@@ -67,6 +70,9 @@ importers:
       '@acme/typescript-config':
         specifier: workspace:~
         version: link:../../tools/typescript-config
+      '@types/bcryptjs':
+        specifier: ~2.4.6
+        version: 2.4.6
       '@types/node':
         specifier: ~20.12.8
         version: 20.12.8
@@ -96,7 +102,7 @@ importers:
     dependencies:
       drizzle-orm:
         specifier: ~0.30.10
-        version: 0.30.10(@types/pg@8.11.6)(pg@8.11.5)(react@18.3.1)
+        version: 0.30.10(@types/pg@8.11.6)(pg@8.11.5)(postgres@3.3.5)(react@18.3.1)
       drizzle-zod:
         specifier: ~0.5.1
         version: 0.5.1(drizzle-orm@0.30.10)(zod@3.23.6)
@@ -106,6 +112,9 @@ importers:
       pg:
         specifier: 8.11.5
         version: 8.11.5
+      postgres:
+        specifier: ~3.3.5
+        version: 3.3.5
       zod:
         specifier: ~3.23.6
         version: 3.23.6
@@ -177,6 +186,9 @@ importers:
       react-hook-form:
         specifier: ~7.51.4
         version: 7.51.4(react@18.3.1)
+      sonner:
+        specifier: ~1.4.41
+        version: 1.4.41(react-dom@18.3.1)(react@18.3.1)
       tailwind-merge:
         specifier: ~2.3.0
         version: 2.3.0
@@ -1552,6 +1564,10 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
+  /@types/bcryptjs@2.4.6:
+    resolution: {integrity: sha512-9xlo6R2qDs5uixm0bcIqCeMCE6HiQsIyel9KQySStiyqNl2tnj2mP3DX1Nf56MD6KMenNNlBBsy3LJ7gUEQPXQ==}
+    dev: true
+
   /@types/cookie@0.6.0:
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
     dev: false
@@ -1669,6 +1685,10 @@ packages:
 
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+
+  /bcryptjs@2.4.3:
+    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
+    dev: false
 
   /binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -2112,7 +2132,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.30.10(@types/pg@8.11.6)(pg@8.11.5)(react@18.3.1):
+  /drizzle-orm@0.30.10(@types/pg@8.11.6)(pg@8.11.5)(postgres@3.3.5)(react@18.3.1):
     resolution: {integrity: sha512-IRy/QmMWw9lAQHpwbUh1b8fcn27S/a9zMIzqea1WNOxK9/4EB8gIo+FZWLiPXzl2n9ixGSv8BhsLZiOppWEwBw==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -2194,6 +2214,7 @@ packages:
     dependencies:
       '@types/pg': 8.11.6
       pg: 8.11.5
+      postgres: 3.3.5
       react: 18.3.1
     dev: false
 
@@ -2203,7 +2224,7 @@ packages:
       drizzle-orm: '>=0.23.13'
       zod: '*'
     dependencies:
-      drizzle-orm: 0.30.10(@types/pg@8.11.6)(pg@8.11.5)(react@18.3.1)
+      drizzle-orm: 0.30.10(@types/pg@8.11.6)(pg@8.11.5)(postgres@3.3.5)(react@18.3.1)
       zod: 3.23.6
     dev: false
 
@@ -3454,6 +3475,10 @@ packages:
   /postgres-range@1.1.4:
     resolution: {integrity: sha512-i/hbxIE9803Alj/6ytL7UHQxRvZkI9O4Sy+J3HGc4F4oo/2eQAjTSNJ0bfxyse3bH0nuVesCk+3IRLaMtG3H6w==}
 
+  /postgres@3.3.5:
+    resolution: {integrity: sha512-+JD93VELV9gHkqpV5gdL5/70HdGtEw4/XE1S4BC8f1mcPmdib3K5XsKVbnR1XcAyC41zOnifJ+9YRKxdIsXiUw==}
+    dev: false
+
   /preact-render-to-string@5.2.3(preact@10.11.3):
     resolution: {integrity: sha512-aPDxUn5o3GhWdtJtW0svRC2SS/l8D9MAgo2+AWml+BhDImb27ALf04Q2d+AHqUUOc6RdSXFIBVa2gxzgMKgtZA==}
     peerDependencies:
@@ -3587,6 +3612,16 @@ packages:
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
     dev: true
+
+  /sonner@1.4.41(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-uG511ggnnsw6gcn/X+YKkWPo5ep9il9wYi3QJxHsYe7yTZ4+cOd1wuodOUmOpFuXL+/RE3R04LczdNCDygTDgQ==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
 
   /source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}

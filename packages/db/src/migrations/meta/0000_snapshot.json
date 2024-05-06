@@ -1,5 +1,5 @@
 {
-  "id": "021cd201-6a83-4366-b8fd-b1dc228ddeb8",
+  "id": "c4f9f089-a5cd-4c7d-9f48-cccda58133db",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -213,6 +213,12 @@
         "emailVerified": {
           "name": "emailVerified",
           "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hashed_password": {
+          "name": "hashed_password",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
