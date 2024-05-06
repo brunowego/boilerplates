@@ -1,0 +1,37 @@
+---
+version: 0.1
+cli:
+  version: 1.22.0
+plugins:
+  sources:
+    - id: trunk
+      ref: v1.5.0
+      uri: https://github.com/trunk-io/plugins
+runtimes:
+  enabled:
+    - node@18.12.1
+    - python@3.10.8
+lint:
+  definitions:
+    - name: biome
+      files:
+        - typescript
+  disabled:
+    - dotenv-linter
+    - prettier
+  enabled:
+    - biome@1.7.2
+    - checkov@3.2.79
+    - git-diff-check
+    - markdownlint@0.40.0
+    - osv-scanner@1.7.2
+    - trivy@0.51.1
+    - trufflehog@3.75.0
+    - yamllint@1.35.1
+actions:
+  disabled:
+    - trunk-check-pre-push
+  enabled:
+    - trunk-announce
+    - trunk-fmt-pre-commit
+    - trunk-upgrade-available
