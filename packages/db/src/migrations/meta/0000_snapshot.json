@@ -1,5 +1,5 @@
 {
-  "id": "612d9f5e-0dbb-40ca-9398-de3dc7898995",
+  "id": "021cd201-6a83-4366-b8fd-b1dc228ddeb8",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -202,7 +202,7 @@
           "name": "name",
           "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "email": {
           "name": "email",
