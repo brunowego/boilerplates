@@ -1,5 +1,6 @@
 import { z } from 'zod'
-import { insertUserSchema, usersTable } from './schema'
+import { insertUserSchema } from './schemas'
+import { usersTable } from './schema'
 import { faker } from '@faker-js/faker'
 import { db } from './db'
 
