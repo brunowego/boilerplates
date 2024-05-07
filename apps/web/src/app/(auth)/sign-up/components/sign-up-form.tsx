@@ -22,7 +22,7 @@ import Button from '@acme/ui/components/button'
 import { User, AtSign, Lock, Loader2 } from '@acme/ui/components/icon'
 
 import api from '@/lib/api'
-import { handleError } from '@/utils'
+import { handleError } from '@/utils/handle-error'
 
 const formSchema = signUpSchema
 

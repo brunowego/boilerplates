@@ -14,7 +14,7 @@ import EmptyState from '@acme/ui/components/empty-state'
 import Skeleton from '@acme/ui/components/skeleton'
 
 import { useUsers } from '@/hooks/api/use-users'
-import { toLocalDate } from '@/utils'
+import { toLocalDate } from '@/utils/date'
 
 type UsersListProps = {
   className?: string

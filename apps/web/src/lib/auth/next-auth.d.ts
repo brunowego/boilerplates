@@ -3,7 +3,7 @@ import type { JWT } from 'next-auth/jwt'
 
 type UserSession = {
   id: string
-  onboardingStatus: integer
+  onboardingStep: string
 }
 
 declare module 'next-auth' {

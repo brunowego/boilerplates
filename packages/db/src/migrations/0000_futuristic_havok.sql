@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS "users" (
 	"emailVerified" timestamp,
 	"hashed_password" varchar,
 	"image" text,
-	"onboarding_status" integer DEFAULT 2 NOT NULL,
+	"onboarding_step" varchar DEFAULT 'username' NOT NULL,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	CONSTRAINT "users_email_unique" UNIQUE("email")
 );

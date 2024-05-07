@@ -1,7 +1,7 @@
 import type { NextAuthConfig } from 'next-auth'
 
 import { getUserById } from '@acme/db/queries'
-import { UserOnboardingStatus } from '@acme/db/schema'
+import { UserOnboardingStep } from '@acme/db/schema'
 
 import {
   CredentialsProvider,
@@ -17,7 +17,7 @@ export default {
       if (token.user) {
         session.user = {
           ...session.user,
-          onboardingStatus: token.user.onboardingStatus,
+          onboardingStep: token.user.onboardingStep,
         }
       }
 
@@ -29,8 +29,8 @@ export default {
 
         token.user = {
           ...(token.user ?? {}),
-          onboardingStatus:
-            result?.onboardingStatus ?? UserOnboardingStatus.PENDING_USERNAME,
+          onboardingStep:
+            result?.onboardingStep ?? UserOnboardingStep.PENDING_USERNAME,
         }
       }
 

@@ -1,5 +1,4 @@
 import {
-  pgEnum,
   pgTable,
   text,
   timestamp,
@@ -13,14 +12,14 @@ import type { AdapterAccount } from 'next-auth/adapters'
 
 import { generateId } from '@acme/id'
 
-export enum UserOnboardingStatus {
-  COMPLETE = 0,
-  // PENDING_EMAIL_VERIFICATION = 1,
-  PENDING_USERNAME = 2,
-  PENDING_AVATAR = 3,
-  // PENDING_BIO = 4,
-  PENDING_WORKSPACE = 5,
-  PENDING_FEEDBACK = 6,
+export enum UserOnboardingStep {
+  // PENDING_EMAIL_VERIFICATION = 'verify-email,
+  PENDING_USERNAME = 'username',
+  PENDING_AVATAR = 'avatar',
+  // PENDING_BIO = 'bio',
+  // PENDING_WORKSPACE = 'workspace',
+  // PENDING_FEEDBACK = 'feedback',
+  COMPLETE = 'complete',
 }
 
 export const usersTable = pgTable(
@@ -30,12 +29,13 @@ export const usersTable = pgTable(
     name: text('name').notNull(),
     email: text('email').notNull().unique(),
     emailVerified: timestamp('emailVerified', { mode: 'date' }),
+    username: varchar('username').unique(),
     hashedPassword: varchar('hashed_password'),
     image: text('image'),
-    onboardingStatus: integer('onboarding_status')
-      .$type<UserOnboardingStatus>()
+    onboardingStep: varchar('onboarding_step')
+      .$type<UserOnboardingStep>()
       .notNull()
-      .default(UserOnboardingStatus.PENDING_USERNAME),
+      .default(UserOnboardingStep.PENDING_USERNAME),
     createdAt: timestamp('created_at').defaultNow().notNull(),
   },
   (t) => ({

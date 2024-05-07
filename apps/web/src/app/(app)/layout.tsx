@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 
 import { LogoMark } from '@acme/ui/components/logo'
-import { UserOnboardingStatus } from '@acme/db/schema'
+import { UserOnboardingStep } from '@acme/db/schema'
 
 import { auth } from '@/lib/auth'
 import {
@@ -33,7 +33,7 @@ export default async function DashboardLayout({
     return redirect('/sign-in')
   }
 
-  if (session?.user?.onboardingStatus !== UserOnboardingStatus.COMPLETE) {
+  if (session?.user?.onboardingStep !== UserOnboardingStep.COMPLETE) {
     return redirect('/onboard')
   }
 

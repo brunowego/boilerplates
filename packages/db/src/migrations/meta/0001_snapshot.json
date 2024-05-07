@@ -1,6 +1,6 @@
 {
-  "id": "10efe30c-3a72-43fd-a8c3-488a1c5ff86e",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "d2edd132-5bbc-467a-bed3-9f9ee7c1949e",
+  "prevId": "10efe30c-3a72-43fd-a8c3-488a1c5ff86e",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -216,6 +216,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "username": {
+          "name": "username",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
         "hashed_password": {
           "name": "hashed_password",
           "type": "varchar",
@@ -260,6 +266,13 @@
           "nullsNotDistinct": false,
           "columns": [
             "email"
+          ]
+        },
+        "users_username_unique": {
+          "name": "users_username_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "username"
           ]
         }
       }
