@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server'
-import bcrypt from 'bcryptjs'
 
 import { signUpSchema } from '@acme/db/schemas'
 import { z } from '@acme/ui/lib/zod'
 import { db } from '@acme/db'
 import { eq } from '@acme/db/orm'
 import { usersTable } from '@acme/db/schema'
+import { hash } from '@acme/auth/lib/bcryptjs'
 
 type SignUp = z.infer<typeof signUpSchema>
 
@@ -25,7 +25,7 @@ export async function POST(req: Request): Promise<Response> {
       )
     }
 
-    const hashedPassword = await bcrypt.hash(password, 12)
+    const hashedPassword = await hash(password, 12)
 
     await db.insert(usersTable).values({
       name,

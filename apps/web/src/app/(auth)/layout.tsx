@@ -3,9 +3,9 @@ import type { ReactNode, JSX } from 'react'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 
+import { auth } from '@acme/auth'
 import { LogoMark } from '@acme/ui/components/logo'
 
-import { auth } from '@/lib/auth'
 import { Layout, LayoutContent, LayoutHeader } from '@/components/layout'
 import ThemeToggle from '@/components/theme-toggle'
 

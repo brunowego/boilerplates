@@ -1,10 +1,10 @@
 'use client'
 
 import type { HTMLAttributes } from 'react'
-import { signIn } from 'next-auth/react'
 
 import { signInSchema } from '@acme/db/schemas'
 import { type z, zodResolver } from '@acme/ui/lib/zod'
+import { signIn } from '@acme/auth/react'
 import { useForm, type SubmitHandler } from '@acme/ui/hooks/use-form'
 import {
   Form,

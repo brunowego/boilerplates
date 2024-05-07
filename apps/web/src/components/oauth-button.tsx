@@ -1,9 +1,9 @@
 'use client'
 
 import { type JSX, useState } from 'react'
-import { signIn } from 'next-auth/react'
 
 import Button, { type ButtonProps } from '@acme/ui/components/button'
+import { signIn } from '@acme/auth/react'
 import { Loader2 } from '@acme/ui/components/icon'
 
 type OAuthButtonProps = ButtonProps & {

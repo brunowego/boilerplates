@@ -33,4 +33,4 @@ export const {
   handlers: { GET, POST },
 } = NextAuth(nextAuthConfig)
 
-// https://github.com/dBianchii/kodix-turbo/blob/main/packages/auth/src/config.ts
+export default NextAuth

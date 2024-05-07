@@ -24,15 +24,15 @@ importers:
 
   apps/web:
     dependencies:
+      '@acme/auth':
+        specifier: workspace:~
+        version: link:../../packages/auth
       '@acme/db':
         specifier: workspace:~
         version: link:../../packages/db
       '@acme/ui':
         specifier: workspace:~
         version: link:../../packages/ui
-      '@auth/drizzle-adapter':
-        specifier: ~1.0.1
-        version: 1.0.1
       '@hookform/devtools':
         specifier: ~4.3.1
         version: 4.3.1(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
@@ -51,15 +51,9 @@ importers:
       axios:
         specifier: ~1.6.8
         version: 1.6.8
-      bcryptjs:
-        specifier: ~2.4.3
-        version: 2.4.3
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1)(react@18.3.1)
-      next-auth:
-        specifier: 5.0.0-beta.17
-        version: 5.0.0-beta.17(next@14.2.3)(react@18.3.1)
       react:
         specifier: ~18.3.1
         version: 18.3.1
@@ -70,9 +64,6 @@ importers:
       '@acme/typescript-config':
         specifier: workspace:~
         version: link:../../tools/typescript-config
-      '@types/bcryptjs':
-        specifier: ~2.4.6
-        version: 2.4.6
       '@types/node':
         specifier: ~20.12.8
         version: 20.12.8
@@ -97,6 +88,25 @@ importers:
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
+
+  packages/auth:
+    dependencies:
+      '@acme/db':
+        specifier: workspace:~
+        version: link:../db
+      '@auth/drizzle-adapter':
+        specifier: ~1.0.1
+        version: 1.0.1
+      bcryptjs:
+        specifier: ~2.4.3
+        version: 2.4.3
+      next-auth:
+        specifier: 5.0.0-beta.17
+        version: 5.0.0-beta.17(next@14.2.3)(react@18.3.1)
+    devDependencies:
+      '@types/bcryptjs':
+        specifier: ~2.4.6
+        version: 2.4.6
 
   packages/db:
     dependencies:

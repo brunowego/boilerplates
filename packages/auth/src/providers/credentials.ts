@@ -1,8 +1,9 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
-import bcrypt from 'bcryptjs'
 
 import { signInSchema } from '@acme/db/schemas'
 import { getUserByEmail } from '@acme/db/queries'
+
+import { compare } from '../lib/bcryptjs'
 
 export default CredentialsProvider({
   credentials: {
@@ -18,10 +19,7 @@ export default CredentialsProvider({
       return null
     }
 
-    const validPassword = await bcrypt.compare(
-      password,
-      existingUser.hashedPassword,
-    )
+    const validPassword = await compare(password, existingUser.hashedPassword)
 
     if (!validPassword) {
       return null

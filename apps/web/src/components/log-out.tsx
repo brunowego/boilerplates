@@ -1,9 +1,9 @@
 'use client'
 
 import type { JSX } from 'react'
-import { signOut } from 'next-auth/react'
 
 import Button, { type ButtonProps } from '@acme/ui/components/button'
+import { signOut } from '@acme/auth/react'
 import { LogOut as Icon } from '@acme/ui/components/icon'
 
 type LogOutProps = ButtonProps
