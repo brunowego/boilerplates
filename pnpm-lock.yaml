@@ -129,9 +129,6 @@ importers:
         specifier: ~3.23.6
         version: 3.23.6
     devDependencies:
-      '@acme/id':
-        specifier: workspace:~
-        version: link:../id
       '@acme/typescript-config':
         specifier: workspace:~
         version: link:../../tools/typescript-config

@@ -10,12 +10,10 @@ import {
 import { relations } from 'drizzle-orm/relations'
 import type { AdapterAccount } from 'next-auth/adapters'
 
-import { generateId } from '@acme/id'
-
 export const usersTable = pgTable(
   'users',
   {
-    id: text('id').primaryKey().$defaultFn(generateId),
+    id: text('id').primaryKey(),
     name: text('name').notNull(),
     email: text('email').notNull().unique(),
     emailVerified: timestamp('emailVerified', { mode: 'date' }),
@@ -69,7 +67,7 @@ export const accountsRelations = relations(accountsTable, ({ one }) => ({
 export const sessionsTable = pgTable(
   'sessions',
   {
-    id: text('id').primaryKey().$defaultFn(generateId),
+    id: text('id').primaryKey(),
     sessionToken: text('sessionToken').notNull().unique(),
     userId: text('userId')
       .notNull()
