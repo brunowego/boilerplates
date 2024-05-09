@@ -1,31 +1,19 @@
-import { pgTable, text, varchar, timestamp, index } from 'drizzle-orm/pg-core'
-import { createSelectSchema, createInsertSchema } from 'drizzle-zod'
-import { z } from 'zod'
+import { pgTable, varchar, json, timestamp, index } from 'drizzle-orm/pg-core'
 
 import { generateId } from '@acme/id'
 
-export const usersTable = pgTable(
-  'users',
+export const pagesTable = pgTable(
+  'pages',
   {
     id: varchar('id').primaryKey().$defaultFn(generateId),
-    firstName: varchar('first_name').notNull(),
-    lastName: varchar('last_name').notNull(),
-    username: varchar('username').notNull().unique(),
-    email: text('email').notNull().unique(),
+    title: varchar('title').notNull(),
+    handle: varchar('handle').notNull().unique(), // subdomain
+    // domain
+    data: json('data').notNull(),
+    publishData: json('data').notNull(),
     createdAt: timestamp('created_at').defaultNow().notNull(),
   },
   (t) => ({
-    emailIdx: index('users_email_idx').on(t.email),
+    handleIdx: index('pages_handle_idx').on(t.handle),
   }),
 )
-
-export const selectUserSchema = createSelectSchema(usersTable)
-export const insertUserSchema = createInsertSchema(usersTable, {
-  firstName: z.string().min(2).max(20),
-  lastName: z.string().min(2).max(20),
-  username: z.string().min(2).max(20),
-  email: z.string().email(),
-})
-
-export type User = z.infer<typeof selectUserSchema>
-export type InsertUser = z.infer<typeof insertUserSchema>

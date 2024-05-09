@@ -39,7 +39,7 @@
     --background: 210 11% 7%;
     --foreground: 0 0% 98%;
 
-    --card: 210 11% 7%;
+    --card: 216 9% 8%;
     --card-foreground: 0 0% 98%;
 
     --popover: 210 11% 7%;
@@ -77,5 +77,5 @@
 }
 
 .Puck {
-  @apply w-full h-auto flex
+  @apply w-full h-auto flex flex-col
 }

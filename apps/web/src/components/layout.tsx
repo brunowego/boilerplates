@@ -26,7 +26,7 @@ const LayoutHeader = ({
 
       <header
         className={cn(
-          'fixed inset-y-0 flex w-16 flex-col gap-y-2 px-2 py-4 text-center',
+          'fixed inset-y-0 flex w-16 flex-col gap-y-4 px-2 py-4 text-center',
           infinite ? 'bg-secondary' : null,
           className,
         )}
@@ -39,15 +39,13 @@ const LayoutHeader = ({
 type LayoutContentProps = HTMLAttributes<HTMLElement>
 
 const LayoutContent = ({ className, ...props }: LayoutContentProps) => {
-  return <main className={cn('w-full pl-16', className)} {...props} />
+  return <main className={cn('w-full border-r pl-16', className)} {...props} />
 }
 
 type LayoutAsideProps = HTMLAttributes<HTMLElement>
 
 const LayoutAside = ({ className, ...props }: LayoutAsideProps) => {
-  return (
-    <aside className={cn('w-96 shrink-0 border-l', className)} {...props} />
-  )
+  return <aside className={cn('w-96 shrink-0', className)} {...props} />
 }
 
 export { Layout, LayoutHeader, LayoutContent, LayoutAside }

@@ -4,12 +4,7 @@ import Link from 'next/link'
 
 import { LogoMark } from '@acme/ui/components/logo'
 
-import {
-  Layout,
-  LayoutHeader,
-  LayoutContent,
-  LayoutAside,
-} from '@/components/layout'
+import { Layout, LayoutHeader, LayoutContent } from '@/components/layout'
 import ThemeToggle from '@/components/theme-toggle'
 
 export const metadata: Metadata = {
@@ -33,7 +28,7 @@ export default function DashboardLayout({
         <ThemeToggle className='mt-auto self-center' />
       </LayoutHeader>
 
-      {children}
+      <LayoutContent>{children}</LayoutContent>
     </Layout>
   )
 }

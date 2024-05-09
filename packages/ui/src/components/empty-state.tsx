@@ -1,6 +1,9 @@
 import type { ReactNode, JSX } from 'react'
 
+import cn from '../lib/cn'
+
 type EmptyStateProps = {
+  className?: string
   emoji?: string
   title: string
   description: string
@@ -8,16 +11,17 @@ type EmptyStateProps = {
 }
 
 export default function EmptyState({
+  className,
   emoji = '🙂',
   title,
   description,
   children,
 }: EmptyStateProps): JSX.Element {
   return (
-    <div className='flex justify-center rounded-md'>
+    <div className={cn('flex justify-center rounded-md', className)}>
       <div className='max-w-lg'>
         <div className='grid space-y-4 p-8 text-center'>
-          <div className='mx-auto flex size-12 shrink-0 items-center justify-center rounded-md border bg-border/20 text-2xl'>
+          <div className='mx-auto flex size-12 shrink-0 items-center justify-center rounded-md border bg-secondary text-2xl'>
             {emoji}
           </div>
 

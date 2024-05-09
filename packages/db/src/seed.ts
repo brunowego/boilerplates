@@ -1,28 +1,37 @@
 import { z } from 'zod'
-import { insertUserSchema, usersTable } from './schema'
 import { faker } from '@faker-js/faker'
+
+import { insertPageSchema } from './schemas'
+import { pagesTable } from './schema'
 import { db } from './db'
 
-const extendedUserSchema = insertUserSchema.merge(
+const extendedPageSchema = insertPageSchema.merge(
   z.object({
     createdAt: z.date().default(() => new Date()),
   }),
 )
 
-type InsertUser = z.infer<typeof extendedUserSchema>
+type InsertPage = z.infer<typeof extendedPageSchema>
 
-async function seedUsers(): Promise<void> {
-  const users: InsertUser[] = []
+async function seedPages(): Promise<void> {
+  const pages: InsertPage[] = []
 
-  for (let i = 0; i < 100; i++) {
-    const firstName = faker.person.firstName()
-    const lastName = faker.person.lastName()
-
-    users.push({
-      firstName,
-      lastName,
-      username: faker.internet.userName({ firstName, lastName }).toLowerCase(),
-      email: faker.internet.email({ firstName, lastName }).toLowerCase(),
+  for (let i = 0; i < 20; i++) {
+    pages.push({
+      title: `Product ${i}`,
+      handle: `product-${i}`,
+      data: {
+        content: [
+          {
+            type: 'HowItWorksBlock',
+            props: {
+              title: `Product ${i}`,
+            },
+          },
+        ],
+        root: {},
+        zones: {},
+      },
       createdAt: faker.date.between({
         from: new Date('2020-01-01'),
         to: new Date(),
@@ -30,23 +39,23 @@ async function seedUsers(): Promise<void> {
     })
   }
 
-  await db.insert(usersTable).values(users).returning()
+  await db.insert(pagesTable).values(pages).returning()
 }
 
 async function main(): Promise<void> {
   /**
    * Reset database
    */
-  await db.delete(usersTable)
+  await db.delete(pagesTable)
 
   console.log('✔ Database reset')
 
   /**
-   * Create users
+   * Create pages
    */
-  await seedUsers()
+  await seedPages()
 
-  console.log('✔ Created users')
+  console.log('✔ Created pages')
 
   console.log('Database seeded successfully!')
 }
