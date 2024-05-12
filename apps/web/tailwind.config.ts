@@ -7,4 +7,12 @@ export default {
     './src/components/**/*.{ts,tsx}',
     '../../packages/ui/src/components/*.{ts,tsx}',
   ],
+  safelist: [
+    {
+      pattern: /grid-cols-\d/,
+    },
+    {
+      pattern: /col-span-\d/,
+    },
+  ],
 } satisfies Config

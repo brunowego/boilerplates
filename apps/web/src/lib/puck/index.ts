@@ -1,7 +1,23 @@
 import type { Config } from '@measured/puck'
 
-import { HowItWorksBlock } from '@/components/blocks'
+import {
+  ButtonGroup,
+  Card,
+  Columns,
+  Flex,
+  Heading,
+  Paragraph,
+  VerticalSpace,
+} from '@/components/blocks'
 
 export const config: Config = {
-  components: { HowItWorksBlock },
+  components: {
+    ButtonGroup,
+    Card,
+    Columns,
+    Flex,
+    Heading,
+    Paragraph,
+    VerticalSpace,
+  },
 }

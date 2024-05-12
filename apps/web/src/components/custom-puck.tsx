@@ -20,7 +20,7 @@ const CustomHeader = ({ pageId, onPublish }: CustomHeaderProps) => {
   const { hasFuture = false, hasPast = false } = historyStore || {}
 
   return (
-    <header className='flex h-16 items-center space-x-2 border-b px-4 lg:px-5'>
+    <header className='flex h-16 shrink-0 items-center space-x-2 border-b px-4 lg:px-5'>
       <div className='grow' />
 
       <div className='flex *:p-2'>

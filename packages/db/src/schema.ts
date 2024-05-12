@@ -10,7 +10,6 @@ export const pagesTable = pgTable(
     handle: varchar('handle').notNull().unique(), // subdomain
     // domain
     data: json('data').notNull(),
-    publishData: json('data').notNull(),
     createdAt: timestamp('created_at').defaultNow().notNull(),
   },
   (t) => ({

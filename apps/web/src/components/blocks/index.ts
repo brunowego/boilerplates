@@ -1,1 +1,7 @@
-export { HowItWorksBlock } from './how-it-works-block'
+export { ButtonGroup } from './button-group'
+export { Card } from './card'
+export { Columns } from './columns'
+export { Flex } from './flex'
+export { Heading } from './heading'
+export { Paragraph } from './paragraph'
+export { VerticalSpace } from './vertical-space'
