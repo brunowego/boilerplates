@@ -6,6 +6,7 @@ import {
   Columns,
   Flex,
   Heading,
+  Hero,
   Paragraph,
   VerticalSpace,
 } from '@/components/blocks'
@@ -17,6 +18,7 @@ export const config: Config = {
     Columns,
     Flex,
     Heading,
+    Hero,
     Paragraph,
     VerticalSpace,
   },
