@@ -2,6 +2,7 @@
 
 import useTheme from '@acme/ui/hooks/use-theme'
 import Button from '@acme/ui/components/button'
+import cn from '@acme/ui/lib/cn'
 import { Sun, Moon } from '@acme/ui/components/icon'
 
 type ThemeToggleProps = {
@@ -13,7 +14,7 @@ export default function ThemeToggle({ className }: ThemeToggleProps) {
 
   return (
     <Button
-      className={className}
+      className={cn('space-x-0', className)}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       size='icon'
       variant='ghost'
