@@ -60,6 +60,8 @@ export default function SignInForm({
     },
     onSuccess: () => {
       push('/')
+
+      toast.success('You have successfully registered!')
     },
   })
 
