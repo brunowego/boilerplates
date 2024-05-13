@@ -21,14 +21,7 @@ async function seedPages(): Promise<void> {
       title: `Product ${i}`,
       handle: `product-${i}`,
       data: {
-        content: [
-          {
-            type: 'HowItWorksBlock',
-            props: {
-              title: `Product ${i}`,
-            },
-          },
-        ],
+        content: [],
         root: {},
         zones: {},
       },

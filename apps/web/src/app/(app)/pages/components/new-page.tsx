@@ -39,15 +39,7 @@ export default function NewPage(): JSX.Element {
         config={config}
         // @ts-ignore
         data={{
-          content: [
-            {
-              type: 'HowItWorksBlock',
-              props: {
-                id: 'HowItWorksBlock-47140790-d1fe-4a7a-a057-7c7b191fb5fc',
-                title: 'Title',
-              },
-            },
-          ],
+          content: [],
           root: {},
           zones: {},
         }}
