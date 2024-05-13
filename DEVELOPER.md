@@ -14,5 +14,5 @@
 pnpm install
 
 # Start the development server
-pnpm dev --filter console
+pnpm dev --filter web
 ```
