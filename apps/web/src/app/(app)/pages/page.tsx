@@ -16,7 +16,7 @@ export default function HomePage(): JSX.Element {
             variant: 'title',
           })}
         >
-          Landing Pages
+          Pages
         </h1>
       </PageHeader>
 

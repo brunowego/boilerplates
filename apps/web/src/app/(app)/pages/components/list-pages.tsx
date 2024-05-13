@@ -56,14 +56,14 @@ export default function ListPages(): JSX.Element {
         <EmptyState
           className='-mt-56 relative'
           emoji='🎨'
-          title='Add your first landing page'
-          description='Empower your platform by seamlessly adding landing pages.'
+          title='Add your first page'
+          description='Empower your platform by seamlessly adding pages.'
         >
           <Link
             className={buttonVariants({ className: 'mx-auto px-10' })}
             href='/pages/new'
           >
-            Create a landing page
+            Create a page
           </Link>
         </EmptyState>
       </>
