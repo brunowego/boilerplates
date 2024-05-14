@@ -1,5 +1,13 @@
-import { Loader2, Moon, Sun } from 'lucide-react'
+import {
+  Check,
+  Loader2,
+  Moon,
+  ShieldBan,
+  ShieldCheck,
+  Sun,
+  UserCog,
+} from 'lucide-react'
 
-export { Loader2, Moon, Sun }
+export { Check, Loader2, Moon, ShieldBan, ShieldCheck, Sun, UserCog }
 
 export * as default from './icon'

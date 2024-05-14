@@ -7,6 +7,11 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "correctness": {
+        "all": false,
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
+      },
       "nursery": {
         "useSortedClasses": {
           "level": "warn",
@@ -14,6 +19,10 @@
             "functions": ["cva"]
           }
         }
+      },
+      "style": {
+        "recommended": true,
+        "useBlockStatements": "error"
       }
     }
   },

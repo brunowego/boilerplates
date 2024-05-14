@@ -3,6 +3,7 @@ import type { ReactNode, JSX } from 'react'
 import Link from 'next/link'
 
 import { LogoMark } from '@acme/ui/components/logo'
+import { UserCog, ShieldBan } from '@acme/ui/components/icon'
 
 import { Layout, LayoutHeader, LayoutContent, LayoutAside } from '@/components'
 import ThemeToggle from '@/components/theme-toggle'
@@ -25,7 +26,17 @@ export default function DashboardLayout({
           <LogoMark className='size-8' />
         </Link>
 
-        <ThemeToggle className='mt-auto self-center' />
+        <nav className='mt-auto grid *:flex *:h-10 *:items-center *:justify-center'>
+          <Link href='/personal'>
+            <UserCog className='size-5' />
+          </Link>
+
+          <Link href='/security'>
+            <ShieldBan className='size-5' />
+          </Link>
+        </nav>
+
+        <ThemeToggle className='self-center' />
       </LayoutHeader>
 
       <LayoutContent>{children}</LayoutContent>

@@ -1,3 +1,5 @@
+'use client'
+
 import {
   forwardRef,
   type HTMLAttributes,
@@ -97,7 +99,7 @@ const FormDescription = forwardRef<
     <p
       ref={ref}
       id={formDescriptionId}
-      className={cn('text-[0.8rem] text-muted-foreground', className)}
+      className={cn('text-[0.8rem] text-muted-foreground leading-5', className)}
       {...props}
     />
   )

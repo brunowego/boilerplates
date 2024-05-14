@@ -16,7 +16,15 @@ const Page = ({ className, ...props }: PageProps) => {
 type PageHeaderProps = HTMLAttributes<HTMLElement>
 
 const PageHeader = ({ className, ...props }: PageHeaderProps) => {
-  return <header className={cn('border-b p-4 lg:px-5', className)} {...props} />
+  return (
+    <header
+      className={cn(
+        'sticky top-0 z-10 flex h-16 shrink-0 items-center justify-between border-b bg-background px-4 lg:px-5',
+        className,
+      )}
+      {...props}
+    />
+  )
 }
 
 type PageContentProps = HTMLAttributes<HTMLElement>
