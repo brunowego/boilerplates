@@ -2,6 +2,15 @@
 
 ## Local Development
 
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker)
+- [Docker Compose](https://docs.docker.com/compose/install)
+- [Node.js](https://nodejs.org/en/download)
+- [bun](https://bun.sh/docs/installation)
+
+### Setup
+
 ```sh
 # Install dependencies
 bun install
@@ -9,13 +18,16 @@ bun install
 # Run auxiliary services
 bun compose:up
 
-# Local environment variables
+# Copy environment files
 ( cd ./apps/console; cp ./.env.local.sample ./.env.local )
-( cd ./packages/db; cp ./.env.local.sample ./.env.local )
+( cd ./packages/db; cp ./.env.sample ./.env )
 
-# Migrate the database
+# Run database migrations
 bun db:migrate
 
-# Run development server
-bunx turbo dev --filter console
+# Run database seeders
+bun db:seed
+
+# Start the development server
+bun dev --filter console
 ```
