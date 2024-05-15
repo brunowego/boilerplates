@@ -35,7 +35,7 @@ export default function ScreenSizeIndicator({
   const { width, height } = dimensions
 
   return (
-    <div className='fixed right-4 bottom-4 z-50 flex space-x-2 rounded-full bg-black px-2.5 py-1 font-mono text-white text-xs'>
+    <div className='fixed right-4 bottom-4 z-50 flex space-x-2 rounded-full bg-foreground px-2.5 py-1 font-mono text-background text-xs'>
       <span>Dev</span>
 
       <div className='h-4 w-px bg-border' />
