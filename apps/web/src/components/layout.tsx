@@ -1,5 +1,6 @@
-import cn from '@acme/ui/lib/cn'
 import type { HTMLAttributes } from 'react'
+
+import cn from '@acme/ui/lib/cn'
 
 type LayoutProps = HTMLAttributes<HTMLDivElement>
 
