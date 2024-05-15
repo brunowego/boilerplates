@@ -1,13 +1,33 @@
 import {
+  Activity,
   Check,
+  CircleUser,
   Loader2,
+  LogOut,
   Moon,
-  ShieldBan,
+  MoveLeft,
+  Plus,
+  Settings2,
+  Shield,
   ShieldCheck,
   Sun,
-  UserCog,
+  UserPlus,
 } from 'lucide-react'
 
-export { Check, Loader2, Moon, ShieldBan, ShieldCheck, Sun, UserCog }
+export {
+  Activity,
+  Check,
+  CircleUser,
+  Loader2,
+  LogOut,
+  Moon,
+  MoveLeft,
+  Plus,
+  Settings2,
+  Shield,
+  ShieldCheck,
+  Sun,
+  UserPlus,
+}
 
 export * as default from './icon'

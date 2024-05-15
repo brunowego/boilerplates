@@ -80,7 +80,7 @@ export default function EditPersonalForm({
           <Page>
             <PageHeader>
               <h1 className={typographyVariants({ variant: 'title' })}>
-                General
+                Profile
               </h1>
 
               {formState.isDirty ? (
