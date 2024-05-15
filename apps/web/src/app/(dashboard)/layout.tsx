@@ -3,15 +3,10 @@ import type { ReactNode, JSX } from 'react'
 import Link from 'next/link'
 
 import { LogoMark } from '@acme/ui/components/logo'
-import { Settings2 } from '@acme/ui/components/icon'
+import { Home, Settings2 } from '@acme/ui/components/icon'
 
-import {
-  Layout,
-  LayoutHeader,
-  LayoutContent /*, LayoutAside*/,
-} from '@/components'
+import { Layout, LayoutHeader, LayoutContent } from '@/components'
 import ThemeToggle from '@/components/theme-toggle'
-import Sidebar from '@/components/sidebar'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -31,6 +26,12 @@ export default function DashboardLayout({
           <LogoMark className='size-8' />
         </Link>
 
+        <nav className='grid *:flex *:h-10 *:items-center *:justify-center'>
+          <Link href='/'>
+            <Home className='size-5' />
+          </Link>
+        </nav>
+
         <nav className='mt-auto grid *:flex *:h-10 *:items-center *:justify-center'>
           <Link href='/personal'>
             <Settings2 className='size-5' />
@@ -40,13 +41,7 @@ export default function DashboardLayout({
         <ThemeToggle className='self-center' />
       </LayoutHeader>
 
-      <LayoutContent>
-        <Sidebar />
-
-        {children}
-      </LayoutContent>
-
-      {/* <LayoutAside /> */}
+      <LayoutContent>{children}</LayoutContent>
     </Layout>
   )
 }

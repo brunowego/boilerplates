@@ -12,7 +12,7 @@ export default function Fieldset({
   children,
 }: FieldsetProps): JSX.Element {
   return (
-    <div className='grid items-start gap-4 xl:grid-cols-7 xl:gap-x-8'>
+    <div className='grid items-start gap-4 xl:grid-cols-8 xl:gap-x-8'>
       <div className='xl:col-span-3'>
         <h2 className='font-medium'>{title}</h2>
 
@@ -23,7 +23,7 @@ export default function Fieldset({
         ) : null}
       </div>
 
-      {children}
+      <div className='xl:col-span-5'>{children}</div>
     </div>
   )
 }

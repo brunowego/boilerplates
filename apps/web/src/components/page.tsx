@@ -6,7 +6,10 @@ type PageProps = HTMLAttributes<HTMLElement>
 
 const Page = ({ className, ...props }: PageProps) => {
   return (
-    <article className={cn('flex h-full flex-col', className)} {...props} />
+    <article
+      className={cn('flex h-full flex-1 flex-col', className)}
+      {...props}
+    />
   )
 }
 

@@ -5,7 +5,6 @@ import { typographyVariants } from '@acme/ui/components/typography'
 import Badge from '@acme/ui/components/badge'
 import { Card, CardContent } from '@acme/ui/components/card'
 import Button from '@acme/ui/components/button'
-import Separator from '@acme/ui/components/separator'
 import { ShieldCheck } from '@acme/ui/components/icon'
 import {
   Table,
@@ -26,7 +25,7 @@ export default function SecurityPage(): JSX.Element {
         <h1 className={typographyVariants({ variant: 'title' })}>Security</h1>
       </PageHeader>
 
-      <PageContent>
+      <PageContent className='divide-y *:py-5 first:*:pt-0 last:*:pb-0'>
         <Fieldset
           title={
             <>
@@ -51,7 +50,7 @@ export default function SecurityPage(): JSX.Element {
             </>
           }
         >
-          <Card className='xl:col-span-4'>
+          <Card>
             <CardContent>
               <p className='text-sm'>
                 Creating a passkey takes under a minute.
@@ -64,10 +63,8 @@ export default function SecurityPage(): JSX.Element {
           </Card>
         </Fieldset>
 
-        <Separator className='my-4 xl:my-5' />
-
         <Fieldset title='Password'>
-          <Card className='col-span-4'>
+          <Card>
             <CardContent>
               <p className='text-sm'>
                 You have not set a password on your account.
@@ -80,13 +77,11 @@ export default function SecurityPage(): JSX.Element {
           </Card>
         </Fieldset>
 
-        <Separator className='my-4 xl:my-5' />
-
         <Fieldset
           title='Secondary email'
           description='A secondary email can be used to restore access to your account. Security notifications are also sent to this email.'
         >
-          <Card className='col-span-4'>
+          <Card>
             <CardContent>
               <p className='text-sm'>You do not have a secondary email.</p>
 
@@ -96,8 +91,6 @@ export default function SecurityPage(): JSX.Element {
             </CardContent>
           </Card>
         </Fieldset>
-
-        <Separator className='my-4 xl:my-5' />
 
         <Fieldset
           title='Two-step authentication'
@@ -114,7 +107,7 @@ export default function SecurityPage(): JSX.Element {
             </>
           }
         >
-          <Card className='col-span-4'>
+          <Card>
             <CardContent className='border-b'>
               <h4 className='font-medium'>Authentication methods</h4>
 
@@ -157,13 +150,11 @@ export default function SecurityPage(): JSX.Element {
           </Card>
         </Fieldset>
 
-        <Separator className='my-4 xl:my-5' />
-
         <Fieldset
           title='Devices'
           description="You're currently logged in to Shopify on these devices. If you don't recognize a device, log out to keep your account secure."
         >
-          <Card className='col-span-4'>
+          <Card>
             <CardContent className='border-b'>
               <h4 className='font-medium'>Logged in</h4>
             </CardContent>
