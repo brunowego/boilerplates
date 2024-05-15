@@ -40,7 +40,7 @@ export default function DashboardLayout({
         <ThemeToggle className='self-center' />
       </LayoutHeader>
 
-      <LayoutContent className='flex'>
+      <LayoutContent>
         <Sidebar />
 
         {children}

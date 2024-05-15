@@ -43,7 +43,9 @@ const LayoutHeader = ({
 type LayoutContentProps = HTMLAttributes<HTMLElement>
 
 const LayoutContent = ({ className, ...props }: LayoutContentProps) => {
-  return <main className={cn('w-full border-r pl-16', className)} {...props} />
+  return (
+    <main className={cn('flex w-full border-r pl-16', className)} {...props} />
+  )
 }
 
 type LayoutAsideProps = HTMLAttributes<HTMLElement>
