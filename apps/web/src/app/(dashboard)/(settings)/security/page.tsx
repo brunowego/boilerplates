@@ -56,9 +56,7 @@ export default function SecurityPage(): JSX.Element {
                 Creating a passkey takes under a minute.
               </p>
 
-              <Button className='mt-4' variant='outline'>
-                Create a passkey
-              </Button>
+              <Button className='mt-4'>Create a passkey</Button>
             </CardContent>
           </Card>
         </Fieldset>
@@ -70,9 +68,7 @@ export default function SecurityPage(): JSX.Element {
                 You have not set a password on your account.
               </p>
 
-              <Button className='mt-4' variant='outline'>
-                Create password
-              </Button>
+              <Button className='mt-4'>Create password</Button>
             </CardContent>
           </Card>
         </Fieldset>
@@ -85,9 +81,7 @@ export default function SecurityPage(): JSX.Element {
             <CardContent>
               <p className='text-sm'>You do not have a secondary email.</p>
 
-              <Button className='mt-4' variant='outline'>
-                Add secondary email
-              </Button>
+              <Button className='mt-4'>Add secondary email</Button>
             </CardContent>
           </Card>
         </Fieldset>
@@ -143,9 +137,7 @@ export default function SecurityPage(): JSX.Element {
                 </li>
               </ul>
 
-              <Button className='mt-4' variant='outline'>
-                Turn on two-step
-              </Button>
+              <Button className='mt-4'>Turn on two-step</Button>
             </CardContent>
           </Card>
         </Fieldset>

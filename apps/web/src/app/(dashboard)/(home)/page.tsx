@@ -26,7 +26,7 @@ export default function HomePage(): JSX.Element {
       </PageHeader>
 
       <PageContent>
-        <div className='relative mt-4'>
+        <div className='relative'>
           <div className='grid grid-cols-5 gap-x-4'>
             {Array.from({ length: 5 }).map((_, index) => (
               <div

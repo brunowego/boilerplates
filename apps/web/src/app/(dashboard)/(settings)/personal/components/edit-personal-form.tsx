@@ -81,7 +81,9 @@ export default function EditPersonalForm({
                   <div className='flex gap-x-4'>
                     <Avatar className='size-16'>
                       <AvatarImage src='' />
-                      <AvatarFallback>BW</AvatarFallback>
+                      <AvatarFallback className='border-dashed'>
+                        BW
+                      </AvatarFallback>
                     </Avatar>
 
                     <div className='grid'>
@@ -314,16 +316,11 @@ export default function EditPersonalForm({
                 </h2>
 
                 <div className='flex gap-x-2'>
-                  <Button size='lg' variant='outline'>
+                  <Button size='lg' variant='secondary'>
                     Cancel
                   </Button>
 
-                  <Button
-                    disabled={!formState.isValid}
-                    size='lg'
-                    type='submit'
-                    variant='secondary'
-                  >
+                  <Button disabled={!formState.isValid} size='lg' type='submit'>
                     {formState.isSubmitting ? (
                       <Loader2 className='size-5 animate-spin' />
                     ) : (
