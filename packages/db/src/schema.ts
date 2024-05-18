@@ -63,7 +63,10 @@ export const accountsTable = pgTable(
 )
 
 export const accountsRelations = relations(accountsTable, ({ one }) => ({
-  user: one(usersTable),
+  user: one(usersTable, {
+    fields: [accountsTable.userId],
+    references: [usersTable.id],
+  }),
 }))
 
 export const sessionsTable = pgTable(
@@ -87,7 +90,10 @@ export const sessionsTable = pgTable(
 )
 
 export const sessionsRelations = relations(sessionsTable, ({ one }) => ({
-  user: one(usersTable),
+  user: one(usersTable, {
+    fields: [sessionsTable.userId],
+    references: [usersTable.id],
+  }),
 }))
 
 export const verificationTokensTable = pgTable(
