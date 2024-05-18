@@ -1,7 +1,7 @@
 ---
 version: 0.1
 cli:
-  version: 1.22.0
+  version: 1.22.1
 plugins:
   sources:
     - id: trunk
@@ -20,13 +20,13 @@ lint:
     - dotenv-linter
     - prettier
   enabled:
-    - biome@1.7.2
-    - checkov@3.2.79
+    - biome@1.7.3
+    - checkov@3.2.95
     - git-diff-check
     - markdownlint@0.40.0
-    - osv-scanner@1.7.2
+    - osv-scanner@1.7.3
     - trivy@0.51.1
-    - trufflehog@3.75.0
+    - trufflehog@3.76.3
     - yamllint@1.35.1
 actions:
   disabled:
