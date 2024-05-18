@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/email",
+  "version": "0.0.0",
+  "private": true,
+  "license": "COPYRIGHT",
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "email dev"
+  },
+  "dependencies": {
+    "@react-email/components": "~0.0.17",
+    "@react-email/tailwind": "~0.0.16",
+    "react": "~18.3.1",
+    "react-dom": "~18.3.1",
+    "react-email": "~2.1.2",
+    "resend": "~3.2.0"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:~",
+    "@types/preview-email": "~3.0.4",
+    "preview-email": "~3.0.19"
+  }
+}
