@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@acme/db": "workspace:~",
+    "@acme/puck": "workspace:~",
     "@acme/ui": "workspace:~",
     "@hookform/devtools": "~4.3.1",
     "@measured/puck": "~0.14.2",

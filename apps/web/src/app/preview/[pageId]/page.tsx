@@ -1,6 +1,6 @@
 import type { JSX } from 'react'
 
-import { default as View } from '../components/view-page'
+import { default as View } from './components/view-page'
 
 type ViewPageProps = {
   params: {
@@ -9,5 +9,9 @@ type ViewPageProps = {
 }
 
 export default function ViewPage({ params }: ViewPageProps): JSX.Element {
-  return <View pageId={params.pageId} />
+  return (
+    <div className='container'>
+      <View pageId={params.pageId} />
+    </div>
+  )
 }

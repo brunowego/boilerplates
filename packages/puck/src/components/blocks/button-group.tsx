@@ -1,5 +1,4 @@
 import type { ComponentConfig } from '@measured/puck'
-import Link from 'next/link'
 
 import cn from '@acme/ui/lib/cn'
 import { buttonVariants } from '@acme/ui/components/button'
@@ -54,14 +53,14 @@ export const ButtonGroup: ComponentConfig<ButtonGroupProps> = {
     return (
       <div className={cn('flex gap-x-2', align)}>
         {buttons.map((button, index) => (
-          <Link
+          <a
             className={buttonVariants({ variant: button.variant })}
             href={button.href}
             // biome-ignore lint/suspicious/noArrayIndexKey: This is a static list of buttons
             key={index}
           >
             {button.label}
-          </Link>
+          </a>
         ))}
       </div>
     )

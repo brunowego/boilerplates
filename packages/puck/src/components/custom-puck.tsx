@@ -1,6 +1,5 @@
 import type { JSX } from 'react'
 import { type Data, usePuck, Puck } from '@measured/puck'
-import Link from 'next/link'
 
 import Button, { buttonVariants } from '@acme/ui/components/button'
 import { ChevronLeft, ChevronRight } from '@acme/ui/components/icon'
@@ -48,13 +47,14 @@ const CustomHeader = ({ pageId, onPublish }: CustomHeaderProps) => {
       </div>
 
       {pageId ? (
-        <Link
+        <a
           className={buttonVariants({ variant: 'secondary' })}
-          href={`/pages/${pageId}`}
+          href={`/preview/${pageId}`}
           target='_blank'
+          rel='noreferrer'
         >
           View page
-        </Link>
+        </a>
       ) : null}
 
       <Button onClick={() => onPublish(appState.data)} type='button'>

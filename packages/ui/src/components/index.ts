@@ -21,6 +21,7 @@ export { typographyVariants } from './typography'
 
 export { default as Button, buttonVariants } from './button'
 export { default as EmptyState } from './empty-state'
+export { default as Heading } from './heading'
 export { default as Input, inputVariants } from './input'
 export { default as Separator } from './separator'
 export { default as Skeleton } from './skeleton'

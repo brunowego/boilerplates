@@ -1,6 +1,5 @@
 import type { ComponentConfig } from '@measured/puck'
 import { useState } from 'react'
-import Link from 'next/link'
 
 import cn from '@acme/ui/lib/cn'
 import { buttonVariants } from '@acme/ui/components/button'
@@ -108,14 +107,14 @@ export const Hero: ComponentConfig<HeroProps> = {
 
           <div className='mt-4 flex gap-x-2'>
             {buttons.map((button, index) => (
-              <Link
+              <a
                 className={buttonVariants({ variant: button.variant })}
                 href={button.href}
                 // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                 key={index}
               >
                 {button.label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

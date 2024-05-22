@@ -9,7 +9,7 @@ import {
   Hero,
   Paragraph,
   VerticalSpace,
-} from '@/components/blocks'
+} from './components/blocks'
 
 export const config: Config = {
   components: {
@@ -23,3 +23,6 @@ export const config: Config = {
     VerticalSpace,
   },
 }
+
+export { type Data, Puck as default, Render } from '@measured/puck'
+export { default as CustomPuck } from './components/custom-puck'

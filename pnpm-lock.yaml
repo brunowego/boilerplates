@@ -27,6 +27,9 @@ importers:
       '@acme/db':
         specifier: workspace:~
         version: link:../../packages/db
+      '@acme/puck':
+        specifier: workspace:~
+        version: link:../../packages/puck
       '@acme/ui':
         specifier: workspace:~
         version: link:../../packages/ui
@@ -131,6 +134,25 @@ importers:
       nanoid:
         specifier: ~5.0.7
         version: 5.0.7
+    devDependencies:
+      '@acme/typescript-config':
+        specifier: workspace:~
+        version: link:../../tools/typescript-config
+
+  packages/puck:
+    dependencies:
+      '@acme/ui':
+        specifier: workspace:~
+        version: link:../ui
+      '@measured/puck':
+        specifier: ~0.14.2
+        version: 0.14.2(@types/react-dom@18.3.0)(@types/react@18.3.2)(prop-types@15.8.1)(react-dom@18.3.1)(react@18.3.1)
+      '@types/react':
+        specifier: ~18.3.2
+        version: 18.3.2
+      react:
+        specifier: ~18.3.1
+        version: 18.3.1
     devDependencies:
       '@acme/typescript-config':
         specifier: workspace:~

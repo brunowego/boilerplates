@@ -2,7 +2,7 @@ import type { ComponentConfig } from '@measured/puck'
 
 import _Heading, {
   type HeadingProps as _HeadingProps,
-} from '@/components/heading'
+} from '@acme/ui/components/heading'
 
 export type HeadingProps = {
   text?: string

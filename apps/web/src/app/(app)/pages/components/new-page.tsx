@@ -3,15 +3,13 @@
 import type { JSX } from 'react'
 // import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
-import { type Data, Puck } from '@measured/puck'
-import '@measured/puck/puck.css'
 
 import toast from '@acme/ui/lib/toast'
+import Puck, { type Data, config, CustomPuck } from '@acme/puck'
+import '@acme/puck/styles.css'
 
 import api from '@/lib/api'
 import { Page } from '@/components/page'
-import { config } from '@/lib/puck'
-import CustomPuck from '@/components/custom-puck'
 
 export default function NewPage(): JSX.Element {
   const { push } = useRouter()

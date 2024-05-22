@@ -2,10 +2,10 @@
 
 import type { JSX } from 'react'
 import { notFound } from 'next/navigation'
-import { Render as PuckRender } from '@measured/puck'
+
+import { Render, config, type Data } from '@acme/puck'
 
 import { usePage } from '@/hooks/api/use-pages'
-import { config } from '@/lib/puck'
 
 type ViewPageProps = {
   pageId: string
@@ -23,5 +23,5 @@ export default function ViewPage({ pageId }: ViewPageProps): JSX.Element {
   }
 
   // @ts-ignore
-  return <PuckRender config={config} data={page.data} />
+  return <Render config={config} data={page.data as Data} />
 }
