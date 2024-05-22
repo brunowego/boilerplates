@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/puck-background-image",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.tsx",
+  "dependencies": {
+    "@acme/ui": "workspace:~",
+    "@measured/puck": "~0.14.2",
+    "axios": "~1.7.2",
+    "react": "~18.3.1"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:~",
+    "@types/node": "~20.12.12",
+    "@types/react": "~18.3.2"
+  }
+}
