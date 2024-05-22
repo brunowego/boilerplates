@@ -37,23 +37,23 @@ importers:
         specifier: ~0.14.2
         version: 0.14.2(@types/react-dom@18.3.0)(@types/react@18.3.2)(prop-types@15.8.1)(react-dom@18.3.1)(react@18.3.1)
       '@tanstack/query-core':
-        specifier: ~5.36.0
-        version: 5.36.0
+        specifier: ~5.36.1
+        version: 5.36.1
       '@tanstack/react-query':
-        specifier: ~5.36.0
-        version: 5.36.0(react@18.3.1)
+        specifier: ~5.37.1
+        version: 5.37.1(react@18.3.1)
       '@tanstack/react-query-devtools':
-        specifier: ~5.36.0
-        version: 5.36.0(@tanstack/react-query@5.36.0)(react@18.3.1)
+        specifier: ~5.37.1
+        version: 5.37.1(@tanstack/react-query@5.37.1)(react@18.3.1)
       '@tanstack/react-query-next-experimental':
-        specifier: ~5.36.0
-        version: 5.36.0(@tanstack/react-query@5.36.0)(next@14.2.3)(react@18.3.1)
+        specifier: ~5.37.1
+        version: 5.37.1(@tanstack/react-query@5.37.1)(next@14.2.3)(react@18.3.1)
       axios:
-        specifier: ~1.6.8
-        version: 1.6.8
+        specifier: ~1.7.2
+        version: 1.7.2
       lucide-react:
-        specifier: ~0.378.0
-        version: 0.378.0(react@18.3.1)
+        specifier: ~0.379.0
+        version: 0.379.0(react@18.3.1)
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1)(react@18.3.1)
@@ -68,8 +68,8 @@ importers:
         specifier: workspace:~
         version: link:../../tools/typescript-config
       '@types/node':
-        specifier: ~20.12.11
-        version: 20.12.11
+        specifier: ~20.12.12
+        version: 20.12.12
       '@types/react':
         specifier: ~18.3.2
         version: 18.3.2
@@ -120,11 +120,11 @@ importers:
         specifier: ~8.11.6
         version: 8.11.6
       bun:
-        specifier: ~1.1.8
-        version: 1.1.8
+        specifier: ~1.1.9
+        version: 1.1.9
       drizzle-kit:
-        specifier: ~0.21.1
-        version: 0.21.1
+        specifier: ~0.21.2
+        version: 0.21.2
 
   packages/id:
     dependencies:
@@ -142,8 +142,8 @@ importers:
         specifier: workspace:~
         version: link:../../tools/tailwind-config
       '@hookform/resolvers':
-        specifier: ~3.3.4
-        version: 3.3.4(react-hook-form@7.51.4)
+        specifier: ~3.4.2
+        version: 3.4.2(react-hook-form@7.51.5)
       '@radix-ui/react-label':
         specifier: ~2.0.2
         version: 2.0.2(@types/react-dom@18.3.0)(@types/react@18.3.2)(react-dom@18.3.1)(react@18.3.1)
@@ -160,14 +160,14 @@ importers:
         specifier: ~2.1.1
         version: 2.1.1
       lucide-react:
-        specifier: ~0.378.0
-        version: 0.378.0(react@18.3.1)
+        specifier: ~0.379.0
+        version: 0.379.0(react@18.3.1)
       next-themes:
         specifier: ~0.3.0
         version: 0.3.0(react-dom@18.3.1)(react@18.3.1)
       react-hook-form:
-        specifier: ~7.51.4
-        version: 7.51.4(react@18.3.1)
+        specifier: ~7.51.5
+        version: 7.51.5(react@18.3.1)
       slugify:
         specifier: ~1.6.6
         version: 1.6.6
@@ -191,8 +191,8 @@ importers:
         specifier: workspace:~
         version: link:../../tools/typescript-config
       '@types/node':
-        specifier: ~20.12.11
-        version: 20.12.11
+        specifier: ~20.12.12
+        version: 20.12.12
       '@types/react':
         specifier: ~18.3.2
         version: 18.3.2
@@ -919,12 +919,12 @@ packages:
       - '@types/react'
     dev: false
 
-  /@hookform/resolvers@3.3.4(react-hook-form@7.51.4):
-    resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
+  /@hookform/resolvers@3.4.2(react-hook-form@7.51.5):
+    resolution: {integrity: sha512-1m9uAVIO8wVf7VCDAGsuGA0t6Z3m6jVGAN50HkV9vYLl0yixKK/Z1lr01vaRvYCkIKGoy1noVRxMzQYb4y/j1Q==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.51.4(react@18.3.1)
+      react-hook-form: 7.51.5(react@18.3.1)
     dev: false
 
   /@isaacs/cliui@8.0.2:
@@ -1123,64 +1123,64 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  /@oven/bun-darwin-aarch64@1.1.8:
-    resolution: {integrity: sha512-M9qPzCYbSsQOsPNhyr8h8hIyZ1T7fgeg8QJPIIXppWHzL6nqqOn+12ombFuDy0EdetVjrUSDmSPO8cR8j3Kv0Q==}
+  /@oven/bun-darwin-aarch64@1.1.9:
+    resolution: {integrity: sha512-t5YimxcRKx/pKO8mqifIOvI97xgQtlNFmuYmZnYdv5CJjagiBN3xv+a5LAQsYS/TPmP4sbKel9vB7SrYRekToA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@oven/bun-darwin-x64-baseline@1.1.8:
-    resolution: {integrity: sha512-YV7pETCt3k5Xc4soR3kFx3AxbPco3w/17JhDHTDajkw033aSqCMWLvd2fHLUA0xPn46ktOMhe/aESULymvvo5w==}
+  /@oven/bun-darwin-x64-baseline@1.1.9:
+    resolution: {integrity: sha512-agY30jyGM86EJ13PkvYIMBBVXxFyTf0N3PvYrJE6723Hr//R6j9i7UOvdWIqeE9YRjsJbPLhCjtViBSsJ2hPaw==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@oven/bun-darwin-x64@1.1.8:
-    resolution: {integrity: sha512-al0V8PlWWFRprptwAQTdhMYacc0K1RyaoW+FvLtwZis1Lzl8o+NDHnxOhRzfzafttYIjssPOEz9zGTYuACBn8w==}
+  /@oven/bun-darwin-x64@1.1.9:
+    resolution: {integrity: sha512-58gCtFrf1PCU++Om6qH4WKhcGvDrRqnH6KQQHaxmFqlJegeTu6q9cArulhD6xuEl7U6dIdZQrv2KHoEU/wJylw==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@oven/bun-linux-aarch64@1.1.8:
-    resolution: {integrity: sha512-C/QL5vgmBXWm0JsHWEKXlwG/gSB+MiOdvgfbnADRDaGPgZMGRK7uXFj/TLtw9CBRXugfty/lLkzY+18fQ8LVfw==}
+  /@oven/bun-linux-aarch64@1.1.9:
+    resolution: {integrity: sha512-R0eiTHD2Po+uUfXQiqNvw0CuVuBMlAGLQ6UeYTx+60mkLLKJkws1+kq8VhBWYt40fg+BYlWcIoLsZ1sTNFlCNg==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@oven/bun-linux-x64-baseline@1.1.8:
-    resolution: {integrity: sha512-RlWLFVvSbHkpNyorzeapfYUKuZYfhBgQV5N7EwiG8Kul8BPiRKAW+uOK6BuwJyA0vduF7Z4/cBeIO4XygXb5QQ==}
+  /@oven/bun-linux-x64-baseline@1.1.9:
+    resolution: {integrity: sha512-vi/CKnXi1uzmFpI9TsSRwnXuf+fR6ZmzULyj4dKY/PGo09BIUc6iJ2fmTc2lXa519t7XEjP0MMYivb/HQp70Lw==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@oven/bun-linux-x64@1.1.8:
-    resolution: {integrity: sha512-Z6Lyd8oH8EjER4rpC3L+B7G4ub7DW6IjPqmaov445jByOK/KZktzlNEJgdrcrPVocAA/xZ+eYtzeyQ/z4ITdhg==}
+  /@oven/bun-linux-x64@1.1.9:
+    resolution: {integrity: sha512-GpXZKKmVTJp1zZFlBJp6v3aAcy9s2FlbdBSy2c3kNv8C7Vyn0ROi1N9/zU8Ug44my7fLImtTJA1wVjxdSHy+8g==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@oven/bun-windows-x64-baseline@1.1.8:
-    resolution: {integrity: sha512-RXoCcY5DnVaF5HAGZ8Hms8Izo6yTHgTZsy/rqmaZLjfntOf4Gn8vw3YVE4Pa0AqW6oQYTSmSlgxM47kVWOv3+w==}
+  /@oven/bun-windows-x64-baseline@1.1.9:
+    resolution: {integrity: sha512-Noorqymq+AcEpbF0hIBSLVhEnLuXOw/pqxZx1adNxmkuVQqq0xhm7bI1dV88vH6aBFa1Ii7gfBxV9SaPh6ndTQ==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@oven/bun-windows-x64@1.1.8:
-    resolution: {integrity: sha512-svZHc2sGLqJrzXiD/6XaJNvJ0PE+WpdZv/pRkn9tXgA2j0gOawN3oAiHXUOWoYS5kQQ7GiksEJlYVPA4JyJY0A==}
+  /@oven/bun-windows-x64@1.1.9:
+    resolution: {integrity: sha512-7qgAkj/20m2GSd9JYAV1w3WoXKb+2i8Dc9STKdpBV14nEcHAcO0X/WfKvHLS+xnhFJ629TQioXXMPDHmWYjyFA==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
@@ -1296,43 +1296,43 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@tanstack/query-core@5.36.0:
-    resolution: {integrity: sha512-B5BD3pg/mztDR36i77hGcyySKKeYrbM5mnogOROTBi1SUml5ByRK7PGUUl16vvubvQC+mSnqziFG/VIy/DE3FQ==}
+  /@tanstack/query-core@5.36.1:
+    resolution: {integrity: sha512-BteWYEPUcucEu3NBcDAgKuI4U25R9aPrHSP6YSf2NvaD2pSlIQTdqOfLRsxH9WdRYg7k0Uom35Uacb6nvbIMJg==}
     dev: false
 
-  /@tanstack/query-devtools@5.32.1:
-    resolution: {integrity: sha512-7Xq57Ctopiy/4atpb0uNY5VRuCqRS/1fi/WBCKKX6jHMa6cCgDuV/AQuiwRXcKARbq2OkVAOrW2v4xK9nTbcCA==}
+  /@tanstack/query-devtools@5.37.1:
+    resolution: {integrity: sha512-XcG4IIHIv0YQKrexTqo2zogQWR1Sz672tX2KsfE9kzB+9zhx44vRKH5si4WDILE1PIWQpStFs/NnrDQrBAUQpg==}
     dev: false
 
-  /@tanstack/react-query-devtools@5.36.0(@tanstack/react-query@5.36.0)(react@18.3.1):
-    resolution: {integrity: sha512-AxZSmM7CmjDQrcY9gceFBS+1DqkfTqAMpDCMltzIxMKvKn+ZhgBsV49aewhVXP1DgZzb+Is4f9HH2EMu//njXw==}
+  /@tanstack/react-query-devtools@5.37.1(@tanstack/react-query@5.37.1)(react@18.3.1):
+    resolution: {integrity: sha512-fWL3rV/avL9HsHt3RVYxuLCqSHghBwSGPIUMDZ9hfg9PDjQaeI9d8kJj6yLoCBWUhTue5/rQbISvFtr+yxyYyA==}
     peerDependencies:
-      '@tanstack/react-query': ^5.36.0
+      '@tanstack/react-query': ^5.37.1
       react: ^18.0.0
     dependencies:
-      '@tanstack/query-devtools': 5.32.1
-      '@tanstack/react-query': 5.36.0(react@18.3.1)
+      '@tanstack/query-devtools': 5.37.1
+      '@tanstack/react-query': 5.37.1(react@18.3.1)
       react: 18.3.1
     dev: false
 
-  /@tanstack/react-query-next-experimental@5.36.0(@tanstack/react-query@5.36.0)(next@14.2.3)(react@18.3.1):
-    resolution: {integrity: sha512-NBYM8HuOjZeDce+fdE9mlf2BTqJgtbSp9VJX+fN6t+wVtoUSN93SeZD/7vRnRv22yKA4PehbPNQ0maX4TWwa/A==}
+  /@tanstack/react-query-next-experimental@5.37.1(@tanstack/react-query@5.37.1)(next@14.2.3)(react@18.3.1):
+    resolution: {integrity: sha512-Z4ksCK2Ta4UhQ2fwowlOT3P94pcfRLIY+cHHsp92y2di9Bft6q6yODoDVOSvVho1tqQjlJemljegZaUZUvtKVA==}
     peerDependencies:
-      '@tanstack/react-query': ^5.36.0
+      '@tanstack/react-query': ^5.37.1
       next: ^13 || ^14
       react: ^18.0.0
     dependencies:
-      '@tanstack/react-query': 5.36.0(react@18.3.1)
+      '@tanstack/react-query': 5.37.1(react@18.3.1)
       next: 14.2.3(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
     dev: false
 
-  /@tanstack/react-query@5.36.0(react@18.3.1):
-    resolution: {integrity: sha512-BATvtM0rohwg7pRHUnxgeDiwLWRGZ8OM/4y8LImHVpecQWoH6Uhytu3Z8YV6V7hQ1sMQBFcUrGE1/e4MxR6YiA==}
+  /@tanstack/react-query@5.37.1(react@18.3.1):
+    resolution: {integrity: sha512-EhtBNA8GL3XFeSx6VYUjXQ96n44xe3JGKZCzBINrCYlxbZP6UwBafv7ti4eSRWc2Fy+fybQre0w17gR6lMzULA==}
     peerDependencies:
       react: ^18.0.0
     dependencies:
-      '@tanstack/query-core': 5.36.0
+      '@tanstack/query-core': 5.36.1
       react: 18.3.1
     dev: false
 
@@ -1362,8 +1362,8 @@ packages:
     resolution: {integrity: sha512-X+2qazGS3jxLAIz5JDXDzglAF3KpijdhFxlf/V1+hEsOUc+HnWi81L/uv/EvGuV90WY+7mPGFCUDGfQC3Gj95Q==}
     dev: false
 
-  /@types/node@20.12.11:
-    resolution: {integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==}
+  /@types/node@20.12.12:
+    resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
     dependencies:
       undici-types: 5.26.5
 
@@ -1374,7 +1374,7 @@ packages:
   /@types/pg@8.11.6:
     resolution: {integrity: sha512-/2WmmBXHLsfRqzfHW7BNZ8SbYzE8OSk7i3WjFYvfgRHj7S1xj+16Je5fUKv3lVdVzk/zn9TXOqf+avFCFIE0yQ==}
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       pg-protocol: 1.6.1
       pg-types: 4.0.2
 
@@ -1454,8 +1454,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /axios@1.6.8:
-    resolution: {integrity: sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==}
+  /axios@1.7.2:
+    resolution: {integrity: sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==}
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
@@ -1510,21 +1510,21 @@ packages:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: true
 
-  /bun@1.1.8:
-    resolution: {integrity: sha512-TSL3POeJspEvIsfVqQZ/Sbl81kkzuUYCdE5fPdaDw0V6uU1j9d6JzfjYwNyDRnaacAAPnz3ZJukwGz3d6qJNzw==}
+  /bun@1.1.9:
+    resolution: {integrity: sha512-imtKSi5ieJYZ8H/YJIUy1xY91izXTV0iE28399vKiq3vjNaVz9/kzEHqZKDZcofYtknfnc5Izo4qaB5kpmQ+Yg==}
     cpu: [arm64, x64]
     os: [darwin, linux, win32]
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      '@oven/bun-darwin-aarch64': 1.1.8
-      '@oven/bun-darwin-x64': 1.1.8
-      '@oven/bun-darwin-x64-baseline': 1.1.8
-      '@oven/bun-linux-aarch64': 1.1.8
-      '@oven/bun-linux-x64': 1.1.8
-      '@oven/bun-linux-x64-baseline': 1.1.8
-      '@oven/bun-windows-x64': 1.1.8
-      '@oven/bun-windows-x64-baseline': 1.1.8
+      '@oven/bun-darwin-aarch64': 1.1.9
+      '@oven/bun-darwin-x64': 1.1.9
+      '@oven/bun-darwin-x64-baseline': 1.1.9
+      '@oven/bun-linux-aarch64': 1.1.9
+      '@oven/bun-linux-x64': 1.1.9
+      '@oven/bun-linux-x64-baseline': 1.1.9
+      '@oven/bun-windows-x64': 1.1.9
+      '@oven/bun-windows-x64-baseline': 1.1.9
     dev: true
 
   /busboy@1.6.0:
@@ -1881,8 +1881,8 @@ packages:
       wordwrap: 1.0.0
     dev: true
 
-  /drizzle-kit@0.21.1:
-    resolution: {integrity: sha512-Sp7OnCdROiE2ebMuHsAfrnRoHVGYCvErQxUh7/0l6R1caHssZu9oZu/hW9rLU19xnTK4/y3iSe3sL0Cc530wCg==}
+  /drizzle-kit@0.21.2:
+    resolution: {integrity: sha512-U87IhZyCt/9d0ZT/Na3KFJVY31tSxtTx/n9UMcWFpW/5c2Ede39xiCG5efNV/0iimsv97UIRtDI0ldLBW5lbcg==}
     hasBin: true
     dependencies:
       '@esbuild-kit/esm-loader': 2.6.5
@@ -2453,8 +2453,8 @@ packages:
       es5-ext: 0.10.64
     dev: true
 
-  /lucide-react@0.378.0(react@18.3.1):
-    resolution: {integrity: sha512-u6EPU8juLUk9ytRcyapkWI18epAv3RU+6+TC23ivjR0e+glWKBobFeSgRwOIJihzktILQuy6E0E80P2jVTDR5g==}
+  /lucide-react@0.379.0(react@18.3.1):
+    resolution: {integrity: sha512-KcdeVPqmhRldldAAgptb8FjIunM2x2Zy26ZBh1RsEUcdLIvsEmbcw7KpzFYUy5BbpGeWhPu9Z9J5YXfStiXwhg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
@@ -3231,8 +3231,8 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
     dev: false
 
-  /react-hook-form@7.51.4(react@18.3.1):
-    resolution: {integrity: sha512-V14i8SEkh+V1gs6YtD0hdHYnoL4tp/HX/A45wWQN15CYr9bFRmmRdYStSO5L65lCCZRF+kYiSKhm9alqbcdiVA==}
+  /react-hook-form@7.51.5(react@18.3.1):
+    resolution: {integrity: sha512-J2ILT5gWx1XUIJRETiA7M19iXHlG74+6O3KApzvqB/w8S5NQR7AbU8HVZrMALdmDgWpRPYiZJl0zx8Z4L2mP6Q==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
