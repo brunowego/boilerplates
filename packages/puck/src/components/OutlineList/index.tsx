@@ -1,0 +1,31 @@
+import styles from './styles.module.css'
+import getClassNameFactory from '../../lib/get-class-name-factory'
+import type { ReactNode, SyntheticEvent } from 'react'
+
+const getClassName = getClassNameFactory('OutlineList', styles)
+const getClassNameItem = getClassNameFactory('OutlineListItem', styles)
+
+export const OutlineList = ({ children }: { children: ReactNode }) => {
+  return <ul className={getClassName()}>{children}</ul>
+}
+
+OutlineList.Clickable = ({ children }: { children: ReactNode }) => (
+  <div className={getClassNameItem({ clickable: true })}>{children}</div>
+)
+
+OutlineList.Item = ({
+  children,
+  onClick,
+}: {
+  children: ReactNode
+  onClick?: (e: SyntheticEvent) => void
+}) => {
+  return (
+    <li
+      className={getClassNameItem({ clickable: !!onClick })}
+      onClick={onClick}
+    >
+      {children}
+    </li>
+  )
+}

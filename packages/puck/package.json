@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/puck",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./rsc": {
+      "types": "./src/rsc.ts",
+      "import": "./src/rsc.ts"
+    },
+    "./puck.css": "./src/styles/index.css"
+  },
+  "dependencies": {
+    "@acme/id": "workspace:~",
+    "@acme/typescript-config": "workspace:~",
+    "@acme/ui": "workspace:~",
+    "@measured/dnd": "16.6.0-canary.4cba1d1",
+    "classnames": "~2.5.1",
+    "css-box-model": "~1.2.1",
+    "object-hash": "~3.0.0",
+    "react-frame-component": "~5.2.6",
+    "react-hotkeys-hook": "~4.5.0",
+    "ua-parser-js": "~1.0.37",
+    "use-debounce": "~10.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "~20.12.12",
+    "@types/object-hash": "~3.0.6",
+    "@types/react": "~18.3.3",
+    "@types/react-dom": "~18.3.0",
+    "@types/ua-parser-js": "~0.7.39",
+    "typescript": "~5.4.5"
+  }
+}

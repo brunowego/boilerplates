@@ -1,0 +1,3 @@
+# @acme/typescript-config
+
+TBD
