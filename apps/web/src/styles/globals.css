@@ -1,0 +1,59 @@
+@import url('@acme/ui/styles.css');
+
+/*  */
+
+/* .w-color-compact {
+  @apply !w-[305px] !bg-background
+}
+
+.w-color-compact .w-color-swatch {
+  @apply mb-2
+}
+
+.w-color-compact .w-color-swatch > div {
+  @apply !size-5 !rounded-[2px]
+}
+
+.w-color-compact .w-color-editable-input > span > div {
+  @apply !size-5 !rounded-[2px]
+}
+
+.w-color-compact .w-color-editable-input > input {
+  --editable-input-color: var(--input);
+
+  @apply !text-sm !bg-border rounded-sm !px-1.5;
+}
+
+.w-color-compact .w-color-editable-input-rgba > .w-color-editable-input:first-child {
+  @apply ml-4
+}
+
+.w-color-compact .w-color-editable-input-rgba > .w-color-editable-input > input {
+  @apply !w-9
+}
+
+.w-color-compact .w-color-editable-input-rgba > .w-color-editable-input > span {
+  @apply mr-1.5
+} */
+
+/*  */
+
+.w-color-sketch {
+  @apply !bg-background
+}
+
+.w-color-sketch .w-color-swatch {
+  @apply !border-t-border
+}
+
+.w-color-sketch .w-color-editable-input > input {
+  @apply !shadow-none !text-foreground !bg-border !rounded-sm !px-1.5 !text-sm
+}
+
+.w-color-sketch .w-color-editable-input-rgba > .w-color-editable-input > input {
+  @apply !w-9 text-center
+}
+
+.w-color-sketch .w-color-swatch > div {
+  @apply !size-5 !rounded-[2px] !mr-[10px] !mb-[10px]
+}
