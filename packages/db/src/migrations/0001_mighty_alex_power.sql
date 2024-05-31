@@ -1,0 +1,1 @@
+ALTER TABLE "domains" ADD COLUMN "last_checked" timestamp DEFAULT now() NOT NULL;
