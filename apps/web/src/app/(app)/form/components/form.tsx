@@ -1,0 +1,72 @@
+'use client'
+
+import type { JSX } from 'react'
+import Link from 'next/link'
+
+import Label from '@acme/ui/components/label'
+import Input, { inputVariants } from '@acme/ui/components/input'
+import InfoTooltip from '@acme/ui/components/info-tooltip'
+import Tooltip from '@acme/ui/components/tooltip'
+import Button from '@acme/ui/components/button'
+
+export default function Form(): JSX.Element {
+  return (
+    <>
+      <div className='space-y-2'>
+        <Label>Domain</Label>
+
+        <Input placeholder='go.acme.com' />
+      </div>
+
+      <div className='space-y-2'>
+        <Label>
+          <span>Destination URL</span>
+
+          <InfoTooltip>
+            The page your users will get redirected to when they visit your
+            domain.{' '}
+            <Link
+              className='underline underline-offset-4'
+              href='/'
+              onClick={(e) => e.stopPropagation()}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              Learn more.
+            </Link>
+          </InfoTooltip>
+        </Label>
+
+        <Input placeholder='https://yourdomain.com' />
+      </div>
+
+      <div className='space-y-2'>
+        <Label>Destination URL</Label>
+
+        <Tooltip>
+          <Tooltip.Trigger asChild>
+            <div
+              className={inputVariants({
+                className:
+                  '!bg-background cursor-not-allowed items-center text-muted-foreground',
+              })}
+            >
+              https://yourdomain.com
+            </div>
+          </Tooltip.Trigger>
+
+          <Tooltip.Content className='max-w-xs p-4 text-center text-sm leading-6'>
+            <p className='mb-4'>
+              You can't configure a custom landing page on a free plan. Upgrade
+              to a Pro plan to proceed.
+            </p>
+
+            <Button className='w-full' variant='secondary'>
+              Upgrade to pro
+            </Button>
+          </Tooltip.Content>
+        </Tooltip>
+      </div>
+    </>
+  )
+}
