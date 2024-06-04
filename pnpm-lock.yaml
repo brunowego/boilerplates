@@ -42,9 +42,6 @@ importers:
       '@tanstack/react-query-next-experimental':
         specifier: ~5.40.0
         version: 5.40.0(@tanstack/react-query@5.40.0)(next@14.2.3)(react@18.3.1)
-      '@uiw/react-color-compact':
-        specifier: ~2.3.0
-        version: 2.3.0(@babel/runtime@7.24.4)(react-dom@18.3.1)(react@18.3.1)
       '@uiw/react-color-sketch':
         specifier: ~2.3.0
         version: 2.3.0(@babel/runtime@7.24.4)(react-dom@18.3.1)(react@18.3.1)
@@ -1293,22 +1290,6 @@ packages:
       '@babel/runtime': 7.24.4
       '@uiw/color-convert': 2.3.0(@babel/runtime@7.24.4)
       '@uiw/react-drag-event-interactive': 2.3.0(@babel/runtime@7.24.4)(react-dom@18.3.1)(react@18.3.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    dev: false
-
-  /@uiw/react-color-compact@2.3.0(@babel/runtime@7.24.4)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-WKV5Oe7SoRgrTH9qY6pKO4DS7m2GlLFm87gE7izKLio1JcxRLcbGN3ZM+ZPg2ATKS4a5yZwsPD5KWjiOR0bBSA==}
-    peerDependencies:
-      '@babel/runtime': '>=7.19.0'
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
-    dependencies:
-      '@babel/runtime': 7.24.4
-      '@uiw/color-convert': 2.3.0(@babel/runtime@7.24.4)
-      '@uiw/react-color-editable-input': 2.3.0(@babel/runtime@7.24.4)(react-dom@18.3.1)(react@18.3.1)
-      '@uiw/react-color-editable-input-rgba': 2.3.0(@babel/runtime@7.24.4)(react-dom@18.3.1)(react@18.3.1)
-      '@uiw/react-color-swatch': 2.3.0(@babel/runtime@7.24.4)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     dev: false

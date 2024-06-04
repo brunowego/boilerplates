@@ -50,7 +50,7 @@ export default function ColorInput({
           />
 
           <Input
-            className='pl-10'
+            className='pl-11'
             defaultValue={value}
             onChange={(e) => handleInputChange(e.currentTarget.value)}
             value={hex}
