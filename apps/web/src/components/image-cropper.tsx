@@ -6,11 +6,15 @@ import 'cropperjs/dist/cropper.css'
 
 import Button from '@acme/ui/components/button'
 
+interface CropperImageElement extends HTMLImageElement {
+  cropper?: Cropper
+}
+
 type ImageCropperProps = {
   image: File | null | string
   setCroppedImage: (image: string | null) => void
   handleSubmit?: (croppedDataUrl: string) => void
-  setCurrentPage?: (page: number) => void
+  // setCurrentPage?: (page: number) => void
   setOpen?: (open: boolean) => void
   className?: string
 }
@@ -19,18 +23,14 @@ export default function ImageCropper({
   image,
   setCroppedImage,
   handleSubmit,
-  setCurrentPage,
+  // setCurrentPage,
   setOpen,
   className,
 }: ImageCropperProps) {
-  interface CropperImageElement extends HTMLImageElement {
-    cropper?: Cropper
-  }
-
   const cropperRef = useRef<CropperImageElement>(null)
 
   const cropImage = () => {
-    if (cropperRef.current && cropperRef.current !== null) {
+    if (typeof cropperRef.current?.cropper !== 'undefined') {
       const imageElement: CropperImageElement | null = cropperRef.current
       const cropper: Cropper | undefined = imageElement.cropper
 
@@ -44,11 +44,11 @@ export default function ImageCropper({
 
   const completeCrop = () => {
     cropImage()
-    setCurrentPage ? setCurrentPage(1) : null
+    // setCurrentPage ? setCurrentPage(1) : null
   }
 
   const cancelCrop = () => {
-    setCurrentPage ? setCurrentPage(1) : null
+    // setCurrentPage ? setCurrentPage(1) : null
     setOpen ? setOpen(false) : null
   }
 
@@ -58,10 +58,8 @@ export default function ImageCropper({
         <>
           <Cropper
             aspectRatio={1}
-            // guides
             ref={cropperRef}
             src={image instanceof File ? URL.createObjectURL(image) : image}
-            // style={{ height: '100%', width: '100%' }}
           />
 
           <div className='mt-4 flex justify-end space-x-2'>

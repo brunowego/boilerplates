@@ -16,7 +16,9 @@ export default function EditPersonal(): JSX.Element {
 
   const [croppedImage, setCroppedImage] = useState<string | null>(null)
 
-  const handleSubmit = (croppedDataUrl: string) => {}
+  const handleSubmit = (croppedDataUrl: string) => {
+    console.log('croppedDataUrl', croppedDataUrl)
+  }
 
   if (isLoading) {
     return <Page>Loading...</Page>
@@ -31,9 +33,9 @@ export default function EditPersonal(): JSX.Element {
       <PageContent>
         <ImageCropper
           className='max-w-lg'
+          handleSubmit={handleSubmit}
           image={user?.image as string}
           setCroppedImage={setCroppedImage}
-          handleSubmit={handleSubmit}
           // setOpen={setOpen}
         />
 
