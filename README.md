@@ -1,4 +1,4 @@
-# Next.js with Auth.js (Profile)
+# Next.js with react-cropper
 
 TODO
 
