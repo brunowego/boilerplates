@@ -124,7 +124,7 @@ importers:
         version: link:../id
       drizzle-orm:
         specifier: ~0.31.1
-        version: 0.31.1(@types/pg@8.11.6)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1)
+        version: 0.31.1(@types/pg@8.11.6)(pg@8.12.0)(postgres@3.3.5)(react@18.3.1)
       drizzle-zod:
         specifier: ~0.5.1
         version: 0.5.1(drizzle-orm@0.31.1)(zod@3.23.8)
@@ -135,8 +135,8 @@ importers:
         specifier: 8.12.0
         version: 8.12.0
       postgres:
-        specifier: ~3.4.4
-        version: 3.4.4
+        specifier: ~3.3.5
+        version: 3.3.5
       zod:
         specifier: ~3.23.8
         version: 3.23.8
@@ -2095,7 +2095,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.31.1(@types/pg@8.11.6)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1):
+  /drizzle-orm@0.31.1(@types/pg@8.11.6)(pg@8.12.0)(postgres@3.3.5)(react@18.3.1):
     resolution: {integrity: sha512-hTbYne2XX3y6sV7WSxcPH6/vNSiQSUG9VZsFI27jBMCN0OT3Ok7ao3pIT5OMAqWkzJCRFgGjAaUeTAZWPgOKag==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -2177,7 +2177,7 @@ packages:
     dependencies:
       '@types/pg': 8.11.6
       pg: 8.12.0
-      postgres: 3.4.4
+      postgres: 3.3.5
       react: 18.3.1
     dev: false
 
@@ -2187,7 +2187,7 @@ packages:
       drizzle-orm: '>=0.23.13'
       zod: '*'
     dependencies:
-      drizzle-orm: 0.31.1(@types/pg@8.11.6)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1)
+      drizzle-orm: 0.31.1(@types/pg@8.11.6)(pg@8.12.0)(postgres@3.3.5)(react@18.3.1)
       zod: 3.23.8
     dev: false
 
@@ -3275,9 +3275,8 @@ packages:
   /postgres-range@1.1.4:
     resolution: {integrity: sha512-i/hbxIE9803Alj/6ytL7UHQxRvZkI9O4Sy+J3HGc4F4oo/2eQAjTSNJ0bfxyse3bH0nuVesCk+3IRLaMtG3H6w==}
 
-  /postgres@3.4.4:
-    resolution: {integrity: sha512-IbyN+9KslkqcXa8AO9fxpk97PA4pzewvpi2B3Dwy9u4zpV32QicaEdgmF3eSQUzdRk7ttDHQejNgAEr4XoeH4A==}
-    engines: {node: '>=12'}
+  /postgres@3.3.5:
+    resolution: {integrity: sha512-+JD93VELV9gHkqpV5gdL5/70HdGtEw4/XE1S4BC8f1mcPmdib3K5XsKVbnR1XcAyC41zOnifJ+9YRKxdIsXiUw==}
     dev: false
 
   /preact-render-to-string@5.2.3(preact@10.11.3):
