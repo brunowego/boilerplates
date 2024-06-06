@@ -9,14 +9,14 @@ import { useUser } from '@/hooks/api/use-user'
 import { Page, PageHeader, PageContent } from '@/components/page'
 import ImageCrop from '@/components/image-crop'
 
-// import EditPersonalForm from './edit-personal-form'
-
 export default function EditPersonal(): JSX.Element {
   const { data: user, isLoading } = useUser()
 
-  // const [croppedImage, setCroppedImage] = useState<string | null>(null)
+  const [croppedImage, setCroppedImage] = useState<string | null>(null)
 
-  // const handleSubmit = (croppedDataUrl: string) => {}
+  const handleSubmit = (croppedDataUrl: string) => {
+    console.log('croppedDataUrl', croppedDataUrl)
+  }
 
   if (isLoading) {
     return <Page>Loading...</Page>
@@ -28,21 +28,19 @@ export default function EditPersonal(): JSX.Element {
         <h1 className={typographyVariants({ variant: 'title' })}>Profile</h1>
       </PageHeader>
 
-      <PageContent>
+      <PageContent className='space-y-4'>
         <ImageCrop
           className='max-w-lg'
           image={user?.image as string}
-          // setCroppedImage={setCroppedImage}
-          // handleSubmit={handleSubmit}
+          setCroppedImage={setCroppedImage}
+          handleSubmit={handleSubmit}
           // setOpen={setOpen}
         />
 
-        {/* <Avatar className='size-20'>
+        <Avatar className='size-20'>
           <AvatarImage src={croppedImage as string} />
           <AvatarFallback>CN</AvatarFallback>
-        </Avatar> */}
-
-        {/* <EditPersonalForm user={user} /> */}
+        </Avatar>
       </PageContent>
     </Page>
   )
