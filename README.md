@@ -1,4 +1,4 @@
-# Next.js with Empty State
+# Next.js with Users (Table)
 
 TODO
 
