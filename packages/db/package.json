@@ -18,6 +18,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "bun": "~1.1.12",
     "drizzle-orm": "~0.30.4",
     "pg": "~8.11.3",
     "postgres": "~3.4.4",

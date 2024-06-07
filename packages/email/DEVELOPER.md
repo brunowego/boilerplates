@@ -6,5 +6,5 @@
 
 ```sh
 #
-bun --cwd packages/email dev
+pnpm dev --filter @acme/email
 ```
