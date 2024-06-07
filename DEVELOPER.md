@@ -10,12 +10,12 @@ bun install
 bun compose:up
 
 # Local environment variables
-( cd ./apps/console; cp ./.env.local.sample ./.env.local )
+( cd ./apps/web; cp ./.env.local.sample ./.env.local )
 ( cd ./packages/db; cp ./.env.local.sample ./.env.local )
 
 # Migrate the database
 bun db:migrate
 
 # Run development server
-bunx turbo dev --filter console
+bunx turbo dev --filter web
 ```
