@@ -8,6 +8,7 @@ import Input, { inputVariants } from '@acme/ui/components/input'
 import InfoTooltip from '@acme/ui/components/info-tooltip'
 import Tooltip from '@acme/ui/components/tooltip'
 import Button from '@acme/ui/components/button'
+import FieldLength from '@acme/ui/components/field-length'
 
 export default function Form(): JSX.Element {
   return (
@@ -66,6 +67,14 @@ export default function Form(): JSX.Element {
             </Button>
           </Tooltip.Content>
         </Tooltip>
+      </div>
+
+      <div className='space-y-2'>
+        <Label>
+          Title <FieldLength currentLength={0} maxLength={60} />
+        </Label>
+
+        <Input maxLength={60} type='text' />
       </div>
     </>
   )
