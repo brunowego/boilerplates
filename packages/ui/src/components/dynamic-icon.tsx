@@ -13,8 +13,5 @@ export default function DynamicIcon({
 }: DynamicIconProps): JSX.Element {
   const Ikon = Icon[icon] as ElementType
 
-  console.log('Ikon', icon)
-  console.log('Ikon', Ikon)
-
   return <Ikon className={className} />
 }
