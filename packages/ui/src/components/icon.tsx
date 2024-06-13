@@ -1,5 +1,14 @@
-import { CircleUser, Loader2, Moon, Sun, Trash2, Upload } from 'lucide-react'
+import {
+  CircleUser,
+  Loader2,
+  ImageUp,
+  Moon,
+  Sun,
+  Trash2,
+  Upload,
+  X,
+} from 'lucide-react'
 
-export { CircleUser, Loader2, Moon, Sun, Trash2, Upload }
+export { CircleUser, Loader2, ImageUp, Moon, Sun, Trash2, Upload, X }
 
 export * as default from './icon'

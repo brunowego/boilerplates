@@ -1,10 +1,27 @@
 import type { Crop, PixelCrop } from 'react-image-crop'
 import { useState, useCallback } from 'react'
 
-import useDocumentListener from './use-document-listener'
+// import useToggle from './use-toggle'
+// import useDocumentListener from './use-document-listener'
 
 export default function useCrop() {
-  const [crop, setCrop] = useState<Crop>()
+  const [crop, setCrop] = useState<Crop | undefined>({
+    unit: 'px',
+    x: 32,
+    y: 32,
+    width: 400,
+    height: 400,
+  })
+
+  // const [
+  //   isCropping,
+  //   toggleIsCropping,
+  //   toggleOnIsCropping,
+  //   toggleOffIsCropping,
+  // ] = useToggle()
+
+  // const [storedCrop, setStoredCrop] = useState<PixelCrop>()
+
   const [storedCrop, setStoredCrop] = useState<PixelCrop>()
 
   const onCrop = useCallback((crop: Crop | undefined) => {
@@ -12,8 +29,9 @@ export default function useCrop() {
   }, [])
 
   const onCancelCrop = useCallback(() => {
+    // toggleOffIsCropping(),
     onCrop(undefined)
-  }, [onCrop])
+  }, [onCrop /*, toggleOffIsCropping*/])
 
   const cropImage = useCallback(
     async (image: HTMLImageElement, crop: PixelCrop) => {
@@ -60,13 +78,24 @@ export default function useCrop() {
     [crop, onCrop],
   )
 
-  useDocumentListener('keydown', (event) => {
-    if (event.key !== 'Escape') {
-      return
-    }
+  // useDocumentListener('keydown', (event) => {
+  //   if (event.key !== 'Escape') {
+  //     return
+  //   }
 
-    onCancelCrop()
-  })
+  //   onCancelCrop()
+  // })
 
-  return { crop, setCrop, storedCrop, setStoredCrop, onCancelCrop, cropImage }
+  return {
+    crop,
+    setCrop,
+    storedCrop,
+    setStoredCrop,
+    onCancelCrop,
+    cropImage,
+    // isCropping,
+    // toggleIsCropping,
+    // toggleOnIsCropping,
+    // toggleOffIsCropping,
+  }
 }
