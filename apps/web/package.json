@@ -10,8 +10,6 @@
     "start": "next start -p ${PORT-13000}"
   },
   "dependencies": {
-    "@acme/db": "workspace:~",
-    "@acme/id": "workspace:~",
     "@acme/ui": "workspace:~",
     "@hookform/devtools": "~4.3.1",
     "@tanstack/query-core": "~5.40.0",
