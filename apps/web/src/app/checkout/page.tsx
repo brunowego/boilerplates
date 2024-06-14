@@ -1,6 +1,6 @@
 import type { JSX } from 'react'
 
-import { LogoCheckout, Google, Apple } from '@acme/ui/components/logo'
+import { LogoMark, Google, Apple } from '@acme/ui/components/logo'
 import Button from '@acme/ui/components/button'
 import Input from '@acme/ui/components/input'
 import Card from '@acme/ui/components/card'
@@ -12,7 +12,13 @@ export default function CheckoutPage(): JSX.Element {
     <main className='min-h-screen space-y-8'>
       <header className='h-16 border-b bg-primary'>
         <div className='container flex h-full max-w-6xl items-center space-x-4'>
-          <LogoCheckout className='mr-auto h-8' />
+          <div className='mr-auto flex items-center space-x-4'>
+            <LogoMark className='h-9' />
+
+            <span className='text-muted-foreground text-xs'>/</span>
+
+            <span className='font-medium'>Checkout</span>
+          </div>
 
           <p className='text-muted-foreground text-sm'>
             Already have an account?
