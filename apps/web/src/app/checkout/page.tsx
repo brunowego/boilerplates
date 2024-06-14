@@ -10,7 +10,7 @@ import Separator from '@acme/ui/components/separator'
 export default function CheckoutPage(): JSX.Element {
   return (
     <main className='min-h-screen space-y-8'>
-      <header className='h-16 border-b bg-primary'>
+      <header className='h-16 border-b bg-card'>
         <div className='container flex h-full max-w-6xl items-center space-x-4'>
           <div className='mr-auto flex items-center space-x-4'>
             <LogoMark className='h-9' />

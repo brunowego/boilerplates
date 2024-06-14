@@ -29,7 +29,7 @@ const Guarantee = (props: LogoProps) => (
         height='64'
         x='-2'
         y='-2'
-        color-interpolation-filters='sRGB'
+        colorInterpolationFilters='sRGB'
         filterUnits='userSpaceOnUse'
       >
         <feFlood floodOpacity='0' result='BackgroundImageFix' />
