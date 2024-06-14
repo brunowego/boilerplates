@@ -1,0 +1,8 @@
+{
+	"recommendations": [
+		"EditorConfig.EditorConfig",
+		"biomejs.biome",
+		"Trunk.io",
+		"tamasfe.even-better-toml"
+	]
+}
