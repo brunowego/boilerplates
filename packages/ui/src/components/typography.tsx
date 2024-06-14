@@ -13,7 +13,7 @@ export const typographyVariants = cva('', {
     },
     variant: {
       muted: 'text-muted-foreground',
-      title: 'text-lg',
+      title: 'text-lg leading-8',
       h1: 'text-3xl leading-10',
       h2: 'text-2xl',
       h3: 'text-xl',

@@ -1,7 +1,6 @@
 import type { JSX } from 'react'
 
 import Page from '@acme/ui/components/page'
-import { typographyVariants } from '@acme/ui/components/typography'
 import Button from '@acme/ui/components/button'
 import { GitHub } from '@acme/ui/components/logo'
 import { ArrowRight } from '@acme/ui/components/icon'
@@ -10,14 +9,7 @@ export default function ButtonPage(): JSX.Element {
   return (
     <Page>
       <Page.Header>
-        <h1
-          className={typographyVariants({
-            className: 'leading-8',
-            variant: 'title',
-          })}
-        >
-          Button
-        </h1>
+        <Page.Title>Button</Page.Title>
       </Page.Header>
 
       <Page.Content className='space-y-2'>

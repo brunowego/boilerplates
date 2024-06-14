@@ -2,6 +2,8 @@ import type { HTMLAttributes } from 'react'
 
 import cn from '@acme/ui/utils/cn'
 
+import { typographyVariants } from './typography'
+
 type PageProps = HTMLAttributes<HTMLElement>
 
 const Page = ({ className, ...props }: PageProps) => {
@@ -19,9 +21,26 @@ const PageHeader = ({ className, ...props }: PageHeaderProps) => {
   return (
     <header
       className={cn(
-        'sticky top-0 z-10 flex h-16 shrink-0 items-center space-x-4 border-b bg-background px-4 lg:px-5',
+        'sticky top-0 z-10 min-h-16 shrink-0 border-b bg-background px-4 lg:px-5',
         className,
       )}
+      {...props}
+    />
+  )
+}
+
+type PageTitleProps = {
+  className?: string
+  children: string
+}
+
+const PageTitle = ({ className, ...props }: PageTitleProps) => {
+  return (
+    <h1
+      className={typographyVariants({
+        className: 'mt-4',
+        variant: 'title',
+      })}
       {...props}
     />
   )
@@ -45,6 +64,7 @@ const PageFooter = ({ className, ...props }: PageFooterProps) => {
 }
 
 Page.Header = PageHeader
+Page.Title = PageTitle
 Page.Content = PageContent
 Page.Footer = PageFooter
 
