@@ -1,0 +1,14 @@
+@hostname = 127.0.0.1
+@port = 8000
+@host = {{hostname}}:{{port}}
+@baseUrl = http://{{host}}
+@contentType = application/json
+
+### Send hello
+
+POST {{baseUrl}}/hello HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "inner": "Hello, world!"
+}

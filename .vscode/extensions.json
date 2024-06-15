@@ -4,6 +4,7 @@
     "Trunk.io",
     "tamasfe.even-better-toml",
     "rust-lang.rust-analyzer",
-    "adpyke.vscode-sql-formatter"
+    "adpyke.vscode-sql-formatter",
+    "humao.rest-client"
   ]
 }
