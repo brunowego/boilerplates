@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "Trunk.io",
+    "tamasfe.even-better-toml",
+    "rust-lang.rust-analyzer",
+    "adpyke.vscode-sql-formatter"
+  ]
+}
