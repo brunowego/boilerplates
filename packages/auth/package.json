@@ -3,7 +3,6 @@
   "name": "@acme/auth",
   "version": "0.0.0",
   "private": true,
-  "license": "COPYRIGHT",
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
