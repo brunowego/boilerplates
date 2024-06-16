@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS "users" (
 CREATE TABLE IF NOT EXISTS "verification_tokens" (
 	"identifier" varchar NOT NULL,
 	"token" varchar NOT NULL,
-	"expires" timestamp NOT NULL,
+	"expires_at" timestamp NOT NULL,
 	CONSTRAINT "verification_tokens_identifier_token_pk" PRIMARY KEY("identifier","token")
 );
 --> statement-breakpoint

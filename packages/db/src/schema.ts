@@ -71,7 +71,7 @@ export const verificationTokensTable = pgTable(
   {
     identifier: varchar('identifier').notNull(),
     token: varchar('token').notNull(),
-    expires: timestamp('expires', { mode: 'date' }).notNull(),
+    expiresAt: timestamp('expires_at', { mode: 'date' }).notNull(),
   },
   (t) => ({
     compoundKey: primaryKey({ columns: [t.identifier, t.token] }),
