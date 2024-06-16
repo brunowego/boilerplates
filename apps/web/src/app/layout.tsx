@@ -9,7 +9,10 @@ import '@/styles/globals.css'
 import Providers from './providers'
 
 export const metadata: Metadata = {
-  title: 'ACME',
+  title: {
+    default: 'ACME',
+    template: '%s — ACME',
+  },
   description: 'Basic boilerplate for Next.js.',
 }
 
