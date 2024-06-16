@@ -6,6 +6,6 @@
   "license": "COPYRIGHT",
   "main": "./index.ts",
   "dependencies": {
-    "tailwindcss": "~3.4.3"
+    "tailwindcss": "~3.4.4"
   }
 }
