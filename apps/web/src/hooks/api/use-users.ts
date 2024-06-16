@@ -1,7 +1,8 @@
 import { type UseQueryResult, useQuery } from '@tanstack/react-query'
 
-import api from '@/lib/api'
 import type { User } from '@acme/db/schemas'
+
+import api from '@/lib/api'
 
 const userKeys = {
   getUsers: () => ['users'] as const,

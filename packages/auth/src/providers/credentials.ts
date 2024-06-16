@@ -1,7 +1,6 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
 
-import { signInSchema } from '@acme/db/schemas'
-import { getUserByEmail } from '@acme/db/queries'
+import { signInSchema, getUserByEmail } from '@acme/db'
 
 import { compare } from '../lib/bcryptjs'
 

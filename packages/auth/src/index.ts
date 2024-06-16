@@ -1,9 +1,8 @@
 import NextAuth, { type NextAuthConfig } from 'next-auth'
 
-import authConfig from './config'
-
 import { db } from '@acme/db'
 
+import authConfig from './config'
 import DrizzleAdapter from './drizzle-adapter'
 
 const nextAuthConfig: NextAuthConfig = {

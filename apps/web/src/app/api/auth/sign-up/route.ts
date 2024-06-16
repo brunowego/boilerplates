@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server'
 
-import { signUpSchema } from '@acme/db/schemas'
+import { signUpSchema, db, eq, usersTable } from '@acme/db'
 import { z } from '@acme/ui/lib/zod'
-import { db } from '@acme/db'
-import { eq } from '@acme/db/orm'
-import { usersTable } from '@acme/db/schema'
 import { hash } from '@acme/auth/lib/bcryptjs'
 
 type SignUp = z.infer<typeof signUpSchema>

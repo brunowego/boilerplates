@@ -2,9 +2,7 @@
 
 // import z from '@acme/ui/lib/zod'
 // import type { User } from '@acme/db/schemas'
-import { db } from '@acme/db'
-import { eq } from '@acme/db/orm'
-import { usersTable } from '@acme/db/schema'
+import { db, eq, usersTable } from '@acme/db'
 
 // export const emailSchema = z
 //   .string({
