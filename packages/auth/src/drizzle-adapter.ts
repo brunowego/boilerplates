@@ -1,7 +1,6 @@
 import type {
   Adapter,
   AdapterUser,
-  // AdapterSession,
   AdapterAccount,
   VerificationToken,
 } from 'next-auth/adapters'
@@ -9,30 +8,11 @@ import type {
 import { type PostgresJsDatabase, and, eq } from '@acme/db/orm'
 import {
   usersTable,
-  // sessionsTable,
   accountsTable,
   verificationTokensTable,
 } from '@acme/db/schema'
 
 import { generateId } from '@acme/id'
-
-// declare module 'next-auth' {
-//   interface User {
-//     id: string
-//   }
-// }
-
-// declare module 'next-auth/adapters' {
-//   interface AdapterUser {
-//     id: string
-//   }
-// }
-
-// type CustomAdapter = Omit<Adapter, 'createUser'> & {
-//   createUser: (
-//     user: Omit<AdapterUser & { username: string }, 'id'>,
-//   ) => Awaitable<AdapterUser & { username: string }>
-// }
 
 export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
   return {
@@ -70,30 +50,6 @@ export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
         .then((res) => (res.length > 0 ? res[0] : null))
     },
 
-    // async createSession(data: {
-    //   sessionToken: string
-    //   userId: string
-    //   expires: Date
-    // }) {
-    //   return db
-    //     .insert(sessionsTable)
-    //     .values(data)
-    //     .returning()
-    //     .then((res) => res[0])
-    // },
-
-    // async getSessionAndUser(sessionToken: string) {
-    //   return db
-    //     .select({
-    //       session: sessionsTable,
-    //       user: usersTable,
-    //     })
-    //     .from(sessionsTable)
-    //     .where(eq(sessionsTable.sessionToken, sessionToken))
-    //     .innerJoin(usersTable, eq(usersTable.id, sessionsTable.userId))
-    //     .then((res) => (res.length > 0 ? res[0] : null))
-    // },
-
     async updateUser(data: Partial<AdapterUser> & Pick<AdapterUser, 'id'>) {
       if (!data.id) {
         throw new Error('No user id.')
@@ -112,17 +68,6 @@ export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
       return result
     },
 
-    // async updateSession(
-    //   data: Partial<AdapterSession> & Pick<AdapterSession, 'sessionToken'>,
-    // ) {
-    //   return db
-    //     .update(sessionsTable)
-    //     .set(data)
-    //     .where(eq(sessionsTable.sessionToken, data.sessionToken))
-    //     .returning()
-    //     .then((res) => res[0])
-    // },
-
     async linkAccount(data: AdapterAccount) {
       await db.insert(accountsTable).values({
         userId: data.userId,
@@ -135,7 +80,6 @@ export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
         tokenType: data.token_type,
         scope: data.scope,
         idToken: data.id_token,
-        // sessionState: data.session_state,
       })
     },
 
@@ -159,12 +103,6 @@ export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
 
       return result?.user ?? null
     },
-
-    // async deleteSession(sessionToken: string) {
-    //   await db
-    //     .delete(sessionsTable)
-    //     .where(eq(sessionsTable.sessionToken, sessionToken))
-    // },
 
     async createVerificationToken(data: VerificationToken) {
       return db

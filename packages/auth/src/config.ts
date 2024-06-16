@@ -2,7 +2,6 @@ import type { NextAuthConfig } from 'next-auth'
 
 import {
   CredentialsProvider,
-  // ResendProvider,
   GitHubProvider,
   GoogleProvider,
   LinkedInProvider,
@@ -11,7 +10,6 @@ import {
 export default {
   providers: [
     CredentialsProvider,
-    // ResendProvider,
     GitHubProvider,
     GoogleProvider,
     LinkedInProvider,

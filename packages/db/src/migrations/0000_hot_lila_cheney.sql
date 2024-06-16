@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS "accounts" (
 	"token_type" varchar,
 	"scope" varchar,
 	"id_token" varchar,
-	"session_state" varchar,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	CONSTRAINT "accounts_provider_provider_account_id_pk" PRIMARY KEY("provider","provider_account_id")
 );
@@ -38,5 +37,5 @@ EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
-CREATE INDEX IF NOT EXISTS "accounts_user_id_index" ON "accounts" ("user_id");--> statement-breakpoint
-CREATE INDEX IF NOT EXISTS "users_email_idx" ON "users" ("email");
+CREATE INDEX IF NOT EXISTS "accounts_user_id_index" ON "accounts" USING btree ("user_id");--> statement-breakpoint
+CREATE INDEX IF NOT EXISTS "users_email_idx" ON "users" USING btree ("email");

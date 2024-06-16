@@ -29,7 +29,6 @@ export const usersTable = pgTable(
 
 export const usersRelations = relations(usersTable, ({ many }) => ({
   accounts: many(accountsTable),
-  // session: many(sessionsTable),
 }))
 
 export const accountsTable = pgTable(
@@ -50,7 +49,6 @@ export const accountsTable = pgTable(
     tokenType: varchar('token_type'),
     scope: varchar('scope'),
     idToken: varchar('id_token'),
-    sessionState: varchar('session_state'),
     createdAt: timestamp('created_at').defaultNow().notNull(),
   },
   (t) => ({
@@ -67,33 +65,6 @@ export const accountsRelations = relations(accountsTable, ({ one }) => ({
     references: [usersTable.id],
   }),
 }))
-
-// export const sessionsTable = pgTable(
-//   'sessions',
-//   {
-//     id: varchar('id').primaryKey(),
-//     sessionToken: varchar('session_token').notNull().unique(),
-//     userId: varchar('user_id')
-//       .notNull()
-//       .references(() => usersTable.id, {
-//         onDelete: 'cascade',
-//       }),
-//     expires: timestamp('expires', { mode: 'date' }).notNull(),
-//     createdAt: timestamp('created_at').defaultNow().notNull(),
-//   },
-//   (t) => {
-//     return {
-//       userIdIdx: index().on(t.userId),
-//     }
-//   },
-// )
-
-// export const sessionsRelations = relations(sessionsTable, ({ one }) => ({
-//   user: one(usersTable, {
-//     fields: [sessionsTable.userId],
-//     references: [usersTable.id],
-//   }),
-// }))
 
 export const verificationTokensTable = pgTable(
   'verification_tokens',
