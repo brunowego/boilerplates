@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/auth",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./config": "./src/config.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./providers": "./src/providers/index.ts",
+    "./react": "./src/react.ts"
+  },
+  "dependencies": {
+    "@acme/db": "workspace:~",
+    "@acme/id": "workspace:~",
+    "@auth/drizzle-adapter": "~1.2.0",
+    "bcryptjs": "~2.4.3",
+    "next-auth": "5.0.0-beta.17"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "~2.4.6"
+  }
+}
