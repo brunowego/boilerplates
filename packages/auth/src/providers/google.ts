@@ -7,7 +7,6 @@ export default GoogleProvider({
       name: profile.name,
       email: profile.email,
       image: profile.picture,
-      // username: profile.email.split('@')[0],
     }
   },
   clientId: process.env.GOOGLE_CLIENT_ID,

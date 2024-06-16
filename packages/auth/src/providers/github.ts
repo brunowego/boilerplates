@@ -7,7 +7,6 @@ export default GitHubProvider({
       name: profile.name,
       email: profile.email,
       image: profile.avatar_url,
-      // username: profile.login,
     }
   },
   clientId: process.env.GITHUB_CLIENT_ID,

@@ -21,7 +21,6 @@ async function seedUsers(): Promise<void> {
 
     users.push({
       fullName: `${firstName} ${lastName}`,
-      // username: faker.internet.userName({ firstName, lastName }).toLowerCase(),
       email: faker.internet.email({ firstName, lastName }).toLowerCase(),
       createdAt: faker.date.between({
         from: new Date('2020-01-01'),
