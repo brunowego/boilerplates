@@ -31,7 +31,7 @@ export async function POST(req: Request): Promise<Response> {
     })
 
     return new Response(null, {
-      status: 200,
+      status: 201,
     })
   } catch (err) {
     console.error(err)
