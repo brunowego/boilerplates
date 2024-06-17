@@ -1,3 +1,0 @@
-# @acme/console
-
-TBD
