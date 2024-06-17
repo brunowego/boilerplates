@@ -36,6 +36,12 @@ export default function Revolut({
 
           <Input
             defaultValue={identifier as string}
+            onChange={(e) => {
+              e.target.value = e.target.value
+                .trim()
+                .replace(/\s/g, '')
+                .toLowerCase()
+            }}
             style={{ paddingLeft: width + 16 }}
             type='text'
           />

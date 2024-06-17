@@ -13,7 +13,7 @@ export default function StoreCredit({
   return (
     <Option
       enabled={enabled}
-      icon={<Icon className='size-8' />}
+      icon={<Icon className='m-1 size-6' />}
       title='Store credit'
     />
   )

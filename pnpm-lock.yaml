@@ -192,6 +192,9 @@ importers:
       clsx:
         specifier: ~2.1.1
         version: 2.1.1
+      cmdk:
+        specifier: ~1.0.0
+        version: 1.0.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
       lucide-react:
         specifier: ~0.383.0
         version: 0.383.0(react@18.3.1)
@@ -201,6 +204,9 @@ importers:
       react-hook-form:
         specifier: ~7.51.5
         version: 7.51.5(react@18.3.1)
+      react-international-phone:
+        specifier: ~4.3.0
+        version: 4.3.0(react@18.3.1)
       react-resizable-panels:
         specifier: ~2.0.19
         version: 2.0.19(react-dom@18.3.1)(react@18.3.1)
@@ -219,6 +225,9 @@ importers:
       use-debounce:
         specifier: ~10.0.1
         version: 10.0.1(react@18.3.1)
+      use-mask-input:
+        specifier: ~3.3.7
+        version: 3.3.7(react-dom@18.3.1)(react@18.3.1)
       zod:
         specifier: ~3.23.8
         version: 3.23.8
@@ -2365,6 +2374,21 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
+  /cmdk@1.0.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-gDzVf0a09TvoJ5jnuPvygTB77+XdOSwEmJ88L6XPFPlv7T3RxbP9jgenfylrAMD0+Le1aO0nVjQUzl2g+vjz5Q==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@radix-ui/react-dialog': 1.0.5(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
+      '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
+    dev: false
+
   /color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -4037,6 +4061,14 @@ packages:
       react: 18.3.1
     dev: false
 
+  /react-international-phone@4.3.0(react@18.3.1):
+    resolution: {integrity: sha512-lIntIkwq2j0m3j4RsRiGJl/buHMLBd+mQ9S9RfiX3KbiUCUtbawoPCV2r8BvyeRMZI0cDtovoukBCuZ+70QzJA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.3.1
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
@@ -4677,6 +4709,17 @@ packages:
       '@babel/runtime': 7.24.4
       dequal: 2.0.3
       react: 18.3.1
+    dev: false
+
+  /use-mask-input@3.3.7(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-cj3sSnRzF0r1lNBk9NzAgbvQTgCOB7n5wL4tJrXQB2YR9hS4adWCaqEVqJvWHcRqTFb8hekmITQYPOZrDSN/Yg==}
+    engines: {node: '>=16', npm: '>=7'}
+    peerDependencies:
+      react: '>=16.4 || 17 || 18 || 20'
+      react-dom: '>=16.4 || 17 || 18 || 20'
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /use-sidecar@1.1.2(@types/react@18.3.3)(react@18.3.1):

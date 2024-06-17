@@ -3,26 +3,22 @@ import { useMeasure } from 'react-use'
 import Link from 'next/link'
 
 import type { PaymentMethod } from '@acme/db/types'
-import { MercadoPago as Logo } from '@acme/ui/components/logo'
+import { Asaas as Logo } from '@acme/ui/components/logo'
 import Label from '@acme/ui/components/label'
 import Input from '@acme/ui/components/input'
 
 import Option from './option'
 
-type MercadoPagoProps = PaymentMethod
+type AsaasProps = PaymentMethod
 
-export default function MercadoPago({
+export default function Asaas({
   enabled,
   identifier,
-}: MercadoPagoProps): JSX.Element {
+}: AsaasProps): JSX.Element {
   const [spanRef, { width }] = useMeasure<HTMLSpanElement>()
 
   return (
-    <Option
-      enabled={enabled}
-      icon={<Logo className='size-8' />}
-      title='Mercado Pago'
-    >
+    <Option enabled={enabled} icon={<Logo className='size-8' />} title='Asaas'>
       <div className='space-y-2'>
         <Label>Payment link</Label>
 
@@ -31,7 +27,7 @@ export default function MercadoPago({
             className='absolute inset-y-0 left-4 flex items-center text-muted-foreground text-sm'
             ref={spanRef}
           >
-            https://link.mercadopago.com.br/
+            https://asaas.com/c/
           </span>
 
           <Input
@@ -48,7 +44,7 @@ export default function MercadoPago({
         </div>
 
         <p className='text-muted-foreground text-sm leading-6'>
-          Don't have Mercado Pago account?{' '}
+          Don't have Asaas account?{' '}
           <Link
             className='text-foreground underline underline-offset-4'
             href='/'

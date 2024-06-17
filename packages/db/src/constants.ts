@@ -1,9 +1,10 @@
 export const PAYMENT_METHOD_TYPES = [
   'manual_pix',
+  'asaas',
+  'mercado_pago',
   'paypal',
   'revolut',
   'wise',
-  'mercado_pago',
   'bank_transfer',
   'cod', // Cash on delivery
   'store_credit',

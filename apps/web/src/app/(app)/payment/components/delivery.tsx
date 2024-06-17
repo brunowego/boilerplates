@@ -1,19 +1,25 @@
 import type { JSX } from 'react'
 import { useMeasure } from 'react-use'
 
-import type { PaymentMethod } from '@acme/db/types'
+import { Truck as Icon } from '@acme/ui/components/icon'
 import Label from '@acme/ui/components/label'
 import Input from '@acme/ui/components/input'
 
 import Option from './option'
 
-type DeliveryProps = PaymentMethod
+type DeliveryProps = {
+  enabled: boolean
+}
 
 export default function Delivery({ enabled }: DeliveryProps): JSX.Element {
   const [spanRef, { width }] = useMeasure<HTMLSpanElement>()
 
   return (
-    <Option enabled={enabled} title='Delivery'>
+    <Option
+      enabled={enabled}
+      icon={<Icon className='m-1 size-6' />}
+      title='Delivery'
+    >
       <div className='space-y-2'>
         <Label>Delivery fee</Label>
 

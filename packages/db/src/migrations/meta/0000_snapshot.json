@@ -1,5 +1,5 @@
 {
-  "id": "481ca557-cf74-4676-96d4-543b9cc02ff4",
+  "id": "6a67b2b8-a0af-4278-91a8-384295183884",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -89,10 +89,11 @@
       "schema": "public",
       "values": [
         "manual_pix",
+        "asaas",
+        "mercado_pago",
         "paypal",
         "revolut",
         "wise",
-        "mercado_pago",
         "bank_transfer",
         "cod",
         "store_credit"

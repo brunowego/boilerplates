@@ -15,3 +15,7 @@ export const insertPaymentMethodSchema = createInsertSchema(paymentMethods, {
   params: z.record(z.unknown()),
   enabled: z.boolean().optional(),
 })
+
+export const insertPaymentSchema = z.object({
+  methods: z.array(selectPaymentMethodSchema),
+})

@@ -5,7 +5,7 @@ EXCEPTION
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- CREATE TYPE "public"."payment_method_type" AS ENUM('manual_pix', 'paypal', 'revolut', 'wise', 'mercado_pago', 'bank_transfer', 'cod', 'store_credit');
+ CREATE TYPE "public"."payment_method_type" AS ENUM('manual_pix', 'asaas', 'mercado_pago', 'paypal', 'revolut', 'wise', 'bank_transfer', 'cod', 'store_credit');
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;

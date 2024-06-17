@@ -13,19 +13,25 @@ type BankTransferProps = PaymentMethod
 export default function BankTransfer({
   enabled,
   identifier,
-  params,
+  // params,
 }: BankTransferProps): JSX.Element {
   return (
     <Option
       enabled={enabled}
-      icon={<Icon className='size-8' />}
+      icon={<Icon className='m-1 size-6' />}
       title='Bank transfer'
     >
       <div className='grid grid-cols-2 gap-3'>
         <div className='space-y-2'>
           <Label>Account holder name</Label>
 
-          <Input defaultValue={identifier as string} type='text' />
+          <Input
+            defaultValue={identifier as string}
+            onChange={(e) => {
+              e.target.value = e.target.value.toUpperCase()
+            }}
+            type='text'
+          />
         </div>
 
         <div className='space-y-2'>

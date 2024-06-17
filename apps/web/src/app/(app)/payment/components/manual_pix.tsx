@@ -5,6 +5,10 @@ import { Pix as Logo } from '@acme/ui/components/logo'
 import Label from '@acme/ui/components/label'
 import Select from '@acme/ui/components/select'
 import Input from '@acme/ui/components/input'
+import _PhoneNumberInput from '@acme/ui/components/phone-number-input'
+import _SSNInput from '@acme/ui/components/ssn-input'
+import _EINInput from '@acme/ui/components/ein-input'
+import _UUIDInput from '@acme/ui/components/uuid-input'
 
 import Option from './option'
 
@@ -31,7 +35,7 @@ type PixProps = PaymentMethod
 export default function Pix({
   enabled,
   identifier,
-  identifierType,
+  identifierType = 'ssn',
 }: PixProps): JSX.Element {
   const [type, setType] = useState<IdentifierType | null>(identifierType)
 
@@ -86,7 +90,7 @@ const PhoneNumberInput = ({ value }: InputProps) => {
     <>
       <Label>Phone number</Label>
 
-      <Input defaultValue={value} type='text' />
+      <_PhoneNumberInput defaultValue={value} />
     </>
   )
 }
@@ -110,7 +114,7 @@ const SSNInput = ({ value }: InputProps) => {
     <>
       <Label>CPF</Label>
 
-      <Input defaultValue={value} placeholder='000.000.000-00' type='text' />
+      <_SSNInput defaultValue={value} placeholder='000.000.000-00' />
     </>
   )
 }
@@ -120,11 +124,7 @@ const EINInput = ({ value }: InputProps) => {
     <>
       <Label>CNPJ</Label>
 
-      <Input
-        defaultValue={value}
-        placeholder='00.000.000/0000-00'
-        type='text'
-      />
+      <_EINInput defaultValue={value} placeholder='00.000.000/0000-00' />
     </>
   )
 }
@@ -134,7 +134,10 @@ const RandonKeyInput = ({ value }: InputProps) => {
     <>
       <Label>Randon key</Label>
 
-      <Input defaultValue={value} type='text' />
+      <_UUIDInput
+        defaultValue={value}
+        placeholder='00000000-0000-0000-0000-000000000000'
+      />
     </>
   )
 }

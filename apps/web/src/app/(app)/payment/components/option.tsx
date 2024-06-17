@@ -37,7 +37,7 @@ export default function Option({
         />
       </div>
 
-      {expanded ? (
+      {children && expanded ? (
         <motion.div className='space-y-4' {...FADE_IN_ANIMATION_SETTINGS}>
           {children}
         </motion.div>

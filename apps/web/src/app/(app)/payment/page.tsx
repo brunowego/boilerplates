@@ -1,7 +1,7 @@
 import type { JSX } from 'react'
 
-import Payment from './components/payment'
+import EditPayment from './components/edit-payment'
 
 export default function PaymentPage(): JSX.Element {
-  return <Payment />
+  return <EditPayment />
 }

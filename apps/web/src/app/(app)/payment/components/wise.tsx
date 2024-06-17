@@ -33,6 +33,12 @@ export default function Wise({ enabled, identifier }: WiseProps): JSX.Element {
 
           <Input
             defaultValue={identifier as string}
+            onChange={(e) => {
+              e.target.value = e.target.value
+                .trim()
+                .replace(/\s/g, '')
+                .toLowerCase()
+            }}
             style={{ paddingLeft: width + 16 }}
             type='text'
           />
