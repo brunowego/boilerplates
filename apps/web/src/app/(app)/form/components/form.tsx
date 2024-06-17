@@ -8,6 +8,9 @@ import Input, { inputVariants } from '@acme/ui/components/input'
 import InfoTooltip from '@acme/ui/components/info-tooltip'
 import Tooltip from '@acme/ui/components/tooltip'
 import PhoneInput from '@acme/ui/components/phone-input'
+import ZipCodeInput from '@acme/ui/components/zip-code-input'
+import SSNInput from '@acme/ui/components/ssn-input'
+import EINInput from '@acme/ui/components/ein-input'
 import Button from '@acme/ui/components/button'
 import FieldLength from '@acme/ui/components/field-length'
 
@@ -82,6 +85,24 @@ export default function Form(): JSX.Element {
         <Label>Phone number</Label>
 
         <PhoneInput className='max-w-80' />
+      </div>
+
+      <div className='space-y-2'>
+        <Label>Zip Code</Label>
+
+        <ZipCodeInput className='max-w-80' />
+      </div>
+
+      <div className='space-y-2'>
+        <Label>CPF</Label>
+
+        <SSNInput className='max-w-80' />
+      </div>
+
+      <div className='space-y-2'>
+        <Label>CNPJ</Label>
+
+        <EINInput className='max-w-80' />
       </div>
     </>
   )
