@@ -11,6 +11,7 @@ import PhoneInput from '@acme/ui/components/phone-input'
 import ZipCodeInput from '@acme/ui/components/zip-code-input'
 import SSNInput from '@acme/ui/components/ssn-input'
 import EINInput from '@acme/ui/components/ein-input'
+import UUIDInput from '@acme/ui/components/uuid-input'
 import Button from '@acme/ui/components/button'
 import FieldLength from '@acme/ui/components/field-length'
 
@@ -103,6 +104,12 @@ export default function Form(): JSX.Element {
         <Label>CNPJ</Label>
 
         <EINInput className='max-w-80' />
+      </div>
+
+      <div className='space-y-2'>
+        <Label>UUID</Label>
+
+        <UUIDInput className='max-w-80' />
       </div>
     </>
   )
