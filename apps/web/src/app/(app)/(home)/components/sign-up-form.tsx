@@ -119,7 +119,7 @@ export default function SignUpForm({
             name='phoneNumber'
             render={({ field }) => (
               <FormItem className='w-96'>
-                <FormLabel>Date of birth</FormLabel>
+                <FormLabel>Phone number</FormLabel>
 
                 <FormControl>
                   <PhoneInput
@@ -130,11 +130,6 @@ export default function SignUpForm({
                     value={field.value}
                   />
                 </FormControl>
-
-                <FormDescription>
-                  This phone number will be used to contact you when applying to
-                  job offers.
-                </FormDescription>
 
                 <FormMessage />
               </FormItem>
