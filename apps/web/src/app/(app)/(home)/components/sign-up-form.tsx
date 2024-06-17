@@ -15,12 +15,12 @@ import {
   FormMessage,
 } from '@acme/ui/components/form'
 import cn from '@acme/ui/lib/cn'
+import PhoneInput from '@acme/ui/components/phone-input'
 import Button from '@acme/ui/components/button'
 import { Loader2 } from '@acme/ui/components/icon'
 
 import { api } from '@/lib/api'
 import HookFormDevtool from '@/components/hookform-devtool'
-import PhoneInput from '@/components/phone-input'
 
 type User = {
   phoneNumber: string

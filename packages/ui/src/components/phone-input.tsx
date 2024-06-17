@@ -8,21 +8,17 @@ import {
   parseCountry,
 } from 'react-international-phone'
 
-import Input, { type InputProps } from '@acme/ui/components/input'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@acme/ui/components/popover'
-import cn from '@acme/ui/lib/cn'
+import Input, { type InputProps } from './input'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
+import cn from '../lib/cn'
 import {
   Command,
   CommandInput,
   CommandEmpty,
   CommandList,
   CommandItem,
-} from '@acme/ui/components/command'
-import { ChevronDown } from '@acme/ui/components/icon'
+} from './command'
+import { ChevronDown } from './icon'
 
 export interface PhoneInputProps
   extends Omit<InputProps, 'value' | 'onChange'> {
