@@ -1,3 +1,0 @@
-# @acme/id
-
-TBD
