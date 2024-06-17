@@ -13,7 +13,6 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-  FormDescription,
 } from '@acme/ui/components/form'
 import cn from '@acme/ui/lib/cn'
 import Button from '@acme/ui/components/button'
@@ -110,7 +109,7 @@ export default function SignUpForm({
         }}
       >
         <form
-          className={cn('grid space-y-2', className)}
+          className={cn('space-y-4', className)}
           onSubmit={handleSubmit(onSubmit)}
           {...props}
         >
@@ -136,19 +135,17 @@ export default function SignUpForm({
             )}
           />
 
-          <div className='flex'>
-            <Button
-              disabled={!formState.isDirty || !formState.isValid}
-              type='submit'
-              variant='secondary'
-            >
-              {formState.isSubmitting ? (
-                <Loader2 className='w-5 animate-spin' />
-              ) : (
-                <span>Continue</span>
-              )}
-            </Button>
-          </div>
+          <Button
+            disabled={!formState.isDirty || !formState.isValid}
+            type='submit'
+            variant='secondary'
+          >
+            {formState.isSubmitting ? (
+              <Loader2 className='w-5 animate-spin' />
+            ) : (
+              <span>Continue</span>
+            )}
+          </Button>
         </form>
       </Form>
     </>

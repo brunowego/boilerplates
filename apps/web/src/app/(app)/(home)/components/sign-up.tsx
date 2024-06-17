@@ -7,7 +7,7 @@ export default function SignUp(): JSX.Element {
     <div className='p-4 lg:px-5'>
       <SignUpForm
         user={{
-          phoneNumber: '+5561982502595',
+          phoneNumber: '',
         }}
       />
     </div>

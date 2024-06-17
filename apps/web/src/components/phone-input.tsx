@@ -14,7 +14,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@acme/ui/components/popover'
-import Button from '@acme/ui/components/button'
 import cn from '@acme/ui/lib/cn'
 import {
   Command,
@@ -24,7 +23,6 @@ import {
   CommandItem,
 } from '@acme/ui/components/command'
 import { ChevronDown } from '@acme/ui/components/icon'
-// import { ScrollArea } from '@acme/ui/components/scroll-area'
 
 export interface PhoneInputProps
   extends Omit<InputProps, 'value' | 'onChange'> {
@@ -52,31 +50,26 @@ const PhoneInput = ({
     })
 
   return (
-    <div className='relative h-12 w-full'>
+    <div className='relative'>
       <Popover>
         <PopoverTrigger asChild>
-          <Button
-            className={cn(
-              'absolute top-2 left-2.5 h-[calc(100%-1rem)] w-12 justify-between rounded-xs pr-1 pl-2',
-            )}
-            role='combobox'
-            size='icon'
-            variant='secondary'
+          <button
+            className='absolute inset-y-0 left-4 flex items-center space-x-1'
+            type='button'
           >
-            <FlagImage iso2={country.iso2 as CountryIso2} className='size-5' />
+            <FlagImage iso2={country.iso2 as CountryIso2} className='size-6' />
 
-            <ChevronDown className='size-3' />
-          </Button>
+            <ChevronDown className='size-3.5 text-muted-foreground' />
+          </button>
         </PopoverTrigger>
 
-        <PopoverContent align='start' className='-ml-2 mt-2 w-96 p-0'>
+        <PopoverContent align='start' className='-ml-4 w-96 p-0'>
           <Command>
             <CommandInput placeholder='Search countries...' />
 
             <CommandEmpty>No country found.</CommandEmpty>
 
             <CommandList>
-              {/* <ScrollArea className='p-1'> */}
               {defaultCountries.map((c) => {
                 const item = parseCountry(c)
 
@@ -111,7 +104,6 @@ const PhoneInput = ({
                   </CommandItem>
                 )
               })}
-              {/* </ScrollArea> */}
             </CommandList>
           </Command>
         </PopoverContent>
