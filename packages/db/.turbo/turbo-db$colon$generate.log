@@ -1,0 +1,13 @@
+
+> @acme/db@0.0.0 db:generate /Volumes/Workspace/Repositories/github.com/brunowego/boilerplates/packages/db
+> drizzle-kit generate
+
+[90mdrizzle-kit: v0.22.7[39m
+[90mdrizzle-orm: v0.31.2[39m
+
+[90mNo config path provided, using default 'drizzle.config.ts'[39m
+[90mReading config file '/Volumes/Workspace/Repositories/github.com/brunowego/boilerplates/packages/db/drizzle.config.ts'[39m
+[1m1 tables[22m
+[1m[22m[1m[34mpayment_methods[39m[22m [90m7 columns 0 indexes 0 fks[39m
+
+[[32m✓[39m] Your SQL migration file ➜ [1m[4m[34msrc/migrations/0000_even_sandman.sql[39m[24m[22m 🚀
