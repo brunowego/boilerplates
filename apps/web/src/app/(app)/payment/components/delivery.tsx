@@ -1,55 +1,37 @@
-import { type JSX, useState } from 'react'
+import type { JSX } from 'react'
 import { useMeasure } from 'react-use'
-import { motion } from 'framer-motion'
 
+import type { PaymentMethod } from '@acme/db/types'
 import Label from '@acme/ui/components/label'
-import Switch from '@acme/ui/components/switch'
 import Input from '@acme/ui/components/input'
-import { Truck } from '@acme/ui/components/icon'
 
-import { FADE_IN_ANIMATION_SETTINGS } from '@/constants/framer-motion'
+import Option from './option'
 
-export default function Delivery(): JSX.Element {
-  const [expanded, setExpanded] = useState(false)
+type DeliveryProps = PaymentMethod
 
+export default function Delivery({ enabled }: DeliveryProps): JSX.Element {
   const [spanRef, { width }] = useMeasure<HTMLSpanElement>()
 
   return (
-    <>
-      <div className='flex items-center space-x-4'>
-        <Label className='grow space-x-1.5 font-medium' htmlFor='delivery'>
-          <div className='p-1'>
-            <Truck className='size-6' />
-          </div>
+    <Option enabled={enabled} title='Delivery'>
+      <div className='space-y-2'>
+        <Label>Delivery fee</Label>
 
-          <span className='font-medium text-base'>Delivery</span>
-        </Label>
+        <div className='relative'>
+          <span
+            className='absolute inset-y-0 left-4 flex items-center text-muted-foreground text-sm'
+            ref={spanRef}
+          >
+            R$
+          </span>
 
-        <Switch id='delivery' onClick={() => setExpanded(!expanded)} />
+          <Input
+            defaultValue={0}
+            style={{ paddingLeft: width + 20 }}
+            type='text'
+          />
+        </div>
       </div>
-
-      {expanded ? (
-        <motion.div className='space-y-4' {...FADE_IN_ANIMATION_SETTINGS}>
-          <div className='space-y-2'>
-            <Label>Delivery fee</Label>
-
-            <div className='relative'>
-              <span
-                className='absolute inset-y-0 left-4 flex items-center text-muted-foreground text-sm'
-                ref={spanRef}
-              >
-                R$
-              </span>
-
-              <Input
-                defaultValue={0}
-                style={{ paddingLeft: width + 20 }}
-                type='text'
-              />
-            </div>
-          </div>
-        </motion.div>
-      ) : null}
-    </>
+    </Option>
   )
 }

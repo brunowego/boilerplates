@@ -3,32 +3,35 @@ import { useMeasure } from 'react-use'
 import Link from 'next/link'
 
 import type { PaymentMethod } from '@acme/db/types'
-import { Wise as Logo } from '@acme/ui/components/logo'
+import { MercadoPago as Logo } from '@acme/ui/components/logo'
 import Label from '@acme/ui/components/label'
 import Input from '@acme/ui/components/input'
 
 import Option from './option'
 
-type WiseProps = PaymentMethod
+type MercadoPagoProps = PaymentMethod
 
-export default function Wise({ enabled, identifier }: WiseProps): JSX.Element {
+export default function MercadoPago({
+  enabled,
+  identifier,
+}: MercadoPagoProps): JSX.Element {
   const [spanRef, { width }] = useMeasure<HTMLSpanElement>()
 
   return (
     <Option
       enabled={enabled}
-      icon={<Logo className='size-8 fill-[#163300] dark:fill-[#9FE870]' />}
-      title='Wise'
+      icon={<Logo className='size-8' />}
+      title='Mercado Pago'
     >
       <div className='space-y-2'>
-        <Label>Tag ID</Label>
+        <Label>Username</Label>
 
         <div className='relative'>
           <span
             className='absolute inset-y-0 left-4 flex items-center text-muted-foreground text-sm'
             ref={spanRef}
           >
-            https://wise.com/pay/me/
+            https://link.mercadopago.com.br/
           </span>
 
           <Input
@@ -39,7 +42,7 @@ export default function Wise({ enabled, identifier }: WiseProps): JSX.Element {
         </div>
 
         <p className='text-muted-foreground text-sm leading-6'>
-          Don't have Wise account?{' '}
+          Don't have Mercado Pago account?{' '}
           <Link
             className='text-foreground underline underline-offset-4'
             href='/'

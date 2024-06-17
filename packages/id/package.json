@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/id",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "nanoid": "~5.0.7"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:~"
+  }
+}

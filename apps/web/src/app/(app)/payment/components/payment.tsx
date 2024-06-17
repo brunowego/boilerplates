@@ -8,24 +8,20 @@ import Card from '@acme/ui/components/card'
 import Label from '@acme/ui/components/label'
 import Switch from '@acme/ui/components/switch'
 import Badge from '@acme/ui/components/badge'
-import {
-  WalletMinimal,
-  CreditCard,
-  ShoppingBag,
-  Bot,
-  Gift,
-} from '@acme/ui/components/icon'
+import { CreditCard, ShoppingBag, Bot, Gift } from '@acme/ui/components/icon'
 
-import Pix from './pix'
-import PayPal from './paypal'
-import Revolut from './revolut'
-import Wise from './wise'
-import MercadoPago from './mercado-pago'
-import Crypto from './crypto'
-import BankTransfer from './bank-transfer'
+import { usePaymentMethods } from '@/hooks/api/use-payment-methods'
+
+import Dynamic from './dynamic'
 import Delivery from './delivery'
 
 export default function Payment(): JSX.Element {
+  const { data: paymentMethods, isLoading } = usePaymentMethods()
+
+  if (isLoading) {
+    return <>Loading...</>
+  }
+
   return (
     <Page>
       <Page.Header>
@@ -38,52 +34,11 @@ export default function Payment(): JSX.Element {
           description='Customers will choose one of following payment methods to make payment.'
         >
           <Card className='divide-y xl:col-span-4 *:space-y-4'>
-            <Card.Content>
-              <Pix />
-            </Card.Content>
-
-            <Card.Content>
-              <PayPal />
-            </Card.Content>
-
-            <Card.Content>
-              <Revolut />
-            </Card.Content>
-
-            <Card.Content>
-              <Wise />
-            </Card.Content>
-
-            <Card.Content>
-              <MercadoPago />
-            </Card.Content>
-
-            <Card.Content>
-              <Crypto />
-            </Card.Content>
-
-            <Card.Content>
-              <BankTransfer />
-            </Card.Content>
-
-            <Card.Content>
-              <div className='flex items-center space-x-4'>
-                <Label
-                  className='grow space-x-1.5 font-medium'
-                  htmlFor='cash-on-delivery'
-                >
-                  <div className='p-1'>
-                    <WalletMinimal className='size-6' />
-                  </div>
-
-                  <span className='font-medium text-base'>
-                    Cash on delivery
-                  </span>
-                </Label>
-
-                <Switch id='cash-on-delivery' />
-              </div>
-            </Card.Content>
+            {paymentMethods?.map(({ type, ...props }) => (
+              <Card.Content key={type}>
+                {type ? <Dynamic type={type} {...props} /> : null}
+              </Card.Content>
+            ))}
 
             {/* <Card.Content>
               <div className='flex items-center space-x-4'>
