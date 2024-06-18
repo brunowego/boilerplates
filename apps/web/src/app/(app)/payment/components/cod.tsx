@@ -13,6 +13,7 @@ export default function Cod({ enabled }: CodProps): JSX.Element {
       enabled={enabled}
       icon={<Icon className='m-1 size-6' />}
       title='Cash on delivery'
+      type='cod'
     />
   )
 }

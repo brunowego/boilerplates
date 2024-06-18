@@ -2,7 +2,7 @@
 
 import { type HTMLAttributes, type JSX, useMemo } from 'react'
 
-import { insertPaymentMethodsSchema } from '@acme/db/schemas'
+import { insertPaymentSchema } from '@acme/db/schemas'
 import { type z, zodResolver } from '@acme/ui/lib/zod'
 import type { PaymentMethod } from '@acme/db/types'
 import { useForm, type SubmitHandler } from '@acme/ui/hooks/use-form'
@@ -25,7 +25,7 @@ import Dynamic from './dynamic'
 // import SelfPickUp from './self-pick-up'
 // import WhatsAppBot from './whatsapp-bot'
 
-const formSchema = insertPaymentMethodsSchema
+const formSchema = insertPaymentSchema
 
 type FormValues = z.infer<typeof formSchema>
 
@@ -51,7 +51,7 @@ export default function EditPaymentForm({
 
   const { formState, reset, handleSubmit, control, ...form } =
     useForm<FormValues>({
-      defaultValues,
+      // defaultValues,
       resolver: zodResolver(formSchema),
     })
 
@@ -91,32 +91,32 @@ export default function EditPaymentForm({
             <Page.Header className='justify-between'>
               <Page.Title>Payment</Page.Title>
 
-              {/* {formState.isDirty ? ( */}
-              <div className='flex items-center gap-x-4'>
-                <h2 className='text-muted-foreground text-xs'>
-                  Unsaved changes
-                </h2>
+              {formState.isDirty ? (
+                <div className='flex items-center gap-x-4'>
+                  <h2 className='text-muted-foreground text-xs'>
+                    Unsaved changes
+                  </h2>
 
-                <div className='flex gap-x-2'>
-                  <Button onClick={cancel} variant='outline'>
-                    Cancel
-                  </Button>
+                  <div className='flex gap-x-2'>
+                    <Button onClick={cancel} variant='outline'>
+                      Cancel
+                    </Button>
 
-                  <Button
-                    className='gap-x-2'
-                    disabled={!formState.isValid}
-                    type='submit'
-                    variant='secondary'
-                  >
-                    <span>Salvar</span>
+                    <Button
+                      className='gap-x-2'
+                      disabled={!formState.isValid}
+                      type='submit'
+                      variant='secondary'
+                    >
+                      <span>Salvar</span>
 
-                    {/* {formState.isSubmitting ? ( */}
-                    <Loader2 className='size-4 animate-spin' />
-                    {/* ) : null} */}
-                  </Button>
+                      {formState.isSubmitting ? (
+                        <Loader2 className='size-4 animate-spin' />
+                      ) : null}
+                    </Button>
+                  </div>
                 </div>
-              </div>
-              {/* ) : null} */}
+              ) : null}
             </Page.Header>
 
             <Page.Content className='divide-y *:py-5 first:*:pt-0 last:*:pb-0'>

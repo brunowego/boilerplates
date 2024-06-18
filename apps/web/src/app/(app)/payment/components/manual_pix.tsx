@@ -42,7 +42,12 @@ export default function Pix({
   const getValue = identifierType === type ? (identifier as string) : ''
 
   return (
-    <Option enabled={enabled} icon={<Logo className='size-8' />} title='Pix'>
+    <Option
+      enabled={enabled}
+      icon={<Logo className='size-8' />}
+      title='Pix'
+      type='manual_pix'
+    >
       <div className='grid grid-cols-3 space-x-3'>
         <div className='space-y-2'>
           <Label>ID type</Label>

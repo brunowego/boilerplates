@@ -20,6 +20,7 @@ export default function BankTransfer({
       enabled={enabled}
       icon={<Icon className='m-1 size-6' />}
       title='Bank transfer'
+      type='bank_transfer'
     >
       <div className='grid grid-cols-2 gap-3'>
         <div className='space-y-2'>

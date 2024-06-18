@@ -1,20 +1,21 @@
 import { type ReactNode, type JSX, useState } from 'react'
 import { motion } from 'framer-motion'
 
+import type { PaymentMethod } from '@acme/db/types'
 import Label from '@acme/ui/components/label'
 import Switch from '@acme/ui/components/switch'
 
 import { FADE_IN_ANIMATION_SETTINGS } from '@/constants/framer-motion'
 
-type OptionProps = {
-  enabled: boolean | null
-  title: string
+type OptionProps = Pick<PaymentMethod, 'enabled' | 'type'> & {
   icon: ReactNode
+  title: string
   children?: ReactNode
 }
 
 export default function Option({
   enabled = false,
+  type,
   icon,
   title,
   children,
@@ -24,7 +25,7 @@ export default function Option({
   return (
     <>
       <div className='flex items-center space-x-4'>
-        <Label className='grow space-x-1.5 font-medium' htmlFor='paypal'>
+        <Label className='grow space-x-1.5 font-medium' htmlFor={type}>
           {icon}
 
           <span className='font-medium text-base'>{title}</span>
@@ -32,7 +33,7 @@ export default function Option({
 
         <Switch
           checked={expanded as boolean}
-          id='paypal'
+          id={type}
           onClick={() => setExpanded(!expanded)}
         />
       </div>

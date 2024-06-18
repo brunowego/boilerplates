@@ -15,6 +15,7 @@ export default function StoreCredit({
       enabled={enabled}
       icon={<Icon className='m-1 size-6' />}
       title='Store credit'
+      type='store_credit'
     />
   )
 }
