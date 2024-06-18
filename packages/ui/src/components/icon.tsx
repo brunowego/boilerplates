@@ -1,5 +1,4 @@
 import {
-  Activity,
   Check,
   CircleUser,
   Home,
@@ -16,7 +15,6 @@ import {
 } from 'lucide-react'
 
 export {
-  Activity,
   Check,
   CircleUser,
   Home,

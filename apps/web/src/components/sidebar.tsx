@@ -22,16 +22,6 @@ const menus = [
         title: 'Security',
         href: '/security',
       },
-      {
-        icon: 'Activity',
-        title: 'Activity',
-        href: '/',
-      },
-      {
-        icon: 'Settings2',
-        title: 'Preferences',
-        href: '/',
-      },
     ],
   },
   {
