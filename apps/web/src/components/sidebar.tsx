@@ -24,16 +24,6 @@ const menus = [
       },
     ],
   },
-  {
-    title: 'Workspaces',
-    links: [
-      {
-        logo: 'A',
-        title: 'Acme',
-        href: '/',
-      },
-    ],
-  },
 ] as {
   title: string
   links?: {
