@@ -6,5 +6,5 @@ type UUIDInputProps = InputProps
 export default function UUIDInput({ ...props }: UUIDInputProps): JSX.Element {
   const uuidRef = withMask(['********-****-****-****-************'])
 
-  return <Input {...props} ref={uuidRef} />
+  return <Input type='text' {...props} ref={uuidRef} />
 }

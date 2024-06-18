@@ -6,5 +6,5 @@ type SSNInputProps = InputProps
 export default function SSNInput({ ...props }: SSNInputProps): JSX.Element {
   const ssnRef = withMask(['999.999.999-99'])
 
-  return <Input {...props} ref={ssnRef} />
+  return <Input type='text' {...props} ref={ssnRef} />
 }

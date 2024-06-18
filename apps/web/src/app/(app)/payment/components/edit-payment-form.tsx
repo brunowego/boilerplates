@@ -14,15 +14,15 @@ import Button from '@acme/ui/components/button'
 import Fieldset from '@acme/ui/components/fieldset'
 import Card from '@acme/ui/components/card'
 // import Label from '@acme/ui/components/label'
-import Switch from '@acme/ui/components/switch'
-import Input from '@acme/ui/components/input'
+// import Switch from '@acme/ui/components/switch'
+// import Input from '@acme/ui/components/input'
 // import Badge from '@acme/ui/components/badge'
-import { Loader2, CreditCard, Gift } from '@acme/ui/components/icon'
+import { Loader2 } from '@acme/ui/components/icon'
 
 import HookFormDevtool from '@/components/hookform-devtool'
 
+import ManualPix from './manual_pix'
 // import Loading from './loading'
-import Dynamic from './dynamic'
 // import Delivery from './delivery'
 // import SelfPickUp from './self-pick-up'
 // import WhatsAppBot from './whatsapp-bot'
@@ -63,6 +63,7 @@ export default function EditPaymentForm({
   const onSubmit: SubmitHandler<FormValues> = async (values: FormValues) => {
     try {
       console.log(values)
+
       // // @ts-ignore
       // const modifiedFields: FormValues = Object.fromEntries(
       //   Object.keys(formState.dirtyFields).map((key) => [
@@ -70,7 +71,9 @@ export default function EditPaymentForm({
       //     values[key as keyof FormValues],
       //   ]),
       // )
+
       // await mutateAsync(modifiedFields)
+
       // reset(modifiedFields)
     } catch (err) {
       if (process.env.NODE_ENV === 'development') {
@@ -83,7 +86,15 @@ export default function EditPaymentForm({
     <>
       <HookFormDevtool control={control} />
 
-      <Form {...{ reset, formState, control, handleSubmit, ...form }}>
+      <Form
+        {...{
+          reset,
+          formState,
+          control,
+          handleSubmit,
+          ...form,
+        }}
+      >
         <form
           className={cn('relative', className)}
           onSubmit={handleSubmit(onSubmit)}
@@ -127,17 +138,19 @@ export default function EditPaymentForm({
                 description='Customers will choose one of following payment methods to make payment.'
               >
                 <Card className='divide-y xl:col-span-4 *:space-y-4'>
-                  {defaultValues.methods?.map(({ type }, index) => (
+                  {defaultValues.methods?.map(({ ...props }, index) => (
                     <Card.Content
                       // biome-ignore lint/suspicious/noArrayIndexKey: This is a dynamic list of items
                       key={index}
                     >
-                      <Dynamic
-                        type={type}
-                        control={control}
-                        index={index}
-                        {...props}
-                      />
+                      {props.type === 'manual_pix' ? (
+                        <ManualPix
+                          // @ts-ignore
+                          control={control}
+                          index={index}
+                          {...props}
+                        />
+                      ) : null}
                     </Card.Content>
                   ))}
 

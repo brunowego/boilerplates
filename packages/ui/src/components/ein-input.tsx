@@ -6,5 +6,5 @@ type EINInputProps = InputProps
 export default function EINInput({ ...props }: EINInputProps): JSX.Element {
   const einRef = withMask(['99.999.999/9999-99'])
 
-  return <Input {...props} ref={einRef} />
+  return <Input type='text' {...props} ref={einRef} />
 }

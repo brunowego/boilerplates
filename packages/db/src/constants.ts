@@ -6,8 +6,8 @@ export const PAYMENT_METHOD_TYPES = [
   // 'revolut',
   // 'wise',
   // 'bank_transfer',
-  'cod', // Cash on delivery
-  'store_credit',
+  // 'cod', // Cash on delivery
+  // 'store_credit',
 ] as const
 
 export const PAYMENT_METHOD_IDENTIFIER_TYPES = [
