@@ -58,14 +58,23 @@ export default function Sidebar({ className }: SidebarProps): JSX.Element {
     >
       <h4 className='font-medium text-lg leading-10'>Settings</h4>
 
-      {menus.map(({ title, links }) => (
-        <div className='flex flex-shrink-0 flex-col text-sm'>
+      {menus.map(({ title, links }, index) => (
+        <div
+          className='flex flex-shrink-0 flex-col text-sm'
+          // biome-ignore lint/suspicious/noArrayIndexKey: This is a static list
+          key={index}
+        >
           <h6 className='font-medium'>{title}</h6>
 
           <div className='mt-2 space-y-1'>
-            {links?.map(({ icon, logo, title, href }) => {
+            {links?.map(({ icon, logo, title, href }, index) => {
               return (
-                <Link className='flex items-center gap-2.5 py-1.5' href={href}>
+                <Link
+                  className='flex items-center gap-2.5 py-1.5'
+                  // biome-ignore lint/suspicious/noArrayIndexKey: This is a static list
+                  key={index}
+                  href={href}
+                >
                   {icon && <DynamicIcon icon={icon} className='size-4' />}
 
                   {logo && (
