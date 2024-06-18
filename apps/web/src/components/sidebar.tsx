@@ -32,16 +32,6 @@ const menus = [
         title: 'Acme',
         href: '/',
       },
-      {
-        icon: 'Plus',
-        title: 'Create workspace',
-        href: '/',
-      },
-      {
-        icon: 'UserPlus',
-        title: 'Invitations',
-        href: '/',
-      },
     ],
   },
 ] as {
