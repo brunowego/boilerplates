@@ -2,6 +2,7 @@ import { type JSX, useState } from 'react'
 
 import type { PaymentMethod, PAYMENT_METHOD_IDENTIFIER_TYPES } from '@acme/db'
 import { Pix as Logo } from '@acme/ui/components/logo'
+import Form from '@acme/ui/components/form'
 import Label from '@acme/ui/components/label'
 import Select from '@acme/ui/components/select'
 import Input from '@acme/ui/components/input'
@@ -30,16 +31,21 @@ const labels = {
   random_key: 'Random key',
 } as Record<IdentifierType, string>
 
-type PixProps = PaymentMethod
+type PixProps = PaymentMethod & {
+  control: any
+  index: number
+}
 
 export default function Pix({
   enabled,
   identifier,
   identifierType = 'ssn',
+  control,
+  index,
 }: PixProps): JSX.Element {
-  const [type, setType] = useState<IdentifierType | null>(identifierType)
+  // const [type, setType] = useState<IdentifierType | null>(identifierType)
 
-  const getValue = identifierType === type ? (identifier as string) : ''
+  // const getValue = identifierType === type ? (identifier as string) : ''
 
   return (
     <Option
@@ -49,38 +55,50 @@ export default function Pix({
       type='manual_pix'
     >
       <div className='grid grid-cols-3 space-x-3'>
-        <div className='space-y-2'>
-          <Label>ID type</Label>
+        <Form.Field
+          control={control}
+          name={`methods.${index}.identifierType`}
+          render={({ field: { value, onChange } }) => (
+            <Form.Item className='grow'>
+              <Form.Label>ID type</Form.Label>
 
-          <Select
-            defaultValue={identifierType as string}
-            onValueChange={(value) => setType(value as IdentifierType)}
-          >
-            <Select.Trigger>
-              <Select.Value />
-            </Select.Trigger>
+              <Form.Control>
+                {/* <Input type='text' {...field} /> */}
+                <Select defaultValue={value} onValueChange={(v) => onChange(v)}>
+                  <Select.Trigger>
+                    <Select.Value />
+                  </Select.Trigger>
 
-            <Select.Content>
-              {identifierTypes.map((type) => (
-                <Select.Item key={type} value={type}>
-                  {labels[type as IdentifierType]}
-                </Select.Item>
-              ))}
-            </Select.Content>
-          </Select>
-        </div>
+                  <Select.Content>
+                    {identifierTypes.map((type) => (
+                      <Select.Item key={type} value={type}>
+                        {labels[type as IdentifierType]}
+                      </Select.Item>
+                    ))}
+                  </Select.Content>
+                </Select>
+              </Form.Control>
 
-        <div className='col-span-2 space-y-2'>
-          {type === 'phone_number' && <PhoneNumberInput value={getValue} />}
+              <Form.Message />
+            </Form.Item>
+          )}
+        />
 
-          {type === 'email' && <EmailInput value={getValue} />}
+        <Form.Field
+          control={control}
+          name={`methods.${index}.identifier`}
+          render={({ field }) => (
+            <Form.Item className='col-span-2'>
+              <Form.Label>Identifier</Form.Label>
 
-          {type === 'ssn' && <SSNInput value={getValue} />}
+              <Form.Control>
+                <Input type='text' {...field} />
+              </Form.Control>
 
-          {type === 'ein' && <EINInput value={getValue} />}
-
-          {type === 'random_key' && <RandonKeyInput value={getValue} />}
-        </div>
+              <Form.Message />
+            </Form.Item>
+          )}
+        />
       </div>
     </Option>
   )

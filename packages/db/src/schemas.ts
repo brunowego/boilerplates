@@ -12,10 +12,13 @@ export const insertPaymentMethodSchema = createInsertSchema(paymentMethods, {
   type: z.enum(PAYMENT_METHOD_TYPES),
   identifier: z.string().optional(),
   identifierType: z.enum(PAYMENT_METHOD_IDENTIFIER_TYPES).optional(),
-  params: z.record(z.unknown()),
+  // params: z.record(z.unknown()),
   enabled: z.boolean().optional(),
 })
 
-export const insertPaymentSchema = z.object({
+export const selectPaymentSchema = z.object({
   methods: z.array(selectPaymentMethodSchema),
+})
+export const insertPaymentSchema = z.object({
+  methods: z.array(insertPaymentMethodSchema),
 })

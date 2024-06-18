@@ -5,7 +5,7 @@ export const PAYMENT_METHOD_TYPES = [
   // 'paypal',
   // 'revolut',
   // 'wise',
-  'bank_transfer',
+  // 'bank_transfer',
   'cod', // Cash on delivery
   'store_credit',
 ] as const

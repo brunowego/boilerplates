@@ -4,7 +4,10 @@ import type { PaymentMethod } from '@acme/db/types'
 
 import Loading from './loading'
 
-type DynamicProps = PaymentMethod
+type DynamicProps = PaymentMethod & {
+  control: any
+  index: number
+}
 
 export default function Dynamic({ ...props }: DynamicProps) {
   if (typeof window !== 'undefined') {

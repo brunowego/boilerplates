@@ -10,7 +10,7 @@ export default function Sidebar({
   children,
 }: SidebarProps): JSX.Element | null {
   return (
-    <div className='z-10 w-80 border-r'>
+    <div className='z-10 w-80 shrink-0 border-r'>
       <aside className='sticky top-0'>{children}</aside>
     </div>
   )

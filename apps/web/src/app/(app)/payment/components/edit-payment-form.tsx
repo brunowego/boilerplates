@@ -4,7 +4,7 @@ import { type HTMLAttributes, type JSX, useMemo } from 'react'
 
 import { insertPaymentSchema } from '@acme/db/schemas'
 import { type z, zodResolver } from '@acme/ui/lib/zod'
-import type { PaymentMethod } from '@acme/db/types'
+import type { InsertPayment } from '@acme/db/types'
 import { useForm, type SubmitHandler } from '@acme/ui/hooks/use-form'
 // import toast from '@acme/ui/lib/toast'
 import Form from '@acme/ui/components/form'
@@ -14,12 +14,14 @@ import Button from '@acme/ui/components/button'
 import Fieldset from '@acme/ui/components/fieldset'
 import Card from '@acme/ui/components/card'
 // import Label from '@acme/ui/components/label'
-// import Switch from '@acme/ui/components/switch'
+import Switch from '@acme/ui/components/switch'
+import Input from '@acme/ui/components/input'
 // import Badge from '@acme/ui/components/badge'
 import { Loader2, CreditCard, Gift } from '@acme/ui/components/icon'
 
 import HookFormDevtool from '@/components/hookform-devtool'
 
+// import Loading from './loading'
 import Dynamic from './dynamic'
 // import Delivery from './delivery'
 // import SelfPickUp from './self-pick-up'
@@ -30,9 +32,7 @@ const formSchema = insertPaymentSchema
 type FormValues = z.infer<typeof formSchema>
 
 interface EditPaymentFormProps extends HTMLAttributes<HTMLFormElement> {
-  payment?: {
-    methods: PaymentMethod[]
-  }
+  payment?: InsertPayment
   isLoading?: boolean
 }
 
@@ -44,14 +44,15 @@ export default function EditPaymentForm({
 }: EditPaymentFormProps): JSX.Element {
   const defaultValues = useMemo(
     () => ({
-      methods: payment?.methods ?? [],
+      methods: payment?.methods || [],
     }),
     [payment],
   )
 
-  const { formState, reset, handleSubmit, control, ...form } =
+  const { reset, formState, control, handleSubmit, ...form } =
+    // @ts-ignore
     useForm<FormValues>({
-      // defaultValues,
+      defaultValues,
       resolver: zodResolver(formSchema),
     })
 
@@ -60,28 +61,29 @@ export default function EditPaymentForm({
   }
 
   const onSubmit: SubmitHandler<FormValues> = async (values: FormValues) => {
-    // try {
-    //   // @ts-ignore
-    //   const modifiedFields: FormValues = Object.fromEntries(
-    //     Object.keys(formState.dirtyFields).map((key) => [
-    //       key,
-    //       values[key as keyof FormValues],
-    //     ]),
-    //   )
-    //   await mutateAsync(modifiedFields)
-    //   reset(modifiedFields)
-    // } catch (err) {
-    //   if (process.env.NODE_ENV === 'development') {
-    //     console.error(err)
-    //   }
-    // }
+    try {
+      console.log(values)
+      // // @ts-ignore
+      // const modifiedFields: FormValues = Object.fromEntries(
+      //   Object.keys(formState.dirtyFields).map((key) => [
+      //     key,
+      //     values[key as keyof FormValues],
+      //   ]),
+      // )
+      // await mutateAsync(modifiedFields)
+      // reset(modifiedFields)
+    } catch (err) {
+      if (process.env.NODE_ENV === 'development') {
+        console.error(err)
+      }
+    }
   }
 
   return (
     <>
       <HookFormDevtool control={control} />
 
-      <Form {...{ formState, reset, handleSubmit, control, ...form }}>
+      <Form {...{ reset, formState, control, handleSubmit, ...form }}>
         <form
           className={cn('relative', className)}
           onSubmit={handleSubmit(onSubmit)}
@@ -125,9 +127,17 @@ export default function EditPaymentForm({
                 description='Customers will choose one of following payment methods to make payment.'
               >
                 <Card className='divide-y xl:col-span-4 *:space-y-4'>
-                  {payment?.methods?.map(({ type, ...props }) => (
-                    <Card.Content key={type}>
-                      {type ? <Dynamic type={type} {...props} /> : null}
+                  {defaultValues.methods?.map(({ type }, index) => (
+                    <Card.Content
+                      // biome-ignore lint/suspicious/noArrayIndexKey: This is a dynamic list of items
+                      key={index}
+                    >
+                      <Dynamic
+                        type={type}
+                        control={control}
+                        index={index}
+                        {...props}
+                      />
                     </Card.Content>
                   ))}
 
