@@ -1,23 +1,19 @@
-// import 'server-only'
-
-import { db } from './db'
+import db from './db'
 import { eq } from './orm'
-import { usersTable } from './schema'
+import { users } from './schema'
 
-export async function getUsers() {
-  return await db.query.usersTable.findMany({
+export async function getWorkpaces() {
+  return await db.query.workspaces.findMany({
     columns: {
       id: true,
-      fullName: true,
-      email: true,
-      createdAt: true,
+      name: true,
+      current: true,
     },
-    limit: 15,
   })
 }
 
 export async function getUserByEmail(email: string) {
-  return await db.query.usersTable.findFirst({
-    where: eq(usersTable.email, email),
+  return await db.query.users.findFirst({
+    where: eq(users.email, email),
   })
 }

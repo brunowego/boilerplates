@@ -4,7 +4,7 @@
 // import type { User } from '@acme/db/schemas'
 import { db } from '@acme/db'
 import { eq } from '@acme/db/orm'
-import { usersTable } from '@acme/db/schema'
+import { users } from '@acme/db/schema'
 
 // export const emailSchema = z
 //   .string({
@@ -37,8 +37,8 @@ import { usersTable } from '@acme/db/schema'
 //       return null
 //     }
 
-//     return await db.query.usersTable.findFirst({
-//       where: eq(usersTable.email, validatedInput.data.email),
+//     return await db.query.users.findFirst({
+//       where: eq(users.email, validatedInput.data.email),
 //     })
 //   } catch (err) {
 //     console.error(err)
@@ -48,7 +48,7 @@ import { usersTable } from '@acme/db/schema'
 // }
 
 export async function getUserByEmail(email: string) {
-  return await db.query.usersTable.findFirst({
-    where: eq(usersTable.email, email),
+  return await db.query.users.findFirst({
+    where: eq(users.email, email),
   })
 }

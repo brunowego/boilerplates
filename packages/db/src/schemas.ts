@@ -1,10 +1,10 @@
 import { createSelectSchema, createInsertSchema } from 'drizzle-zod'
 import { z } from 'zod'
 
-import { usersTable } from './schema'
+import { users, workspaces } from './schema'
 
-export const selectUserSchema = createSelectSchema(usersTable)
-export const insertUserSchema = createInsertSchema(usersTable, {
+export const selectUserSchema = createSelectSchema(users)
+export const insertUserSchema = createInsertSchema(users, {
   fullName: z.string().min(2).max(40),
   email: z.string().email(),
 })
@@ -25,3 +25,10 @@ export const signInSchema = selectUserSchema
   .extend({
     password: z.string().min(8).max(64),
   })
+
+export const selectWorkspaceSchema = createSelectSchema(workspaces)
+export const insertWorkspaceSchema = createInsertSchema(workspaces, {
+  name: z.string().min(2).max(40),
+  slug: z.string().min(2).max(40),
+  current: z.boolean(),
+})

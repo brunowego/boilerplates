@@ -1,5 +1,5 @@
-import NextAuth, { type DefaultSession, type NextAuthConfig } from 'next-auth'
 import type { DefaultJWT } from 'next-auth/jwt'
+import NextAuth, { type NextAuthConfig } from 'next-auth'
 
 import { db } from '@acme/db'
 
@@ -8,21 +8,27 @@ import authConfig from './config'
 
 declare module 'next-auth' {
   interface User {
-    workspaceId: string
+    workspaceId?: string
   }
 
-  interface Session extends DefaultSession {
-    user: DefaultSession['user'] & {
-      workspaceId: string
-    }
-  }
+  // interface Session extends DefaultSession {
+  //   user: DefaultSession['user'] & {
+  //     workspaceId?: string
+  //   }
+  // }
 }
 
 declare module 'next-auth/jwt' {
   interface JWT extends DefaultJWT {
-    workspaceId: string
+    workspaceId?: string
   }
 }
+
+// declare module '@auth/core/adapters' {
+//   interface AdapterUser extends User {
+//     workspaceId?: string
+//   }
+// }
 
 const nextAuthConfig: NextAuthConfig = {
   callbacks: {
@@ -37,7 +43,7 @@ const nextAuthConfig: NextAuthConfig = {
     },
     jwt({ user, token, trigger, session }) {
       if (user) {
-        token.workspaceId = user.workspaceId ?? '01J101T3X2F8X0KRCZQFP57C90'
+        token.workspaceId = user.workspaceId
       }
 
       if (trigger === 'update' && session?.workspaceId) {
@@ -47,7 +53,6 @@ const nextAuthConfig: NextAuthConfig = {
       return token
     },
   },
-  // @ts-ignore
   adapter: DrizzleAdapter(db),
   debug: process.env.NODE_ENV === 'development',
   ...authConfig,

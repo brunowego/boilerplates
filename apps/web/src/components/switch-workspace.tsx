@@ -9,35 +9,28 @@ import Skeleton from '@acme/ui/components/skeleton'
 import cn from '@acme/ui/utils/cn'
 import Select from '@acme/ui/components/select'
 
+import { useWorkspaces } from '@/hooks/api/use-workspaces'
+
 type SwitchWorkspaceProps = {
   className?: string
 }
 
-const workspaces = [
-  {
-    id: '01J101T3X2F8X0KRCZQFP57C90',
-    name: '01J101T3X2F8X0KRCZQFP57C90',
-  },
-  {
-    id: '01J101T7E9VXK6ZW32PAH82SXP',
-    name: '01J101T7E9VXK6ZW32PAH82SXP',
-  },
-]
-
 export default function SwitchWorkspace({
   className,
 }: SwitchWorkspaceProps): JSX.Element {
+  const { data: workspaces, isLoading } = useWorkspaces()
   const { data: session, status, update: sessionUpdate } = useSession()
+
   const { refresh } = useRouter()
   const queryClient = useQueryClient()
 
   const selected = useMemo(() => {
     return workspaces?.find(
-      (workspace) => workspace.id === session?.user.workspaceId,
+      (workspace) => workspace.id === session?.user?.workspaceId,
     )
-  }, [session])
+  }, [workspaces, session])
 
-  if (status === 'loading') {
+  if (isLoading || status === 'loading') {
     return <Skeleton className={cn('h-10', className)} />
   }
 
@@ -56,7 +49,7 @@ export default function SwitchWorkspace({
       </Select.Trigger>
 
       <Select.Content>
-        {workspaces.map(({ id, name }) => (
+        {workspaces?.map(({ id, name }) => (
           <Select.Item key={id} value={id}>
             {name}
           </Select.Item>

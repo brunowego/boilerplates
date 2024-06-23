@@ -1,29 +1,20 @@
-import { type PostgresJsDatabase, drizzle } from 'drizzle-orm/postgres-js'
+import type { Logger } from 'drizzle-orm/logger'
+import { drizzle } from 'drizzle-orm/postgres-js'
 
-import * as schema from './schema'
+import client from './client'
 import { env } from './env'
-import { client } from './client'
+import * as schema from './schema'
 
-declare global {
-  var db: PostgresJsDatabase<typeof schema> | undefined
-}
+// const drizzleLogger: Logger = {
+//   logQuery(query: string, params: unknown[]): void {
+//     console.log('\x1b[32m%s\x1b[0m', 'drizzle:query', query, params.join(','))
+//   },
+// }
 
-// biome-ignore lint/suspicious/noRedeclare: to support hot reloading
-let db: PostgresJsDatabase<typeof schema>
+const db = drizzle(client, {
+  // logger: env.NODE_ENV === 'development' ? drizzleLogger : false,
+  logger: env.NODE_ENV === 'development',
+  schema,
+})
 
-if (env.NODE_ENV === 'production') {
-  db = drizzle(client, {
-    schema,
-  })
-} else {
-  global.db =
-    global.db ??
-    drizzle(client, {
-      logger: env.NODE_ENV === 'development',
-      schema,
-    })
-
-  db = global.db
-}
-
-export { db }
+export default db

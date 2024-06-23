@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { insertUserSchema } from './schemas'
-import { usersTable } from './schema'
+import { users } from './schema'
 import { faker } from '@faker-js/faker'
 import { db } from './db'
 
@@ -29,14 +29,14 @@ async function seedUsers(): Promise<void> {
     })
   }
 
-  await db.insert(usersTable).values(users).returning()
+  await db.insert(users).values(users).returning()
 }
 
 async function main(): Promise<void> {
   /**
    * Reset database
    */
-  await db.delete(usersTable)
+  await db.delete(users)
 
   console.log('✔ Database reset')
 
