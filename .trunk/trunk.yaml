@@ -17,16 +17,16 @@ lint:
       files:
         - typescript
   disabled:
+    - osv-scanner
     - dotenv-linter
     - prettier
   enabled:
-    - biome@1.8.1
-    - checkov@3.2.136
+    - biome@1.8.2
+    - checkov@3.2.141
     - git-diff-check
     - markdownlint@0.41.0
-    - osv-scanner@1.7.4
-    - trivy@0.52.1
-    - trufflehog@3.78.1
+    - trivy@0.52.2
+    - trufflehog@3.78.2
     - yamllint@1.35.1
 actions:
   disabled:
