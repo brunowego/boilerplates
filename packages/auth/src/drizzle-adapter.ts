@@ -29,7 +29,6 @@ export default function DrizzleAdapter(db: Db): Adapter {
     },
 
     async getUser(id: string): Promise<AdapterUser | null> {
-      console.log('getUser', id)
       return (await db.query.users.findFirst({
         columns: {
           id: true,
