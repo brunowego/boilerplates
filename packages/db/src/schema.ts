@@ -74,7 +74,7 @@ export const workspaces = pgTable(
     ...id,
     name: varchar('name').notNull(),
     slug: varchar('slug').unique().notNull(),
-    current: boolean('current').default(false),
+    current: boolean('current').default(false).notNull(),
     ...timestamps,
   },
   (t) => ({

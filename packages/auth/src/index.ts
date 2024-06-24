@@ -30,18 +30,23 @@ declare module 'next-auth/jwt' {
 //   }
 // }
 
+export const adapter = DrizzleAdapter(db)
+
 const nextAuthConfig: NextAuthConfig = {
   callbacks: {
     session({ session, token }) {
+      console.log('session', session, token)
       return {
         ...session,
         user: {
           ...session.user,
+          id: token.sub,
           workspaceId: token.workspaceId,
         },
       }
     },
     jwt({ user, token, trigger, session }) {
+      console.log('jwt', user, token, trigger, session)
       if (user) {
         token.workspaceId = user.workspaceId
       }
@@ -53,7 +58,7 @@ const nextAuthConfig: NextAuthConfig = {
       return token
     },
   },
-  adapter: DrizzleAdapter(db),
+  adapter,
   debug: process.env.NODE_ENV === 'development',
   ...authConfig,
 }

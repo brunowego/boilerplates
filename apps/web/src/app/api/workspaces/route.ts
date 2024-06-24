@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 import { auth } from '@acme/auth'
-import { getWorkpaces } from '@acme/db'
+import { getWorkpacesByUserId } from '@acme/db/queries'
 
 export const GET = auth(async function GET(req) {
   if (!req.auth) {
@@ -10,14 +10,16 @@ export const GET = auth(async function GET(req) {
     })
   }
 
-  // if (!req.auth.user?.id) {
-  //   return new Response(null, {
-  //     status: 404,
-  //   })
-  // }
+  const userId = req.auth.user?.id
+
+  if (!userId) {
+    return new Response(null, {
+      status: 404,
+    })
+  }
 
   try {
-    const response = await getWorkpaces()
+    const response = await getWorkpacesByUserId(userId)
 
     return NextResponse.json(response, {
       status: 200,

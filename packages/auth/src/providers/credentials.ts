@@ -25,6 +25,10 @@ export default CredentialsProvider({
       return null
     }
 
-    return { name: existingUser.fullName }
+    return {
+      id: existingUser.id,
+      name: existingUser.fullName,
+      workspaceId: existingUser.workspaceId,
+    }
   },
 })

@@ -2,6 +2,7 @@ import type { Adapter, AdapterUser, AdapterAccount } from 'next-auth/adapters'
 
 import type { Db } from '@acme/db/types'
 import { users, accounts, memberships, workspaces } from '@acme/db/schema'
+import { getUserByEmail } from '@acme/db/queries'
 import { eq, and } from '@acme/db/orm'
 
 export default function DrizzleAdapter(db: Db): Adapter {
@@ -28,6 +29,7 @@ export default function DrizzleAdapter(db: Db): Adapter {
     },
 
     async getUser(id: string): Promise<AdapterUser | null> {
+      console.log('getUser', id)
       return (await db.query.users.findFirst({
         columns: {
           id: true,
@@ -55,30 +57,7 @@ export default function DrizzleAdapter(db: Db): Adapter {
     },
 
     async getUserByEmail(email: string): Promise<AdapterUser | null> {
-      return (await db.query.users.findFirst({
-        columns: {
-          id: true,
-          fullName: true,
-          email: true,
-          emailVerified: true,
-          image: true,
-        },
-        // with: {
-        //   workspaces: {
-        //     columns: {
-        //       workspaceId: true,
-        //     },
-        //     with: {
-        //       workspace: {
-        //         columns: {
-        //           current: true,
-        //         },
-        //       },
-        //     },
-        //   },
-        // },
-        where: eq(users.email, email),
-      })) as AdapterUser | null
+      return (await getUserByEmail(email)) as AdapterUser | null
     },
 
     async updateUser(data: Partial<AdapterUser> & Pick<AdapterUser, 'id'>) {
