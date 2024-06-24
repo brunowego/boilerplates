@@ -15,7 +15,6 @@
     "@acme/db": "workspace:~",
     "@acme/id": "workspace:~",
     "@auth/core": "~0.34.1",
-    "@auth/drizzle-adapter": "~1.2.0",
     "bcryptjs": "~2.4.3",
     "next-auth": "5.0.0-beta.17"
   },
