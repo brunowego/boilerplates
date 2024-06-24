@@ -1,6 +1,6 @@
 import type { NextAuthConfig } from 'next-auth'
 
-import { generateId } from '@acme/id'
+// import { generateId } from '@acme/id'
 
 import {
   CredentialsProvider,
@@ -18,9 +18,9 @@ export default {
   ],
   session: {
     strategy: 'jwt',
-    maxAge: 7 * 24 * 60 * 60, // 30 days
-    updateAge: 24 * 60 * 60, // 24 hours
-    generateSessionToken: () => generateId(),
+    // maxAge: 7 * 24 * 60 * 60, // 30 days
+    // updateAge: 24 * 60 * 60, // 24 hours
+    // generateSessionToken: () => generateId(),
   },
   cookies: {
     sessionToken: {

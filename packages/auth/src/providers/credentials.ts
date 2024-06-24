@@ -15,6 +15,8 @@ export default CredentialsProvider({
 
     const existingUser = await getUserByEmail(email)
 
+    console.log('existingUser', existingUser)
+
     if (!existingUser?.hashedPassword) {
       return null
     }

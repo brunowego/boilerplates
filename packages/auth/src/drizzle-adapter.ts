@@ -1,9 +1,9 @@
 import type { Adapter, AdapterUser, AdapterAccount } from 'next-auth/adapters'
 
 import type { Db } from '@acme/db/types'
-import { users, accounts, memberships, workspaces } from '@acme/db/schema'
-import { getUserByEmail } from '@acme/db/queries'
+import { users, accounts, workspaces, memberships } from '@acme/db/schema'
 import { eq, and } from '@acme/db/orm'
+import { getUserByEmail } from '@acme/db/queries'
 
 export default function DrizzleAdapter(db: Db): Adapter {
   return {
@@ -29,7 +29,6 @@ export default function DrizzleAdapter(db: Db): Adapter {
     },
 
     async getUser(id: string): Promise<AdapterUser | null> {
-      console.log('getUser', id)
       return (await db.query.users.findFirst({
         columns: {
           id: true,
@@ -43,6 +42,7 @@ export default function DrizzleAdapter(db: Db): Adapter {
     },
 
     async getUserByEmail(email: string): Promise<AdapterUser | null> {
+      console.log(email)
       return (await getUserByEmail(email)) as AdapterUser | null
     },
 
@@ -82,11 +82,8 @@ export default function DrizzleAdapter(db: Db): Adapter {
     async getUserByAccount(
       account: Pick<AdapterAccount, 'provider' | 'providerAccountId'>,
     ): Promise<AdapterUser | null> {
-      const result = await db
+      return await db
         .select({
-          account: {
-            id: accounts.type,
-          },
           user: {
             id: users.id,
             email: users.email,
@@ -96,12 +93,12 @@ export default function DrizzleAdapter(db: Db): Adapter {
           workspace: { id: workspaces.id },
         })
         .from(accounts)
-        .innerJoin(users, eq(accounts.userId, users.id))
-        .innerJoin(memberships, eq(users.id, memberships.userId))
-        .innerJoin(
+        .innerJoin(users, eq(users.id, accounts.userId))
+        .rightJoin(memberships, eq(memberships.userId, users.id))
+        .rightJoin(
           workspaces,
           and(
-            eq(memberships.workspaceId, workspaces.id),
+            eq(workspaces.id, memberships.workspaceId),
             eq(workspaces.current, true),
           ),
         )
@@ -112,21 +109,20 @@ export default function DrizzleAdapter(db: Db): Adapter {
           ),
         )
         .then((res) => {
-          const result = res[0]
+          const user = res[0]?.user
+
+          if (!user) {
+            return null
+          }
 
           return {
-            user: {
-              id: result?.user.id as string,
-              email: result?.user.email as string,
-              emailVerified: result?.user.emailVerified as Date,
-              image: result?.user.image as string,
-              workspaceId: result?.workspace.id,
-            },
-            account: result?.account,
+            id: user.id as string,
+            email: user.email as string,
+            emailVerified: user.emailVerified as Date,
+            image: user.image as string,
+            workspaceId: res[0]?.workspace.id,
           }
         })
-
-      return result?.user ?? null
     },
 
     async deleteUser(id: string) {

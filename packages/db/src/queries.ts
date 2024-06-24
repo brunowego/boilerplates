@@ -33,8 +33,8 @@ export async function getUserByEmail(email: string) {
       },
     })
     .from(users)
-    .innerJoin(memberships, eq(users.id, memberships.userId))
-    .innerJoin(
+    .leftJoin(memberships, eq(users.id, memberships.userId))
+    .leftJoin(
       workspaces,
       and(
         eq(memberships.workspaceId, workspaces.id),
@@ -43,16 +43,20 @@ export async function getUserByEmail(email: string) {
     )
     .where(eq(users.email, email))
     .then((res) => {
-      const result = res[0]
+      const user = res[0]?.user
+
+      if (!user) {
+        return null
+      }
 
       return {
-        id: result?.user.id as string,
-        fullName: result?.user.fullName as string,
-        email: result?.user.email as string,
-        emailVerified: result?.user.emailVerified as Date,
-        hashedPassword: result?.user.hashedPassword as string,
-        image: result?.user.image as string,
-        workspaceId: result?.workspace.id,
+        id: user.id as string,
+        fullName: user.fullName as string,
+        email: user.email as string,
+        emailVerified: user.emailVerified as Date,
+        hashedPassword: user.hashedPassword as string,
+        image: user.image as string,
+        workspaceId: res[0]?.workspace?.id,
       }
     })
 }
