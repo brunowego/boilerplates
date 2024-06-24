@@ -29,6 +29,7 @@ export default function DrizzleAdapter(db: Db): Adapter {
     },
 
     async getUser(id: string): Promise<AdapterUser | null> {
+      console.log('getUser', id)
       return (await db.query.users.findFirst({
         columns: {
           id: true,
@@ -37,20 +38,6 @@ export default function DrizzleAdapter(db: Db): Adapter {
           emailVerified: true,
           image: true,
         },
-        // with: {
-        //   workspaces: {
-        //     columns: {
-        //       workspaceId: true,
-        //     },
-        //     with: {
-        //       workspace: {
-        //         columns: {
-        //           current: true,
-        //         },
-        //       },
-        //     },
-        //   },
-        // },
         where: eq(users.id, id),
       })) as AdapterUser | null
     },

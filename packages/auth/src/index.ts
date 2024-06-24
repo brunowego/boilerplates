@@ -35,7 +35,6 @@ export const adapter = DrizzleAdapter(db)
 const nextAuthConfig: NextAuthConfig = {
   callbacks: {
     session({ session, token }) {
-      console.log('session', session, token)
       return {
         ...session,
         user: {
@@ -46,7 +45,6 @@ const nextAuthConfig: NextAuthConfig = {
       }
     },
     jwt({ user, token, trigger, session }) {
-      console.log('jwt', user, token, trigger, session)
       if (user) {
         token.workspaceId = user.workspaceId
       }
