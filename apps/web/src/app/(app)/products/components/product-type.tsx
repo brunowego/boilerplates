@@ -53,7 +53,7 @@ export default function ProductType(): JSX.Element {
           </h1>
         </div>
 
-        <div className='-z-10 absolute top-0 right-0 h-[300px] w-full bg-white dark:bg-[#0f0f0f]' />
+        <div className='-z-10 absolute top-0 right-0 h-[300px] w-full bg-white shadow-sm dark:bg-[#0f0f0f]' />
 
         <div className='mx-auto max-w-xl space-y-6'>
           <nav className='grid grid-cols-3 gap-x-4'>

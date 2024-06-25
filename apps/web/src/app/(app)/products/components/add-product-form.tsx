@@ -36,7 +36,7 @@ export default function AddProductForm(): JSX.Element {
           <h1 className='my-20 text-2xl leading-normal'>Infoproduto</h1>
         </div>
 
-        <div className='-z-10 absolute top-0 right-0 h-[300px] w-full bg-white dark:bg-[#0f0f0f]' />
+        <div className='-z-10 absolute top-0 right-0 h-[300px] w-full bg-white shadow-sm dark:bg-[#0f0f0f]' />
 
         <div className='mx-auto max-w-xl space-y-6'>
           <div className='-mx-2 relative'>
@@ -88,7 +88,11 @@ export default function AddProductForm(): JSX.Element {
                 <Label>Desconto</Label>
 
                 <div className='-mx-2 relative'>
-                  <Input className='h-12 text-right' placeholder='%' />
+                  <Input className='h-12 pr-7 text-right' />
+
+                  <span className='absolute inset-y-1 right-1 p-2.5 text-muted-foreground text-sm'>
+                    %
+                  </span>
                 </div>
               </div>
             </div>
@@ -99,11 +103,11 @@ export default function AddProductForm(): JSX.Element {
               <div className='-mx-2 relative'>
                 <Select>
                   <Select.Trigger className='h-12'>
-                    <Select.Value placeholder='Theme' />
+                    <Select.Value placeholder='Selecione a categoria' />
                   </Select.Trigger>
 
                   <Select.Content>
-                    <Select.Item value='light'>Light</Select.Item>
+                    <Select.Item value='1'>Livros</Select.Item>
                   </Select.Content>
                 </Select>
               </div>
