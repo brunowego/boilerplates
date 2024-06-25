@@ -21,24 +21,24 @@ export default function AddProductForm(): JSX.Element {
             size: 'icon',
             variant: 'secondary',
           })}
-          href='/'
+          href='/products/select'
         >
           <LogOut className='size-4 scale-x-[-1]' />
 
           <span className='sr-only'>Voltar</span>
         </Link>
-
-        <div className='mx-auto flex max-w-xl items-center space-x-3'>
-          <Page.Title>Novo</Page.Title>
-        </div>
       </Page.Header>
 
-      <div className='-z-10 absolute top-0 right-0 h-[320px] w-full bg-white dark:bg-[#0f0f0f]' />
+      <div className='-z-10 absolute top-0 right-0 h-[300px] w-full bg-white dark:bg-[#0f0f0f]' />
 
-      <Page.Content>
+      <Page.Content className='relative'>
         <div className='mx-auto max-w-xl space-y-6'>
-          <h1 className='font-medium text-xl'>Info produto</h1>
+          <h1 className='my-20 text-2xl leading-normal'>Infoproduto</h1>
+        </div>
 
+        <div className='-z-10 absolute top-0 right-0 h-[300px] w-full bg-white dark:bg-[#0f0f0f]' />
+
+        <div className='mx-auto max-w-xl space-y-6'>
           <div className='-mx-2 relative'>
             <label
               htmlFor='dropzone-file'

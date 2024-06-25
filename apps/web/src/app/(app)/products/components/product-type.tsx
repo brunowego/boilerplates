@@ -48,12 +48,12 @@ export default function ProductType(): JSX.Element {
 
       <Page.Content className='relative'>
         <div className='mx-auto max-w-xl space-y-6'>
-          <h1 className='my-10 text-2xl leading-normal'>
+          <h1 className='my-20 text-2xl leading-normal'>
             Olá 👋! O que você vai anunciar?
           </h1>
         </div>
 
-        <div className='-z-10 absolute top-0 right-0 h-[224px] w-full bg-white dark:bg-[#0f0f0f]' />
+        <div className='-z-10 absolute top-0 right-0 h-[300px] w-full bg-white dark:bg-[#0f0f0f]' />
 
         <div className='mx-auto max-w-xl space-y-6'>
           <nav className='grid grid-cols-3 gap-x-4'>
@@ -63,7 +63,7 @@ export default function ProductType(): JSX.Element {
               return (
                 <Link
                   className='flex flex-col items-center gap-y-2 rounded-md border bg-secondary p-5 text-sm shadow-sm'
-                  href='/'
+                  href='/products/add'
                   key={id}
                 >
                   <Ikon className='inline-block size-24' />
