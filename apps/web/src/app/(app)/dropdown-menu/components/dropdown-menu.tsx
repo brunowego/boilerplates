@@ -9,7 +9,7 @@ export default function _DropdownMenu(): JSX.Element {
     <DropdownMenu>
       <DropdownMenu.Trigger>Open</DropdownMenu.Trigger>
 
-      <DropdownMenu.Content align='start' className='max-w-40'>
+      <DropdownMenu.Content align='start' className='w-48'>
         <DropdownMenu.Label>My Account</DropdownMenu.Label>
 
         <DropdownMenu.Separator />
@@ -18,6 +18,8 @@ export default function _DropdownMenu(): JSX.Element {
         <DropdownMenu.Item>Billing</DropdownMenu.Item>
         <DropdownMenu.Item>Team</DropdownMenu.Item>
         <DropdownMenu.Item>Subscription</DropdownMenu.Item>
+
+        <DropdownMenu.Arrow />
       </DropdownMenu.Content>
     </DropdownMenu>
   )

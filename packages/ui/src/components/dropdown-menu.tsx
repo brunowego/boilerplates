@@ -81,6 +81,19 @@ const DropdownMenuContent = forwardRef<
 ))
 DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName
 
+const DropdownMenuArrow = forwardRef<
+  ElementRef<typeof DropdownMenuPrimitive.Arrow>,
+  ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Arrow>
+>(({ className, ...props }, ref) => (
+  <DropdownMenuPrimitive.Arrow
+    className={cn('fill-border', className)}
+    ref={ref}
+    width={12}
+    height={6}
+    {...props}
+  />
+))
+
 const DropdownMenuItem = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.Item>,
   ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
@@ -193,6 +206,7 @@ DropdownMenuShortcut.displayName = 'DropdownMenuShortcut'
 type DropdownMenuProps = typeof DropdownMenuRoot & {
   Trigger: typeof DropdownMenuTrigger
   Content: typeof DropdownMenuContent
+  Arrow: typeof DropdownMenuArrow
   Item: typeof DropdownMenuItem
   CheckboxItem: typeof DropdownMenuCheckboxItem
   RadioItem: typeof DropdownMenuRadioItem
@@ -211,6 +225,7 @@ const DropdownMenu = DropdownMenuRoot as DropdownMenuProps
 
 DropdownMenu.Trigger = DropdownMenuTrigger
 DropdownMenu.Content = DropdownMenuContent
+DropdownMenu.Arrow = DropdownMenuArrow
 DropdownMenu.Item = DropdownMenuItem
 DropdownMenu.CheckboxItem = DropdownMenuCheckboxItem
 DropdownMenu.RadioItem = DropdownMenuRadioItem
