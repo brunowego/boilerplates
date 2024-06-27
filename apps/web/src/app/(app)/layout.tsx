@@ -39,6 +39,10 @@ const components = [
     name: 'Modal',
     href: '/modal',
   },
+  {
+    name: 'Popover',
+    href: '/popover',
+  },
 ] as { name: string; href: string }[]
 
 interface AppLayoutProps {
