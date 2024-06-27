@@ -93,6 +93,7 @@ const DropdownMenuArrow = forwardRef<
     {...props}
   />
 ))
+DropdownMenuArrow.displayName = DropdownMenuPrimitive.Arrow.displayName
 
 const DropdownMenuItem = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.Item>,
