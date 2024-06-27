@@ -9,7 +9,10 @@ export default function _Popover(): JSX.Element {
     <Popover>
       <Popover.Trigger>Open</Popover.Trigger>
 
-      <Popover.Content>Place content for the popover here.</Popover.Content>
+      <Popover.Content>
+        <Popover.Arrow />
+        Place content for the popover here.
+      </Popover.Content>
     </Popover>
   )
 }

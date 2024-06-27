@@ -34,10 +34,23 @@ const PopoverContent = forwardRef<
 ))
 PopoverContent.displayName = PopoverPrimitive.Content.displayName
 
+const PopoverArrow = forwardRef<
+  ElementRef<typeof PopoverPrimitive.Arrow>,
+  ComponentPropsWithoutRef<typeof PopoverPrimitive.Arrow>
+>(({ className, ...props }, ref) => (
+  <PopoverPrimitive.Arrow
+    className={cn('h-1.5 w-3 fill-border', className)}
+    ref={ref}
+    {...props}
+  />
+))
+PopoverArrow.displayName = PopoverPrimitive.Arrow.displayName
+
 type PopoverProps = typeof PopoverRoot & {
   Trigger: typeof PopoverTrigger
   Anchor: typeof PopoverAnchor
   Content: typeof PopoverContent
+  Arrow: typeof PopoverArrow
 }
 
 const Popover = PopoverRoot as PopoverProps
@@ -45,5 +58,6 @@ const Popover = PopoverRoot as PopoverProps
 Popover.Trigger = PopoverTrigger
 Popover.Anchor = PopoverAnchor
 Popover.Content = PopoverContent
+Popover.Arrow = PopoverArrow
 
 export default Popover
