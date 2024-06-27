@@ -29,14 +29,28 @@ const TooltipContent = forwardRef<
 ))
 TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
+const TooltipArrow = forwardRef<
+  ElementRef<typeof TooltipPrimitive.Arrow>,
+  ComponentPropsWithoutRef<typeof TooltipPrimitive.Arrow>
+>(({ className, ...props }, ref) => (
+  <TooltipPrimitive.Arrow
+    className={cn('h-1 w-2 fill-primary', className)}
+    ref={ref}
+    {...props}
+  />
+))
+TooltipArrow.displayName = TooltipPrimitive.Arrow.displayName
+
 type TooltipProps = typeof TooltipRoot & {
   Trigger: typeof TooltipTrigger
   Content: typeof TooltipContent
+  Arrow: typeof TooltipArrow
 }
 
 const Tooltip = TooltipRoot as TooltipProps
 
 Tooltip.Trigger = TooltipTrigger
 Tooltip.Content = TooltipContent
+Tooltip.Arrow = TooltipArrow
 
 export default Tooltip
