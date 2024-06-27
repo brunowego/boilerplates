@@ -34,8 +34,10 @@ const TooltipArrow = forwardRef<
   ComponentPropsWithoutRef<typeof TooltipPrimitive.Arrow>
 >(({ className, ...props }, ref) => (
   <TooltipPrimitive.Arrow
-    className={cn('h-1 w-2 fill-primary', className)}
+    className={cn('fill-primary', className)}
     ref={ref}
+    width={8}
+    height={4}
     {...props}
   />
 ))
