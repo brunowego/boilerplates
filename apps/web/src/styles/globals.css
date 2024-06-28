@@ -1,0 +1,33 @@
+@import url('@acme/ui/styles.css');
+
+.bn-inline-content:has(>.ProseMirror-trailingBreak):before {
+  @apply text-muted-foreground
+}
+
+.bn-side-menu {
+  @apply mr-2
+}
+
+.bn-toolbar {
+  @apply rounded-md
+}
+
+.bn-suggestion-menu-item {
+  @apply space-x-3 cursor-pointer
+}
+
+.bn-suggestion-menu-item > div:first-of-type {
+  @apply p-3 bg-border rounded-sm
+}
+
+.bn-suggestion-menu-item > div:last-of-type > div {
+  @apply px-2 py-1
+}
+
+.bn-panel {
+  @apply rounded-md
+}
+
+.bn-tab-panel {
+  @apply space-y-4
+}
