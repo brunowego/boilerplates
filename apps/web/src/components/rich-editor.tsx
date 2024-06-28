@@ -32,7 +32,7 @@ export default function RichEditor(props: {
   return (
     <ProseKit editor={editor}>
       <div
-        className='prose dark:prose-invert mx-auto min-h-full px-10 outline-none'
+        className='prose lg:prose-lg dark:prose-invert min-h-full outline-none'
         ref={editor.mount}
       />
 

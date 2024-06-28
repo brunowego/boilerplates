@@ -14,6 +14,7 @@ import { defineUnderline } from 'prosekit/extensions/underline'
 import { defineStrike } from 'prosekit/extensions/strike'
 import { defineHeading } from 'prosekit/extensions/heading'
 import { defineLink } from 'prosekit/extensions/link'
+import { defineImage } from 'prosekit/extensions/image'
 
 // import { defineList } from 'prosekit/extensions/list'
 
@@ -23,7 +24,9 @@ import { defineLink } from 'prosekit/extensions/link'
 
 export function defineEditorExtension() {
   return union([
-    definePlaceholder({ placeholder: 'Press / for commands' }),
+    definePlaceholder({
+      placeholder: "Write something, or press '/' for commands...",
+    }),
     defineDoc(),
     defineText(),
     defineParagraph(),
@@ -32,6 +35,7 @@ export function defineEditorExtension() {
     defineUnderline(),
     defineStrike(),
     defineLink(),
+    defineImage(),
     defineHeading(),
     // defineList(),
     // defineAutoLink(),
