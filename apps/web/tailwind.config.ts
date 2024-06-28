@@ -7,4 +7,15 @@ export default {
     './src/components/**/*.{ts,tsx}',
     '../../packages/ui/src/components/*.{ts,tsx}',
   ],
+  theme: {
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'initial',
+          },
+        },
+      },
+    },
+  },
 } satisfies Config
