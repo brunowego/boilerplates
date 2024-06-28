@@ -32,7 +32,7 @@ export default function NotificationItem({
       return (
         <div className='items-between flex justify-between space-x-4 px-3 py-3 hover:bg-secondary'>
           <Link
-            className='items-between flex justify-between space-x-4 '
+            className='items-between flex justify-between space-x-4'
             href={`/transactions?filter=${JSON.stringify({
               date: {
                 from,
@@ -57,10 +57,10 @@ export default function NotificationItem({
           {markMessageAsRead && (
             <div>
               <Button
-                size='icon'
-                variant='secondary'
                 className='rounded-full bg-transparent hover:bg-[#1A1A1A]'
                 onClick={() => markMessageAsRead(id)}
+                size='icon'
+                variant='secondary'
               >
                 {/* <Inventory2 /> */}
               </Button>
@@ -73,7 +73,7 @@ export default function NotificationItem({
       return (
         <div className='items-between flex justify-between space-x-4 px-3 py-3 hover:bg-secondary'>
           <Link
-            className='items-between flex justify-between space-x-4 '
+            className='items-between flex justify-between space-x-4'
             href={`/transactions?id=${recordId}`}
             onClick={() => setOpen(false)}
           >
@@ -109,7 +109,7 @@ export default function NotificationItem({
       return (
         <div className='items-between flex justify-between space-x-4 px-3 py-3 hover:bg-secondary'>
           <Link
-            className='items-between flex justify-between space-x-4 '
+            className='items-between flex justify-between space-x-4'
             href={`/inbox?id=${recordId}`}
             onClick={() => setOpen(false)}
           >
@@ -120,7 +120,7 @@ export default function NotificationItem({
             <div>
               <p className='text-sm'>{description}</p>
 
-              <span className='text-xs text-[#606060]'>
+              <span className='text-[#606060] text-xs'>
                 {formatDistanceToNow(new Date(createdAt))} ago
               </span>
             </div>
@@ -129,10 +129,10 @@ export default function NotificationItem({
           {markMessageAsRead && (
             <div>
               <Button
-                size='icon'
-                variant='secondary'
                 className='rounded-full bg-transparent hover:bg-[#1A1A1A]'
                 onClick={() => markMessageAsRead(id)}
+                size='icon'
+                variant='secondary'
               >
                 {/* <Inventory2 /> */}
               </Button>
@@ -143,20 +143,20 @@ export default function NotificationItem({
 
     case 'match':
       return (
-        <div className='flex items-between justify-between space-x-4 px-3 py-3 hover:bg-secondary'>
+        <div className='items-between flex justify-between space-x-4 px-3 py-3 hover:bg-secondary'>
           <Link
-            className='flex items-between justify-between space-x-4 '
-            onClick={() => setOpen(false)}
+            className='items-between flex justify-between space-x-4'
             href={`/transactions?id=${recordId}`}
+            onClick={() => setOpen(false)}
           >
-            <div className='size-9 flex items-center justify-center space-y-0 border rounded-full'>
+            <div className='flex size-9 items-center justify-center space-y-0 rounded-full border'>
               {/* <Match /> */}
             </div>
 
             <div>
               <p className='text-sm'>{description}</p>
 
-              <span className='text-xs text-[#606060]'>
+              <span className='text-[#606060] text-xs'>
                 {formatDistanceToNow(new Date(createdAt))} ago
               </span>
             </div>
@@ -165,10 +165,10 @@ export default function NotificationItem({
           {markMessageAsRead && (
             <div>
               <Button
-                size='icon'
-                variant='secondary'
                 className='rounded-full bg-transparent hover:bg-[#1A1A1A]'
                 onClick={() => markMessageAsRead(id)}
+                size='icon'
+                variant='secondary'
               >
                 {/* <Inventory2 /> */}
               </Button>
