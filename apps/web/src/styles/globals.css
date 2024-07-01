@@ -1,0 +1,5 @@
+@import url('@acme/ui/styles.css');
+
+.react-grid-item.react-grid-placeholder {
+  @apply border-dashed
+}
