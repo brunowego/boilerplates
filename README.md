@@ -1,3 +1,7 @@
-# Next.js + Mock Service Worker (MSW)
+# Next.js with Mock Service Worker (REST)
 
-TBD
+TODO
+
+## Docs
+
+- [Developer Guide](/DEVELOPER.md)

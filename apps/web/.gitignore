@@ -1,3 +1,4 @@
+/.next
 /.turbo
-/.vercel
 /node_modules
+/.env*.local

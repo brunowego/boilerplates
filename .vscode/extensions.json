@@ -1,3 +1,8 @@
 {
-  "recommendations": ["esbenp.prettier-vscode"]
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "biomejs.biome",
+    "Trunk.io",
+    "bradlc.vscode-tailwindcss"
+  ]
 }
