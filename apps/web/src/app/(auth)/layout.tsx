@@ -1,13 +1,9 @@
 import type { Metadata } from 'next'
 import type { ReactNode, JSX } from 'react'
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
 
 import { auth } from '@acme/auth'
-import { LogoMark } from '@acme/ui/components/logo'
-
-import { Layout, LayoutContent, LayoutHeader } from '@/components/layout'
-import ThemeToggle from '@/components/theme-toggle'
+import Layout from '@acme/ui/components/layout'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -28,21 +24,15 @@ export default async function AuthLayout({
 
   return (
     <Layout>
-      <LayoutHeader infinite={false}>
-        <Link className='self-center py-1' href='/'>
-          <LogoMark className='size-8' />
-        </Link>
+      <Layout.Header infinite={false} />
 
-        <ThemeToggle className='mt-auto self-center' />
-      </LayoutHeader>
-
-      <LayoutContent>
-        <article className='flex min-h-screen items-center justify-center overflow-hidden p-6 md:p-0'>
-          <section className='m-auto flex w-full max-w-md flex-col space-y-6 p-4 lg:px-5'>
+      <Layout.Content>
+        <section className='flex min-h-screen w-full items-center justify-center overflow-hidden p-6 md:p-0'>
+          <div className='m-auto flex w-full max-w-lg flex-col space-y-6 p-4 lg:px-5'>
             {children}
-          </section>
-        </article>
-      </LayoutContent>
+          </div>
+        </section>
+      </Layout.Content>
     </Layout>
   )
 }

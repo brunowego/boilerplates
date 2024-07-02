@@ -1,19 +1,11 @@
 import type { Metadata } from 'next'
 import type { ReactNode, JSX } from 'react'
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
 
 import { auth } from '@acme/auth'
-import { LogoMark } from '@acme/ui/components/logo'
+import Layout from '@acme/ui/components/layout'
 
-import {
-  Layout,
-  LayoutHeader,
-  LayoutContent,
-  LayoutAside,
-} from '@/components/layout'
 import LogOut from '@/components/log-out'
-import ThemeToggle from '@/components/theme-toggle'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -34,19 +26,13 @@ export default async function DashboardLayout({
 
   return (
     <Layout>
-      <LayoutHeader>
-        <Link className='self-center py-1' href='/'>
-          <LogoMark className='size-8' />
-        </Link>
-
+      <Layout.Header>
         <LogOut className='mt-auto' />
+      </Layout.Header>
 
-        <ThemeToggle className='self-center' />
-      </LayoutHeader>
+      <Layout.Content>{children}</Layout.Content>
 
-      <LayoutContent>{children}</LayoutContent>
-
-      <LayoutAside />
+      <Layout.Aside />
     </Layout>
   )
 }

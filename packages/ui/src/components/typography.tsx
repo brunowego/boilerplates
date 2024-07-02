@@ -13,7 +13,7 @@ export const typographyVariants = cva('', {
     },
     variant: {
       muted: 'text-muted-foreground',
-      header: 'text-lg',
+      title: 'text-lg leading-8',
       h1: 'text-3xl leading-10',
       h2: 'text-2xl',
       h3: 'text-xl',
@@ -26,7 +26,7 @@ export const typographyVariants = cva('', {
   },
   compoundVariants: [
     {
-      variant: ['header', 'h1', 'h2', 'h3', 'h4'],
+      variant: ['title', 'h1', 'h2', 'h3', 'h4'],
       className: 'font-medium tracking-tight',
     },
   ],

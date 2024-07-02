@@ -13,13 +13,13 @@ const extendedUserSchema = insertUserSchema.merge(
 type InsertUser = z.infer<typeof extendedUserSchema>
 
 async function seedUsers(): Promise<void> {
-  const users: InsertUser[] = []
+  const usersData: InsertUser[] = []
 
   for (let i = 0; i < 100; i++) {
     const firstName = faker.person.fullName()
     const lastName = faker.person.lastName()
 
-    users.push({
+    usersData.push({
       fullName: `${firstName} ${lastName}`,
       email: faker.internet.email({ firstName, lastName }).toLowerCase(),
       createdAt: faker.date.between({
@@ -29,7 +29,7 @@ async function seedUsers(): Promise<void> {
     })
   }
 
-  await db.insert(users).values(users).returning()
+  await db.insert(users).values(usersData).returning()
 }
 
 async function main(): Promise<void> {
