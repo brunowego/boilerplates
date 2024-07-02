@@ -1,6 +1,7 @@
 export { LogoMark } from './logo'
 export { typographyVariants } from './typography'
 
+export { default as Accordion } from './accordion'
 export { default as Avatar } from './avatar'
 export { default as Button, buttonVariants } from './button'
 export { default as Dialog } from './dialog'
