@@ -6,7 +6,6 @@ import DrizzleAdapter from './drizzle-adapter'
 import authConfig from './config'
 
 const nextAuthConfig: NextAuthConfig = {
-  // @ts-ignore
   adapter: DrizzleAdapter(db),
   ...authConfig,
 }

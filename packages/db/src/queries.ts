@@ -1,11 +1,9 @@
-// import 'server-only'
-
-import { db } from './db'
+import db from './db'
 import { eq } from './orm'
-import { usersTable } from './schema'
+import { users } from './schema'
 
 export async function getUsers() {
-  return await db.query.usersTable.findMany({
+  return await db.query.users.findMany({
     columns: {
       id: true,
       fullName: true,
@@ -17,7 +15,7 @@ export async function getUsers() {
 }
 
 export async function getUserByEmail(email: string) {
-  return await db.query.usersTable.findFirst({
-    where: eq(usersTable.email, email),
+  return await db.query.users.findFirst({
+    where: eq(users.email, email),
   })
 }

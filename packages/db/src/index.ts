@@ -1,5 +1,5 @@
-export { client } from './client'
-export { db } from './db'
+export { default as client } from './client'
+export { default as db } from './db'
 
 export * from './orm'
 export * from './queries'

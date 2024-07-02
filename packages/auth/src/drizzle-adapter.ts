@@ -1,28 +1,25 @@
 import type { Adapter, AdapterUser, AdapterAccount } from 'next-auth/adapters'
 
-import { type PostgresJsDatabase, and, eq } from '@acme/db/orm'
-import { usersTable, accountsTable } from '@acme/db/schema'
+import type { Db } from '@acme/db/types'
+import { and, eq } from '@acme/db/orm'
+import { users, accounts } from '@acme/db/schema'
+import { getUserByEmail } from '@acme/db/queries'
 
-import { generateId } from '@acme/id'
-
-export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
+export default function DrizzleAdapter(db: Db): Adapter {
   return {
-    // @ts-ignore
-    async createUser(data: AdapterUser) {
+    async createUser(data: AdapterUser): Promise<AdapterUser> {
       return await db.transaction(async (tx) => {
         try {
-          return await tx
-            .insert(usersTable)
+          return (await tx
+            .insert(users)
             .values({
-              // @ts-ignore
-              id: generateId() || null,
-              fullName: data.name,
+              fullName: data.name as string,
               email: data.email,
               emailVerified: data.emailVerified,
               image: data.image,
             })
             .returning()
-            .then((res) => res[0])
+            .then((res) => res[0])) as AdapterUser
         } catch (err) {
           tx.rollback()
 
@@ -31,22 +28,21 @@ export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
       })
     },
 
-    // @ts-ignore
-    async getUser(userId: string) {
-      return db
-        .select()
-        .from(usersTable)
-        .where(eq(usersTable.id, userId))
-        .then((res) => (res.length > 0 ? res[0] : null))
+    async getUser(id: string): Promise<AdapterUser | null> {
+      return (await db.query.users.findFirst({
+        columns: {
+          id: true,
+          fullName: true,
+          email: true,
+          emailVerified: true,
+          image: true,
+        },
+        where: eq(users.id, id),
+      })) as AdapterUser | null
     },
 
-    // @ts-ignore
-    async getUserByEmail(email: string) {
-      return db
-        .select()
-        .from(usersTable)
-        .where(eq(usersTable.email, email))
-        .then((res) => (res.length > 0 ? res[0] : null))
+    async getUserByEmail(email: string): Promise<AdapterUser | null> {
+      return (await getUserByEmail(email)) as AdapterUser | null
     },
 
     async updateUser(data: Partial<AdapterUser> & Pick<AdapterUser, 'id'>) {
@@ -55,9 +51,9 @@ export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
       }
 
       const [result] = await db
-        .update(usersTable)
+        .update(users)
         .set(data)
-        .where(eq(usersTable.id, data.id))
+        .where(eq(users.id, data.id))
         .returning()
 
       if (!result) {
@@ -68,7 +64,7 @@ export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
     },
 
     async linkAccount(data: AdapterAccount) {
-      await db.insert(accountsTable).values({
+      await db.insert(accounts).values({
         userId: data.userId,
         type: data.type,
         provider: data.provider,
@@ -87,15 +83,15 @@ export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
     ) {
       const result = await db
         .select({
-          account: accountsTable,
-          user: usersTable,
+          account: accounts,
+          user: users,
         })
-        .from(accountsTable)
-        .innerJoin(usersTable, eq(accountsTable.userId, usersTable.id))
+        .from(accounts)
+        .innerJoin(users, eq(accounts.userId, users.id))
         .where(
           and(
-            eq(accountsTable.provider, account.provider),
-            eq(accountsTable.providerAccountId, account.providerAccountId),
+            eq(accounts.provider, account.provider),
+            eq(accounts.providerAccountId, account.providerAccountId),
           ),
         )
         .then((res) => res[0])
@@ -104,18 +100,18 @@ export default function DrizzleAdapter(db: PostgresJsDatabase): Adapter {
     },
 
     async deleteUser(id: string) {
-      await db.delete(usersTable).where(eq(usersTable.id, id))
+      await db.delete(users).where(eq(users.id, id))
     },
 
     async unlinkAccount(
       params: Pick<AdapterAccount, 'provider' | 'providerAccountId'>,
     ) {
       await db
-        .delete(accountsTable)
+        .delete(accounts)
         .where(
           and(
-            eq(accountsTable.provider, params.provider),
-            eq(accountsTable.providerAccountId, params.providerAccountId),
+            eq(accounts.provider, params.provider),
+            eq(accounts.providerAccountId, params.providerAccountId),
           ),
         )
     },

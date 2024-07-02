@@ -11,7 +11,7 @@ import type { AdapterAccount } from 'next-auth/adapters'
 
 import { id, timestamps } from './utils'
 
-export const usersTable = pgTable(
+export const users = pgTable(
   'users',
   {
     ...id,
@@ -27,16 +27,16 @@ export const usersTable = pgTable(
   }),
 )
 
-export const usersRelations = relations(usersTable, ({ many }) => ({
-  accounts: many(accountsTable),
+export const usersRelations = relations(users, ({ many }) => ({
+  accounts: many(accounts),
 }))
 
-export const accountsTable = pgTable(
+export const accounts = pgTable(
   'accounts',
   {
     userId: varchar('user_id')
       .notNull()
-      .references(() => usersTable.id, {
+      .references(() => users.id, {
         onUpdate: 'cascade',
         onDelete: 'cascade',
       }),
@@ -59,9 +59,9 @@ export const accountsTable = pgTable(
   }),
 )
 
-export const accountsRelations = relations(accountsTable, ({ one }) => ({
-  user: one(usersTable, {
-    fields: [accountsTable.userId],
-    references: [usersTable.id],
+export const accountsRelations = relations(accounts, ({ one }) => ({
+  user: one(users, {
+    fields: [accounts.userId],
+    references: [users.id],
   }),
 }))

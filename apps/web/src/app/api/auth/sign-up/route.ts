@@ -4,7 +4,7 @@ import { signUpSchema } from '@acme/db/schemas'
 import { z } from '@acme/ui/lib/zod'
 import { db } from '@acme/db'
 import { eq } from '@acme/db/orm'
-import { usersTable } from '@acme/db/schema'
+import { users } from '@acme/db/schema'
 import { hash } from '@acme/auth/lib/bcryptjs'
 
 type SignUp = z.infer<typeof signUpSchema>
@@ -14,8 +14,8 @@ export async function POST(req: Request): Promise<Response> {
     const json: SignUp = await req.json()
     const { fullName, email, password } = signUpSchema.parse(json)
 
-    const existingUser = await db.query.usersTable.findFirst({
-      where: eq(usersTable.email, email),
+    const existingUser = await db.query.users.findFirst({
+      where: eq(users.email, email),
     })
 
     if (existingUser) {
@@ -27,7 +27,7 @@ export async function POST(req: Request): Promise<Response> {
 
     const hashedPassword = await hash(password, 12)
 
-    await db.insert(usersTable).values({
+    await db.insert(users).values({
       fullName,
       email,
       hashedPassword,
