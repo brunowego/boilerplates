@@ -8,14 +8,7 @@ import { signUpSchema } from '@acme/db/schemas'
 import { type z, zodResolver } from '@acme/ui/lib/zod'
 import { useForm, type SubmitHandler } from '@acme/ui/hooks/use-form'
 import toast from '@acme/ui/lib/toast'
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormMessage,
-} from '@acme/ui/components/form'
+import Form from '@acme/ui/components/form'
 import cn from '@acme/ui/utils/cn'
 import Input from '@acme/ui/components/input'
 import Button from '@acme/ui/components/button'
@@ -81,14 +74,14 @@ export default function SignInForm({
         {...props}
       >
         <div className='grid'>
-          <FormField
+          <Form.Field
             control={control}
             name='fullName'
             render={({ field }) => (
-              <FormItem>
-                <FormLabel className='sr-only'>Full name</FormLabel>
+              <Form.Item>
+                <Form.Label className='sr-only'>Full name</Form.Label>
 
-                <FormControl>
+                <Form.Control>
                   <div className='relative'>
                     <div className='absolute inset-y-0 left-3 flex'>
                       <User className='size-4 self-center' />
@@ -101,21 +94,21 @@ export default function SignInForm({
                       {...field}
                     />
                   </div>
-                </FormControl>
+                </Form.Control>
 
-                <FormMessage />
-              </FormItem>
+                <Form.Message />
+              </Form.Item>
             )}
           />
 
-          <FormField
+          <Form.Field
             control={control}
             name='email'
             render={({ field }) => (
-              <FormItem>
-                <FormLabel className='sr-only'>Email</FormLabel>
+              <Form.Item>
+                <Form.Label className='sr-only'>Email</Form.Label>
 
-                <FormControl>
+                <Form.Control>
                   <div className='relative'>
                     <div className='absolute inset-y-0 left-3 flex'>
                       <AtSign className='size-4 self-center' />
@@ -128,21 +121,21 @@ export default function SignInForm({
                       {...field}
                     />
                   </div>
-                </FormControl>
+                </Form.Control>
 
-                <FormMessage />
-              </FormItem>
+                <Form.Message />
+              </Form.Item>
             )}
           />
 
-          <FormField
+          <Form.Field
             control={control}
             name='password'
             render={({ field }) => (
-              <FormItem>
-                <FormLabel className='sr-only'>Password</FormLabel>
+              <Form.Item>
+                <Form.Label className='sr-only'>Password</Form.Label>
 
-                <FormControl>
+                <Form.Control>
                   <div className='relative'>
                     <div className='absolute inset-y-0 left-3 flex'>
                       <Lock className='size-4 self-center' />
@@ -155,10 +148,10 @@ export default function SignInForm({
                       {...field}
                     />
                   </div>
-                </FormControl>
+                </Form.Control>
 
-                <FormMessage />
-              </FormItem>
+                <Form.Message />
+              </Form.Item>
             )}
           />
         </div>

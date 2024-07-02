@@ -10,7 +10,7 @@ import { ChevronDownIcon } from '@radix-ui/react-icons'
 
 import cn from '../utils/cn'
 
-const Accordion = AccordionPrimitive.Root
+const AccordionRoot = AccordionPrimitive.Root
 
 const AccordionItem = forwardRef<
   ElementRef<typeof AccordionPrimitive.Item>,
@@ -31,7 +31,7 @@ const AccordionTrigger = forwardRef<
   <AccordionPrimitive.Header className='flex'>
     <AccordionPrimitive.Trigger
       className={cn(
-        'flex flex-1 items-center justify-between py-4 font-medium text-sm transition-all [&[data-state=open]>svg]:rotate-180 hover:underline',
+        'flex flex-1 items-center justify-between py-4 font-medium text-sm transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
         className,
       )}
       ref={ref}
@@ -58,4 +58,16 @@ const AccordionContent = forwardRef<
 ))
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+type AccordionProps = typeof AccordionRoot & {
+  Item: typeof AccordionItem
+  Trigger: typeof AccordionTrigger
+  Content: typeof AccordionContent
+}
+
+const Accordion = AccordionRoot as AccordionProps
+
+Accordion.Item = AccordionItem
+Accordion.Trigger = AccordionTrigger
+Accordion.Content = AccordionContent
+
+export default Accordion

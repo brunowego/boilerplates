@@ -2,14 +2,7 @@
 
 import { type JSX, Suspense } from 'react'
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@acme/ui/components/table'
+import Table from '@acme/ui/components/table'
 import EmptyState from '@acme/ui/components/empty-state'
 import Skeleton from '@acme/ui/components/skeleton'
 
@@ -25,56 +18,56 @@ export default function UsersList({ className }: UsersListProps): JSX.Element {
 
   return (
     <Table className={className}>
-      <TableHeader>
-        <TableRow>
-          <TableHead className='w-40'>Name</TableHead>
-          <TableHead className='w-40'>Email</TableHead>
-          <TableHead className='text-right'>Created at</TableHead>
-        </TableRow>
-      </TableHeader>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head className='w-40'>Name</Table.Head>
+          <Table.Head className='w-40'>Email</Table.Head>
+          <Table.Head className='text-right'>Created at</Table.Head>
+        </Table.Row>
+      </Table.Header>
 
-      <TableBody>
+      <Table.Body>
         {users && !isLoading ? (
           users.length > 0 ? (
             users.map(({ id, fullName, email, createdAt }) => (
               <Suspense key={id}>
-                <TableRow>
-                  <TableCell>{fullName}</TableCell>
-                  <TableCell>{email}</TableCell>
-                  <TableCell className='text-right'>
+                <Table.Row>
+                  <Table.Cell>{fullName}</Table.Cell>
+                  <Table.Cell>{email}</Table.Cell>
+                  <Table.Cell className='text-right'>
                     {toLocalDate(createdAt)}
-                  </TableCell>
-                </TableRow>
+                  </Table.Cell>
+                </Table.Row>
               </Suspense>
             ))
           ) : (
-            <TableRow>
-              <TableCell colSpan={3}>
+            <Table.Row>
+              <Table.Cell colSpan={3}>
                 <EmptyState
                   emoji='🧘🏻'
                   title='No users found'
                   description="Looks like you still don't have any users using these criteria."
                 />
-              </TableCell>
-            </TableRow>
+              </Table.Cell>
+            </Table.Row>
           )
         ) : (
           Array.from({ length: 15 }).map((_, i) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: This is a skeleton loader
-            <TableRow key={i}>
-              <TableCell>
+            <Table.Row key={i}>
+              <Table.Cell>
                 <Skeleton className='h-3 w-24 rounded-full' />
-              </TableCell>
-              <TableCell>
+              </Table.Cell>
+              <Table.Cell>
                 <Skeleton className='h-3 w-24 rounded-full' />
-              </TableCell>
-              <TableCell className='text-right'>
+              </Table.Cell>
+              <Table.Cell className='text-right'>
                 <Skeleton className='inline-flex h-3 w-20 rounded-full' />
-              </TableCell>
-            </TableRow>
+              </Table.Cell>
+            </Table.Row>
           ))
         )}
-      </TableBody>
+      </Table.Body>
     </Table>
   )
 }
