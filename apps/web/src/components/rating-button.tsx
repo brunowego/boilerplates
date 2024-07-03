@@ -23,7 +23,7 @@ export default function RatingButton({
         >
           <Star
             className={cn(
-              'size-5 transition-all hover:scale-125',
+              'size-6 transition-all hover:scale-125',
               rating >= index + 1
                 ? 'fill-yellow-300 stroke-yellow-300'
                 : 'fill-border stroke-border',

@@ -6,8 +6,8 @@ import Button from '@acme/ui/components/button'
 
 import RatingButton from '@/components/rating-button'
 import Label from '@acme/ui/components/label'
-import Input from '@acme/ui/components/input'
 import Textarea from '@acme/ui/components/textarea'
+import Checkbox from '@acme/ui/components/checkbox'
 
 export type ProductReviewPostPayload = {
   review: string
@@ -125,20 +125,15 @@ export default function RatingForm({
       </div>
 
       <div className='space-y-2'>
-        <Label>Rating title</Label>
-
-        <Input className='max-w-md' type='text' />
-      </div>
-
-      <label>
-        Do you recomand this product?
-        <input type='checkbox' name='recommending' className='m-2' />
-      </label>
-
-      <div className='space-y-2'>
         <Label>Your review</Label>
 
         <Textarea className='max-w-md' />
+      </div>
+
+      <div className='flex items-center space-x-2'>
+        <Label htmlFor='recommending'>Do you recomand this product?</Label>
+
+        <Checkbox id='recommending' />
       </div>
 
       {wizard.type === 'error' && (
@@ -146,8 +141,7 @@ export default function RatingForm({
       )}
 
       <Button className='w-full max-w-md' size='lg' type='submit'>
-        {/* {wizard.type === 'loading' ? 'LOADING' : 'SUBMIT'} */}
-        Submit
+        {wizard.type === 'loading' ? 'Loading...' : 'Submit'}
       </Button>
     </form>
   )
