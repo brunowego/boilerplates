@@ -35,9 +35,20 @@ export default async function DashboardLayout({
         )}
       </Layout.Header>
 
-      <Layout.Content>{children}</Layout.Content>
+      <Layout.Aside>
+        <div className='space-y-4 p-4 lg:px-5'>
+          <h2 className='font-medium text-lg leading-8 tracking-tight'>
+            Reviews
+          </h2>
 
-      <Layout.Aside />
+          <nav className='grid space-y-1 *:leading-8'>
+            <Link href='/products'>Products</Link>
+            <Link href='/components'>Components</Link>
+          </nav>
+        </div>
+      </Layout.Aside>
+
+      <Layout.Content>{children}</Layout.Content>
     </Layout>
   )
 }

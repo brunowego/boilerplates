@@ -51,9 +51,7 @@ const LayoutHeader = ({
 type LayoutContentProps = HTMLAttributes<HTMLElement>
 
 const LayoutContent = ({ className, ...props }: LayoutContentProps) => {
-  return (
-    <main className={cn('flex w-full border-r pl-16', className)} {...props} />
-  )
+  return <main className={cn('flex w-full border-r', className)} {...props} />
 }
 
 type LayoutAsideProps = HTMLAttributes<HTMLElement>
@@ -61,7 +59,7 @@ type LayoutAsideProps = HTMLAttributes<HTMLElement>
 const LayoutAside = ({ className, ...props }: LayoutAsideProps) => {
   return (
     <aside
-      className={cn('w-96 shrink-0 max-lg:hidden', className)}
+      className={cn('w-96 shrink-0 border-r pl-16 max-lg:hidden', className)}
       {...props}
     />
   )

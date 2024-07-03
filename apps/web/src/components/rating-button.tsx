@@ -13,7 +13,7 @@ export default function RatingButton({
   onRatingChange,
 }: RatingButtonProps): JSX.Element {
   return (
-    <div>
+    <div className='space-x-0.5'>
       {new Array(5).fill('').map((_, index) => (
         <button
           // biome-ignore lint/suspicious/noArrayIndexKey: This is a static array
@@ -23,7 +23,7 @@ export default function RatingButton({
         >
           <Star
             className={cn(
-              'size-5',
+              'size-5 transition-all hover:scale-125',
               rating >= index + 1
                 ? 'fill-yellow-300 stroke-yellow-300'
                 : 'fill-border stroke-border',
