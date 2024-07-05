@@ -15,8 +15,7 @@
     "@biomejs/biome": "~1.5.3"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
-  "packageManager": "bun@1.0.25",
-  "workspaces": ["apps/*", "packages/*", "services/*", "tooling/*"]
+  "packageManager": "pnpm@9.4.0"
 }
