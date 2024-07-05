@@ -13,9 +13,5 @@
     "@react-email/components": "~0.0.14",
     "react-email": "~2.0.0",
     "resend": "~3.2.0"
-  },
-  "devDependencies": {
-    "@types/preview-email": "~3.0.4",
-    "preview-email": "~3.0.19"
   }
 }
