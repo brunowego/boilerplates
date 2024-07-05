@@ -9,8 +9,15 @@
     "build": "email build"
   },
   "dependencies": {
-    "@react-email/components": "~0.0.14",
+    "@react-email/components": "~0.0.21",
+    "@react-email/tailwind": "~0.0.18",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-email": "~2.1.2",
-    "resend": "~3.2.0"
+    "resend": "~3.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.25",
+    "@types/react-dom": "18.2.18"
   }
 }

@@ -3,6 +3,6 @@
   "compilerOptions": {
     "jsx": "react-jsx"
   },
-  "include": ["emails/*.tsx"],
+  "include": ["emails/*.tsx", "src/*.ts"],
   "exclude": ["node_modules"]
 }
