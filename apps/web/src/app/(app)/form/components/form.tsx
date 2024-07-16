@@ -12,6 +12,7 @@ import ZipCodeInput from '@acme/ui/components/zip-code-input'
 import SSNInput from '@acme/ui/components/ssn-input'
 import EINInput from '@acme/ui/components/ein-input'
 import UUIDInput from '@acme/ui/components/uuid-input'
+import CurrencyInput from '@acme/ui/components/currency-input'
 import Button from '@acme/ui/components/button'
 import FieldLength from '@acme/ui/components/field-length'
 
@@ -110,6 +111,19 @@ export default function Form(): JSX.Element {
         <Label>UUID</Label>
 
         <UUIDInput className='max-w-80' />
+      </div>
+
+      <div className='space-y-2'>
+        <Label>Currency</Label>
+
+        <CurrencyInput
+          className='max-w-80'
+          defaultValue={0.0}
+          onValueChange={(value, name, values) =>
+            console.log(value, name, values)
+          }
+          placeholder='R$ 0,00'
+        />
       </div>
     </>
   )

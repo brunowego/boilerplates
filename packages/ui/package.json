@@ -40,6 +40,7 @@
     "cmdk": "~1.0.0",
     "lucide-react": "~0.408.0",
     "next-themes": "~0.3.0",
+    "react-currency-input-field": "~3.8.0",
     "react-hook-form": "~7.52.1",
     "react-international-phone": "~4.3.0",
     "react-resizable-panels": "~2.0.20",
