@@ -1,7 +1,5 @@
-import type { JSX } from 'react'
+import { redirect } from 'next/navigation'
 
-import ViewUsers from './components/view-users'
-
-export default function HomePage(): JSX.Element {
-  return <ViewUsers />
+export default function HomePage(): never {
+  return redirect('/users')
 }
