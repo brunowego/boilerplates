@@ -3,6 +3,7 @@ import CurrencyInput, {
 } from 'react-currency-input-field'
 
 import { inputVariants } from './input'
+import cn from '../utils/cn'
 
 export default function _CurrencyInput({
   className,
@@ -11,7 +12,7 @@ export default function _CurrencyInput({
   return (
     <CurrencyInput
       allowNegativeValue={false}
-      className={inputVariants({ className })}
+      className={cn('text-right', inputVariants({ className }))}
       decimalsLimit={2}
       intlConfig={{ locale: 'pt-BR', currency: 'BRL' }}
       step={1}
