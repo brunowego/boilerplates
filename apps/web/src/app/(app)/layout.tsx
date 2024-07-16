@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import type { ReactNode, JSX } from 'react'
 import Link from 'next/link'
 
-import Logo from '@acme/ui/components/logo'
+import { LogoMark } from '@acme/ui/components/logo'
 import ThemeToggle from '@acme/ui/components/theme-toggle'
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function AppLayout({ children }: AppLayoutProps): JSX.Element {
 
       <header className='fixed inset-y-0 flex w-16 flex-col bg-secondary px-2 py-4 text-center'>
         <Link className='self-center py-1' href='/'>
-          <Logo.mark className='size-8' />
+          <LogoMark className='size-8' />
         </Link>
 
         <ThemeToggle className='mt-auto self-center' />
