@@ -39,7 +39,7 @@ export default function Sort(): JSX.Element {
         <div className='w-full p-2 md:w-48'>
           {sortOptions.map(({ display, slug }) => (
             <button
-              className='flex w-full items-center justify-between space-x-2 rounded-md px-1 py-2 active:bg-zinc-200 dark:active:bg-zinc-600 dark:hover:bg-zinc-700 hover:bg-zinc-100'
+              className='flex w-full items-center justify-between space-x-2 rounded-md px-1 py-2 hover:bg-zinc-100 active:bg-zinc-200 dark:active:bg-zinc-600 dark:hover:bg-zinc-700'
               key={slug}
               onClick={() => {
                 queryParams({
