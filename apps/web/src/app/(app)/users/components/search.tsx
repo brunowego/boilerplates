@@ -4,7 +4,7 @@ import { useDebouncedCallback } from 'use-debounce'
 
 import { inputVariants } from '@acme/ui/components/input'
 import Icon from '@acme/ui/components/icon'
-import cn from '@acme/ui/lib/cn'
+import cn from '@acme/ui/utils/cn'
 
 // import useUsers from '@/hooks/api/use-users'
 

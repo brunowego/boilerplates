@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import Popover from '@acme/ui/components/popover'
 import Icon from '@acme/ui/components/icon'
 import MenuIcon from '@acme/ui/components/menu-icon'
-import cn from '@acme/ui/lib/cn'
+import cn from '@acme/ui/utils/cn'
 
 import useRouterStuff from '@/hooks/use-router-stuff'
 
