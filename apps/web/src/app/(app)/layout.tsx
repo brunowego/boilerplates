@@ -3,8 +3,7 @@ import type { ReactNode, JSX } from 'react'
 import Link from 'next/link'
 
 import Logo from '@acme/ui/components/logo'
-
-import ThemeToggle from '@/components/theme-toggle'
+import ThemeToggle from '@acme/ui/components/theme-toggle'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
