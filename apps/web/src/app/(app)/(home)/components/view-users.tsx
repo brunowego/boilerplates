@@ -11,9 +11,9 @@ import {
   TableRow,
 } from '@acme/ui/components/table'
 import Skeleton from '@acme/ui/components/skeleton'
+import EmptyState from '@acme/ui/components/empty-state'
 
 import useUsers from '@/hooks/api/use-users'
-import EmptyState from '@/components/empty-state'
 import { toLocalDate } from '@/utils/formatter'
 
 import Search from './search'
