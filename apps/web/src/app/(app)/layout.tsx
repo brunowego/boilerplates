@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode, JSX } from 'react'
-import Link from 'next/link'
 
-import { LogoMark } from '@acme/ui/components/logo'
-import ThemeToggle from '@acme/ui/components/theme-toggle'
+import Layout from '@acme/ui/components/layout'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -15,22 +13,12 @@ interface AppLayoutProps {
 
 export default function AppLayout({ children }: AppLayoutProps): JSX.Element {
   return (
-    <div className='flex h-screen 2xl:container'>
-      <div className='-translate-x-full fixed top-0 bottom-0 w-full bg-secondary' />
+    <Layout>
+      <Layout.Header />
 
-      <header className='fixed inset-y-0 flex w-16 flex-col bg-secondary px-2 py-4 text-center'>
-        <Link className='self-center py-1' href='/'>
-          <LogoMark className='size-8' />
-        </Link>
+      <Layout.Content>{children}</Layout.Content>
 
-        <ThemeToggle className='mt-auto self-center' />
-      </header>
-
-      <main className='w-full pl-16'>
-        <article>{children}</article>
-      </main>
-
-      <aside className='w-96 shrink-0 border-l' />
-    </div>
+      <Layout.Aside />
+    </Layout>
   )
 }
