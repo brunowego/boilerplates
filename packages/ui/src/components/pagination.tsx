@@ -111,12 +111,11 @@ const PaginationEllipsis = ({
 )
 PaginationEllipsis.displayName = 'PaginationEllipsis'
 
-export {
-  Pagination,
-  PaginationContent,
-  PaginationButton,
-  PaginationItem,
-  PaginationPrevious,
-  PaginationNext,
-  PaginationEllipsis,
-}
+Pagination.Content = PaginationContent
+Pagination.Button = PaginationButton
+Pagination.Item = PaginationItem
+Pagination.Previous = PaginationPrevious
+Pagination.Next = PaginationNext
+Pagination.Ellipsis = PaginationEllipsis
+
+export default Pagination

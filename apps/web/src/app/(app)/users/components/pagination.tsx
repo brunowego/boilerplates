@@ -1,17 +1,10 @@
 import type { JSX } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationEllipsis,
-  PaginationButton,
-  PaginationPrevious,
-  PaginationNext,
-} from '@acme/ui/components/pagination'
+import Pagination from '@acme/ui/components/pagination'
 import NumberTooltip from '@acme/ui/components/number-tooltip'
 import { nFormatter } from '@acme/ui/lib/formater'
+import cn from '@acme/ui/utils/cn'
 
 import useRouterStuff from '@/hooks/use-router-stuff'
 import useUsersCount from '@/hooks/api/use-users-count'
@@ -22,7 +15,7 @@ type PaginationProps = {
   className?: string
 }
 
-export default function Pagination2({
+export default function _Pagination({
   className,
 }: PaginationProps): JSX.Element {
   const searchParams = useSearchParams()
@@ -38,11 +31,11 @@ export default function Pagination2({
 
   return (
     <>
-      <Pagination className='h-10'>
-        <PaginationContent>
+      <Pagination className={cn('h-10', className)}>
+        <Pagination.Content>
           {currentPage > 1 && paginatedCount > 5 && (
-            <PaginationItem>
-              <PaginationPrevious
+            <Pagination.Item>
+              <Pagination.Previous
                 onClick={() => {
                   queryParams({
                     set: {
@@ -51,62 +44,62 @@ export default function Pagination2({
                   })
                 }}
               />
-            </PaginationItem>
+            </Pagination.Item>
           )}
 
           {paginationArray.length > 6 ? (
             currentPage > 3 && currentPage < paginationArray.length - 2 ? (
               <>
-                <PaginationButton2 value={1} />
+                <PaginationButton value={1} />
 
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
+                <Pagination.Item>
+                  <Pagination.Ellipsis />
+                </Pagination.Item>
 
-                <PaginationButton2 value={currentPage - 1} />
-                <PaginationButton2 value={currentPage} />
-                <PaginationButton2 value={currentPage + 1} />
+                <PaginationButton value={currentPage - 1} />
+                <PaginationButton value={currentPage} />
+                <PaginationButton value={currentPage + 1} />
 
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
+                <Pagination.Item>
+                  <Pagination.Ellipsis />
+                </Pagination.Item>
 
-                <PaginationButton2 value={paginationArray.length} />
+                <PaginationButton value={paginationArray.length} />
               </>
             ) : currentPage <= 3 ? (
               <>
-                <PaginationButton2 value={1} />
-                <PaginationButton2 value={2} />
-                <PaginationButton2 value={3} />
+                <PaginationButton value={1} />
+                <PaginationButton value={2} />
+                <PaginationButton value={3} />
 
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
+                <Pagination.Item>
+                  <Pagination.Ellipsis />
+                </Pagination.Item>
 
-                <PaginationButton2 value={paginationArray.length} />
+                <PaginationButton value={paginationArray.length} />
               </>
             ) : (
               <>
-                <PaginationButton2 value={1} />
+                <PaginationButton value={1} />
 
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
+                <Pagination.Item>
+                  <Pagination.Ellipsis />
+                </Pagination.Item>
 
-                <PaginationButton2 value={paginationArray.length - 2} />
-                <PaginationButton2 value={paginationArray.length - 1} />
-                <PaginationButton2 value={paginationArray.length} />
+                <PaginationButton value={paginationArray.length - 2} />
+                <PaginationButton value={paginationArray.length - 1} />
+                <PaginationButton value={paginationArray.length} />
               </>
             )
           ) : (
             paginationArray.map((i) => (
-              <PaginationButton2 key={i + 1} value={i + 1} />
+              <PaginationButton key={i + 1} value={i + 1} />
             ))
           )}
 
           {currentPage < paginatedCount && paginatedCount > 5 && (
-            <PaginationItem>
-              <PaginationNext
+            <Pagination.Item>
+              <Pagination.Next
                 onClick={() => {
                   queryParams({
                     set: {
@@ -115,9 +108,9 @@ export default function Pagination2({
                   })
                 }}
               />
-            </PaginationItem>
+            </Pagination.Item>
           )}
-        </PaginationContent>
+        </Pagination.Content>
       </Pagination>
 
       <div className='mt-6' />
@@ -134,13 +127,13 @@ export default function Pagination2({
   )
 }
 
-const PaginationButton2 = ({ value }: { value: number }) => {
+const PaginationButton = ({ value }: { value: number }) => {
   const searchParams = useSearchParams()
   const currentPage = Number.parseInt(searchParams?.get('page') || '1')
   const { queryParams } = useRouterStuff()
 
   return (
-    <PaginationButton
+    <Pagination.Button
       isActive={value === currentPage}
       onClick={() => {
         queryParams({
@@ -151,6 +144,6 @@ const PaginationButton2 = ({ value }: { value: number }) => {
       }}
     >
       {value}
-    </PaginationButton>
+    </Pagination.Button>
   )
 }

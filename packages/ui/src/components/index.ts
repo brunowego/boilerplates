@@ -1,12 +1,4 @@
 export {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationNext,
-  PaginationPrevious,
-} from './pagination'
-export {
   Table,
   TableHeader,
   TableBody,
@@ -24,6 +16,7 @@ export { default as Layout } from './layout'
 export { default as MenuIcon } from './menu-icon'
 export { default as NumberTooltip } from './number-tooltip'
 export { default as Page } from './page'
+export { default as Pagination } from './pagination'
 export { default as Popover } from './popover'
 export { default as ScreenSizeIndicator } from './screen-size-indicator'
 export { default as Skeleton } from './skeleton'
