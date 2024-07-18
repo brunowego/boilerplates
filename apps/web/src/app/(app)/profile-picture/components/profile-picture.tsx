@@ -9,8 +9,6 @@ import {
 } from 'react'
 
 import Page from '@acme/ui/components/page'
-import { typographyVariants } from '@acme/ui/components/typography'
-import Label from '@acme/ui/components/label'
 import Avatar from '@acme/ui/components/avatar'
 import { ImageUp } from '@acme/ui/components/icon'
 import { buttonVariants } from '@acme/ui/components/button'
@@ -18,7 +16,7 @@ import Input from '@acme/ui/components/input'
 
 import useCropImageModal from '../hooks/use-crop-image.modal'
 
-export default function EditPersonal(): JSX.Element {
+export default function ProfilePicture(): JSX.Element {
   const [croppedImage, setCroppedImage] = useState<string | null>(null)
   const [file, setFile] = useState<File | null>(null)
 
@@ -71,44 +69,40 @@ export default function EditPersonal(): JSX.Element {
     <>
       <Page>
         <Page.Header>
-          <Page.Title>Profile</Page.Title>
+          <Page.Title>Profile picture</Page.Title>
         </Page.Header>
 
         <Page.Content>
-          <div className='space-y-2'>
-            <Label>Profile picture</Label>
+          <div className='flex gap-x-4'>
+            <Avatar className='size-20 text-4xl'>
+              <Avatar.Image src={croppedImage as string} />
 
-            <div className='flex gap-x-4'>
-              <Avatar className='size-20 text-4xl'>
-                <Avatar.Image src={croppedImage as string} />
+              <Avatar.Fallback className='bg-secondary'>
+                <ImageUp className='size-10 stroke-muted-foreground' />
+              </Avatar.Fallback>
+            </Avatar>
 
-                <Avatar.Fallback className='bg-secondary'>
-                  <ImageUp className='size-10 stroke-muted-foreground' />
-                </Avatar.Fallback>
-              </Avatar>
+            <div className='flex flex-col items-start justify-center space-y-2'>
+              <label
+                aria-disabled='false'
+                className={buttonVariants({
+                  className: 'cursor-pointer',
+                  variant: 'secondary',
+                })}
+              >
+                <Input
+                  accept={acceptedFileTypes.join(',')}
+                  className='sr-only'
+                  onChange={onChangePicture}
+                  // ref={fileInputRef}
+                  type='file'
+                />
+                Select image
+              </label>
 
-              <div className='flex flex-col items-start justify-center space-y-2'>
-                <label
-                  aria-disabled='false'
-                  className={buttonVariants({
-                    className: 'cursor-pointer',
-                    variant: 'secondary',
-                  })}
-                >
-                  <Input
-                    accept={acceptedFileTypes.join(',')}
-                    className='sr-only'
-                    onChange={onChangePicture}
-                    // ref={fileInputRef}
-                    type='file'
-                  />
-                  Select image
-                </label>
-
-                <p className='text-muted-foreground text-sm'>
-                  .png, .jpeg, files up to 8MB. Recommended size is 256x256px.
-                </p>
-              </div>
+              <p className='text-muted-foreground text-sm'>
+                .png, .jpeg, files up to 8MB. Recommended size is 256x256px.
+              </p>
             </div>
           </div>
         </Page.Content>

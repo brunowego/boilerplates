@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
 
 export default function HomePage(): never {
-  return redirect('/personal')
+  return redirect('/profile-picture')
 }
