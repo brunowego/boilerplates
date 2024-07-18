@@ -22,5 +22,5 @@ pnpm compose:up
 ( cd ./apps/web; cp ./.env.local.sample ./.env.local )
 
 # Start the development server
-pnpm dev --filter web
+pnpm dev --filter @acme/web
 ```
