@@ -22,29 +22,29 @@
   },
   "dependencies": {
     "@acme/tailwind-config": "workspace:~",
-    "@hookform/resolvers": "~3.6.0",
-    "@radix-ui/react-avatar": "~1.0.4",
-    "@radix-ui/react-dialog": "~1.0.5",
-    "@radix-ui/react-label": "~2.0.2",
-    "@radix-ui/react-separator": "~1.0.3",
-    "@radix-ui/react-slot": "~1.0.2",
+    "@hookform/resolvers": "~3.9.0",
+    "@radix-ui/react-avatar": "~1.1.0",
+    "@radix-ui/react-dialog": "~1.1.1",
+    "@radix-ui/react-label": "~2.1.0",
+    "@radix-ui/react-separator": "~1.1.0",
+    "@radix-ui/react-slot": "~1.1.0",
     "class-variance-authority": "~0.7.0",
     "clsx": "~2.1.1",
-    "lucide-react": "~0.390.0",
+    "lucide-react": "~0.408.0",
     "next-themes": "~0.3.0",
-    "react-hook-form": "~7.51.5",
-    "sonner": "~1.4.41",
-    "tailwind-merge": "~2.3.0",
-    "tailwindcss": "~3.4.4",
+    "react-hook-form": "~7.52.1",
+    "sonner": "~1.5.0",
+    "tailwind-merge": "~2.4.0",
+    "tailwindcss": "~3.4.6",
     "tailwindcss-animate": "~1.0.7",
     "zod": "~3.23.8"
   },
   "devDependencies": {
     "@acme/typescript-config": "workspace:~",
-    "@types/node": "~20.14.2",
+    "@types/node": "~20.14.11",
     "@types/react": "~18.3.3",
     "@types/react-dom": "~18.3.0",
     "react": "~18.3.1",
-    "typescript": "~5.4.5"
+    "typescript": "~5.5.3"
   }
 }
