@@ -1,5 +1,4 @@
 import type { HTMLAttributes } from 'react'
-import Link from 'next/link'
 
 import cn from '@acme/ui/utils/cn'
 import { LogoMark } from '@acme/ui/components/logo'
@@ -26,21 +25,21 @@ const LayoutHeader = ({
   return (
     <>
       {infinite ? (
-        <div className='-translate-x-full fixed top-0 bottom-0 z-10 w-full bg-secondary' />
+        <div className='-translate-x-full fixed top-0 bottom-0 z-20 w-full bg-secondary' />
       ) : null}
 
       <header
         className={cn(
-          'fixed inset-y-0 flex w-16 flex-col gap-y-2 px-2 py-3 text-center shadow-md',
+          'fixed inset-y-0 z-10 flex w-16 flex-col gap-y-4 px-2 py-3 text-center shadow-md',
           infinite ? 'bg-secondary' : null,
           className,
         )}
       >
-        <Link className='self-center py-1' href='/'>
+        <a className='self-center py-1' href='/'>
           <LogoMark className='size-8' />
-        </Link>
+        </a>
 
-        <nav className='flex h-full flex-col items-center gap-y-2 *:p-2.5'>
+        <nav className='flex h-full flex-col items-center gap-y-1 *:p-2.5'>
           {children}
         </nav>
 
@@ -53,7 +52,9 @@ const LayoutHeader = ({
 type LayoutContentProps = HTMLAttributes<HTMLElement>
 
 const LayoutContent = ({ className, ...props }: LayoutContentProps) => {
-  return <main className={cn('w-full border-r pl-16', className)} {...props} />
+  return (
+    <main className={cn('flex w-full border-r pl-16', className)} {...props} />
+  )
 }
 
 type LayoutAsideProps = HTMLAttributes<HTMLElement>
@@ -67,4 +68,8 @@ const LayoutAside = ({ className, ...props }: LayoutAsideProps) => {
   )
 }
 
-export { Layout, LayoutHeader, LayoutContent, LayoutAside }
+Layout.Header = LayoutHeader
+Layout.Content = LayoutContent
+Layout.Aside = LayoutAside
+
+export default Layout

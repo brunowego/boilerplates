@@ -9,7 +9,6 @@ import {
 } from 'react'
 
 import Page from '@acme/ui/components/page'
-import { typographyVariants } from '@acme/ui/components/typography'
 import Avatar from '@acme/ui/components/avatar'
 import { ImageUp } from '@acme/ui/components/icon'
 import { buttonVariants } from '@acme/ui/components/button'
@@ -70,7 +69,7 @@ export default function EditPersonal(): JSX.Element {
     <>
       <Page>
         <Page.Header>
-          <h1 className={typographyVariants({ variant: 'title' })}>Profile</h1>
+          <Page.Title>Profile picture</Page.Title>
         </Page.Header>
 
         <Page.Content>

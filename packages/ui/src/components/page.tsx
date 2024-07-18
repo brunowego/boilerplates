@@ -1,13 +1,15 @@
 import type { HTMLAttributes } from 'react'
 
-import cn from '../utils/cn'
+import cn from '@acme/ui/utils/cn'
 
-type PageRootProps = HTMLAttributes<HTMLElement>
+import { typographyVariants } from './typography'
 
-const PageRoot = ({ className, ...props }: PageRootProps) => {
+type PageProps = HTMLAttributes<HTMLElement>
+
+const Page = ({ className, ...props }: PageProps) => {
   return (
     <article
-      className={cn('flex h-full flex-1 flex-col border-r', className)}
+      className={cn('flex h-full flex-1 flex-col', className)}
       {...props}
     />
   )
@@ -19,9 +21,26 @@ const PageHeader = ({ className, ...props }: PageHeaderProps) => {
   return (
     <header
       className={cn(
-        'sticky top-0 z-10 flex h-16 shrink-0 items-center space-x-4 border-b bg-background px-4 lg:px-5',
+        'sticky top-0 z-10 min-h-16 shrink-0 border-b bg-background px-4 lg:px-5',
         className,
       )}
+      {...props}
+    />
+  )
+}
+
+type PageTitleProps = {
+  className?: string
+  children: string
+}
+
+const PageTitle = ({ className, ...props }: PageTitleProps) => {
+  return (
+    <h1
+      className={typographyVariants({
+        className: 'mt-4',
+        variant: 'title',
+      })}
       {...props}
     />
   )
@@ -44,15 +63,8 @@ const PageFooter = ({ className, ...props }: PageFooterProps) => {
   )
 }
 
-type PageProps = typeof PageRoot & {
-  Header: typeof PageHeader
-  Content: typeof PageContent
-  Footer: typeof PageFooter
-}
-
-const Page = PageRoot as PageProps
-
 Page.Header = PageHeader
+Page.Title = PageTitle
 Page.Content = PageContent
 Page.Footer = PageFooter
 

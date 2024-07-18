@@ -1,15 +1,17 @@
 'use client'
 
-import type { JSX } from 'react'
-
-import cn from '@acme/ui/utils/cn'
+import type { ReactNode, JSX } from 'react'
 
 type SidebarProps = {
-  className?: string
+  children?: ReactNode
 }
 
-export default function Sidebar({ className }: SidebarProps): JSX.Element {
+export default function Sidebar({
+  children,
+}: SidebarProps): JSX.Element | null {
   return (
-    <nav className={cn('w-56 shrink-0 border-r lg:w-64 xl:w-72', className)} />
+    <div className='z-10 w-80 border-r'>
+      <aside className='sticky top-0'>{children}</aside>
+    </div>
   )
 }
