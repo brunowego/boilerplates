@@ -14,5 +14,5 @@
 pnpm install
 
 # Start the development server
-pnpm dev --filter web
+pnpm dev --filter @acme/web
 ```
