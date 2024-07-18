@@ -15,6 +15,10 @@ const components = [
     name: 'Profile picture',
     href: '/profile-picture',
   },
+  {
+    name: 'Cover',
+    href: '/cover',
+  },
 ] as { name: string; href: string }[]
 
 interface AppLayoutProps {
