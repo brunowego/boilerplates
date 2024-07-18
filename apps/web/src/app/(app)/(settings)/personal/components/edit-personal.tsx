@@ -71,7 +71,7 @@ export default function EditPersonal(): JSX.Element {
     <>
       <Page>
         <Page.Header>
-          <h1 className={typographyVariants({ variant: 'title' })}>Profile</h1>
+          <Page.Title>Profile</Page.Title>
         </Page.Header>
 
         <Page.Content>

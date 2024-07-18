@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode, JSX } from 'react'
 
-import { Layout, LayoutHeader, LayoutContent } from '@/components/layout'
+import Layout from '@acme/ui/components/layout'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -16,9 +16,9 @@ export default async function DashboardLayout({
 }: DashboardLayoutProps): Promise<JSX.Element> {
   return (
     <Layout>
-      <LayoutHeader />
+      <Layout.Header />
 
-      <LayoutContent>{children}</LayoutContent>
+      <Layout.Content>{children}</Layout.Content>
     </Layout>
   )
 }
