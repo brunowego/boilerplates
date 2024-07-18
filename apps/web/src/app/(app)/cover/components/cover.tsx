@@ -100,7 +100,7 @@ export default function Cover(): JSX.Element {
             >
               {croppedCover ? (
                 <>
-                  <Edit className='size-4' />
+                  <Edit className='size-5' />
 
                   <span className='sr-only'>Change cover</span>
                 </>
