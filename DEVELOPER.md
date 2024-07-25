@@ -29,5 +29,5 @@ pnpm db:migrate
 pnpm db:seed
 
 # Start the development server
-pnpm dev --filter web
+pnpm dev --filter @acme/web
 ```
