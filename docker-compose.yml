@@ -1,6 +1,4 @@
 ---
-version: '3'
-
 services:
   mongodb:
     image: docker.io/library/mongo:7.0.5
