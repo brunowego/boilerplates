@@ -3,7 +3,7 @@ import { type ButtonHTMLAttributes, forwardRef } from 'react'
 import { Slot } from '@radix-ui/react-slot'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center space-x-2 whitespace-nowrap rounded-md font-medium text-sm transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
