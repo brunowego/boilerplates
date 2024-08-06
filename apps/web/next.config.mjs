@@ -5,7 +5,8 @@ const nextConfig = {
   transpilePackages: ['@acme/ui'],
 
   experimental: {
-    serverComponentsExternalPackages: ['oslo'],
+    esmExternals: 'loose',
+    serverComponentsExternalPackages: ['oslo', 'mongoose'],
   },
 }
 
