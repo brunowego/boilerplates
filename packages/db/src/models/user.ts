@@ -1,27 +1,21 @@
-import mongoose, { Schema } from 'mongoose'
+import { BaseModel } from './base'
+import { User } from '../schemas/user'
+import type { IUser } from '../types'
 
-type ObjectId = mongoose.Types.ObjectId
+export const userModel = new BaseModel(User)
 
-export interface IUser {
-  _id: ObjectId
-  email: string
-  firstName: string
-  lastName: string
-  createdAt: Date
-}
-
-const UserSchema = new Schema(
-  {
-    email: {
-      type: String,
-      required: true,
+export const seedUsers = async () => {
+  const usersData = [
+    {
+      email: 'brunowego@gmail.com',
+      firstName: 'Bruno',
+      lastName: 'Gomes',
     },
-    firstName: String,
-    lastName: String,
-  },
-  {
-    timestamps: true,
-  },
-)
+  ] as IUser[]
 
-export default mongoose.model<IUser>('User', UserSchema)
+  for (const user of usersData) {
+    await User.findOneAndUpdate({ email: user.email }, user, {
+      upsert: true,
+    })
+  }
+}

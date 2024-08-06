@@ -9,11 +9,11 @@
     "./models": "./src/models.ts"
   },
   "dependencies": {
-    "mongoose": "~8.3.2"
+    "mongoose": "~8.5.2"
   },
   "devDependencies": {
     "@acme/typescript-config": "workspace:~",
     "@faker-js/faker": "~8.4.1",
-    "bun": "~1.1.4"
+    "bun": "~1.1.21"
   }
 }
