@@ -1,5 +1,6 @@
 'use client'
 
+import type { JSX } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 import {
@@ -13,7 +14,7 @@ import {
 } from '@acme/ui/components/select'
 import { USER_ROLES } from '@acme/db/constants'
 
-export default function RoleSelector() {
+export default function RoleSelector(): JSX.Element {
   const searchParams = useSearchParams()
   const role = searchParams.get('role') || 'member'
 

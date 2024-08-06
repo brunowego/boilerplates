@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { CheckIcon } from '@radix-ui/react-icons'
 import type { Column } from '@tanstack/react-table'
 
@@ -31,7 +32,7 @@ export default function FacetedFilter<TData, TValue>({
   column,
   title,
   options,
-}: FacetedFilterProps<TData, TValue>) {
+}: FacetedFilterProps<TData, TValue>): JSX.Element {
   const facets = column?.getFacetedUniqueValues()
   const selectedValues = new Set(column?.getFilterValue() as string[])
 
