@@ -5,26 +5,27 @@ import {
   type TdHTMLAttributes,
 } from 'react'
 
-import cn from '../lib/cn'
+import cn from '../utils/cn'
 
-const Table = forwardRef<HTMLTableElement, HTMLAttributes<HTMLTableElement>>(
-  ({ className, ...props }, ref) => (
-    <div className='relative w-full overflow-auto'>
-      <table
-        ref={ref}
-        className={cn('w-full caption-bottom text-sm', className)}
-        {...props}
-      />
-    </div>
-  ),
-)
-Table.displayName = 'Table'
+const TableRoot = forwardRef<
+  HTMLTableElement,
+  HTMLAttributes<HTMLTableElement>
+>(({ className, ...props }, ref) => (
+  <div className='relative w-full overflow-auto'>
+    <table
+      className={cn('w-full caption-bottom text-sm', className)}
+      ref={ref}
+      {...props}
+    />
+  </div>
+))
+TableRoot.displayName = 'TableRoot'
 
 const TableHeader = forwardRef<
   HTMLTableSectionElement,
   HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => (
-  <thead ref={ref} className={cn('[&_tr]:border-b', className)} {...props} />
+  <thead className={cn('[&_tr]:border-b', className)} ref={ref} {...props} />
 ))
 TableHeader.displayName = 'TableHeader'
 
@@ -33,8 +34,8 @@ const TableBody = forwardRef<
   HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => (
   <tbody
-    ref={ref}
     className={cn('[&_tr:last-child]:border-0', className)}
+    ref={ref}
     {...props}
   />
 ))
@@ -45,11 +46,11 @@ const TableFooter = forwardRef<
   HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => (
   <tfoot
-    ref={ref}
     className={cn(
       'border-t bg-muted/50 font-medium [&>tr]:last:border-b-0',
       className,
     )}
+    ref={ref}
     {...props}
   />
 ))
@@ -60,11 +61,11 @@ const TableRow = forwardRef<
   HTMLAttributes<HTMLTableRowElement>
 >(({ className, ...props }, ref) => (
   <tr
-    ref={ref}
     className={cn(
-      'border-b transition-colors data-[state=selected]:bg-muted hover:bg-muted/50',
+      'border-b transition-colors hover:bg-input data-[state=selected]:bg-muted',
       className,
     )}
+    ref={ref}
     {...props}
   />
 ))
@@ -75,11 +76,11 @@ const TableHead = forwardRef<
   ThHTMLAttributes<HTMLTableCellElement>
 >(({ className, ...props }, ref) => (
   <th
-    ref={ref}
     className={cn(
-      'h-10 px-2 text-left align-middle font-medium text-muted-foreground [&>[role=checkbox]]:translate-y-[2px] [&:has([role=checkbox])]:pr-0 last-of-type:pr-4 lg:last-of-type:pr-5 first-of-type:pl-4 lg:first-of-type:pl-5',
+      'h-10 px-2 text-left align-middle font-medium text-muted-foreground first-of-type:pl-4 last-of-type:pr-4 lg:last-of-type:pr-5 lg:first-of-type:pl-5 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
       className,
     )}
+    ref={ref}
     {...props}
   />
 ))
@@ -91,7 +92,7 @@ const TableCell = forwardRef<
 >(({ className, ...props }, ref) => (
   <td
     className={cn(
-      'p-2 align-middle [&>[role=checkbox]]:translate-y-[2px] [&:has([role=checkbox])]:pr-0 last-of-type:pr-4 lg:last-of-type:pr-5 first-of-type:pl-4 lg:first-of-type:pl-5',
+      'p-2 align-middle first-of-type:pl-4 last-of-type:pr-4 lg:last-of-type:pr-5 lg:first-of-type:pl-5 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
       className,
     )}
     ref={ref}
@@ -112,13 +113,24 @@ const TableCaption = forwardRef<
 ))
 TableCaption.displayName = 'TableCaption'
 
-export {
-  Table,
-  TableHeader,
-  TableBody,
-  TableFooter,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableCaption,
+type TableProps = typeof TableRoot & {
+  Header: typeof TableHeader
+  Body: typeof TableBody
+  Footer: typeof TableFooter
+  Head: typeof TableHead
+  Row: typeof TableRow
+  Cell: typeof TableCell
+  Caption: typeof TableCaption
 }
+
+const Table = TableRoot as TableProps
+
+Table.Header = TableHeader
+Table.Body = TableBody
+Table.Footer = TableFooter
+Table.Head = TableHead
+Table.Row = TableRow
+Table.Cell = TableCell
+Table.Caption = TableCaption
+
+export default Table

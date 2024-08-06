@@ -10,10 +10,10 @@ import { Command as CommandPrimitive } from 'cmdk'
 import type { DialogProps } from '@radix-ui/react-dialog'
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 
-import cn from '../lib/cn'
-import { Dialog, DialogContent } from './dialog'
+import cn from '../utils/cn'
+import Dialog from './dialog'
 
-const Command = forwardRef<
+const CommandRoot = forwardRef<
   ElementRef<typeof CommandPrimitive>,
   ComponentPropsWithoutRef<typeof CommandPrimitive>
 >(({ className, ...props }, ref) => (
@@ -26,18 +26,18 @@ const Command = forwardRef<
     {...props}
   />
 ))
-Command.displayName = CommandPrimitive.displayName
+CommandRoot.displayName = CommandPrimitive.displayName
 
 interface CommandDialogProps extends DialogProps {}
 
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
-      <DialogContent className='overflow-hidden p-0'>
-        <Command className='[&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-item]_svg]:w-5 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group]]:px-2 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground'>
+      <Dialog.Content className='overflow-hidden p-0'>
+        <Command className='[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5'>
           {children}
         </Command>
-      </DialogContent>
+      </Dialog.Content>
     </Dialog>
   )
 }
@@ -51,7 +51,7 @@ const CommandInput = forwardRef<
 
     <CommandPrimitive.Input
       className={cn(
-        'flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none disabled:cursor-not-allowed placeholder:text-muted-foreground disabled:opacity-50',
+        'flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50',
         className,
       )}
       ref={ref}
@@ -122,7 +122,7 @@ const CommandItem = forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Item
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
       className,
     )}
     ref={ref}
@@ -148,14 +148,26 @@ const CommandShortcut = ({
 }
 CommandShortcut.displayName = 'CommandShortcut'
 
-export {
-  Command,
-  CommandDialog,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandShortcut,
-  CommandSeparator,
+type CommandProps = typeof CommandRoot & {
+  Dialog: typeof CommandDialog
+  Input: typeof CommandInput
+  List: typeof CommandList
+  Empty: typeof CommandEmpty
+  Group: typeof CommandGroup
+  Item: typeof CommandItem
+  Shortcut: typeof CommandShortcut
+  Separator: typeof CommandSeparator
 }
+
+const Command = CommandRoot as CommandProps
+
+Command.Dialog = CommandDialog
+Command.Input = CommandInput
+Command.List = CommandList
+Command.Empty = CommandEmpty
+Command.Group = CommandGroup
+Command.Item = CommandItem
+Command.Shortcut = CommandShortcut
+Command.Separator = CommandSeparator
+
+export default Command

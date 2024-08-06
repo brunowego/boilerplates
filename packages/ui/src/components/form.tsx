@@ -16,11 +16,11 @@ import {
 } from 'react-hook-form'
 
 import { FormFieldContext, FormItemContext } from '../contexts/form'
-import cn from '../lib/cn'
+import cn from '../utils/cn'
 import Label from './label'
 import useFormField from '../hooks/use-form-field'
 
-const Form = FormProvider
+const FormRoot = FormProvider
 
 const FormField = <
   TFieldValues extends FieldValues = FieldValues,
@@ -128,12 +128,22 @@ const FormMessage = forwardRef<
 })
 FormMessage.displayName = 'FormMessage'
 
-export {
-  Form,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage,
-  FormField,
+type FormProps = typeof FormRoot & {
+  Item: typeof FormItem
+  Label: typeof FormLabel
+  Control: typeof FormControl
+  Description: typeof FormDescription
+  Message: typeof FormMessage
+  Field: typeof FormField
 }
+
+const Form = FormRoot as FormProps
+
+Form.Item = FormItem
+Form.Label = FormLabel
+Form.Control = FormControl
+Form.Description = FormDescription
+Form.Message = FormMessage
+Form.Field = FormField
+
+export default Form

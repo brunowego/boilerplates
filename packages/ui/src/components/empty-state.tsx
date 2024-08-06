@@ -1,6 +1,6 @@
 import type { ReactNode, JSX } from 'react'
 
-import cn from '../lib/cn'
+import cn from '../utils/cn'
 
 type EmptyStateProps = {
   className?: string

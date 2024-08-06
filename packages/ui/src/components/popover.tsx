@@ -1,15 +1,15 @@
 'use client'
 
+import * as PopoverPrimitive from '@radix-ui/react-popover'
 import {
   forwardRef,
   type ElementRef,
   type ComponentPropsWithoutRef,
 } from 'react'
-import * as PopoverPrimitive from '@radix-ui/react-popover'
 
-import cn from '../lib/cn'
+import cn from '../utils/cn'
 
-const Popover = PopoverPrimitive.Root
+const PopoverRoot = PopoverPrimitive.Root
 
 const PopoverTrigger = PopoverPrimitive.Trigger
 
@@ -34,4 +34,32 @@ const PopoverContent = forwardRef<
 ))
 PopoverContent.displayName = PopoverPrimitive.Content.displayName
 
-export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor }
+const PopoverArrow = forwardRef<
+  ElementRef<typeof PopoverPrimitive.Arrow>,
+  ComponentPropsWithoutRef<typeof PopoverPrimitive.Arrow>
+>(({ className, ...props }, ref) => (
+  <PopoverPrimitive.Arrow
+    className={cn('fill-border', className)}
+    ref={ref}
+    width={12}
+    height={6}
+    {...props}
+  />
+))
+PopoverArrow.displayName = PopoverPrimitive.Arrow.displayName
+
+type PopoverProps = typeof PopoverRoot & {
+  Trigger: typeof PopoverTrigger
+  Anchor: typeof PopoverAnchor
+  Content: typeof PopoverContent
+  Arrow: typeof PopoverArrow
+}
+
+const Popover = PopoverRoot as PopoverProps
+
+Popover.Trigger = PopoverTrigger
+Popover.Anchor = PopoverAnchor
+Popover.Content = PopoverContent
+Popover.Arrow = PopoverArrow
+
+export default Popover

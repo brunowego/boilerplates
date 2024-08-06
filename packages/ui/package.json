@@ -13,6 +13,7 @@
     "./hooks/*": "./src/hooks/*.ts",
     "./lib/*": "./src/lib/*.ts",
     "./providers/*": "./src/providers/*.ts",
+    "./utils/*": "./src/utils/*.ts",
     "./styles.css": "./src/styles/index.css",
     "./tailwind.config": "./tailwind.config.ts"
   },

@@ -9,9 +9,9 @@ import {
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { Cross2Icon } from '@radix-ui/react-icons'
 
-import cn from '../lib/cn'
+import cn from '../utils/cn'
 
-const Dialog = DialogPrimitive.Root
+const DialogRoot = DialogPrimitive.Root
 
 const DialogTrigger = DialogPrimitive.Trigger
 
@@ -51,7 +51,7 @@ const DialogContent = forwardRef<
     >
       {children}
 
-      <DialogPrimitive.Close className='absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'>
+      <DialogPrimitive.Close className='absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground'>
         <Cross2Icon className='size-4' />
 
         <span className='sr-only'>Close</span>
@@ -116,15 +116,28 @@ const DialogDescription = forwardRef<
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 
-export {
-  Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogTrigger,
-  DialogClose,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
+type DialogProps = typeof DialogRoot & {
+  Portal: typeof DialogPortal
+  Overlay: typeof DialogOverlay
+  Trigger: typeof DialogTrigger
+  Close: typeof DialogClose
+  Content: typeof DialogContent
+  Header: typeof DialogHeader
+  Footer: typeof DialogFooter
+  Title: typeof DialogTitle
+  Description: typeof DialogDescription
 }
+
+const Dialog = DialogRoot as DialogProps
+
+Dialog.Portal = DialogPortal
+Dialog.Overlay = DialogOverlay
+Dialog.Trigger = DialogTrigger
+Dialog.Close = DialogClose
+Dialog.Content = DialogContent
+Dialog.Header = DialogHeader
+Dialog.Footer = DialogFooter
+Dialog.Title = DialogTitle
+Dialog.Description = DialogDescription
+
+export default Dialog

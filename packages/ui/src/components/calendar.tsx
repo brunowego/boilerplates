@@ -4,7 +4,7 @@ import type { ComponentProps, JSX } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
 import { DayPicker } from 'react-day-picker'
 
-import cn from '../lib/cn'
+import cn from '../utils/cn'
 import { buttonVariants } from './button'
 
 export type CalendarProps = ComponentProps<typeof DayPicker>

@@ -2,7 +2,7 @@ import type { JSX } from 'react'
 import { CheckIcon } from '@radix-ui/react-icons'
 import type { Column } from '@tanstack/react-table'
 
-import cn from '../lib/cn'
+import cn from '../utils/cn'
 import Badge from './badge'
 import Button from './button'
 import {

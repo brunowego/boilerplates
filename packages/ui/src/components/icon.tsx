@@ -1,5 +1,3 @@
-import { Calendar, ChevronUp, CirclePlus, Moon, Sun } from 'lucide-react'
-
-export { Calendar, ChevronUp, CirclePlus, Moon, Sun }
+export * from 'lucide-react'
 
 export * as default from './icon'

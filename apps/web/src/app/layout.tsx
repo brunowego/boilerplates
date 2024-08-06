@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode, JSX } from 'react'
 
-import TailwindIndicator from '@acme/ui/components/tailwind-indicator'
+import ScreenSizeIndicator from '@acme/ui/components/screen-size-indicator'
 
 import { fontSans } from '@/lib/fonts'
 import '@/styles/globals.css'
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
       <body className={fontSans.className}>
         <Providers>{children}</Providers>
 
-        <TailwindIndicator env={process.env.NODE_ENV} />
+        <ScreenSizeIndicator env={process.env.NODE_ENV} />
       </body>
     </html>
   )
