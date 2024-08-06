@@ -23,9 +23,8 @@ const badgeVariants = cva(
   },
 )
 
-export interface BadgeProps
-  extends HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badgeVariants> {}
+type BadgeProps = HTMLAttributes<HTMLDivElement> &
+  VariantProps<typeof badgeVariants>
 
 function Badge({ className, variant, ...props }: BadgeProps): JSX.Element {
   return (
@@ -33,4 +32,4 @@ function Badge({ className, variant, ...props }: BadgeProps): JSX.Element {
   )
 }
 
-export { Badge as default, badgeVariants }
+export { Badge as default, type BadgeProps, badgeVariants }
