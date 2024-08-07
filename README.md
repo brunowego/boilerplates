@@ -1,4 +1,4 @@
-# Next.js with Dropzone
+# Next.js with Upload React Dropzone
 
 TODO
 
