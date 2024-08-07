@@ -19,7 +19,7 @@ pnpm install
 pnpm compose:up
 
 # Copy environment files
-( cd ./apps/console; cp ./.env.local.sample ./.env.local )
+( cd ./apps/web; cp ./.env.local.sample ./.env.local )
 ( cd ./packages/db; cp ./.env.sample ./.env )
 
 # Run database migrations
@@ -29,5 +29,5 @@ pnpm db:migrate
 pnpm db:seed
 
 # Start the development server
-pnpm dev --filter console
+pnpm dev --filter @acme/web
 ```
