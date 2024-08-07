@@ -13,8 +13,8 @@
     "./schemas": "./src/schemas.ts"
   },
   "scripts": {
-    "db:generate": "drizzle-kit generate:pg",
-    "db:migrate": "bun ./src/migrate.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit push",
     "db:seed": "bun ./src/seed.ts",
     "db:studio": "drizzle-kit studio"
   },
