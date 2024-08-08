@@ -200,7 +200,6 @@ export default function SignUpForm({
                           onResetValidation()
                         }
                       }}
-                      // @ts-ignore
                       ref={zipCodeRef}
                     />
 
