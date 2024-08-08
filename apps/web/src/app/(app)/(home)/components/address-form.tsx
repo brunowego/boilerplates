@@ -21,7 +21,7 @@ import Button from '@acme/ui/components/button'
 import { Loader2, Check, X } from '@acme/ui/components/icon'
 import { withMask } from 'use-mask-input'
 
-import { api } from '@/lib/api'
+import api from '@/lib/api'
 import useDebouncedZipCodeAddress from '@/hooks/use-debounced-zip-code-address'
 import HookFormDevtool from '@/components/hookform-devtool'
 

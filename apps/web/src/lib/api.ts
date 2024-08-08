@@ -9,4 +9,4 @@ const api: AxiosInstance = axios.create({
   baseURL: '/api',
 } satisfies AxiosRequestConfig)
 
-export { api, AxiosError, isAxiosError }
+export { api as default, axios, AxiosError, isAxiosError }
