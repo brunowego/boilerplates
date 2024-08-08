@@ -20,17 +20,17 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "drizzle-orm": "~0.30.8",
+    "drizzle-orm": "~0.32.2",
     "drizzle-zod": "~0.5.1",
-    "pg": "~8.11.5",
+    "pg": "~8.12.0",
     "postgres": "~3.4.4",
-    "zod": "~3.22.5"
+    "zod": "~3.23.8"
   },
   "devDependencies": {
     "@acme/id": "workspace:~",
     "@acme/typescript-config": "workspace:~",
     "@faker-js/faker": "~8.4.1",
-    "bun": "~1.1.4",
-    "drizzle-kit": "~0.20.16"
+    "bun": "~1.1.22",
+    "drizzle-kit": "~0.23.2"
   }
 }
