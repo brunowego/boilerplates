@@ -10,7 +10,7 @@
     "start": "turbo start"
   },
   "dependencies": {
-    "turbo": "~1.12.4"
+    "turbo": "~2.0.12"
   },
   "devDependencies": {
     "@acme/typescript-config": "workspace:~"
@@ -18,5 +18,5 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@9.4.0"
+  "packageManager": "pnpm@9.7.0"
 }
