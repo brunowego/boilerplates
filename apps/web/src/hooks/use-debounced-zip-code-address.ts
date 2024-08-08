@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { useDebouncedCallback } from '@react-hookz/web'
 
-import { axios } from '@/lib/api'
+import api from '@/lib/api'
 
 export type ValidationState = 'idle' | 'loading' | 'success' | 'invalid'
 
@@ -28,7 +28,7 @@ export default function useDebouncedZipCodeAddress(): {
     mutationKey: ['zip-code'],
 
     mutationFn: async (zipCode: string) => {
-      return axios.get(`${process.env.BRASILAPI_API_URL}/${zipCode}`)
+      return api.get(`/addresses/br/zip/${zipCode}`)
     },
 
     onSuccess: (res) => {
