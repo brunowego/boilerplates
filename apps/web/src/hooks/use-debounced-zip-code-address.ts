@@ -28,7 +28,7 @@ export default function useDebouncedZipCodeAddress(): {
     mutationKey: ['zip-code'],
 
     mutationFn: async (zipCode: string) => {
-      return api.get(`https://brasilapi.com.br/api/cep/v1/${zipCode}`)
+      return api.get(`${process.env.BRASILAPI_API_URL}/${zipCode}`)
     },
 
     onSuccess: (res) => {
