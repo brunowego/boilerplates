@@ -2,8 +2,19 @@
   "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
   "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "webhook:listen": {
+      "cache": false,
+      "persistent": true
+    },
     "build": {
       "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "start": {
+      "cache": false
     }
   }
 }
