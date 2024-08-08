@@ -79,7 +79,7 @@ export default function SignUpForm({
     setValue,
     ...form
   } = useForm<FormValues>({
-    // mode: 'onChange',
+    mode: 'onBlur',
     defaultValues: {
       zipCode: address?.zipCode || '',
       state: address?.state || '',
