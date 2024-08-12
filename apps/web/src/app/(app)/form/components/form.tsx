@@ -15,6 +15,7 @@ import UUIDInput from '@acme/ui/components/uuid-input'
 import CurrencyInput from '@acme/ui/components/currency-input'
 import Button from '@acme/ui/components/button'
 import FieldLength from '@acme/ui/components/field-length'
+import ToggleGroup from '@acme/ui/components/toggle-group'
 
 export default function Form(): JSX.Element {
   return (
@@ -124,6 +125,19 @@ export default function Form(): JSX.Element {
           }
           placeholder='R$ 0,00'
         />
+      </div>
+
+      <div className='space-y-2'>
+        <Label>Toggle Group</Label>
+
+        <ToggleGroup className='max-w-80' type='single'>
+          <ToggleGroup.Item className='w-full' value='test'>
+            Test
+          </ToggleGroup.Item>
+          <ToggleGroup.Item className='w-full' value='test2'>
+            Test2
+          </ToggleGroup.Item>
+        </ToggleGroup>
       </div>
     </>
   )
