@@ -12,7 +12,7 @@
     },
     "build": {
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": ["PAGARME_API_KEY"]
+      "env": ["DATABASE_URL", "PAGARME_API_KEY"]
     },
     "start": {
       "cache": false
