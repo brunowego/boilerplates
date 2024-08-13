@@ -11,7 +11,8 @@
       "persistent": true
     },
     "build": {
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["PAGARME_API_KEY"]
     },
     "start": {
       "cache": false
