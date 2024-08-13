@@ -19,6 +19,7 @@ export default function OAuthButton({
 
   return (
     <Button
+      className='space-x-2'
       onClick={() => {
         setIsLoading(true)
         signIn(provider)
