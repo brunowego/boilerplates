@@ -7,13 +7,13 @@ export async function POST(): Promise<Response> {
 
   try {
     const { result } = await recipientsController.createRecipient({
-      name: 'Bruno Gomes',
-      document: '01479506192',
+      name: 'Karina Lima',
+      document: '04989551176',
       type: 'individual',
       defaultBankAccount: {
-        holderName: 'Bruno Wesley Gomes Batista',
+        holderName: 'Karina Maria Lima Felix',
         holderType: 'individual',
-        holderDocument: '01479506192',
+        holderDocument: '04989551176',
         bank: '077',
         branchNumber: '0001',
         accountNumber: '2034550',
@@ -22,7 +22,7 @@ export async function POST(): Promise<Response> {
         metadata: {},
       },
       metadata: {},
-      code: '',
+      code: '2',
       paymentMode: 'bank_transfer',
     })
 
