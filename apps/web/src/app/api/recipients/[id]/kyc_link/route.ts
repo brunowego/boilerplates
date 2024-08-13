@@ -18,7 +18,7 @@ export async function GET(): Promise<Response> {
       console.error(err)
     }
 
-    return new Response(null, {
+    return new Response(JSON.stringify(err), {
       status: 500,
     })
   }
