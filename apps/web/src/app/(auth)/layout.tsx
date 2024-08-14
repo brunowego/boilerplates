@@ -38,7 +38,7 @@ export default async function AuthLayout({
 
       <LayoutContent>
         <article className='flex min-h-screen items-center justify-center overflow-hidden p-6 md:p-0'>
-          <section className='m-auto flex w-full max-w-md flex-col space-y-6 p-4 lg:px-5'>
+          <section className='m-auto flex w-full max-w-lg flex-col space-y-6 p-4 lg:px-5'>
             {children}
           </section>
         </article>
