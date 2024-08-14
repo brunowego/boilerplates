@@ -4,7 +4,7 @@ import NextThemesProvider from './next-themes'
 import ReactQueryProvider from './react-query'
 import SonnerProvider from './sonner'
 
-interface ProvidersProps {
+type ProvidersProps = {
   children: ReactNode
 }
 

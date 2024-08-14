@@ -16,7 +16,7 @@ const formSchema = signInSchema
 
 type FormValues = z.infer<typeof formSchema>
 
-interface SignInFormProps extends HTMLAttributes<HTMLFormElement> {}
+type SignInFormProps = HTMLAttributes<HTMLFormElement>
 
 export default function SignInForm({
   className,

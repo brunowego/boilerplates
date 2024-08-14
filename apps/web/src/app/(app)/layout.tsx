@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Dashboard',
 }
 
-interface DashboardLayoutProps {
+type DashboardLayoutProps = {
   children: ReactNode
 }
 
