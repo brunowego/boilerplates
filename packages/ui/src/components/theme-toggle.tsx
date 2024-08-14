@@ -2,6 +2,7 @@
 
 import useTheme from '../hooks/use-theme'
 import Button from './button'
+import cn from '../utils/cn'
 import { Sun, Moon } from './icon'
 
 type ThemeToggleProps = {
@@ -13,7 +14,7 @@ export default function ThemeToggle({ className }: ThemeToggleProps) {
 
   return (
     <Button
-      className={className}
+      className={cn('shrink-0', className)}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       size='icon'
       variant='ghost'
