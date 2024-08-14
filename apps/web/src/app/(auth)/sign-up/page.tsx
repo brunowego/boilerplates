@@ -29,7 +29,8 @@ export default function SignUpPage(): JSX.Element {
 
         <p className={typographyVariants({ size: 'xl', variant: 'muted' })}>
           Automate your tasks, stay organized, and make informed decisions
-          effortlessly.{' '}
+          effortlessly.
+          <br />
           <Link
             className='text-foreground underline underline-offset-4'
             href='/sign-in'
