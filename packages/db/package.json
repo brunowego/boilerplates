@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@acme/id": "workspace:~",
-    "drizzle-orm": "~0.31.1",
+    "drizzle-orm": "~0.33.0",
     "drizzle-zod": "~0.5.1",
     "next-auth": "5.0.0-beta.18",
     "pg": "8.12.0",
@@ -31,7 +31,7 @@
     "@acme/typescript-config": "workspace:~",
     "@faker-js/faker": "~8.4.1",
     "@types/pg": "~8.11.6",
-    "bun": "~1.1.12",
-    "drizzle-kit": "~0.22.4"
+    "bun": "~1.1.24",
+    "drizzle-kit": "~0.24.0"
   }
 }

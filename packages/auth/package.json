@@ -14,7 +14,7 @@
   "dependencies": {
     "@acme/db": "workspace:~",
     "@acme/id": "workspace:~",
-    "@auth/drizzle-adapter": "~1.2.0",
+    "@auth/drizzle-adapter": "~1.4.2",
     "bcryptjs": "~2.4.3",
     "next-auth": "5.0.0-beta.18"
   },
