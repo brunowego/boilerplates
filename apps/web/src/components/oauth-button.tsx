@@ -19,14 +19,16 @@ export default function OAuthButton({
 
   return (
     <Button
-      className='space-x-2'
+      className='md:grid md:grid-cols-[24px_1fr_24px]'
       onClick={() => {
         setIsLoading(true)
         signIn(provider)
       }}
       {...props}
     >
-      {isLoading ? <Loader2 className='size-5 animate-spin' /> : children}
+      {children}
+
+      {isLoading ? <Loader2 className='size-5 animate-spin' /> : null}
     </Button>
   )
 }
