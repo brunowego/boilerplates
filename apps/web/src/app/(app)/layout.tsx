@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode, JSX } from 'react'
 import { redirect } from 'next/navigation'
+import Link from 'next/link'
 
 import { auth } from '@acme/auth'
 import { Home } from '@acme/ui/components/icon'
@@ -12,7 +13,6 @@ import {
   LayoutAside,
 } from '@/components/layout'
 import LogOut from '@/components/log-out'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
