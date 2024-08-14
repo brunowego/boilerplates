@@ -9,9 +9,11 @@ import * as SeparatorPrimitive from '@radix-ui/react-separator'
 
 import cn from '../utils/cn'
 
+type SeparatorProps = ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
+
 const Separator = forwardRef<
   ElementRef<typeof SeparatorPrimitive.Root>,
-  ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
+  SeparatorProps
 >(
   (
     { className, orientation = 'horizontal', decorative = true, ...props },
