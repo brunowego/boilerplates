@@ -21,7 +21,7 @@ const LayoutHeader = ({ className, children }: LayoutHeaderProps) => {
 
       <header
         className={cn(
-          'fixed inset-y-0 z-40 flex w-16 flex-col gap-y-4 bg-navbar px-2 py-4 text-center shadow-md',
+          'fixed inset-y-0 z-40 flex w-16 flex-col gap-y-1 bg-navbar px-2 py-4 text-center shadow-md',
           className,
         )}
       >
