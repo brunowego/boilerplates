@@ -1,4 +1,4 @@
-# Next.js with Auth.js Onboarding
+# Next.js with Auth.js (Onboarding)
 
 TODO
 
