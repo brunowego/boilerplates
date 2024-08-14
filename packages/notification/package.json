@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/notification",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@novu/node": "2.0.0-canary.1",
+    "nanoid": "~5.0.7"
+  },
+  "devDependencies": {
+    "typescript": "~5.5.4"
+  }
+}
