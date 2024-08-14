@@ -43,6 +43,10 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        navbar: {
+          DEFAULT: 'hsl(var(--navbar))',
+          foreground: 'hsl(var(--navbar-foreground))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',

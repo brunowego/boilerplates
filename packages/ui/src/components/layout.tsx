@@ -12,25 +12,16 @@ const Layout = ({ className, ...props }: LayoutProps) => {
   )
 }
 
-type LayoutHeaderProps = HTMLAttributes<HTMLElement> & {
-  infinite?: boolean
-}
+type LayoutHeaderProps = HTMLAttributes<HTMLElement>
 
-const LayoutHeader = ({
-  infinite = true,
-  className,
-  children,
-}: LayoutHeaderProps) => {
+const LayoutHeader = ({ className, children }: LayoutHeaderProps) => {
   return (
     <>
-      {infinite ? (
-        <div className='-translate-x-full fixed top-0 bottom-0 z-20 w-full bg-secondary' />
-      ) : null}
+      <div className='-translate-x-full fixed top-0 bottom-0 z-50 w-full bg-navbar' />
 
       <header
         className={cn(
-          'fixed inset-y-0 z-10 flex w-16 flex-col gap-y-4 px-2 py-4 text-center shadow-md',
-          infinite ? 'bg-secondary' : null,
+          'fixed inset-y-0 z-40 flex w-16 flex-col gap-y-4 bg-navbar px-2 py-4 text-center shadow-md',
           className,
         )}
       >

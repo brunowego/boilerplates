@@ -24,7 +24,7 @@ export default async function AuthLayout({
 
   return (
     <Layout>
-      <Layout.Header infinite={false} />
+      <Layout.Header />
 
       <Layout.Content>
         <section className='flex min-h-screen w-full items-center justify-center overflow-hidden p-6 md:p-0'>
