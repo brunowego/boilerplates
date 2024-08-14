@@ -1,11 +1,11 @@
 ---
 version: 0.1
 cli:
-  version: 1.22.1
+  version: 1.22.2
 plugins:
   sources:
     - id: trunk
-      ref: v1.5.0
+      ref: v1.6.1
       uri: https://github.com/trunk-io/plugins
 runtimes:
   enabled:
@@ -17,16 +17,16 @@ lint:
       files:
         - typescript
   disabled:
+    - osv-scanner
     - dotenv-linter
     - prettier
   enabled:
-    - biome@1.7.3
-    - checkov@3.2.95
+    - biome@1.8.3
+    - checkov@3.2.223
     - git-diff-check
-    - markdownlint@0.40.0
-    - osv-scanner@1.7.3
-    - trivy@0.51.1
-    - trufflehog@3.76.3
+    - markdownlint@0.41.0
+    - trivy@0.54.1
+    - trufflehog@3.81.8
     - yamllint@1.35.1
 actions:
   disabled:
