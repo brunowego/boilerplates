@@ -31,15 +31,33 @@ export const usersRelations = relations(users, ({ many }) => ({
   accounts: many(accounts),
 }))
 
+export const userAddresses = pgTable('user_addresses', {
+  ...id,
+  userId: varchar('user_id')
+    .references(() => users.id, {
+      onUpdate: 'cascade',
+      onDelete: 'cascade',
+    })
+    .notNull(),
+  zipCode: varchar('zip_code').notNull(),
+  state: varchar('state').notNull(),
+  city: varchar('city').notNull(),
+  neighborhood: varchar('neighborhood').notNull(),
+  street: varchar('street').notNull(),
+  number: varchar('number').notNull(),
+  reference: varchar('reference'),
+  ...timestamps,
+})
+
 export const accounts = pgTable(
   'accounts',
   {
     userId: varchar('user_id')
-      .notNull()
       .references(() => users.id, {
         onUpdate: 'cascade',
         onDelete: 'cascade',
-      }),
+      })
+      .notNull(),
     type: varchar('type').$type<AdapterAccount['type']>().notNull(),
     provider: varchar('provider').notNull(),
     providerAccountId: varchar('provider_account_id').notNull(),
