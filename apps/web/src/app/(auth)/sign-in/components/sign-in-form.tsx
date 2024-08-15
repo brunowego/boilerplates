@@ -36,9 +36,7 @@ export default function SignInForm({
         ...values,
       })
     } catch (err) {
-      if (process.env.NODE_ENV === 'development') {
-        console.error(err)
-      }
+      console.error(err)
     }
   }
 

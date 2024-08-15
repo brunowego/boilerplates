@@ -15,9 +15,7 @@ export async function GET(): Promise<Response> {
       status: 200,
     })
   } catch (err) {
-    if (process.env.NODE_ENV === 'development') {
-      console.error(err)
-    }
+    console.error(err)
 
     return new Response(JSON.stringify(err), {
       status: 500,
@@ -40,9 +38,7 @@ export async function GET(): Promise<Response> {
 //       status: 200,
 //     })
 //   } catch (err) {
-//     if (process.env.NODE_ENV === 'development') {
-//       console.error(err)
-//     }
+//     console.error(err)
 
 //     return new Response(null, {
 //       status: 500,

@@ -30,9 +30,7 @@ export async function POST(): Promise<Response> {
       status: 200,
     })
   } catch (err) {
-    if (process.env.NODE_ENV === 'development') {
-      console.error(err)
-    }
+    console.error(err)
 
     return new Response(null, {
       status: 500,
