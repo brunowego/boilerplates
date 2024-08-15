@@ -37,8 +37,8 @@ importers:
         specifier: ~4.3.1
         version: 4.3.1(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@pagarme/pagarme-nodejs-sdk':
-        specifier: ~6.8.10
-        version: 6.8.10
+        specifier: ~6.8.11
+        version: 6.8.11
       '@tanstack/query-core':
         specifier: ~5.51.9
         version: 5.51.9
@@ -865,8 +865,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@pagarme/pagarme-nodejs-sdk@6.8.10':
-    resolution: {integrity: sha512-cJvR/OxjxsXemcGbavUYv39qoZAFgX0BmyK32CqFbE0o6KzonecoT7uSHhIkiHQl7iV2+L+DvseGUkf/RSUW8g==}
+  '@pagarme/pagarme-nodejs-sdk@6.8.11':
+    resolution: {integrity: sha512-w4VPB5bmd8qW63SdvzB05Ibxh48pfaqeJ9dUhxaDpf0yAf3rp0K0Fl1SFRop1qAThtbH6wP/2msfeYz1Brc/YA==}
     engines: {node: '>=14.17.0'}
 
   '@panva/hkdf@1.1.1':
@@ -3125,7 +3125,7 @@ snapshots:
   '@oven/bun-windows-x64@1.1.20':
     optional: true
 
-  '@pagarme/pagarme-nodejs-sdk@6.8.10':
+  '@pagarme/pagarme-nodejs-sdk@6.8.11':
     dependencies:
       '@apimatic/authentication-adapters': 0.5.4
       '@apimatic/axios-client-adapter': 0.3.4
