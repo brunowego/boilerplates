@@ -1,7 +1,8 @@
 import { z } from 'zod'
+import { faker } from '@faker-js/faker'
+
 import { insertUserSchema } from './schemas'
 import { users } from './schema'
-import { faker } from '@faker-js/faker'
 import db from './db'
 
 const extendedUserSchema = insertUserSchema.merge(
