@@ -1,2 +1,2 @@
-export { default as cn } from '../utils/cn'
+export { default as toast } from './toast'
 export { default as z, zodResolver } from './zod'
