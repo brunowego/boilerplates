@@ -7,7 +7,7 @@ export async function GET(): Promise<Response> {
 
   try {
     const { result } = await recipientsController.createKYCLink(
-      're_clzrqr5aj5q1h0l9tjberbyrp',
+      're_clzvmcgob03bg0k9tpg9jqlhi',
     )
 
     return NextResponse.json(result, {

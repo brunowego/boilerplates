@@ -8,7 +8,7 @@ export async function GET(): Promise<Response> {
   try {
     // const { result } = await recipientsController.getRecipientByCode()
     const { result } = await recipientsController.getRecipient(
-      're_clzrqr5aj5q1h0l9tjberbyrp',
+      're_clzvmcgob03bg0k9tpg9jqlhi',
     )
 
     return NextResponse.json(result, {
@@ -23,25 +23,30 @@ export async function GET(): Promise<Response> {
   }
 }
 
-// export async function PATH(): Promise<Response> {
-//   const recipientsController = new RecipientsController(client)
+export async function POST(): Promise<Response> {
+  const recipientsController = new RecipientsController(client)
 
-//   try {
-//     const { result } = await recipientsController.updateRecipient(
-//       're_clzrqr5aj5q1h0l9tjberbyrp',
-//       {
-//         code: '3',
-//       },
-//     )
+  try {
+    const { result } = await recipientsController.updateRecipient(
+      're_clzvmcgob03bg0k9tpg9jqlhi',
+      {
+        name: 'Bruno Wesley Gomes Batista',
+        email: 'me@brunowego.com',
+        description: 'Recebedor da Henkiz Tecnologia',
+        type: 'individual',
+        status: 'active',
+        metadata: {},
+      },
+    )
 
-//     return NextResponse.json(result, {
-//       status: 200,
-//     })
-//   } catch (err) {
-//     console.error(err)
+    return NextResponse.json(result, {
+      status: 200,
+    })
+  } catch (err) {
+    console.error(err)
 
-//     return new Response(null, {
-//       status: 500,
-//     })
-//   }
-// }
+    return new Response(null, {
+      status: 500,
+    })
+  }
+}

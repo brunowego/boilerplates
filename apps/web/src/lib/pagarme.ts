@@ -2,8 +2,15 @@ import {
   Client,
   BalanceOperationsController,
   CustomersController,
+  InvoicesController,
   OrdersController,
+  PayablesController,
+  PlansController,
   RecipientsController,
+  SubscriptionsController,
+  TransactionsController,
+  TransfersController,
+  type CreateRegisterInformationIndividualRequest,
 } from '@pagarme/pagarme-nodejs-sdk'
 
 const client = new Client({
@@ -17,6 +24,13 @@ export {
   client,
   BalanceOperationsController,
   CustomersController,
+  InvoicesController,
   OrdersController,
+  PayablesController,
+  PlansController,
   RecipientsController,
+  SubscriptionsController,
+  TransactionsController,
+  TransfersController,
+  type CreateRegisterInformationIndividualRequest,
 }

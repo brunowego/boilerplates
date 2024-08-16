@@ -7,13 +7,15 @@ export async function POST(): Promise<Response> {
 
   try {
     const { result } = await recipientsController.createRecipient({
-      name: 'Karina Lima',
-      document: '04989551176',
+      name: 'Bruno Wesley Gomes Batista',
+      email: 'brunowego@gmail.com',
+      description: 'Recebedor da Henkiz Tecnologia',
+      document: '01479506192',
       type: 'individual',
       defaultBankAccount: {
-        holderName: 'Karina Maria Lima Felix',
+        holderName: 'Bruno Wesley Gomes Batista',
         holderType: 'individual',
-        holderDocument: '04989551176',
+        holderDocument: '01479506192',
         bank: '077',
         branchNumber: '0001',
         accountNumber: '2034550',
@@ -22,8 +24,26 @@ export async function POST(): Promise<Response> {
         metadata: {},
       },
       metadata: {},
-      code: '2',
+      // transferSettings: {},
+      code: '3',
       paymentMode: 'bank_transfer',
+      // registerInformation: {
+      //   // name: 'Bruno Wesley Gomes Batista',
+      //   // birthdate: '1985-09-27',
+      //   // monthly_income: 20000,
+      //   // professional_occupation: 'Desenvolvedor de Software',
+      //   email: 'brunowego@gmail.com',
+      //   document: '01479506192',
+      //   type: 'individual',
+      //   // siteUrl: '',
+      //   phoneNumbers: [
+      //     {
+      //       ddd: '61',
+      //       number: '982502595',
+      //       type: 'mobile',
+      //     },
+      //   ],
+      // },
     })
 
     return NextResponse.json(result, {
