@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { type InputHTMLAttributes, forwardRef } from 'react'
 
 const inputVariants = cva(
-  'flex h-10 w-full rounded-md border border-input bg-white px-4 py-1 text-sm transition-colors disabled:cursor-not-allowed file:border-0 focus-visible:border-white dark:bg-secondary file:bg-transparent file:font-medium file:text-sm placeholder:text-muted-foreground disabled:opacity-50 focus-visible:outline-none',
+  'flex h-10 w-full rounded-md border border-input bg-white px-4 py-1 text-sm transition-colors file:border-0 file:bg-transparent file:font-medium file:text-sm placeholder:text-muted-foreground focus-visible:border-white focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-secondary',
 )
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> &
