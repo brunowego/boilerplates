@@ -25,7 +25,7 @@ export default function Form(): JSX.Element {
       <div className='space-y-2'>
         <Label>Domain</Label>
 
-        <Input placeholder='go.acme.com' />
+        <Input className='max-w-80' placeholder='go.acme.com' />
       </div>
 
       <div className='space-y-2'>
@@ -47,7 +47,7 @@ export default function Form(): JSX.Element {
           </InfoTooltip>
         </Label>
 
-        <Input placeholder='https://yourdomain.com' />
+        <Input className='max-w-80' placeholder='https://yourdomain.com' />
       </div>
 
       <div className='space-y-2'>
@@ -58,7 +58,7 @@ export default function Form(): JSX.Element {
             <div
               className={inputVariants({
                 className:
-                  '!bg-background cursor-not-allowed items-center text-muted-foreground',
+                  '!bg-background max-w-80 cursor-not-allowed items-center text-muted-foreground',
               })}
             >
               https://yourdomain.com
@@ -78,7 +78,7 @@ export default function Form(): JSX.Element {
         </Tooltip>
       </div>
 
-      <div className='space-y-2'>
+      <div className='max-w-80 space-y-2'>
         <Label>
           Title{' '}
           <FieldLength
