@@ -130,7 +130,7 @@ export default function Form(): JSX.Element {
 
         <CurrencyInput
           className='max-w-80'
-          defaultValue={0.0}
+          // defaultValue={0.0}
           onValueChange={(value, name, values) =>
             console.log(value, name, values)
           }
