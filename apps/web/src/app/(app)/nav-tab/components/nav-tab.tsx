@@ -39,7 +39,7 @@ export default function NavTab(): JSX.Element {
         <Page.Title>Nav Tab</Page.Title>
 
         <nav className='flex h-12 space-x-4 text-sm *:flex *:items-center'>
-          {nav.map(({ href, title }) => (
+          {nav.map(({ href, title }, index) => (
             <Link
               className={cn(
                 '-mb-px border-b hover:border-foreground',
@@ -48,6 +48,8 @@ export default function NavTab(): JSX.Element {
                   : 'text-muted-foreground',
               )}
               href='/'
+              // biome-ignore lint/suspicious/noArrayIndexKey: This is a static list
+              key={index}
             >
               {title}
             </Link>
