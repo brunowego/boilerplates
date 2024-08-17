@@ -8,7 +8,9 @@ import Button from '@acme/ui/components/button'
 export default function _Modal(): JSX.Element {
   return (
     <Modal>
-      <Modal.Trigger>Open</Modal.Trigger>
+      <Modal.Trigger asChild>
+        <Button>Open</Button>
+      </Modal.Trigger>
 
       <Modal.Content>
         <Modal.Header>
