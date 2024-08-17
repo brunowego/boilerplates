@@ -3,11 +3,14 @@
 import type { JSX } from 'react'
 
 import DropdownMenu from '@acme/ui/components/dropdown-menu'
+import Button from '@acme/ui/components/button'
 
 export default function _DropdownMenu(): JSX.Element {
   return (
     <DropdownMenu>
-      <DropdownMenu.Trigger>Open</DropdownMenu.Trigger>
+      <DropdownMenu.Trigger asChild>
+        <Button>Open</Button>
+      </DropdownMenu.Trigger>
 
       <DropdownMenu.Content align='start' className='w-48'>
         <DropdownMenu.Label>My Account</DropdownMenu.Label>
