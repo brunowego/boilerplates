@@ -1,6 +1,6 @@
 'use client'
 
-import type { JSX } from 'react'
+import { type JSX, useState } from 'react'
 import Link from 'next/link'
 
 import Label from '@acme/ui/components/label'
@@ -18,6 +18,8 @@ import FieldLength from '@acme/ui/components/field-length'
 import ToggleGroup from '@acme/ui/components/toggle-group'
 
 export default function Form(): JSX.Element {
+  const [titleLength, setTitleLength] = useState(0)
+
   return (
     <>
       <div className='space-y-2'>
@@ -78,10 +80,19 @@ export default function Form(): JSX.Element {
 
       <div className='space-y-2'>
         <Label>
-          Title <FieldLength currentLength={0} maxLength={60} />
+          Title{' '}
+          <FieldLength
+            // currentLength={field.value.length ?? 0}
+            currentLength={titleLength}
+            maxLength={60}
+          />
         </Label>
 
-        <Input maxLength={60} type='text' />
+        <Input
+          maxLength={60}
+          onChange={(value) => setTitleLength(value.target.value.length)}
+          type='text'
+        />
       </div>
 
       <div className='space-y-2'>
