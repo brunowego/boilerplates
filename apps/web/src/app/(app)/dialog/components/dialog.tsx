@@ -3,11 +3,14 @@
 import type { JSX } from 'react'
 
 import Dialog from '@acme/ui/components/dialog'
+import Button from '@acme/ui/components/button'
 
 export default function _Dialog(): JSX.Element {
   return (
     <Dialog>
-      <Dialog.Trigger>Open</Dialog.Trigger>
+      <Dialog.Trigger asChild>
+        <Button>Open</Button>
+      </Dialog.Trigger>
 
       <Dialog.Content>
         <Dialog.Header>
