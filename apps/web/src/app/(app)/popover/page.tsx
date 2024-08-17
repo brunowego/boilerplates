@@ -11,7 +11,7 @@ export default function PopoverPage(): JSX.Element {
         <Page.Title>Popover</Page.Title>
       </Page.Header>
 
-      <Page.Content className='space-y-4'>
+      <Page.Content>
         <Popover />
       </Page.Content>
     </Page>
