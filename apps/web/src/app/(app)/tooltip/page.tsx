@@ -11,8 +11,10 @@ export default function TooltipPage(): JSX.Element {
         <Page.Title>Tooltip</Page.Title>
       </Page.Header>
 
-      <Page.Content className='space-y-4'>
-        <Tooltip />
+      <Page.Content>
+        <div>
+          <Tooltip />
+        </div>
       </Page.Content>
     </Page>
   )

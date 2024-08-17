@@ -3,13 +3,16 @@
 import type { JSX } from 'react'
 
 import Tooltip from '@acme/ui/components/tooltip'
+import Button from '@acme/ui/components/button'
 
-export default function _Popover(): JSX.Element {
+export default function _Tooltip(): JSX.Element {
   return (
     <Tooltip>
-      <Tooltip.Trigger>Hover</Tooltip.Trigger>
+      <Tooltip.Trigger asChild>
+        <Button>Hover</Button>
+      </Tooltip.Trigger>
 
-      <Tooltip.Content side='right'>
+      <Tooltip.Content align='center' side='right'>
         <Tooltip.Arrow />
 
         <p>Add to library</p>
