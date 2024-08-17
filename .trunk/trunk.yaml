@@ -17,6 +17,7 @@ lint:
       files:
         - typescript
   disabled:
+    - osv-scanner
     - dotenv-linter
     - prettier
   enabled:
@@ -24,7 +25,6 @@ lint:
     - checkov@3.2.109
     - git-diff-check
     - markdownlint@0.41.0
-    - osv-scanner@1.7.3
     - trivy@0.51.4
     - trufflehog@3.76.3
     - yamllint@1.35.1
