@@ -5,7 +5,7 @@ import type { JSX } from 'react'
 import { typographyVariants } from '@acme/ui/components/typography'
 
 import { useWorkspace } from '@/context/workspace-context'
-import { Page, PageHeader, PageFooter } from '@/components/page'
+import { Page, PageHeader } from '@/components/page'
 
 import WorkspacesList from './components/workspaces-list'
 
@@ -29,10 +29,6 @@ export default function HomePage(): JSX.Element {
 
         <WorkspacesList />
       </div>
-
-      <PageFooter>
-        <p>TBD</p>
-      </PageFooter>
     </Page>
   )
 }
