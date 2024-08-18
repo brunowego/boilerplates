@@ -29,12 +29,12 @@ const LayoutHeader = ({
 
       <header
         className={cn(
-          'fixed inset-y-0 z-10 flex w-16 flex-col gap-y-4 px-2 py-3 text-center shadow-md',
+          'fixed inset-y-0 z-10 flex w-16 flex-col gap-y-1 px-2 py-4 text-center shadow-md',
           infinite ? 'bg-secondary' : null,
           className,
         )}
       >
-        <a className='self-center py-1' href='/'>
+        <a className='self-center' href='/'>
           <LogoMark className='size-8' />
         </a>
 
