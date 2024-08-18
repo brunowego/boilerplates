@@ -62,7 +62,7 @@ const TableRow = forwardRef<
   <tr
     ref={ref}
     className={cn(
-      'border-b transition-colors data-[state=selected]:bg-muted hover:bg-muted/50',
+      'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
       className,
     )}
     {...props}
@@ -77,7 +77,7 @@ const TableHead = forwardRef<
   <th
     ref={ref}
     className={cn(
-      'h-10 px-2 text-left align-middle font-medium text-muted-foreground [&>[role=checkbox]]:translate-y-[2px] [&:has([role=checkbox])]:pr-0 last-of-type:pr-4 lg:last-of-type:pr-5 first-of-type:pl-4 lg:first-of-type:pl-5',
+      'h-10 px-2 text-left align-middle font-medium text-muted-foreground first-of-type:pl-4 last-of-type:pr-4 lg:last-of-type:pr-5 lg:first-of-type:pl-5 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
       className,
     )}
     {...props}
@@ -91,7 +91,7 @@ const TableCell = forwardRef<
 >(({ className, ...props }, ref) => (
   <td
     className={cn(
-      'p-2 align-middle [&>[role=checkbox]]:translate-y-[2px] [&:has([role=checkbox])]:pr-0 last-of-type:pr-4 lg:last-of-type:pr-5 first-of-type:pl-4 lg:first-of-type:pl-5',
+      'p-2 align-middle first-of-type:pl-4 last-of-type:pr-4 lg:last-of-type:pr-5 lg:first-of-type:pl-5 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
       className,
     )}
     ref={ref}
