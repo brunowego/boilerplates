@@ -24,13 +24,13 @@ const LayoutHeader = ({
   return (
     <>
       {infinite ? (
-        <div className='-translate-x-full fixed top-0 bottom-0 z-20 w-full bg-secondary' />
+        <div className='-translate-x-full fixed top-0 bottom-0 z-50 w-full bg-navbar' />
       ) : null}
 
       <header
         className={cn(
-          'fixed inset-y-0 z-10 flex w-16 flex-col gap-y-1 px-2 py-4 text-center shadow-md',
-          infinite ? 'bg-secondary' : null,
+          'fixed inset-y-0 z-40 flex w-16 flex-col gap-y-1 px-2 py-4 text-center shadow-md',
+          infinite ? 'bg-navbar' : null,
           className,
         )}
       >

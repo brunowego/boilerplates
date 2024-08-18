@@ -4,8 +4,11 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 98%;
     --foreground: 210 11% 7%;
+
+    --navbar: 0 0% 100%;
+    --navbar-foreground: 210 11% 7%;
 
     --card: 0 0% 100%;
     --card-foreground: 210 11% 7%;
@@ -39,6 +42,9 @@
     --background: 210 11% 7%;
     --foreground: 0 0% 98%;
 
+    --navbar: 216 9% 10%;
+    --navbar-foreground: 0 0% 98%;
+
     --card: 210 11% 7%;
     --card-foreground: 0 0% 98%;
 
@@ -54,7 +60,7 @@
     --muted: 216 9% 10%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 216 9% 10%;
+    --accent: 216 9% 13%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
