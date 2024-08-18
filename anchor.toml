@@ -1,0 +1,10 @@
+[lcl-host]
+realm-apid = 'localhost'
+
+[org]
+apid = 'brunowego'
+
+[service]
+apid = 'boilerplates'
+category = 'javascript'
+cert-style = 'acme'

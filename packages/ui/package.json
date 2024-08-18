@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/ui",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./components/*": "./src/components/*.tsx",
+    "./hooks/*": "./src/hooks/*.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./providers/*": "./src/providers/*.ts",
+    "./styles.css": "./src/styles/index.css",
+    "./tailwind.config": "./tailwind.config.ts",
+    "./utils/*": "./src/utils/*.ts"
+  },
+  "scripts": {
+    "clean": "pnpx rimraf ./.turbo"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "~1.2.0",
+    "@radix-ui/react-label": "~2.1.0",
+    "@radix-ui/react-slot": "~1.1.0",
+    "class-variance-authority": "~0.7.0",
+    "clsx": "~2.1.1",
+    "lucide-react": "~0.428.0",
+    "next-themes": "~0.3.0",
+    "tailwind-merge": "~2.5.2",
+    "tailwindcss": "~3.4.10",
+    "tailwindcss-animate": "~1.0.7",
+    "zod": "~3.23.8"
+  },
+  "devDependencies": {
+    "@acme/typescript-config": "workspace:~",
+    "@types/node": "~22.4.0",
+    "@types/react": "~18.3.3",
+    "@types/react-dom": "~18.3.0",
+    "react": "~18.3.1",
+    "typescript": "~5.5.4"
+  }
+}
