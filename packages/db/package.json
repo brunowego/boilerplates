@@ -30,7 +30,7 @@
     "@acme/typescript-config": "workspace:~",
     "@faker-js/faker": "~8.4.1",
     "@types/pg": "~8.11.6",
-    "bun": "~1.1.22",
+    "bun": "~1.1.24",
     "drizzle-kit": "~0.24.0"
   }
 }
