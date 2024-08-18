@@ -1,5 +1,3 @@
-import { ChevronUp, Moon, Sun } from 'lucide-react'
-
-export { ChevronUp, Moon, Sun }
+export * from 'lucide-react'
 
 export * as default from './icon'
