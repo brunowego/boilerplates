@@ -12,25 +12,25 @@
   "dependencies": {
     "@acme/db": "workspace:~",
     "@acme/ui": "workspace:~",
-    "@tanstack/query-core": "~5.51.9",
-    "@tanstack/react-query": "~5.51.9",
-    "@tanstack/react-query-next-experimental": "~5.51.9",
-    "axios": "~1.7.2",
+    "@tanstack/query-core": "~5.51.21",
+    "@tanstack/react-query": "~5.51.23",
+    "@tanstack/react-query-next-experimental": "~5.51.23",
+    "axios": "~1.7.4",
     "next": "14.2.5",
     "react": "~18.3.1",
     "react-dom": "~18.3.1",
-    "use-debounce": "~10.0.1"
+    "use-debounce": "~10.0.3"
   },
   "devDependencies": {
     "@acme/typescript-config": "workspace:~",
-    "@tanstack/react-query-devtools": "~5.51.9",
-    "@types/node": "~20.14.11",
+    "@tanstack/react-query-devtools": "~5.51.23",
+    "@types/node": "~22.4.0",
     "@types/react": "~18.3.3",
     "@types/react-dom": "~18.3.0",
-    "autoprefixer": "~10.4.19",
-    "cssnano": "~7.0.4",
-    "postcss": "~8.4.39",
-    "tailwindcss": "~3.4.6",
-    "typescript": "~5.5.3"
+    "autoprefixer": "~10.4.20",
+    "cssnano": "~7.0.5",
+    "postcss": "~8.4.41",
+    "tailwindcss": "~3.4.10",
+    "typescript": "~5.5.4"
   }
 }
