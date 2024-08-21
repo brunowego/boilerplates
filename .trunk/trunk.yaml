@@ -5,7 +5,7 @@ cli:
 plugins:
   sources:
     - id: trunk
-      ref: v1.6.1
+      ref: v1.6.2
       uri: https://github.com/trunk-io/plugins
 runtimes:
   enabled:
@@ -22,7 +22,7 @@ lint:
     - osv-scanner
   enabled:
     - biome@1.8.3
-    - checkov@3.2.228
+    - checkov@3.2.235
     - git-diff-check
     - markdownlint@0.41.0
     - trivy@0.54.1
