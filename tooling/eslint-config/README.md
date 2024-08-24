@@ -1,3 +1,0 @@
-# @acme/eslint-config
-
-TBD

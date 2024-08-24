@@ -3,7 +3,6 @@
   "private": true,
   "scripts": {
     "dev": "turbo dev",
-    "lint": "turbo lint",
     "test": "turbo test",
     "test:watch": "turbo test:watch",
     "test:cov": "turbo test:cov",
@@ -15,10 +14,8 @@
     "start:prod": "turbo start:prod"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:~",
     "@acme/typescript-config": "workspace:~",
     "@trivago/prettier-plugin-sort-imports": "~4.3.0",
-    "eslint": "~8.56.0",
     "prettier": "~3.2.4",
     "turbo": "~1.11.3"
   },

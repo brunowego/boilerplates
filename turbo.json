@@ -6,10 +6,6 @@
       "cache": false,
       "persistent": true
     },
-    "lint": {
-      "cache": false,
-      "persistent": true
-    },
     "test": {
       "cache": false
     },

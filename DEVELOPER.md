@@ -6,9 +6,6 @@
 # Install dependencies
 pnpm install
 
-# Lint code
-pnpm lint --filter api
-
 # Test code
 pnpm test --filter api
 # Watch mode

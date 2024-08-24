@@ -5,7 +5,6 @@
   "license": "COPYRIGHT",
   "scripts": {
     "dev": "nest start -w --preserveWatchOutput",
-    "lint": "eslint --ext .ts ./{src,test}",
     "test": "jest",
     "test:watch": "jest --color --watch",
     "test:cov": "jest --color --coverage",
@@ -26,7 +25,6 @@
     "rxjs": "~7.8.1"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:~",
     "@acme/typescript-config": "workspace:~",
     "@nestjs/cli": "~10.3.0",
     "@nestjs/schematics": "~10.1.0",
@@ -35,7 +33,6 @@
     "@types/jest": "~29.5.11",
     "@types/node": "~20.11.5",
     "@types/supertest": "~6.0.2",
-    "eslint": "~8.56.0",
     "jest": "~29.7.0",
     "prettier": "~3.2.4",
     "source-map-support": "~0.5.21",
