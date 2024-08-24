@@ -14,7 +14,8 @@
       },
       "style": {
         "recommended": true,
-        "useBlockStatements": "error"
+        "useBlockStatements": "error",
+        "useImportType": "warn"
       }
     }
   },
