@@ -8,7 +8,7 @@
     "test:watch": "jest --color --watch",
     "test:cov": "jest --color --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register ./node_modules/.bin/jest -i",
-    "test:e2e": "jest -c ./test/jest-e2e.json",
+    "test:e2e": "jest -c ./test/jest-e2e.config.ts",
     "build": "nest build",
     "start": "nest start",
     "start:debug": "nest start -wd",
@@ -17,9 +17,11 @@
   "dependencies": {
     "@nestjs/axios": "~3.0.3",
     "@nestjs/common": "~10.4.1",
+    "@nestjs/config": "~3.2.3",
     "@nestjs/core": "~10.4.1",
     "@nestjs/platform-express": "~10.4.1",
     "@nestjs/terminus": "~10.2.3",
+    "joi": "~17.13.3",
     "reflect-metadata": "~0.2.2",
     "rxjs": "~7.8.1"
   },
