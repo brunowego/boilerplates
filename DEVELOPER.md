@@ -1,6 +1,13 @@
 # Developer Guide
 
-## Locally Development
+## Local Development
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/download)
+- [pnpm](https://pnpm.io/installation)
+
+### Setup
 
 ```sh
 # Install dependencies
