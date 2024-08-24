@@ -8,6 +8,7 @@
 - [Docker Compose](https://docs.docker.com/compose/install)
 - [Node.js](https://nodejs.org/en/download)
 - [pnpm](https://pnpm.io/installation)
+- [Pagar.me Dashboard](https://dash.pagar.me)
 
 ### Setup
 
