@@ -6,6 +6,7 @@
 
 - [Node.js](https://nodejs.org/en/download)
 - [pnpm](https://pnpm.io/installation)
+- [Stripe API keys](https://dashboard.stripe.com/test/apikeys)
 
 ### Setup
 
