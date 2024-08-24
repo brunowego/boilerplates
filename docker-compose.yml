@@ -1,0 +1,25 @@
+---
+services:
+  mongodb:
+    image: docker.io/library/mongo:7.0.5
+    volumes:
+      - type: volume
+        source: mongodb-data
+        target: /data/db
+      - type: volume
+        source: mongodb-configdb
+        target: /data/configdb
+    environment:
+      MONGO_INITDB_DATABASE:
+    command: --storageEngine=wiredTiger
+    ports:
+      - target: 27017
+        published: $MONGODB_PORT
+        protocol: tcp
+    restart: unless-stopped
+
+volumes:
+  mongodb-data:
+    driver: local
+  mongodb-configdb:
+    driver: local
