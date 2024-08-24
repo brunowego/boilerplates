@@ -3,6 +3,9 @@
   "name": "acme",
   "private": true,
   "scripts": {
+    "compose:up": "docker compose up -d",
+    "compose:status": "docker compose ps",
+    "compose:down": "docker compose down",
     "lint": "trunk check",
     "format": "trunk fmt",
     "dev": "turbo dev",
