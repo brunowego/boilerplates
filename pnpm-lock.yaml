@@ -45,6 +45,9 @@ importers:
       '@nestjs/terminus':
         specifier: ~10.2.3
         version: 10.2.3(@nestjs/axios@3.0.3(@nestjs/common@10.4.1(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(axios@1.6.5)(rxjs@7.8.1))(@nestjs/common@10.4.1(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/mongoose@10.0.10(@nestjs/common@10.4.1(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(mongoose@8.5.4)(rxjs@7.8.1))(mongoose@8.5.4)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+      '@pagarme/pagarme-nodejs-sdk':
+        specifier: ~6.8.11
+        version: 6.8.11
       class-transformer:
         specifier: ~0.5.1
         version: 0.5.1
@@ -138,6 +141,49 @@ packages:
   '@angular-devkit/schematics@17.3.8':
     resolution: {integrity: sha512-QRVEYpIfgkprNHc916JlPuNbLzOgrm9DZalHasnLUz4P6g7pR21olb8YCyM2OTJjombNhya9ZpckcADU5Qyvlg==}
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
+
+  '@apimatic/authentication-adapters@0.5.4':
+    resolution: {integrity: sha512-UP4+LfvLQJjgtKaGr+hgQogM3JJGb9llEX8v9OVUp0xmiIVI8zt0m69nz/vk4GaNe4U6AvS3D4x0YiE5JtLVkg==}
+    engines: {node: '>=14.15.0 || >=16.0.0'}
+
+  '@apimatic/axios-client-adapter@0.3.4':
+    resolution: {integrity: sha512-vRluB6E7AHnGRZp/ntPcvdj01RrxUj2ylzDR6ejsT/xbXf0SOw2awSDOEq1ZsglzakNvzbuGaWIBY+e2yq8e/Q==}
+    engines: {node: '>=14.15.0 || >=16.0.0'}
+
+  '@apimatic/convert-to-stream@0.0.2':
+    resolution: {integrity: sha512-1DRg17ItExfMYsXwjt6WIjJSCgV5RGg3fHPLgYD44/YmiU+7suWj7YfPKKUqmNcnJ/AvMh4lG1+tHrfOT01zXw==}
+    engines: {node: '>=10.4.0'}
+
+  '@apimatic/convert-to-stream@0.1.2':
+    resolution: {integrity: sha512-4UzlEIbecy1Qubbx8KXVerpt1w/KD4iEtHRfE28p0eMEU6RoLksnHVONp5i4uycvfNJsA0z0kiTBRtXkmNsWag==}
+    engines: {node: '>=14.15.0 || >=16.0.0'}
+
+  '@apimatic/core-interfaces@0.2.6':
+    resolution: {integrity: sha512-XbqyftDB4GO3rVOablFt7RnF03gLdctUgLT0flDP5JI3E4r+Cn2O66nFufWfSFhI/Vr0vJbVjjDG2xzZ2bHBjQ==}
+    engines: {node: '>=14.15.0 || >=16.0.0'}
+
+  '@apimatic/core@0.10.12':
+    resolution: {integrity: sha512-PcOkX5SykmhORfHVQsWvGE8rFgCYA7gRoTaTX5kYXDHQLXOZoo/lIoo5Hc4FLqQkgMma9/bsqvvG8ls1d/suhA==}
+    engines: {node: '>=14.15.0 || >=16.0.0'}
+
+  '@apimatic/file-wrapper@0.3.2':
+    resolution: {integrity: sha512-pU2n9eEw5lIb4qWbqfgNmjrWAw8oI6I9jduE97Qpoe71+GSFZ2DWY0VBo+LXTYVm+fQBKpfcXAdheF6Ec3ilOA==}
+    engines: {node: '>=14.15.0 || >=16.0.0'}
+
+  '@apimatic/http-headers@0.3.2':
+    resolution: {integrity: sha512-n6f+hSKercj29wvlqGg0gjNGZbXbpcDKelHya0SekBH0072eCqo8ndXdQ2PVsTUjWR+yErF2ZqagwX7aPhJICQ==}
+    engines: {node: '>=14.15.0 || >=16.0.0'}
+
+  '@apimatic/http-query@0.3.2':
+    resolution: {integrity: sha512-rT7HaoaLGraIeZE90FWo7ebwrYzW1FoaOu8NyUQKBiSo9rA6hmHcUPakUPCWIxh53tTqEnJVTSopMudpGVLZXQ==}
+    engines: {node: '>=14.15.0 || >=16.0.0'}
+
+  '@apimatic/json-bigint@1.2.0':
+    resolution: {integrity: sha512-+bmVzYMdZu0Ya5L+my4FXFUih54OvQA/qlZsFOYdOoostyUuB27UDrVWQs/WVCmS0ADdo5vTU0eeTrrBkHoySw==}
+
+  '@apimatic/schema@0.7.12':
+    resolution: {integrity: sha512-JiIabKJuEKAF5QGFPwx2kG9vfTbQW7OLKxhRXbcIv8VvaH1DX/AdAfsDq3/+qCTmu6LpeNJmLWs8fwh8YRcsaQ==}
+    engines: {node: '>=14.15.0 || >=16.0.0'}
 
   '@babel/code-frame@7.23.5':
     resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}
@@ -630,6 +676,10 @@ packages:
     resolution: {integrity: sha512-um0xL3fO7Mf4fDxcqx9KryrB7zgRM5JSlvGN5AGkP6JLM5XEKyjeAiPbNxdXVXQ16isuAhYpvP88NgL2BGd6aA==}
     engines: {node: '>=8.0.0', npm: '>=5.0.0'}
     hasBin: true
+
+  '@pagarme/pagarme-nodejs-sdk@6.8.11':
+    resolution: {integrity: sha512-w4VPB5bmd8qW63SdvzB05Ibxh48pfaqeJ9dUhxaDpf0yAf3rp0K0Fl1SFRop1qAThtbH6wP/2msfeYz1Brc/YA==}
+    engines: {node: '>=14.17.0'}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -1269,9 +1319,15 @@ packages:
     resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
 
+  detect-browser@5.3.0:
+    resolution: {integrity: sha512-53rsFbGdwMwlF7qvCt0ypLM5V5/Mbl0szB7GPN8y9NCcbknYOeVVXdrXEq+90IwAfrrzt6Hd+u2E2ntakICU8w==}
+
   detect-newline@3.1.0:
     resolution: {integrity: sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==}
     engines: {node: '>=8'}
+
+  detect-node@2.1.0:
+    resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==}
 
   dezalgo@1.0.4:
     resolution: {integrity: sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig==}
@@ -1456,6 +1512,10 @@ packages:
     peerDependencies:
       typescript: '>3.6.0'
       webpack: ^5.11.0
+
+  form-data@3.0.1:
+    resolution: {integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==}
+    engines: {node: '>= 6'}
 
   form-data@4.0.0:
     resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
@@ -1866,6 +1926,9 @@ packages:
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
 
+  json-ptr@3.1.1:
+    resolution: {integrity: sha512-SiSJQ805W1sDUCD1+/t1/1BIrveq2Fe9HJqENxZmMCILmrPI7WhS/pePpIOx85v6/H2z1Vy7AI08GV2TzfXocg==}
+
   json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
@@ -1911,6 +1974,12 @@ packages:
   locate-path@5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
     engines: {node: '>=8'}
+
+  lodash.defaultsdeep@4.6.1:
+    resolution: {integrity: sha512-3j8wdDzYuWO3lM3Reg03MuQR957t287Rpcxp1njpEa8oDrikb+FwGdW3n+FELh/A6qib6yPit0j/pv9G/yeAqA==}
+
+  lodash.flatmap@4.5.0:
+    resolution: {integrity: sha512-/OcpcAGWlrZyoHGeHh3cAoa6nGdX6QYtmzNP84Jqol6UEQQ2gIaU3H+0eICcjcKGl0/XF8LWOujNn9lffsnaOg==}
 
   lodash.memoize@4.1.2:
     resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
@@ -2565,6 +2634,9 @@ packages:
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
+  tiny-warning@1.0.3:
+    resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
+
   tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
@@ -2906,6 +2978,78 @@ snapshots:
       rxjs: 7.8.1
     transitivePeerDependencies:
       - chokidar
+
+  '@apimatic/authentication-adapters@0.5.4':
+    dependencies:
+      '@apimatic/core-interfaces': 0.2.6
+      '@apimatic/http-headers': 0.3.2
+      '@apimatic/http-query': 0.3.2
+      tslib: 2.6.3
+
+  '@apimatic/axios-client-adapter@0.3.4':
+    dependencies:
+      '@apimatic/convert-to-stream': 0.1.2
+      '@apimatic/core-interfaces': 0.2.6
+      '@apimatic/file-wrapper': 0.3.2
+      '@apimatic/http-headers': 0.3.2
+      '@apimatic/http-query': 0.3.2
+      '@apimatic/json-bigint': 1.2.0
+      '@apimatic/schema': 0.7.12
+      axios: 1.6.5
+      detect-browser: 5.3.0
+      detect-node: 2.1.0
+      form-data: 3.0.1
+      lodash.flatmap: 4.5.0
+      tiny-warning: 1.0.3
+      tslib: 2.6.3
+    transitivePeerDependencies:
+      - debug
+
+  '@apimatic/convert-to-stream@0.0.2': {}
+
+  '@apimatic/convert-to-stream@0.1.2': {}
+
+  '@apimatic/core-interfaces@0.2.6':
+    dependencies:
+      '@apimatic/file-wrapper': 0.3.2
+      tslib: 2.6.3
+
+  '@apimatic/core@0.10.12':
+    dependencies:
+      '@apimatic/convert-to-stream': 0.0.2
+      '@apimatic/core-interfaces': 0.2.6
+      '@apimatic/file-wrapper': 0.3.2
+      '@apimatic/http-headers': 0.3.2
+      '@apimatic/http-query': 0.3.2
+      '@apimatic/json-bigint': 1.2.0
+      '@apimatic/schema': 0.7.12
+      detect-browser: 5.3.0
+      detect-node: 2.1.0
+      form-data: 3.0.1
+      json-ptr: 3.1.1
+      lodash.defaultsdeep: 4.6.1
+      lodash.flatmap: 4.5.0
+      tiny-warning: 1.0.3
+      tslib: 2.6.3
+
+  '@apimatic/file-wrapper@0.3.2':
+    dependencies:
+      tslib: 2.6.3
+
+  '@apimatic/http-headers@0.3.2':
+    dependencies:
+      tslib: 2.6.3
+
+  '@apimatic/http-query@0.3.2':
+    dependencies:
+      '@apimatic/file-wrapper': 0.3.2
+      tslib: 2.6.3
+
+  '@apimatic/json-bigint@1.2.0': {}
+
+  '@apimatic/schema@0.7.12':
+    dependencies:
+      tslib: 2.6.3
 
   '@babel/code-frame@7.23.5':
     dependencies:
@@ -3513,6 +3657,15 @@ snapshots:
       node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
+
+  '@pagarme/pagarme-nodejs-sdk@6.8.11':
+    dependencies:
+      '@apimatic/authentication-adapters': 0.5.4
+      '@apimatic/axios-client-adapter': 0.3.4
+      '@apimatic/core': 0.10.12
+      '@apimatic/schema': 0.7.12
+    transitivePeerDependencies:
+      - debug
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -4218,7 +4371,11 @@ snapshots:
 
   destroy@1.2.0: {}
 
+  detect-browser@5.3.0: {}
+
   detect-newline@3.1.0: {}
+
+  detect-node@2.1.0: {}
 
   dezalgo@1.0.4:
     dependencies:
@@ -4426,6 +4583,12 @@ snapshots:
       tapable: 2.2.1
       typescript: 5.3.3
       webpack: 5.93.0
+
+  form-data@3.0.1:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
 
   form-data@4.0.0:
     dependencies:
@@ -5042,6 +5205,8 @@ snapshots:
 
   json-parse-even-better-errors@2.3.1: {}
 
+  json-ptr@3.1.1: {}
+
   json-schema-traverse@0.4.1: {}
 
   json-schema-traverse@1.0.0: {}
@@ -5073,6 +5238,10 @@ snapshots:
   locate-path@5.0.0:
     dependencies:
       p-locate: 4.1.0
+
+  lodash.defaultsdeep@4.6.1: {}
+
+  lodash.flatmap@4.5.0: {}
 
   lodash.memoize@4.1.2: {}
 
@@ -5683,6 +5852,8 @@ snapshots:
       minimatch: 3.1.2
 
   through@2.3.8: {}
+
+  tiny-warning@1.0.3: {}
 
   tmp@0.0.33:
     dependencies:
