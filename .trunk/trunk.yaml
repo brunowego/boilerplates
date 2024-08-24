@@ -1,27 +1,33 @@
 ---
 version: 0.1
 cli:
-  version: 1.18.1
+  version: 1.22.3
 plugins:
   sources:
     - id: trunk
-      ref: v1.4.1
+      ref: v1.6.2
       uri: https://github.com/trunk-io/plugins
 runtimes:
   enabled:
     - node@18.12.1
     - python@3.10.8
 lint:
+  disabled:
+    - eslint
+    - osv-scanner
+    - prettier
+  definitions:
+    - name: biome
+      files:
+        - typescript
   enabled:
-    - checkov@3.1.44
-    - eslint@8.56.0
+    - biome@1.8.3
+    - checkov@3.2.235
     - git-diff-check
-    - markdownlint@0.38.0
-    - osv-scanner@1.5.0
-    - prettier@3.1.1
-    - trivy@0.48.1
-    - trufflehog@3.63.7
-    - yamllint@1.33.0
+    - markdownlint@0.41.0
+    - trivy@0.54.1
+    - trufflehog@3.81.9
+    - yamllint@1.35.1
 actions:
   enabled:
     - trunk-announce

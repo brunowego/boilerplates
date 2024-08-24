@@ -1,8 +1,8 @@
 import { HttpModule } from '@nestjs/axios'
 import {
   HttpHealthIndicator,
-  HealthCheckService as TerminusHealthCheckService,
   TerminusModule,
+  HealthCheckService as TerminusHealthCheckService,
 } from '@nestjs/terminus'
 import { Test, type TestingModule } from '@nestjs/testing'
 
@@ -28,16 +28,16 @@ describe('HealthCheck Controller', () => {
           useValue: {
             check: jest.fn(async (arrayOfCallback) => {
               const checks: Record<string, string>[] = await Promise.all(
+                // biome-ignore lint/suspicious/noExplicitAny: any is required to call the callback
                 arrayOfCallback.map((callback: () => any) => callback()),
               )
 
               const healthResult = checks.reduce(
                 (acc, result) => {
-                  return {
-                    ...acc,
-                    info: { ...acc.info, ...result },
-                    details: { ...acc.details, ...result },
-                  }
+                  return Object.assign({}, acc, {
+                    info: Object.assign({}, acc.info, result),
+                    details: Object.assign({}, acc.details, result),
+                  })
                 },
                 {
                   status: 'ok',
