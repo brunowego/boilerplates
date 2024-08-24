@@ -1,5 +1,4 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@acme/typescript-config/base.json",
-  "exclude": ["apps", "node_modules", "packages", "tooling"]
+  "extends": "@acme/typescript-config/base.json"
 }

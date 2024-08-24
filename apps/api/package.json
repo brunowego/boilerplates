@@ -12,7 +12,7 @@
     "build": "nest build",
     "start": "nest start",
     "start:debug": "nest start -wd",
-    "start:prod": "node ./dist/src/main"
+    "start:prod": "node ./dist/main"
   },
   "dependencies": {
     "@nestjs/axios": "~3.0.3",
