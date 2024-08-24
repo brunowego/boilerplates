@@ -7,27 +7,27 @@
 pnpm install
 
 # Test code
-pnpm test --filter api
+pnpm test --filter @acme/api
 # Watch mode
-pnpm test:watch --filter api
+pnpm test:watch --filter @acme/api
 # Test coverage
-pnpm test:cov --filter api
+pnpm test:cov --filter @acme/api
 npx serve ./apps/api/coverage/lcov-report
 # Debug mode
-pnpm test:debug --filter api
+pnpm test:debug --filter @acme/api
 # E2E test
-pnpm test:e2e --filter api
+pnpm test:e2e --filter @acme/api
 
 # Development mode
-pnpm dev --filter api
+pnpm dev --filter @acme/api
 
 # Build code
-pnpm build --filter api
+pnpm build --filter @acme/api
 
 # Production mode
-pnpm start --filter api
+pnpm start --filter @acme/api
 # Debug mode
-pnpm start:debug --filter api
+pnpm start:debug --filter @acme/api
 # Production mode
-pnpm start:prod --filter api
+pnpm start:prod --filter @acme/api
 ```
