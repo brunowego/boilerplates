@@ -10,6 +10,7 @@ services:
         source: mongodb-configdb
         target: /data/configdb
     environment:
+      # trunk-ignore(yamllint/empty-values)
       MONGO_INITDB_DATABASE:
     command: --storageEngine=wiredTiger
     ports:
