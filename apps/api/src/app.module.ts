@@ -7,6 +7,7 @@ import appConfig from './common/configs/app.config'
 import mongoConfig from './common/configs/mongo.config'
 import { HealthCheckModule } from './modules/health-check/health-check.module'
 import { CustomersModule } from './modules/customers/customers.module'
+import { OrdersModule } from './modules/orders/orders.module'
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { CustomersModule } from './modules/customers/customers.module'
     }),
     HealthCheckModule,
     CustomersModule,
+    OrdersModule,
   ],
 })
 export class AppModule {}
