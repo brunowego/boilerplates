@@ -5,26 +5,26 @@ import type {
   GetCustomerResponse,
 } from '@pagarme/pagarme-nodejs-sdk'
 
-import { CustomerService } from './customer.service'
+import { CustomersService } from './customers.service'
 
 @Controller('customers')
-export class CustomerController {
-  constructor(private readonly customerService: CustomerService) {}
+export class CustomersController {
+  constructor(private readonly customersService: CustomersService) {}
 
   @Get()
   async listCustomers(): Promise<ListCustomersResponse> {
-    return await this.customerService.list()
+    return await this.customersService.list()
   }
 
   @Get(':id')
   async getCustomerById(@Param('id') id: string): Promise<GetCustomerResponse> {
-    return await this.customerService.findById(id)
+    return await this.customersService.findById(id)
   }
 
   @Post()
   async createCustomer(
     @Body() createCustomerRequest: CreateCustomerRequest,
   ): Promise<GetCustomerResponse> {
-    return await this.customerService.create(createCustomerRequest)
+    return await this.customersService.create(createCustomerRequest)
   }
 }

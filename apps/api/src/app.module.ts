@@ -6,7 +6,7 @@ import { configValidationSchema as validationSchema } from './common/validations
 import appConfig from './common/configs/app.config'
 import mongoConfig from './common/configs/mongo.config'
 import { HealthCheckModule } from './modules/health-check/health-check.module'
-import { CustomerModule } from './modules/customer/customer.module'
+import { CustomersModule } from './modules/customers/customers.module'
 
 @Module({
   imports: [
@@ -23,7 +23,7 @@ import { CustomerModule } from './modules/customer/customer.module'
       inject: [ConfigService],
     }),
     HealthCheckModule,
-    CustomerModule,
+    CustomersModule,
   ],
 })
 export class AppModule {}

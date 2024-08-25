@@ -8,8 +8,8 @@ import type {
 import { PagarmeService } from '@/common/services/pagarme.service'
 
 @Injectable()
-export class CustomerService {
-  private readonly logger = new Logger(CustomerService.name)
+export class CustomersService {
+  private readonly logger = new Logger(CustomersService.name)
 
   constructor(private readonly pagarmeService: PagarmeService) {}
 
