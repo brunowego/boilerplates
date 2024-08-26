@@ -7,6 +7,9 @@
     --background: 0 0% 96%;
     --foreground: 210 11% 7%;
 
+    --navbar: 0 0% 100%;
+    --navbar-foreground: 210 11% 7%;
+
     --card: 0 0% 100%;
     --card-foreground: 210 11% 7%;
 
@@ -38,6 +41,9 @@
   .dark {
     --background: 210 11% 7%;
     --foreground: 0 0% 98%;
+
+    --navbar: 216 9% 10%;
+    --navbar-foreground: 0 0% 98%;
 
     --card: 216 9% 10%;
     --card-foreground: 0 0% 98%;
