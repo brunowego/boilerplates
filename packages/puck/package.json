@@ -24,17 +24,17 @@
     "classnames": "~2.5.1",
     "css-box-model": "~1.2.1",
     "object-hash": "~3.0.0",
-    "react-frame-component": "~5.2.6",
+    "react-frame-component": "~5.2.7",
     "react-hotkeys-hook": "~4.5.0",
-    "ua-parser-js": "~1.0.37",
-    "use-debounce": "~10.0.1"
+    "ua-parser-js": "~1.0.38",
+    "use-debounce": "~10.0.3"
   },
   "devDependencies": {
-    "@types/node": "~20.12.12",
+    "@types/node": "~22.5.0",
     "@types/object-hash": "~3.0.6",
-    "@types/react": "~18.3.3",
+    "@types/react": "~18.3.4",
     "@types/react-dom": "~18.3.0",
     "@types/ua-parser-js": "~0.7.39",
-    "typescript": "~5.4.5"
+    "typescript": "~5.5.4"
   }
 }
