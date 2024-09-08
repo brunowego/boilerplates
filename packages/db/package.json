@@ -15,7 +15,7 @@
   },
   "scripts": {
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit push",
+    "db:migrate": "bun ./src/migrate.ts",
     "db:seed": "bun ./src/seed.ts",
     "db:studio": "drizzle-kit studio"
   },
