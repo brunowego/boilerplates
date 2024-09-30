@@ -26,6 +26,9 @@ export default async function DashboardLayout({
           </h2>
 
           <nav className='grid space-y-1 *:leading-8'>
+            <h3 className='font-medium text-muted-foreground text-sm'>
+              TanStack Query
+            </h3>
             <Link href='/load-more'>Load More</Link>
           </nav>
         </div>

@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 
 import cn from '../utils/cn'
 import { typographyVariants } from './typography'
@@ -30,7 +30,7 @@ const PageHeader = ({ className, ...props }: PageHeaderProps) => {
 
 type PageTitleProps = {
   className?: string
-  children: string
+  children: ReactNode
 }
 
 const PageTitle = ({ className, ...props }: PageTitleProps) => {

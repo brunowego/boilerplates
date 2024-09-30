@@ -8,7 +8,10 @@ export default function LoadMorePage(): JSX.Element {
   return (
     <Page>
       <Page.Header>
-        <Page.Title>Load More</Page.Title>
+        <Page.Title>
+          With TanStack Query{' '}
+          <span className='text-muted-foreground text-xs'>/</span> Load More
+        </Page.Title>
       </Page.Header>
 
       <Page.Content className='space-y-6'>
