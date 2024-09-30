@@ -29,7 +29,7 @@ export default async function DashboardLayout({
             <h3 className='font-medium text-muted-foreground text-sm'>
               TanStack Query
             </h3>
-            <Link href='/load-more'>Load More</Link>
+            <Link href='/react-query/load-more'>Load More</Link>
           </nav>
         </div>
       </Layout.Aside>
